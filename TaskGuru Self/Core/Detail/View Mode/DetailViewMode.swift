@@ -48,9 +48,7 @@ extension DetailView {
 			.toolbar {
 				if vm.task.status != .done {
 					ToolbarItemGroup(placement: .primaryAction) {
-						Button {
-							isMarkingAsDone.toggle()
-						} label: {
+						Button(action: {isMarkingAsDone.toggle()}) {
 							Label("Mark as Done", systemImage: "checkmark")
 						}
 					}
@@ -59,10 +57,6 @@ extension DetailView {
 				ToolbarItemGroup(placement: .secondaryAction) {
 					Button(action: { isShowingEdit.toggle() }) {
 						Label("Edit", systemImage: "square.and.pencil")
-					}
-					
-					Button(action: {}) {
-						Label("Delete", systemImage: "trash")
 					}
 				}
 			}
