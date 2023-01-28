@@ -21,6 +21,7 @@ extension HomeView {
 		@Published
 		private(set) var otherTasks: [TaskItem] = .init()
 		
+		@Published
 		var isShowingAddTaskView: Bool = false
 		
 		// MARK: - CRUD Operations
