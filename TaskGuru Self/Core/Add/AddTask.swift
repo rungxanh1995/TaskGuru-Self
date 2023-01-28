@@ -68,6 +68,7 @@ struct AddTask: View {
 				ToolbarItem(placement: .navigationBarTrailing) {
 					Button("Add") {
 						// add task then dismiss view
+						dismissThisView()
 					}
 					.font(.headline)
 				}
