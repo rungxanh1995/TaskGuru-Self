@@ -9,7 +9,8 @@ import SwiftUI
 
 extension DetailView {
 	struct ViewMode: View {
-		let task: TaskItem
+		@ObservedObject
+		var vm: DetailView.ViewModel
 				
 		@State
 		private var isShowingEdit: Bool = false
@@ -22,14 +23,14 @@ extension DetailView {
 			ScrollView {
 				VStack(spacing: 8) {
 					LazyVGrid(columns: columns) {
-						DetailGridCell(title: task.name, caption: "Name")
-						DetailGridCell(title: task.status.rawValue, caption: "Status", titleColor: .orange)
-						DetailGridCell(title: task.shortDueDate, caption: "Due date", titleColor: .mint)
-						DetailGridCell(title: task.type.rawValue, caption: "Type")
+						DetailGridCell(title: vm.task.name, caption: "Name")
+						DetailGridCell(title: vm.task.status.rawValue, caption: "Status", titleColor: vm.colorForStatus())
+						DetailGridCell(title: vm.task.shortDueDate, caption: "Due date", titleColor: vm.colorForDueDate())
+						DetailGridCell(title: vm.task.type.rawValue, caption: "Type")
 					}
 					
-					if task.notes.isEmpty == false {
-						DetailGridCell(title: task.notes, caption: "Notes")
+					if vm.task.notes.isEmpty == false {
+						DetailGridCell(title: vm.task.notes, caption: "Notes")
 					}
 					
 				}

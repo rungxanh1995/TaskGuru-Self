@@ -25,6 +25,8 @@
 		2CC25BCD29845D9A006972DF /* AddTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC25BCC29845D9A006972DF /* AddTask.swift */; };
 		2CC25BD0298462FF006972DF /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC25BCF298462FF006972DF /* SettingsView.swift */; };
 		2CCB0B452985AAFA00D489DD /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0B442985AAFA00D489DD /* DetailView.swift */; };
+		2CCB0B472985B2E700D489DD /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0B462985B2E700D489DD /* DetailViewModel.swift */; };
+		2CCB0B492985B5A400D489DD /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0B482985B5A400D489DD /* Date.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,8 @@
 		2CC25BCC29845D9A006972DF /* AddTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTask.swift; sourceTree = "<group>"; };
 		2CC25BCF298462FF006972DF /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		2CCB0B442985AAFA00D489DD /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		2CCB0B462985B2E700D489DD /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		2CCB0B482985B5A400D489DD /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,7 @@
 		2C33F6C62985928F004893EF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				2CCB0B482985B5A400D489DD /* Date.swift */,
 				2C33F6C72985929C004893EF /* PreviewProvider.swift */,
 			);
 			path = Extensions;
@@ -107,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				2CCB0B442985AAFA00D489DD /* DetailView.swift */,
+				2CCB0B462985B2E700D489DD /* DetailViewModel.swift */,
 				2CCB0B432985AA8700D489DD /* View Mode */,
 				2C33F6B129858289004893EF /* Edit Mode */,
 			);
@@ -274,6 +280,7 @@
 				2CC25BBE298459BA006972DF /* HomeView.swift in Sources */,
 				2C33F6BE29858912004893EF /* TaskType.swift in Sources */,
 				2C33F6C82985929C004893EF /* PreviewProvider.swift in Sources */,
+				2CCB0B492985B5A400D489DD /* Date.swift in Sources */,
 				2CC25BD0298462FF006972DF /* SettingsView.swift in Sources */,
 				2C33F6BA298587E7004893EF /* TaskItem.swift in Sources */,
 				2C33F6C529858FEA004893EF /* Constants.swift in Sources */,
@@ -283,6 +290,7 @@
 				2C8C35DF298489DA00DCEA67 /* DetailViewMode.swift in Sources */,
 				2CCB0B452985AAFA00D489DD /* DetailView.swift in Sources */,
 				2CC25BCD29845D9A006972DF /* AddTask.swift in Sources */,
+				2CCB0B472985B2E700D489DD /* DetailViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

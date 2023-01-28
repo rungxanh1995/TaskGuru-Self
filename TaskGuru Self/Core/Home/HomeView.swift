@@ -24,7 +24,7 @@ struct HomeView: View {
 					} else {
 						ForEach(vm.personalTasks) { task in
 							NavigationLink(task.name) {
-								DetailView(for: task)
+								DetailView(vm: .init(for: task, parentVM: self.vm))
 							}
 						}
 						.onDelete(perform: vm.deletePersonalTasks)
@@ -42,7 +42,7 @@ struct HomeView: View {
 					} else {
 						ForEach(vm.workTasks) { task in
 							NavigationLink(task.name) {
-								DetailView(for: task)
+								DetailView(vm: .init(for: task, parentVM: self.vm))
 							}
 						}
 						.onDelete(perform: vm.deleteWorkTasks)
@@ -60,7 +60,7 @@ struct HomeView: View {
 					} else {
 						ForEach(vm.schoolTasks) { task in
 							NavigationLink(task.name) {
-								DetailView(for: task)
+								DetailView(vm: .init(for: task, parentVM: self.vm))
 							}
 						}
 						.onDelete(perform: vm.deleteSchoolTasks)
@@ -78,7 +78,7 @@ struct HomeView: View {
 					} else {
 						ForEach(vm.otherTasks) { task in
 							NavigationLink(task.name) {
-								DetailView(for: task)
+								DetailView(vm: .init(for: task, parentVM: self.vm))
 							}
 						}
 						.onDelete(perform: vm.deleteOtherTasks)

@@ -8,17 +8,16 @@
 import SwiftUI
 
 struct DetailView: View {
-	let task: TaskItem
-	
-	init(for task: TaskItem) { self.task = task }
+	@ObservedObject
+	var vm: DetailView.ViewModel
 	
     var body: some View {
-		DetailView.ViewMode(task: task)
+		DetailView.ViewMode(vm: vm)
     }
 }
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-		DetailView(for: dev.task)
+		DetailView(vm: .init(for: dev.task, parentVM: dev.homeVM))
     }
 }
