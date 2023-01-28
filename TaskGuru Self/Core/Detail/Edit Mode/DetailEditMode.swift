@@ -11,40 +11,39 @@ extension DetailView {
 	struct EditMode: View {
 		@Environment(\.dismiss) var dismissThisView
 		
-		@State
-		private var taskName: String = ""
-		
-		@State
-		private var dueDate: Date = .init()
-		let dateRangeFromToday: PartialRangeFrom<Date> = Date()...
-		
-		@State
-		private var statusSelected = "In progress"
-		private let statuses = ["New", "In progress", "Done"]
-		
-		@State
-		private var taskNotes = ""
+		@ObservedObject
+		var vm: DetailView.ViewModel
 		
 		var body: some View {
 			NavigationView {
 				Form {
-					Section(header: Text("General")) {
-						TextField("Name", text: $taskName)
+					Section {
+						TextField("Name", text: $vm.task.name)
 						
-						DatePicker("Due Date", selection: $dueDate,
-								   in: dateRangeFromToday,
+						DatePicker("Due Date", selection: $vm.task.dueDate,
+								   in: TaskConstants.dateRangeFromToday,
 								   displayedComponents: .date
 						)
 						
-						Picker("Status", selection: $statusSelected) {
-							ForEach(statuses, id: \.self) {
-								Text($0)
+						Picker("Status", selection: $vm.task.status) {
+							ForEach(TaskConstants.allStatuses, id: \.self) {
+								Text($0.rawValue)
 							}
+						}
+					} header: {
+						HStack {
+							Image(systemName: "square.fill.text.grid.1x2")
+							Text("General")
 						}
 					}
 					
-					Section(header: Text("Notes")) {
-						TextField("Notes", text: $taskNotes, prompt: Text("Any extra notes..."), axis: .vertical)
+					Section {
+						TextField("Notes", text: $vm.task.notes, prompt: Text("Any extra notes..."), axis: .vertical)
+					} header: {
+						HStack {
+							Image(systemName: "pencil.and.outline")
+							Text("Notes")
+						}
 					}
 				}
 				.navigationTitle("Edit Task")
@@ -58,13 +57,17 @@ extension DetailView {
 					
 					ToolbarItem(placement: .navigationBarTrailing) {
 						Button("Save") {
-							// add task then dismiss view
-							dismissThisView()
+							didTapSaveButton()
 						}
 						.font(.headline)
 					}
 				}
 			}
+		}
+		
+		private func didTapSaveButton() -> Void {
+			vm.updateItemInItsSource()
+			dismissThisView()
 		}
 	}
 }

@@ -37,5 +37,9 @@ extension DetailView {
 				return Color.red
 			}
 		}
+		
+		func updateItemInItsSource() -> Void {
+			parentVM.updateTasks(with: task)
+		}
 	}
 }

@@ -62,7 +62,7 @@ extension DetailView {
 				}
 			}
 			.sheet(isPresented: $isShowingEdit) {
-				DetailView.EditMode()
+				DetailView.EditMode(vm: self.vm)
 			}
 		}
 	}
