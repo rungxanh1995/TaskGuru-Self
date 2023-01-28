@@ -27,6 +27,7 @@ struct HomeView: View {
 								DetailView(task: task.name)
 							}
 						}
+						.onDelete(perform: vm.deletePersonalTasks)
 					}
 				} header: {
 					HStack {
@@ -44,6 +45,7 @@ struct HomeView: View {
 								DetailView(task: task.name)
 							}
 						}
+						.onDelete(perform: vm.deleteWorkTasks)
 					}
 				} header: {
 					HStack {
@@ -61,6 +63,7 @@ struct HomeView: View {
 								DetailView(task: task.name)
 							}
 						}
+						.onDelete(perform: vm.deleteSchoolTasks)
 					}
 				} header: {
 					HStack {
@@ -78,6 +81,7 @@ struct HomeView: View {
 								DetailView(task: task.name)
 							}
 						}
+						.onDelete(perform: vm.deleteOtherTasks)
 					}
 				} header: {
 					HStack {
