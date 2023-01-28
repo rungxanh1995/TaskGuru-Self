@@ -13,6 +13,7 @@
 		2C33F6BA298587E7004893EF /* TaskItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C33F6B9298587E7004893EF /* TaskItem.swift */; };
 		2C33F6BC298588B4004893EF /* TaskStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C33F6BB298588B4004893EF /* TaskStatus.swift */; };
 		2C33F6BE29858912004893EF /* TaskType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C33F6BD29858912004893EF /* TaskType.swift */; };
+		2C33F6C029858BCF004893EF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C33F6BF29858BCF004893EF /* HomeViewModel.swift */; };
 		2C8C35DF298489DA00DCEA67 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8C35DE298489DA00DCEA67 /* DetailView.swift */; };
 		2CC25BBC298459BA006972DF /* TaskGuru_SelfApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC25BBB298459BA006972DF /* TaskGuru_SelfApp.swift */; };
 		2CC25BBE298459BA006972DF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC25BBD298459BA006972DF /* HomeView.swift */; };
@@ -29,6 +30,7 @@
 		2C33F6B9298587E7004893EF /* TaskItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskItem.swift; sourceTree = "<group>"; };
 		2C33F6BB298588B4004893EF /* TaskStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskStatus.swift; sourceTree = "<group>"; };
 		2C33F6BD29858912004893EF /* TaskType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskType.swift; sourceTree = "<group>"; };
+		2C33F6BF29858BCF004893EF /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		2C8C35DE298489DA00DCEA67 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		2CC25BB8298459BA006972DF /* TaskGuru Self.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TaskGuru Self.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CC25BBB298459BA006972DF /* TaskGuru_SelfApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskGuru_SelfApp.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				2CC25BBD298459BA006972DF /* HomeView.swift */,
+				2C33F6BF29858BCF004893EF /* HomeViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C2541B029849CDC00367BED /* DetailGridCell.swift in Sources */,
+				2C33F6C029858BCF004893EF /* HomeViewModel.swift in Sources */,
 				2CC25BBE298459BA006972DF /* HomeView.swift in Sources */,
 				2C33F6BE29858912004893EF /* TaskType.swift in Sources */,
 				2CC25BD0298462FF006972DF /* SettingsView.swift in Sources */,
