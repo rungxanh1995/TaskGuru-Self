@@ -91,7 +91,7 @@ struct HomeView: View {
 				addTaskButton
 			}
 			.sheet(isPresented: $vm.isShowingAddTaskView) {
-				AddTask()
+				AddTask(vm: .init(parentVM: self.vm))
 			}
 		}
 	}

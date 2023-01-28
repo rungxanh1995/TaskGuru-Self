@@ -10,66 +10,58 @@ import SwiftUI
 struct AddTask: View {
 	@Environment(\.dismiss) var dismissThisView
 	
-	@State
-	private var taskName: String = ""
-	
-	private let taskTypes = ["Personal", "Work", "School"]
-	@State
-	private var taskTypeSelected = "Personal"
-	
-	@State
-	private var dueDate: Date = .init()
-	let dateRangeFromToday: PartialRangeFrom<Date> = Date()...
-	
-	@State
-	private var statusSelected = "New"
-	private let statuses = ["New", "In progress", "Done"]
-	
-	@State
-	private var taskNotes = ""
+	@ObservedObject
+	var vm: AddTask.ViewModel
 	
     var body: some View {
 		NavigationView {
 			Form {
-				Section(header: Text("General")) {
-					TextField("Name", text: $taskName)
+				Section {
+					TextField("Name", text: $vm.taskName)
 					
-					DatePicker("Due Date", selection: $dueDate,
-							   in: dateRangeFromToday,
-							   displayedComponents: .date
-					)
+					DatePicker("Due Date", selection: $vm.dueDate, in: TaskConstants.dateRangeFromToday, displayedComponents: .date)
 					
-					Picker("Type", selection: $taskTypeSelected) {
-						ForEach(taskTypes, id: \.self) {
-							Text($0)
+					Picker("Type", selection: $vm.taskType) {
+						ForEach(TaskConstants.allTypes, id: \.self) {
+							Text($0.rawValue)
 						}
 					}
 					
-					Picker("Status", selection: $statusSelected) {
-						ForEach(statuses, id: \.self) {
-							Text($0)
+					Picker("Status", selection: $vm.taskStatus) {
+						ForEach(TaskConstants.allStatuses, id: \.self) {
+							Text($0.rawValue)
 						}
+					}
+				} header: {
+					HStack {
+						Image(systemName: "square.fill.text.grid.1x2")
+						Text("General")
 					}
 				}
-				
-				Section(header: Text("Notes")) {
-					TextField("Notes", text: $taskNotes, prompt: Text("Any extra notes..."), axis: .vertical)
+
+				Section {
+					TextField("Notes", text: $vm.taskNotes,
+							  prompt: Text("Any extra notes..."),
+							  axis: .vertical)
+				} header: {
+					HStack {
+						Image(systemName: "pencil.and.outline")
+						Text("Notes")
+					}
 				}
 			}
 			.navigationTitle("Add Task")
 			.navigationBarTitleDisplayMode(.inline)
 			.toolbar {
 				ToolbarItem(placement: .navigationBarLeading) {
-					Button("Cancel") {
-						dismissThisView()
-					}
+					Button("Cancel") { dismissThisView() }
 				}
 				
 				ToolbarItem(placement: .navigationBarTrailing) {
-					Button("Add") {
-						// add task then dismiss view
+					Button("Add", action: {
+						addNewTask()
 						dismissThisView()
-					}
+					})
 					.font(.headline)
 				}
 			}
@@ -77,8 +69,14 @@ struct AddTask: View {
     }
 }
 
+extension AddTask {
+	private func addNewTask() -> Void {
+		vm.addTask(name: &vm.taskName, dueDate: vm.dueDate, type: vm.taskType, status: vm.taskStatus, notes: vm.taskNotes)
+	}
+}
+
 struct AddTask_Previews: PreviewProvider {
     static var previews: some View {
-        AddTask()
+		AddTask(vm: .init(parentVM: dev.homeVM))
     }
 }
