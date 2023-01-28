@@ -61,7 +61,7 @@ extension DetailView {
 				}
 			}
 			.sheet(isPresented: $isShowingEdit) {
-				EditView()
+				DetailView.EditMode()
 			}
 		}
 	}
