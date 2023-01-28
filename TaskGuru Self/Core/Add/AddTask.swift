@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct AddTask: View {
+	internal enum FocusField { case name, notes }
+	
+	@FocusState
+	private var focusField: FocusField?
+	
 	@Environment(\.dismiss) var dismissThisView
 	
 	@ObservedObject
@@ -18,6 +23,7 @@ struct AddTask: View {
 			Form {
 				Section {
 					TextField("Name", text: $vm.taskName)
+						.focused($focusField, equals: .name)
 					
 					DatePicker("Due Date", selection: $vm.dueDate, in: TaskConstants.dateRangeFromToday, displayedComponents: .date)
 					
@@ -43,6 +49,7 @@ struct AddTask: View {
 					TextField("Notes", text: $vm.taskNotes,
 							  prompt: Text("Any extra notes..."),
 							  axis: .vertical)
+					.focused($focusField, equals: .notes)
 				} header: {
 					HStack {
 						Image(systemName: "pencil.and.outline")
@@ -50,6 +57,7 @@ struct AddTask: View {
 					}
 				}
 			}
+			.onSubmit { focusField = nil }
 			.navigationTitle("Add Task")
 			.navigationBarTitleDisplayMode(.inline)
 			.toolbar {

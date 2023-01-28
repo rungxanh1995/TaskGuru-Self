@@ -9,6 +9,11 @@ import SwiftUI
 
 extension DetailView {
 	struct EditMode: View {
+		internal enum FocusField { case name, notes }
+		
+		@FocusState
+		private var focusField: FocusField?
+		
 		@Environment(\.dismiss) var dismissThisView
 		
 		@ObservedObject
@@ -19,6 +24,7 @@ extension DetailView {
 				Form {
 					Section {
 						TextField("Name", text: $vm.task.name)
+							.focused($focusField, equals: .name)
 						
 						DatePicker("Due Date", selection: $vm.task.dueDate,
 								   in: TaskConstants.dateRangeFromToday,
@@ -39,6 +45,8 @@ extension DetailView {
 					
 					Section {
 						TextField("Notes", text: $vm.task.notes, prompt: Text("Any extra notes..."), axis: .vertical)
+							.focused($focusField, equals: .notes)
+
 					} header: {
 						HStack {
 							Image(systemName: "pencil.and.outline")
@@ -46,6 +54,7 @@ extension DetailView {
 						}
 					}
 				}
+				.onSubmit { focusField = nil }
 				.navigationTitle("Edit Task")
 				.navigationBarTitleDisplayMode(.inline)
 				.toolbar {
