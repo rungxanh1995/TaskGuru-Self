@@ -105,7 +105,7 @@ extension HomeView {
 	@ViewBuilder
 	private var emptyTaskText: some View {
 		
-		let emptyTaskListSentence: LocalizedStringKey = "Nothing yet. Tap \(Image(systemName: "plus.circle")) to add more"
+		let emptyTaskListSentence: LocalizedStringKey = "Nothing yet. Tap here or \(Image(systemName: "plus.circle")) to add more"
 		
 		HStack {
 			Spacer()
@@ -114,6 +114,7 @@ extension HomeView {
 				.foregroundColor(.secondary)
 			Spacer()
 		}
+		.onTapGesture { vm.isShowingAddTaskView.toggle() }
 	}
 	
 	private var addTaskButton: some View {
