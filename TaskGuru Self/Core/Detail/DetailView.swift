@@ -10,7 +10,10 @@ import SwiftUI
 struct DetailView: View {
 	let task: String
 	
-	let columns = [
+	@State
+	private var isShowingEdit: Bool = false
+	
+	private let columns = [
 		GridItem(.adaptive(minimum: 150.0, maximum: 180.0))
 	]
 	
@@ -42,7 +45,7 @@ struct DetailView: View {
 			}
 			
 			ToolbarItemGroup(placement: .secondaryAction) {
-				Button(action: {}) {
+				Button(action: { isShowingEdit.toggle() }) {
 					Label("Edit", systemImage: "square.and.pencil")
 				}
 				
@@ -50,6 +53,9 @@ struct DetailView: View {
 					Label("Delete", systemImage: "trash")
 				}
 			}
+		}
+		.sheet(isPresented: $isShowingEdit) {
+			EditView()
 		}
     }
 }
