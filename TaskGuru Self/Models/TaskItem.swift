@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct TaskItem: Codable, Identifiable, Hashable {
 	var id: UUID = .init()
@@ -40,5 +41,26 @@ struct TaskItem: Codable, Identifiable, Hashable {
 	
 	var notes: String {
 		didSet { lastUpdated = .now }
+	}
+}
+
+extension TaskItem {
+	func colorForStatus() -> Color {
+		switch status {
+			case .new: return Color.gray
+			case .inProgress: return Color.orange
+			case .done: return Color.mint
+		}
+	}
+	
+	/// Shows green when not approaching today's date, orange on today's date, and red when passed today's date
+	func colorForDueDate() -> Color {
+		if dueDate.isWithinToday {
+			return Color.orange
+		} else if dueDate > Date.now {
+			return Color.mint
+		} else {
+			return Color.red
+		}
 	}
 }
