@@ -19,25 +19,6 @@ extension DetailView {
 			self.parentVM = parentVM
 		}
 		
-		func colorForStatus() -> Color {
-			switch task.status {
-				case .new: return Color.gray
-				case .inProgress: return Color.orange
-				case .done: return Color.mint
-			}
-		}
-		
-		/// Shows green when not approaching today's date, orange on today's date, and red when passed today's date
-		func colorForDueDate() -> Color {
-			if task.dueDate.isWithinToday {
-				return Color.orange
-			} else if task.dueDate > Date.now {
-				return Color.mint
-			} else {
-				return Color.red
-			}
-		}
-		
 		func updateItemInItsSource() -> Void {
 			parentVM.updateTasks(with: task)
 		}

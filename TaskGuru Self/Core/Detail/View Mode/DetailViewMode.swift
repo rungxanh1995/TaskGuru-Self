@@ -24,8 +24,8 @@ extension DetailView {
 				VStack(spacing: 8) {
 					LazyVGrid(columns: columns) {
 						DetailGridCell(title: vm.task.name, caption: "Name")
-						DetailGridCell(title: vm.task.status.rawValue, caption: "Status", titleColor: vm.colorForStatus())
-						DetailGridCell(title: vm.task.shortDueDate, caption: "Due date", titleColor: vm.colorForDueDate())
+						DetailGridCell(title: vm.task.status.rawValue, caption: "Status", titleColor: vm.task.colorForStatus())
+						DetailGridCell(title: vm.task.shortDueDate, caption: "Due date", titleColor: vm.task.colorForDueDate())
 						DetailGridCell(title: vm.task.type.rawValue, caption: "Type")
 					}
 					
