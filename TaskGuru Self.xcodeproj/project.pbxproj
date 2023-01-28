@@ -27,6 +27,12 @@
 		2CCB0B452985AAFA00D489DD /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0B442985AAFA00D489DD /* DetailView.swift */; };
 		2CCB0B472985B2E700D489DD /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0B462985B2E700D489DD /* DetailViewModel.swift */; };
 		2CCB0B492985B5A400D489DD /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0B482985B5A400D489DD /* Date.swift */; };
+		2CCB0B4B2985BC2300D489DD /* SchemeModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0B4A2985BC2300D489DD /* SchemeModifier.swift */; };
+		2CCB0B4D2985BC4500D489DD /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0B4C2985BC4500D489DD /* UserDefaultsKey.swift */; };
+		2CCB0B4F2985BC6800D489DD /* SchemeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0B4E2985BC6800D489DD /* SchemeType.swift */; };
+		2CCB0B512985BC9200D489DD /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0B502985BC9200D489DD /* View.swift */; };
+		2CCB0B532985BCB400D489DD /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0B522985BCB400D489DD /* SettingsViewModel.swift */; };
+		2CCB0B552985BD6D00D489DD /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0B542985BD6D00D489DD /* HapticManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +57,12 @@
 		2CCB0B442985AAFA00D489DD /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		2CCB0B462985B2E700D489DD /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		2CCB0B482985B5A400D489DD /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		2CCB0B4A2985BC2300D489DD /* SchemeModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchemeModifier.swift; sourceTree = "<group>"; };
+		2CCB0B4C2985BC4500D489DD /* UserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
+		2CCB0B4E2985BC6800D489DD /* SchemeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchemeType.swift; sourceTree = "<group>"; };
+		2CCB0B502985BC9200D489DD /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		2CCB0B522985BCB400D489DD /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		2CCB0B542985BD6D00D489DD /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +107,10 @@
 			isa = PBXGroup;
 			children = (
 				2C33F6C429858FEA004893EF /* Constants.swift */,
+				2CCB0B4A2985BC2300D489DD /* SchemeModifier.swift */,
+				2CCB0B4E2985BC6800D489DD /* SchemeType.swift */,
+				2CCB0B4C2985BC4500D489DD /* UserDefaultsKey.swift */,
+				2CCB0B542985BD6D00D489DD /* HapticManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -104,6 +120,7 @@
 			children = (
 				2CCB0B482985B5A400D489DD /* Date.swift */,
 				2C33F6C72985929C004893EF /* PreviewProvider.swift */,
+				2CCB0B502985BC9200D489DD /* View.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -190,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				2CC25BCF298462FF006972DF /* SettingsView.swift */,
+				2CCB0B522985BCB400D489DD /* SettingsViewModel.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -279,6 +297,8 @@
 				2C33F6C029858BCF004893EF /* HomeViewModel.swift in Sources */,
 				2CC25BBE298459BA006972DF /* HomeView.swift in Sources */,
 				2C33F6BE29858912004893EF /* TaskType.swift in Sources */,
+				2CCB0B512985BC9200D489DD /* View.swift in Sources */,
+				2CCB0B4B2985BC2300D489DD /* SchemeModifier.swift in Sources */,
 				2C33F6C82985929C004893EF /* PreviewProvider.swift in Sources */,
 				2CCB0B492985B5A400D489DD /* Date.swift in Sources */,
 				2CC25BD0298462FF006972DF /* SettingsView.swift in Sources */,
@@ -289,8 +309,12 @@
 				2C33F6BC298588B4004893EF /* TaskStatus.swift in Sources */,
 				2C8C35DF298489DA00DCEA67 /* DetailViewMode.swift in Sources */,
 				2CCB0B452985AAFA00D489DD /* DetailView.swift in Sources */,
+				2CCB0B552985BD6D00D489DD /* HapticManager.swift in Sources */,
 				2CC25BCD29845D9A006972DF /* AddTask.swift in Sources */,
 				2CCB0B472985B2E700D489DD /* DetailViewModel.swift in Sources */,
+				2CCB0B532985BCB400D489DD /* SettingsViewModel.swift in Sources */,
+				2CCB0B4F2985BC6800D489DD /* SchemeType.swift in Sources */,
+				2CCB0B4D2985BC4500D489DD /* UserDefaultsKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

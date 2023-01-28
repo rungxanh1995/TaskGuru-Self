@@ -8,19 +8,100 @@
 import SwiftUI
 
 struct SettingsView: View {
-    var body: some View {
+	@StateObject
+	private var vm: ViewModel
+	
+	init(vm: SettingsView.ViewModel = .init()) {
+		_vm = StateObject(wrappedValue: vm)
+	}
+	
+	var body: some View {
 		NavigationView {
 			Form {
-				Text("Settings item 1")
-				Text("Settings item 2")
+				Section {
+					haptics
+					appTheme
+				} header: {
+					HStack {
+						Image(systemName: "gearshape.fill")
+						Text("General")
+					}
+				}
+				
+				Section {
+					resetAppButton
+				} footer: {
+					Text("Be careful, this removes all your data! Restart the app to see changes")
+				}
+				
+				Section {
+					HStack {
+						Image(systemName: "link")
+						Link("Joe Pham", destination: vm.joeGitHubLink)
+					}
+					
+					HStack {
+						Image(systemName: "link")
+						Link("Ostap Sulyk", destination: vm.ostapGitHubLink)
+					}
+					
+					HStack {
+						Image(systemName: "link")
+						Link("Rauf Anata", destination: vm.raufGitHubLink)
+					}
+				} header: {
+					HStack {
+						Image(systemName: "hands.sparkles.fill")
+						Text("Meet The Team")
+					}
+				}
 			}
 			.navigationTitle("Settings")
+			.confirmationDialog(
+				"This action cannot be undone",
+				isPresented: $vm.isConfirmingResetData,
+				titleVisibility: .visible
+			) {
+				Button("Delete", role: .destructive) {
+					vm.resetData()
+					haptic(.success)
+				}
+				Button("Cancel", role: .cancel) { }
+			}
 		}
-    }
+	}
+}
+
+private extension SettingsView {
+	@ViewBuilder
+	private var haptics: some View {
+		Toggle(
+			"Enable Haptics",
+			isOn: $vm.isHapticsEnabled
+		)
+		.tint(.teal)
+	}
+	
+	@ViewBuilder
+	private var appTheme: some View {
+		Picker("Color Theme", selection: $vm.systemTheme) {
+			ForEach(SchemeType.allCases) { (theme) in
+				Text(theme.title)
+					.tag(theme.rawValue)
+			}
+		}
+	}
+	
+	@ViewBuilder
+	private var resetAppButton: some View {
+		Button("Reset to Original", role: .destructive) {
+			vm.isConfirmingResetData.toggle()
+		}
+	}
 }
 
 struct SettingsView_Previews: PreviewProvider {
-    static var previews: some View {
-        SettingsView()
-    }
+	static var previews: some View {
+		SettingsView()
+	}
 }

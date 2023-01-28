@@ -23,6 +23,7 @@ struct TaskGuru_SelfApp: App {
 						Text("Settings")
 					}
 			}
+			.setUpColorTheme()
         }
     }
 }
