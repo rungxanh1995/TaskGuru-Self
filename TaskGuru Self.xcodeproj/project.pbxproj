@@ -33,6 +33,7 @@
 		2CCB0B512985BC9200D489DD /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0B502985BC9200D489DD /* View.swift */; };
 		2CCB0B532985BCB400D489DD /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0B522985BCB400D489DD /* SettingsViewModel.swift */; };
 		2CCB0B552985BD6D00D489DD /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0B542985BD6D00D489DD /* HapticManager.swift */; };
+		2CCC44C32985CFF3009C3FBD /* HomeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCC44C22985CFF3009C3FBD /* HomeListCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		2CCB0B502985BC9200D489DD /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		2CCB0B522985BCB400D489DD /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		2CCB0B542985BD6D00D489DD /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
+		2CCC44C22985CFF3009C3FBD /* HomeListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +192,7 @@
 			children = (
 				2CC25BBD298459BA006972DF /* HomeView.swift */,
 				2C33F6BF29858BCF004893EF /* HomeViewModel.swift */,
+				2CCC44C22985CFF3009C3FBD /* HomeListCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 			files = (
 				2C2541B029849CDC00367BED /* DetailGridCell.swift in Sources */,
 				2C33F6C229858E5E004893EF /* AddTaskViewModel.swift in Sources */,
+				2CCC44C32985CFF3009C3FBD /* HomeListCell.swift in Sources */,
 				2C33F6C029858BCF004893EF /* HomeViewModel.swift in Sources */,
 				2CC25BBE298459BA006972DF /* HomeView.swift in Sources */,
 				2C33F6BE29858912004893EF /* TaskType.swift in Sources */,
