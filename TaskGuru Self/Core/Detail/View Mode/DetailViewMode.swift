@@ -15,6 +15,9 @@ extension DetailView {
 		@State
 		private var isShowingEdit: Bool = false
 		
+		@State
+		private var isMarkingAsDone: Bool = false
+		
 		private let columns = [
 			GridItem(.adaptive(minimum: 150.0, maximum: 180.0))
 		]
@@ -43,11 +46,13 @@ extension DetailView {
 			.navigationTitle("Task Detail")
 			.navigationBarTitleDisplayMode(.inline)
 			.toolbar {
-				ToolbarItemGroup(placement: .primaryAction) {
-					Button {
-						// toggle edit view
-					} label: {
-						Label("Mark as Done", systemImage: "checkmark")
+				if vm.task.status != .done {
+					ToolbarItemGroup(placement: .primaryAction) {
+						Button {
+							isMarkingAsDone.toggle()
+						} label: {
+							Label("Mark as Done", systemImage: "checkmark")
+						}
 					}
 				}
 				
@@ -61,6 +66,10 @@ extension DetailView {
 					}
 				}
 			}
+			.alert("Mark Task as Done?", isPresented: $isMarkingAsDone, actions: {
+				Button("Cancel", role: .cancel, action: {})
+				Button("OK", action: { vm.task.status = .done })
+			})
 			.sheet(isPresented: $isShowingEdit) {
 				DetailView.EditMode(vm: self.vm)
 			}
