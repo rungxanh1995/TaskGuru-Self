@@ -15,6 +15,8 @@
 		2C33F6BE29858912004893EF /* TaskType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C33F6BD29858912004893EF /* TaskType.swift */; };
 		2C33F6C029858BCF004893EF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C33F6BF29858BCF004893EF /* HomeViewModel.swift */; };
 		2C33F6C229858E5E004893EF /* AddTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C33F6C129858E5E004893EF /* AddTaskViewModel.swift */; };
+		2C33F6C529858FEA004893EF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C33F6C429858FEA004893EF /* Constants.swift */; };
+		2C33F6C82985929C004893EF /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C33F6C72985929C004893EF /* PreviewProvider.swift */; };
 		2C8C35DF298489DA00DCEA67 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8C35DE298489DA00DCEA67 /* DetailView.swift */; };
 		2CC25BBC298459BA006972DF /* TaskGuru_SelfApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC25BBB298459BA006972DF /* TaskGuru_SelfApp.swift */; };
 		2CC25BBE298459BA006972DF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC25BBD298459BA006972DF /* HomeView.swift */; };
@@ -33,6 +35,8 @@
 		2C33F6BD29858912004893EF /* TaskType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskType.swift; sourceTree = "<group>"; };
 		2C33F6BF29858BCF004893EF /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		2C33F6C129858E5E004893EF /* AddTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewModel.swift; sourceTree = "<group>"; };
+		2C33F6C429858FEA004893EF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2C33F6C72985929C004893EF /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
 		2C8C35DE298489DA00DCEA67 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		2CC25BB8298459BA006972DF /* TaskGuru Self.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TaskGuru Self.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CC25BBB298459BA006972DF /* TaskGuru_SelfApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskGuru_SelfApp.swift; sourceTree = "<group>"; };
@@ -81,6 +85,22 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		2C33F6C329858FD2004893EF /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				2C33F6C429858FEA004893EF /* Constants.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		2C33F6C62985928F004893EF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2C33F6C72985929C004893EF /* PreviewProvider.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		2C8C35DD298489C700DCEA67 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +132,8 @@
 				2CC25BBB298459BA006972DF /* TaskGuru_SelfApp.swift */,
 				2C33F6B8298587D2004893EF /* Models */,
 				2CC25BC929845A20006972DF /* Core */,
+				2C33F6C62985928F004893EF /* Extensions */,
+				2C33F6C329858FD2004893EF /* Utilities */,
 				2C33F6B729858659004893EF /* Resources */,
 				2CC25BC1298459BB006972DF /* Preview Content */,
 			);
@@ -240,8 +262,10 @@
 				2C33F6C029858BCF004893EF /* HomeViewModel.swift in Sources */,
 				2CC25BBE298459BA006972DF /* HomeView.swift in Sources */,
 				2C33F6BE29858912004893EF /* TaskType.swift in Sources */,
+				2C33F6C82985929C004893EF /* PreviewProvider.swift in Sources */,
 				2CC25BD0298462FF006972DF /* SettingsView.swift in Sources */,
 				2C33F6BA298587E7004893EF /* TaskItem.swift in Sources */,
+				2C33F6C529858FEA004893EF /* Constants.swift in Sources */,
 				2CC25BBC298459BA006972DF /* TaskGuru_SelfApp.swift in Sources */,
 				2C33F6B329858293004893EF /* EditView.swift in Sources */,
 				2C33F6BC298588B4004893EF /* TaskStatus.swift in Sources */,
