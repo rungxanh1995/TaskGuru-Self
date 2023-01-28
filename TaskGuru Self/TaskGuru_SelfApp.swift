@@ -11,7 +11,18 @@ import SwiftUI
 struct TaskGuru_SelfApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+			TabView {
+				HomeView()
+					.tabItem {
+						Image(systemName: "house")
+						Text("Home")
+					}
+				SettingsView()
+					.tabItem {
+						Image(systemName: "gearshape")
+						Text("Settings")
+					}
+			}
         }
     }
 }

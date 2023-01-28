@@ -7,18 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C2541B029849CDC00367BED /* DetailGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2541AF29849CDC00367BED /* DetailGridCell.swift */; };
+		2C8C35DF298489DA00DCEA67 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8C35DE298489DA00DCEA67 /* DetailView.swift */; };
 		2CC25BBC298459BA006972DF /* TaskGuru_SelfApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC25BBB298459BA006972DF /* TaskGuru_SelfApp.swift */; };
-		2CC25BBE298459BA006972DF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC25BBD298459BA006972DF /* ContentView.swift */; };
+		2CC25BBE298459BA006972DF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC25BBD298459BA006972DF /* HomeView.swift */; };
 		2CC25BC0298459BB006972DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CC25BBF298459BB006972DF /* Assets.xcassets */; };
 		2CC25BC3298459BB006972DF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CC25BC2298459BB006972DF /* Preview Assets.xcassets */; };
+		2CC25BCD29845D9A006972DF /* AddTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC25BCC29845D9A006972DF /* AddTask.swift */; };
+		2CC25BD0298462FF006972DF /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC25BCF298462FF006972DF /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C2541AF29849CDC00367BED /* DetailGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGridCell.swift; sourceTree = "<group>"; };
+		2C8C35DE298489DA00DCEA67 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		2CC25BB8298459BA006972DF /* TaskGuru Self.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TaskGuru Self.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CC25BBB298459BA006972DF /* TaskGuru_SelfApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskGuru_SelfApp.swift; sourceTree = "<group>"; };
-		2CC25BBD298459BA006972DF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2CC25BBD298459BA006972DF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		2CC25BBF298459BB006972DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2CC25BC2298459BB006972DF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2CC25BCC29845D9A006972DF /* AddTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTask.swift; sourceTree = "<group>"; };
+		2CC25BCF298462FF006972DF /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +40,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C8C35DD298489C700DCEA67 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				2C8C35DE298489DA00DCEA67 /* DetailView.swift */,
+				2C2541AF29849CDC00367BED /* DetailGridCell.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
 		2CC25BAF298459BA006972DF = {
 			isa = PBXGroup;
 			children = (
@@ -52,7 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				2CC25BBB298459BA006972DF /* TaskGuru_SelfApp.swift */,
-				2CC25BBD298459BA006972DF /* ContentView.swift */,
+				2CC25BC929845A20006972DF /* Core */,
 				2CC25BBF298459BB006972DF /* Assets.xcassets */,
 				2CC25BC1298459BB006972DF /* Preview Content */,
 			);
@@ -65,6 +82,41 @@
 				2CC25BC2298459BB006972DF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2CC25BC929845A20006972DF /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				2CC25BCA29845A24006972DF /* Home */,
+				2CC25BCB29845D82006972DF /* Add */,
+				2C8C35DD298489C700DCEA67 /* Detail */,
+				2CC25BCE298462F0006972DF /* Settings */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		2CC25BCA29845A24006972DF /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2CC25BBD298459BA006972DF /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		2CC25BCB29845D82006972DF /* Add */ = {
+			isa = PBXGroup;
+			children = (
+				2CC25BCC29845D9A006972DF /* AddTask.swift */,
+			);
+			path = Add;
+			sourceTree = "<group>";
+		};
+		2CC25BCE298462F0006972DF /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				2CC25BCF298462FF006972DF /* SettingsView.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +189,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CC25BBE298459BA006972DF /* ContentView.swift in Sources */,
+				2C2541B029849CDC00367BED /* DetailGridCell.swift in Sources */,
+				2CC25BBE298459BA006972DF /* HomeView.swift in Sources */,
+				2CC25BD0298462FF006972DF /* SettingsView.swift in Sources */,
 				2CC25BBC298459BA006972DF /* TaskGuru_SelfApp.swift in Sources */,
+				2C8C35DF298489DA00DCEA67 /* DetailView.swift in Sources */,
+				2CC25BCD29845D9A006972DF /* AddTask.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
