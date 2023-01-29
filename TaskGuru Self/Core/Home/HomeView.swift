@@ -33,7 +33,7 @@ struct HomeView: View {
 					}
 				} header: {
 					HStack {
-						Image(systemName: "person.fill")
+						SFSymbols.personFilled
 						Text("Personal Tasks")
 					}
 				}
@@ -53,7 +53,7 @@ struct HomeView: View {
 					}
 				} header: {
 					HStack {
-						Image(systemName: "building.2.fill")
+						SFSymbols.buildingFilled
 						Text("Work Tasks")
 					}
 				}
@@ -73,7 +73,7 @@ struct HomeView: View {
 					}
 				} header: {
 					HStack {
-						Image(systemName: "graduationcap.fill")
+						SFSymbols.graduationCapFilled
 						Text("School Tasks")
 					}
 				}
@@ -93,7 +93,7 @@ struct HomeView: View {
 					}
 				} header: {
 					HStack {
-						Image(systemName: "list.bullet.rectangle.portrait.fill")
+						SFSymbols.listFilled
 						Text("Other Tasks")
 					}
 				}
@@ -113,7 +113,7 @@ extension HomeView {
 	@ViewBuilder
 	private var emptyTaskText: some View {
 		
-		let emptyTaskListSentence: LocalizedStringKey = "Nothing yet. Tap here or \(Image(systemName: "plus.circle")) to add more"
+		let emptyTaskListSentence: LocalizedStringKey = "Nothing yet. Tap here or \(SFSymbols.plusCircled) to add more"
 		
 		HStack {
 			Spacer()

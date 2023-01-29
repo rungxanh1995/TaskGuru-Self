@@ -40,7 +40,7 @@ struct AddTask: View {
 					}
 				} header: {
 					HStack {
-						Image(systemName: "square.fill.text.grid.1x2")
+						SFSymbols.gridFilled
 						Text("General")
 					}
 				}
@@ -52,7 +52,7 @@ struct AddTask: View {
 					.focused($focusField, equals: .notes)
 				} header: {
 					HStack {
-						Image(systemName: "pencil.and.outline")
+						SFSymbols.pencilDrawing
 						Text("Notes")
 					}
 				}

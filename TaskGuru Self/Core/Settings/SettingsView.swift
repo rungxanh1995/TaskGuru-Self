@@ -23,7 +23,7 @@ struct SettingsView: View {
 					appTheme
 				} header: {
 					HStack {
-						Image(systemName: "gearshape.fill")
+						SFSymbols.gearFilled
 						Text("General")
 					}
 				}
@@ -36,22 +36,22 @@ struct SettingsView: View {
 				
 				Section {
 					HStack {
-						Image(systemName: "link")
+						SFSymbols.link
 						Link("Joe Pham", destination: vm.joeGitHubLink)
 					}
 					
 					HStack {
-						Image(systemName: "link")
+						SFSymbols.link
 						Link("Ostap Sulyk", destination: vm.ostapGitHubLink)
 					}
 					
 					HStack {
-						Image(systemName: "link")
+						SFSymbols.link
 						Link("Rauf Anata", destination: vm.raufGitHubLink)
 					}
 				} header: {
 					HStack {
-						Image(systemName: "hands.sparkles.fill")
+						SFSymbols.handsSparklesFilled
 						Text("Meet The Team")
 					}
 				}

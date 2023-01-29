@@ -38,7 +38,7 @@ extension DetailView {
 						}
 					} header: {
 						HStack {
-							Image(systemName: "square.fill.text.grid.1x2")
+							SFSymbols.gridFilled
 							Text("General")
 						}
 					}
@@ -49,7 +49,7 @@ extension DetailView {
 
 					} header: {
 						HStack {
-							Image(systemName: "pencil.and.outline")
+							SFSymbols.pencilDrawing
 							Text("Notes")
 						}
 					}

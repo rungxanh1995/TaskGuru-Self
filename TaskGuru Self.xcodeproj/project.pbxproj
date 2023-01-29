@@ -34,6 +34,7 @@
 		2CCB0B532985BCB400D489DD /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0B522985BCB400D489DD /* SettingsViewModel.swift */; };
 		2CCB0B552985BD6D00D489DD /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0B542985BD6D00D489DD /* HapticManager.swift */; };
 		2CCC44C32985CFF3009C3FBD /* HomeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCC44C22985CFF3009C3FBD /* HomeListCell.swift */; };
+		2CCC44C5298617D2009C3FBD /* SFSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCC44C4298617D2009C3FBD /* SFSymbols.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,7 @@
 		2CCB0B522985BCB400D489DD /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		2CCB0B542985BD6D00D489DD /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
 		2CCC44C22985CFF3009C3FBD /* HomeListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListCell.swift; sourceTree = "<group>"; };
+		2CCC44C4298617D2009C3FBD /* SFSymbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbols.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				2CCB0B4E2985BC6800D489DD /* SchemeType.swift */,
 				2CCB0B4C2985BC4500D489DD /* UserDefaultsKey.swift */,
 				2CCB0B542985BD6D00D489DD /* HapticManager.swift */,
+				2CCC44C4298617D2009C3FBD /* SFSymbols.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				2CCB0B492985B5A400D489DD /* Date.swift in Sources */,
 				2CC25BD0298462FF006972DF /* SettingsView.swift in Sources */,
 				2C33F6BA298587E7004893EF /* TaskItem.swift in Sources */,
+				2CCC44C5298617D2009C3FBD /* SFSymbols.swift in Sources */,
 				2C33F6C529858FEA004893EF /* Constants.swift in Sources */,
 				2CC25BBC298459BA006972DF /* TaskGuru_SelfApp.swift in Sources */,
 				2C33F6B329858293004893EF /* DetailEditMode.swift in Sources */,

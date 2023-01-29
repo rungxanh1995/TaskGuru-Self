@@ -14,12 +14,12 @@ struct TaskGuru_SelfApp: App {
 			TabView {
 				HomeView()
 					.tabItem {
-						Image(systemName: "house")
+						SFSymbols.house
 						Text("Home")
 					}
 				SettingsView()
 					.tabItem {
-						Image(systemName: "gearshape")
+						SFSymbols.gear
 						Text("Settings")
 					}
 			}

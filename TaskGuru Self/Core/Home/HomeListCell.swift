@@ -25,7 +25,7 @@ struct HomeListCell: View {
 					.foregroundColor(task.colorForDueDate())
 				
 				HStack(spacing: 4) {
-					statusIcon
+					SFSymbols.circleFilled
 					Text(task.status.rawValue)
 				}
 				.font(.system(.caption, design: .rounded))
@@ -34,16 +34,6 @@ struct HomeListCell: View {
 			
 		}
     }
-}
-
-
-private extension HomeListCell {
-	
-	@ViewBuilder
-	var statusIcon: Image {
-		Image(systemName: "circle.fill")
-			.symbolRenderingMode(.hierarchical)
-	}
 }
 
 struct HomeListCell_Previews: PreviewProvider {
