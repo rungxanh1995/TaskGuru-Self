@@ -38,6 +38,7 @@
 		2CCC44C5298617D2009C3FBD /* SFSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCC44C4298617D2009C3FBD /* SFSymbols.swift */; };
 		2CEF1517298899F7002FF516 /* CachedTask+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEF1515298899F7002FF516 /* CachedTask+CoreDataClass.swift */; };
 		2CEF1518298899F7002FF516 /* CachedTask+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEF1516298899F7002FF516 /* CachedTask+CoreDataProperties.swift */; };
+		2CEF151B2988A142002FF516 /* StorageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEF151A2988A142002FF516 /* StorageProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +74,7 @@
 		2CCC44C4298617D2009C3FBD /* SFSymbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbols.swift; sourceTree = "<group>"; };
 		2CEF1515298899F7002FF516 /* CachedTask+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CachedTask+CoreDataClass.swift"; sourceTree = "<group>"; };
 		2CEF1516298899F7002FF516 /* CachedTask+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CachedTask+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		2CEF151A2988A142002FF516 /* StorageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				2CC25BBB298459BA006972DF /* TaskGuru_SelfApp.swift */,
+				2CEF15192988A130002FF516 /* Persistence */,
 				2C33F6B8298587D2004893EF /* Models */,
 				2CC25BC929845A20006972DF /* Core */,
 				2C33F6C62985928F004893EF /* Extensions */,
@@ -250,6 +253,14 @@
 				2C2541AF29849CDC00367BED /* DetailGridCell.swift */,
 			);
 			path = "View Mode";
+			sourceTree = "<group>";
+		};
+		2CEF15192988A130002FF516 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				2CEF151A2988A142002FF516 /* StorageProvider.swift */,
+			);
+			path = Persistence;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -349,6 +360,7 @@
 				2CC25BCD29845D9A006972DF /* AddTask.swift in Sources */,
 				2CCB0B472985B2E700D489DD /* DetailViewModel.swift in Sources */,
 				2CCB0B532985BCB400D489DD /* SettingsViewModel.swift in Sources */,
+				2CEF151B2988A142002FF516 /* StorageProvider.swift in Sources */,
 				2CCB0B4F2985BC6800D489DD /* SchemeType.swift in Sources */,
 				2CCB0B4D2985BC4500D489DD /* UserDefaultsKey.swift in Sources */,
 			);
