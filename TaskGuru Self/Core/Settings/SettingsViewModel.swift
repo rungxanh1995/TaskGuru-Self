@@ -22,8 +22,27 @@ extension SettingsView {
 		let ostapGitHubLink: URL = URL(string: "https://github.com/ostap-sulyk")!
 		let raufGitHubLink: URL = URL(string: "https://github.com/drrauf")!
 		
+		private let storageProvider: StorageProvider
+		
+		init(storageProvider: StorageProvider = StorageProviderImpl.standard) {
+			self.storageProvider = storageProvider
+		}
+		
 		func resetData() -> Void {
-			// TODO: Implement if possible
+			resetDefaults()
+			resetAllTasks()
+		}
+		
+		private func resetDefaults() {
+			let defaults = UserDefaults.standard
+			let dictionary = defaults.dictionaryRepresentation()
+			dictionary.keys.forEach { defaults.removeObject(forKey: $0) }
+		}
+		
+		private func resetAllTasks() {
+			let allTasks: [TaskItem] = storageProvider.fetch()
+			allTasks.forEach { storageProvider.context.delete($0) }
+			storageProvider.saveAndHandleError()
 		}
 	}
 }
