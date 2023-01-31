@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 extension HomeView {
 	final class ViewModel: ObservableObject {
@@ -13,7 +14,43 @@ extension HomeView {
 		private(set) var allTasks: [TaskItem] = .init()
 		
 		@Published
+		private var cachedTasks: [CachedTask] = .init()
+		private var cancellables: Set<AnyCancellable> = []
+		
+		@Published
 		var isShowingAddTaskView: Bool = false
+		
+		private let storageProvider: StorageProvider
+		
+		init(storageProvider: StorageProvider = StorageProviderImpl.standard) {
+			self.storageProvider = storageProvider
+			fetchCachedTasks()
+			convertCachedDataToTasks()
+			print("Cached tasks length: \(cachedTasks.count)")
+			print("All tasks length: \(allTasks.count)")
+		}
+		
+		func fetchCachedTasks() {
+			DispatchQueue.main.async {
+				print("Fetching cached tasks from Core Data")
+				self.cachedTasks = self.storageProvider.fetch()
+			}
+		}
+		
+		func convertCachedDataToTasks() {
+			guard allTasks.isEmpty else { return }
+			$cachedTasks.sink { cachedData in
+				cachedData.forEach { [weak self] cachedTask in
+					self?.allTasks.append(TaskEntityConverter.convertToTaskItem(from: cachedTask))
+				}
+				print("Finished converting cached data to tasks")
+			}.store(in: &cancellables)
+		}
+		
+		private func saveThenRefetchData() {
+			storageProvider.saveAndHandleError()
+			fetchCachedTasks()
+		}
 		
 		// MARK: - CRUD Operations
 		
@@ -29,10 +66,24 @@ extension HomeView {
 		
 		fileprivate func addTask(_ newItem: TaskItem) -> Void {
 			allTasks.append(newItem)
+			addCachedTask(using: newItem)
 		}
 		
 		fileprivate func assignDefaultTaskName(to name: inout String) -> Void {
 			if name == "" { name = "Untitled Task" }
+		}
+		
+		func addCachedTask(using taskItem: TaskItem) {
+			let taskToCache = CachedTask(context: storageProvider.context)
+			taskToCache.cd_id = taskItem.id
+			taskToCache.cd_name = taskItem.name
+			taskToCache.cd_dueDate = taskItem.dueDate
+			taskToCache.cd_type = taskItem.type.rawValue
+			taskToCache.cd_status = taskItem.status.rawValue
+			taskToCache.cd_notes = taskItem.notes
+			taskToCache.cd_lastUpdated = taskItem.lastUpdated
+			
+			saveThenRefetchData()
 		}
 		
 		// UPDATE
@@ -49,6 +100,12 @@ extension HomeView {
 		// DELETE
 		func deletePersonalTasks(at offsets: IndexSet) -> Void {
 			allTasks.remove(atOffsets: offsets)
+			
+			guard let index = offsets.first else { return }
+			let cachedTask = cachedTasks[index]
+			
+			storageProvider.context.delete(cachedTask)
+			saveThenRefetchData()
 		}
 	}
 }

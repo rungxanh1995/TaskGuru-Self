@@ -39,6 +39,7 @@
 		2CEF1517298899F7002FF516 /* CachedTask+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEF1515298899F7002FF516 /* CachedTask+CoreDataClass.swift */; };
 		2CEF1518298899F7002FF516 /* CachedTask+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEF1516298899F7002FF516 /* CachedTask+CoreDataProperties.swift */; };
 		2CEF151B2988A142002FF516 /* StorageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEF151A2988A142002FF516 /* StorageProvider.swift */; };
+		2CEF151D2988A525002FF516 /* TaskEntityConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEF151C2988A525002FF516 /* TaskEntityConverter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,7 @@
 		2CEF1515298899F7002FF516 /* CachedTask+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CachedTask+CoreDataClass.swift"; sourceTree = "<group>"; };
 		2CEF1516298899F7002FF516 /* CachedTask+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CachedTask+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		2CEF151A2988A142002FF516 /* StorageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageProvider.swift; sourceTree = "<group>"; };
+		2CEF151C2988A525002FF516 /* TaskEntityConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEntityConverter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				2C33F6B9298587E7004893EF /* TaskItem.swift */,
 				2C33F6BB298588B4004893EF /* TaskStatus.swift */,
 				2C33F6BD29858912004893EF /* TaskType.swift */,
+				2CEF151C2988A525002FF516 /* TaskEntityConverter.swift */,
 				2C73ACEF298843D700E951A1 /* Core Data */,
 			);
 			path = Models;
@@ -350,6 +353,7 @@
 				2C33F6BA298587E7004893EF /* TaskItem.swift in Sources */,
 				2CEF1517298899F7002FF516 /* CachedTask+CoreDataClass.swift in Sources */,
 				2CCC44C5298617D2009C3FBD /* SFSymbols.swift in Sources */,
+				2CEF151D2988A525002FF516 /* TaskEntityConverter.swift in Sources */,
 				2C33F6C529858FEA004893EF /* Constants.swift in Sources */,
 				2CC25BBC298459BA006972DF /* TaskGuru_SelfApp.swift in Sources */,
 				2C33F6B329858293004893EF /* DetailEditMode.swift in Sources */,
