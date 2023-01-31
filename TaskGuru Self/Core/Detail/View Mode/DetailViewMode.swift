@@ -17,6 +17,9 @@ extension DetailView {
 		
 		@State
 		private var isMarkingAsDone: Bool = false
+				
+		@State
+		private var isDeletingTask: Bool = false
 		
 		private let columns = [
 			GridItem(.adaptive(minimum: 150.0, maximum: 200.0))
@@ -58,6 +61,10 @@ extension DetailView {
 					Button(action: { isShowingEdit.toggle() }) {
 						Label("Edit", systemImage: "square.and.pencil")
 					}
+					
+					Button(action: { isDeletingTask.toggle() }) {
+						Label("Delete", systemImage: "trash")
+					}
 				}
 			}
 			.alert("Mark Task as Done?", isPresented: $isMarkingAsDone, actions: {
@@ -65,6 +72,12 @@ extension DetailView {
 				Button("OK", action: {
 					vm.task.status = .done
 					vm.saveThenRefetchData()
+				})
+			})
+			.alert("Delete Task?", isPresented: $isDeletingTask, actions: {
+				Button("Cancel", role: .cancel, action: {})
+				Button("OK", action: {
+					vm.deleteTask()
 				})
 			})
 			.sheet(isPresented: $isShowingEdit) {
