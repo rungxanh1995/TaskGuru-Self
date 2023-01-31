@@ -29,7 +29,7 @@ struct HomeView: View {
 								HomeListCell(task: task)
 							}
 						}
-						.onDelete(perform: vm.deletePersonalTasks)
+						.onDelete(perform: vm.deleteTasks)
 					}
 				} header: {
 					HStack {

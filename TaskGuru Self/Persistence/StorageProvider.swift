@@ -33,16 +33,16 @@ final class StorageProviderImpl: StorageProvider {
 	}
 	
 	func fetch<T>() -> T {
-		let fetchRequest: NSFetchRequest<CachedTask> = CachedTask.fetchRequest()
+		let fetchRequest: NSFetchRequest<TaskItem> = TaskItem.fetchRequest()
 		return loadTasksAndHandleError(from: fetchRequest) as! T
 	}
 	
-	fileprivate func loadTasksAndHandleError(from request: NSFetchRequest<CachedTask>) -> [CachedTask] {
+	fileprivate func loadTasksAndHandleError(from request: NSFetchRequest<TaskItem>) -> [TaskItem] {
 		do {
 			return try context.fetch(request)
 		} catch let error {
 			print("Error fetching cached tasks. \(error.localizedDescription)")
-			return [CachedTask]()
+			return [TaskItem]()
 		}
 	}
 	

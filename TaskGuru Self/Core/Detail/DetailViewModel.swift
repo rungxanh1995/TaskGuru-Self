@@ -18,9 +18,5 @@ extension DetailView {
 			self.task = task
 			self.parentVM = parentVM
 		}
-		
-		func updateItemInItsSource() -> Void {
-			parentVM.updateTasks(with: task)
-		}
 	}
 }

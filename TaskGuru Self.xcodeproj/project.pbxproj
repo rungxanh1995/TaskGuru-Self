@@ -10,14 +10,12 @@
 		2C2541B029849CDC00367BED /* DetailGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2541AF29849CDC00367BED /* DetailGridCell.swift */; };
 		2C33F6B329858293004893EF /* DetailEditMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C33F6B229858293004893EF /* DetailEditMode.swift */; };
 		2C33F6B629858649004893EF /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C33F6B529858649004893EF /* Launch Screen.storyboard */; };
-		2C33F6BA298587E7004893EF /* TaskItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C33F6B9298587E7004893EF /* TaskItem.swift */; };
 		2C33F6BC298588B4004893EF /* TaskStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C33F6BB298588B4004893EF /* TaskStatus.swift */; };
 		2C33F6BE29858912004893EF /* TaskType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C33F6BD29858912004893EF /* TaskType.swift */; };
 		2C33F6C029858BCF004893EF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C33F6BF29858BCF004893EF /* HomeViewModel.swift */; };
 		2C33F6C229858E5E004893EF /* AddTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C33F6C129858E5E004893EF /* AddTaskViewModel.swift */; };
 		2C33F6C529858FEA004893EF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C33F6C429858FEA004893EF /* Constants.swift */; };
 		2C33F6C82985929C004893EF /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C33F6C72985929C004893EF /* PreviewProvider.swift */; };
-		2C73ACEE2988418F00E951A1 /* TaskGuru.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2C73ACEC2988418F00E951A1 /* TaskGuru.xcdatamodeld */; };
 		2C8C35DF298489DA00DCEA67 /* DetailViewMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8C35DE298489DA00DCEA67 /* DetailViewMode.swift */; };
 		2CC25BBC298459BA006972DF /* TaskGuru_SelfApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC25BBB298459BA006972DF /* TaskGuru_SelfApp.swift */; };
 		2CC25BBE298459BA006972DF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC25BBD298459BA006972DF /* HomeView.swift */; };
@@ -36,24 +34,22 @@
 		2CCB0B552985BD6D00D489DD /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0B542985BD6D00D489DD /* HapticManager.swift */; };
 		2CCC44C32985CFF3009C3FBD /* HomeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCC44C22985CFF3009C3FBD /* HomeListCell.swift */; };
 		2CCC44C5298617D2009C3FBD /* SFSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCC44C4298617D2009C3FBD /* SFSymbols.swift */; };
-		2CEF1517298899F7002FF516 /* CachedTask+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEF1515298899F7002FF516 /* CachedTask+CoreDataClass.swift */; };
-		2CEF1518298899F7002FF516 /* CachedTask+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEF1516298899F7002FF516 /* CachedTask+CoreDataProperties.swift */; };
 		2CEF151B2988A142002FF516 /* StorageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEF151A2988A142002FF516 /* StorageProvider.swift */; };
-		2CEF151D2988A525002FF516 /* TaskEntityConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEF151C2988A525002FF516 /* TaskEntityConverter.swift */; };
+		2CF38FB6298982FB00CB49C5 /* TaskGuru.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2CF38FB3298982FB00CB49C5 /* TaskGuru.xcdatamodeld */; };
+		2CF38FB92989837A00CB49C5 /* TaskItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF38FB72989837A00CB49C5 /* TaskItem+CoreDataClass.swift */; };
+		2CF38FBA2989837A00CB49C5 /* TaskItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF38FB82989837A00CB49C5 /* TaskItem+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2C2541AF29849CDC00367BED /* DetailGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGridCell.swift; sourceTree = "<group>"; };
 		2C33F6B229858293004893EF /* DetailEditMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEditMode.swift; sourceTree = "<group>"; };
 		2C33F6B529858649004893EF /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
-		2C33F6B9298587E7004893EF /* TaskItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskItem.swift; sourceTree = "<group>"; };
 		2C33F6BB298588B4004893EF /* TaskStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskStatus.swift; sourceTree = "<group>"; };
 		2C33F6BD29858912004893EF /* TaskType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskType.swift; sourceTree = "<group>"; };
 		2C33F6BF29858BCF004893EF /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		2C33F6C129858E5E004893EF /* AddTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewModel.swift; sourceTree = "<group>"; };
 		2C33F6C429858FEA004893EF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2C33F6C72985929C004893EF /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
-		2C73ACED2988418F00E951A1 /* CachedTask.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CachedTask.xcdatamodel; sourceTree = "<group>"; };
 		2C8C35DE298489DA00DCEA67 /* DetailViewMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewMode.swift; sourceTree = "<group>"; };
 		2CC25BB8298459BA006972DF /* TaskGuru Self.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TaskGuru Self.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CC25BBB298459BA006972DF /* TaskGuru_SelfApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskGuru_SelfApp.swift; sourceTree = "<group>"; };
@@ -73,10 +69,11 @@
 		2CCB0B542985BD6D00D489DD /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
 		2CCC44C22985CFF3009C3FBD /* HomeListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListCell.swift; sourceTree = "<group>"; };
 		2CCC44C4298617D2009C3FBD /* SFSymbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbols.swift; sourceTree = "<group>"; };
-		2CEF1515298899F7002FF516 /* CachedTask+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CachedTask+CoreDataClass.swift"; sourceTree = "<group>"; };
-		2CEF1516298899F7002FF516 /* CachedTask+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CachedTask+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		2CEF151A2988A142002FF516 /* StorageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageProvider.swift; sourceTree = "<group>"; };
-		2CEF151C2988A525002FF516 /* TaskEntityConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEntityConverter.swift; sourceTree = "<group>"; };
+		2CF38FB4298982FB00CB49C5 /* TaskGuru.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TaskGuru.xcdatamodel; sourceTree = "<group>"; };
+		2CF38FB5298982FB00CB49C5 /* CachedTask.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CachedTask.xcdatamodel; sourceTree = "<group>"; };
+		2CF38FB72989837A00CB49C5 /* TaskItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskItem+CoreDataClass.swift"; sourceTree = "<group>"; };
+		2CF38FB82989837A00CB49C5 /* TaskItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,10 +107,8 @@
 		2C33F6B8298587D2004893EF /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				2C33F6B9298587E7004893EF /* TaskItem.swift */,
 				2C33F6BB298588B4004893EF /* TaskStatus.swift */,
 				2C33F6BD29858912004893EF /* TaskType.swift */,
-				2CEF151C2988A525002FF516 /* TaskEntityConverter.swift */,
 				2C73ACEF298843D700E951A1 /* Core Data */,
 			);
 			path = Models;
@@ -122,7 +117,6 @@
 		2C33F6C329858FD2004893EF /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				2C73ACF729885E3B00E951A1 /* Core Data */,
 				2C33F6C429858FEA004893EF /* Constants.swift */,
 				2CCB0B4A2985BC2300D489DD /* SchemeModifier.swift */,
 				2CCB0B4E2985BC6800D489DD /* SchemeType.swift */,
@@ -146,16 +140,9 @@
 		2C73ACEF298843D700E951A1 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
-				2C73ACEC2988418F00E951A1 /* TaskGuru.xcdatamodeld */,
-				2CEF1515298899F7002FF516 /* CachedTask+CoreDataClass.swift */,
-				2CEF1516298899F7002FF516 /* CachedTask+CoreDataProperties.swift */,
-			);
-			path = "Core Data";
-			sourceTree = "<group>";
-		};
-		2C73ACF729885E3B00E951A1 /* Core Data */ = {
-			isa = PBXGroup;
-			children = (
+				2CF38FB72989837A00CB49C5 /* TaskItem+CoreDataClass.swift */,
+				2CF38FB82989837A00CB49C5 /* TaskItem+CoreDataProperties.swift */,
+				2CF38FB3298982FB00CB49C5 /* TaskGuru.xcdatamodeld */,
 			);
 			path = "Core Data";
 			sourceTree = "<group>";
@@ -345,16 +332,14 @@
 				2C33F6BE29858912004893EF /* TaskType.swift in Sources */,
 				2CCB0B512985BC9200D489DD /* View.swift in Sources */,
 				2CCB0B4B2985BC2300D489DD /* SchemeModifier.swift in Sources */,
-				2C73ACEE2988418F00E951A1 /* TaskGuru.xcdatamodeld in Sources */,
 				2C33F6C82985929C004893EF /* PreviewProvider.swift in Sources */,
 				2CCB0B492985B5A400D489DD /* Date.swift in Sources */,
 				2CC25BD0298462FF006972DF /* SettingsView.swift in Sources */,
-				2CEF1518298899F7002FF516 /* CachedTask+CoreDataProperties.swift in Sources */,
-				2C33F6BA298587E7004893EF /* TaskItem.swift in Sources */,
-				2CEF1517298899F7002FF516 /* CachedTask+CoreDataClass.swift in Sources */,
 				2CCC44C5298617D2009C3FBD /* SFSymbols.swift in Sources */,
-				2CEF151D2988A525002FF516 /* TaskEntityConverter.swift in Sources */,
 				2C33F6C529858FEA004893EF /* Constants.swift in Sources */,
+				2CF38FB6298982FB00CB49C5 /* TaskGuru.xcdatamodeld in Sources */,
+				2CF38FB92989837A00CB49C5 /* TaskItem+CoreDataClass.swift in Sources */,
+				2CF38FBA2989837A00CB49C5 /* TaskItem+CoreDataProperties.swift in Sources */,
 				2CC25BBC298459BA006972DF /* TaskGuru_SelfApp.swift in Sources */,
 				2C33F6B329858293004893EF /* DetailEditMode.swift in Sources */,
 				2C33F6BC298588B4004893EF /* TaskStatus.swift in Sources */,
@@ -573,12 +558,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		2C73ACEC2988418F00E951A1 /* TaskGuru.xcdatamodeld */ = {
+		2CF38FB3298982FB00CB49C5 /* TaskGuru.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				2C73ACED2988418F00E951A1 /* CachedTask.xcdatamodel */,
+				2CF38FB4298982FB00CB49C5 /* TaskGuru.xcdatamodel */,
+				2CF38FB5298982FB00CB49C5 /* CachedTask.xcdatamodel */,
 			);
-			currentVersion = 2C73ACED2988418F00E951A1 /* CachedTask.xcdatamodel */;
+			currentVersion = 2CF38FB4298982FB00CB49C5 /* TaskGuru.xcdatamodel */;
 			path = TaskGuru.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

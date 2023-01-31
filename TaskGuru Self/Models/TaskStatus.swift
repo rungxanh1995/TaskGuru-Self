@@ -7,10 +7,8 @@
 
 import Foundation
 
-extension TaskItem {
-	internal enum TaskStatus: String, Codable, CaseIterable {
-		case new = "New"
-		case inProgress = "In progress"
-		case done = "Done"
-	}
+enum TaskStatus: String, Codable, CaseIterable {
+	case new = "New"
+	case inProgress = "In progress"
+	case done = "Done"
 }

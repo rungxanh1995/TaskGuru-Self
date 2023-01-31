@@ -10,9 +10,12 @@ import Foundation
 extension AddTask {
 	final class ViewModel: ObservableObject {
 		private let listViewModel: HomeView.ViewModel
+		private let storageProvider: StorageProvider
 		
-		init(parentVM: HomeView.ViewModel) {
+		
+		init(parentVM: HomeView.ViewModel, storageProvider: StorageProvider = StorageProviderImpl.standard) {
 			listViewModel = parentVM
+			self.storageProvider = storageProvider
 		}
 		
 		@Published
@@ -22,17 +25,38 @@ extension AddTask {
 		var dueDate: Date = .now
 		
 		@Published
-		var taskType: TaskItem.TaskType = .personal
+		var taskType: TaskType = .personal
 		
 		@Published
-		var taskStatus: TaskItem.TaskStatus = .new
+		var taskStatus: TaskStatus = .new
 		
 		@Published
 		var taskNotes: String = ""
 				
-		func addTask(name: inout String, dueDate: Date, type: TaskItem.TaskType,
-					 status: TaskItem.TaskStatus, notes: String) -> Void {
-			listViewModel.addTask(name: &name, type: type, dueDate: dueDate, status: status, notes: notes)
+		func addTask(name: inout String, dueDate: Date, type: TaskType,
+					 status: TaskStatus, notes: String) -> Void {
+			assignDefaultTaskName(to: &name)
+			
+			let newTask = TaskItem(context: storageProvider.context)
+			newTask.id = UUID()
+			newTask.name = name
+			newTask.dueDate = dueDate
+			newTask.lastUpdated = .now
+			newTask.type = type
+			newTask.status = status
+			newTask.notes = notes
+			
+			
+			saveThenRefetchData()
+		}
+		
+		fileprivate func assignDefaultTaskName(to name: inout String) {
+			if name == "" { name = "Untitled Task" }
+		}
+		
+		private func saveThenRefetchData() -> Void {
+			storageProvider.saveAndHandleError()
+			listViewModel.fetchTasks()
 		}
 	}
 }

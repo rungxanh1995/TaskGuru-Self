@@ -81,7 +81,6 @@ extension DetailView {
 		}
 		
 		private func didTapSaveButton() -> Void {
-			vm.updateItemInItsSource()
 			dismissThisView()
 		}
 	}
