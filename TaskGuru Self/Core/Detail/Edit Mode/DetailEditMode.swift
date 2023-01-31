@@ -23,21 +23,21 @@ extension DetailView {
 			NavigationView {
 				Form {
 					Section {
-						TextField("Name", text: $vm.task.name)
+						TextField("Name", text: $vm.taskName)
 							.focused($focusField, equals: .name)
 						
-						DatePicker("Due Date", selection: $vm.task.dueDate,
+						DatePicker("Due Date", selection: $vm.taskDueDate,
 								   in: TaskConstants.dateRangeFromToday,
 								   displayedComponents: .date
 						)
 						
-						Picker("Type", selection: $vm.task.type) {
+						Picker("Type", selection: $vm.taskType) {
 							ForEach(TaskConstants.allTypes, id: \.self) {
 								Text($0.rawValue)
 							}
 						}
 						
-						Picker("Status", selection: $vm.task.status) {
+						Picker("Status", selection: $vm.taskStatus) {
 							ForEach(TaskConstants.allStatuses, id: \.self) {
 								Text($0.rawValue)
 							}
@@ -50,7 +50,7 @@ extension DetailView {
 					}
 					
 					Section {
-						TextField("Notes", text: $vm.task.notes, prompt: Text("Any extra notes..."), axis: .vertical)
+						TextField("Notes", text: $vm.taskNotes, prompt: Text("Any extra notes..."), axis: .vertical)
 							.focused($focusField, equals: .notes)
 
 					} header: {
@@ -81,6 +81,7 @@ extension DetailView {
 		}
 		
 		private func didTapSaveButton() -> Void {
+			vm.updateTask()
 			dismissThisView()
 		}
 	}

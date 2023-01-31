@@ -9,14 +9,48 @@ import SwiftUI
 
 extension DetailView {
 	final class ViewModel: ObservableObject {
-		@Published
 		var task: TaskItem
 		
-		let parentVM: HomeView.ViewModel
+		// MARK: - Edit Mode
+		@Published var taskName: String
+		@Published var taskDueDate: Date
+		@Published var taskType: TaskType
+		@Published var taskStatus: TaskStatus
+		@Published var taskNotes: String
 		
-		init(for task: TaskItem, parentVM: HomeView.ViewModel) {
+		let parentVM: HomeView.ViewModel
+		private let storageProvider: StorageProvider
+		
+		init(for task: TaskItem, parentVM: HomeView.ViewModel,
+			 storageProvider: StorageProvider = StorageProviderImpl.standard) {
 			self.task = task
 			self.parentVM = parentVM
+			self.storageProvider = storageProvider
+			
+			taskName = task.name
+			taskDueDate = task.dueDate
+			taskType = task.type
+			taskStatus = task.status
+			taskNotes = task.notes
+		}
+		
+		func updateTask() {
+			task.name = taskName
+			task.dueDate = taskDueDate
+			task.type = taskType
+			task.status = taskStatus
+			task.notes = taskNotes
+			saveThenRefetchData()
+		}
+		
+		func deleteTask() {
+			storageProvider.context.delete(task)
+			saveThenRefetchData()
+		}
+		
+		private func saveThenRefetchData() {
+			storageProvider.saveAndHandleError()
+			parentVM.fetchTasks()
 		}
 	}
 }
