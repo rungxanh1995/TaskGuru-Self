@@ -14,6 +14,23 @@ extension HomeView {
 		private(set) var allTasks: [TaskItem] = .init()
 		
 		@Published
+		var searchText = ""
+		
+		var searchResults: [TaskItem] {
+			if searchText.isEmpty {
+				return allTasks
+			} else {
+				return allTasks.filter { task in
+					task.name.lowercased().contains(searchText.lowercased()) ||
+					task.type.rawValue.lowercased().contains(searchText.lowercased()) ||
+					task.status.rawValue.lowercased().contains(searchText.lowercased()) ||
+					task.notes.lowercased().contains(searchText.lowercased()) ||
+					task.dueDate.formatted().lowercased().contains(searchText.lowercased())
+				}
+			}
+		}
+		
+		@Published
 		var isShowingAddTaskView: Bool = false
 		
 		@Published

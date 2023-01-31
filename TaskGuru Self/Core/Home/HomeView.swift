@@ -32,6 +32,7 @@ struct HomeView: View {
 				addTaskButton
 			}
 			.onAppear { vm.fetchTasks() }
+			.searchable(text: $vm.searchText)
 			.sheet(isPresented: $vm.isShowingAddTaskView) {
 				AddTask(vm: .init(parentVM: self.vm))
 			}
@@ -57,7 +58,7 @@ extension HomeView {
 	
 	private var personalTasksSection: some View {
 		Section {
-			ForEach(vm.allTasks.filter{ $0.type == .personal }) { task in
+			ForEach(vm.searchResults.filter{ $0.type == .personal }) { task in
 				NavigationLink {
 					DetailView(vm: .init(for: task))
 				} label: {
@@ -75,7 +76,7 @@ extension HomeView {
 	
 	private var schoolTasksSection: some View {
 		Section {
-			ForEach(vm.allTasks.filter{ $0.type == .school }) { task in
+			ForEach(vm.searchResults.filter{ $0.type == .school }) { task in
 				NavigationLink {
 					DetailView(vm: .init(for: task))
 				} label: {
@@ -93,7 +94,7 @@ extension HomeView {
 	
 	private var workTasksSection: some View {
 		Section {
-			ForEach(vm.allTasks.filter{ $0.type == .work }) { task in
+			ForEach(vm.searchResults.filter{ $0.type == .work }) { task in
 				NavigationLink {
 					DetailView(vm: .init(for: task))
 				} label: {
@@ -111,7 +112,7 @@ extension HomeView {
 	
 	private var otherTasksSection: some View {
 		Section {
-			ForEach(vm.allTasks.filter{ $0.type == .other }) { task in
+			ForEach(vm.searchResults.filter{ $0.type == .other }) { task in
 				NavigationLink {
 					DetailView(vm: .init(for: task))
 				} label: {
