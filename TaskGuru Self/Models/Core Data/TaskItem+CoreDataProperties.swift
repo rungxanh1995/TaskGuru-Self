@@ -16,6 +16,7 @@ extension TaskItem: Identifiable {
         return NSFetchRequest<TaskItem>(entityName: "TaskItem")
     }
 
+	// MARK: - Raw properties managed by Core Data
     @NSManaged private var cd_id: UUID?
     @NSManaged private var cd_name: String?
     @NSManaged private var cd_dueDate: Date?
