@@ -52,8 +52,10 @@ final class StorageProviderImpl: StorageProvider {
 	
 	func saveAndHandleError() -> Void {
 		do {
-			try context.save()
-			print("Data cached successfully!")
+			if context.hasChanges {
+				try context.save()
+				print("Changes deteched. Data cached successfully!")
+			}
 		} catch let error {
 			print("Error saving data. \(error.localizedDescription)")
 		}
