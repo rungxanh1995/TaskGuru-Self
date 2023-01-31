@@ -71,7 +71,7 @@ extension TaskItem: Identifiable {
 	}
 	
 	var status: TaskStatus {
-		get { TaskStatus(rawValue: cd_type ?? "New") ?? .new }
+		get { TaskStatus(rawValue: cd_status ?? "New") ?? .new }
 		set {
 			cd_status = newValue.rawValue
 			cd_lastUpdated = .now
