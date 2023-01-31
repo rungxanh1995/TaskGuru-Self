@@ -31,6 +31,7 @@ struct HomeView: View {
 			.toolbar {
 				addTaskButton
 			}
+			.onAppear { vm.fetchTasks() }
 			.sheet(isPresented: $vm.isShowingAddTaskView) {
 				AddTask(vm: .init(parentVM: self.vm))
 			}
@@ -58,7 +59,7 @@ extension HomeView {
 		Section {
 			ForEach(vm.allTasks.filter{ $0.type == .personal }) { task in
 				NavigationLink {
-					DetailView(vm: .init(for: task, parentVM: self.vm))
+					DetailView(vm: .init(for: task))
 				} label: {
 					HomeListCell(task: task)
 				}
@@ -76,7 +77,7 @@ extension HomeView {
 		Section {
 			ForEach(vm.allTasks.filter{ $0.type == .school }) { task in
 				NavigationLink {
-					DetailView(vm: .init(for: task, parentVM: self.vm))
+					DetailView(vm: .init(for: task))
 				} label: {
 					HomeListCell(task: task)
 				}
@@ -94,7 +95,7 @@ extension HomeView {
 		Section {
 			ForEach(vm.allTasks.filter{ $0.type == .work }) { task in
 				NavigationLink {
-					DetailView(vm: .init(for: task, parentVM: self.vm))
+					DetailView(vm: .init(for: task))
 				} label: {
 					HomeListCell(task: task)
 				}
@@ -112,7 +113,7 @@ extension HomeView {
 		Section {
 			ForEach(vm.allTasks.filter{ $0.type == .other }) { task in
 				NavigationLink {
-					DetailView(vm: .init(for: task, parentVM: self.vm))
+					DetailView(vm: .init(for: task))
 				} label: {
 					HomeListCell(task: task)
 				}

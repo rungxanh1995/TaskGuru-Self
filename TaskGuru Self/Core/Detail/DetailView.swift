@@ -18,6 +18,6 @@ struct DetailView: View {
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-		DetailView(vm: .init(for: dev.task, parentVM: dev.homeVM))
+		DetailView(vm: .init(for: dev.task))
     }
 }

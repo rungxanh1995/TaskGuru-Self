@@ -18,13 +18,10 @@ extension DetailView {
 		@Published var taskStatus: TaskStatus
 		@Published var taskNotes: String
 		
-		let parentVM: HomeView.ViewModel
 		private let storageProvider: StorageProvider
 		
-		init(for task: TaskItem, parentVM: HomeView.ViewModel,
-			 storageProvider: StorageProvider = StorageProviderImpl.standard) {
+		init(for task: TaskItem, storageProvider: StorageProvider = StorageProviderImpl.standard) {
 			self.task = task
-			self.parentVM = parentVM
 			self.storageProvider = storageProvider
 			
 			taskName = task.name
@@ -54,7 +51,6 @@ extension DetailView {
 		
 		func saveThenRefetchData() {
 			storageProvider.saveAndHandleError()
-			parentVM.fetchTasks()
 		}
 		
 		func markTaskAsDone() {
