@@ -34,6 +34,10 @@ final class StorageProviderImpl: StorageProvider {
 	
 	func fetch<T>() -> T {
 		let fetchRequest: NSFetchRequest<TaskItem> = TaskItem.fetchRequest()
+		fetchRequest.sortDescriptors = [
+			NSSortDescriptor(key: "cd_dueDate", ascending: true),
+			NSSortDescriptor(key: "cd_name", ascending: true)
+		]
 		return loadTasksAndHandleError(from: fetchRequest) as! T
 	}
 	
