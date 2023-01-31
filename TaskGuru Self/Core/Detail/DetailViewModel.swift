@@ -34,6 +34,10 @@ extension DetailView {
 			taskNotes = task.notes
 		}
 		
+		var taskIsNewOrInProgress: Bool {
+			return task.status == .new || task.status == .inProgress
+		}
+		
 		func updateTask() {
 			task.name = taskName
 			task.dueDate = taskDueDate
@@ -48,7 +52,7 @@ extension DetailView {
 			saveThenRefetchData()
 		}
 		
-		private func saveThenRefetchData() {
+		func saveThenRefetchData() {
 			storageProvider.saveAndHandleError()
 			parentVM.fetchTasks()
 		}

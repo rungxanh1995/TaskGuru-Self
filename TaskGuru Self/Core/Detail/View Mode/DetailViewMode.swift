@@ -46,7 +46,7 @@ extension DetailView {
 			.navigationTitle("Task Detail")
 			.navigationBarTitleDisplayMode(.inline)
 			.toolbar {
-				if vm.task.status != .done {
+				if vm.taskIsNewOrInProgress {
 					ToolbarItemGroup(placement: .primaryAction) {
 						Button(action: {isMarkingAsDone.toggle()}) {
 							Label("Mark as Done", systemImage: "checkmark")
@@ -62,7 +62,10 @@ extension DetailView {
 			}
 			.alert("Mark Task as Done?", isPresented: $isMarkingAsDone, actions: {
 				Button("Cancel", role: .cancel, action: {})
-				Button("OK", action: { vm.task.status = .done })
+				Button("OK", action: {
+					vm.task.status = .done
+					vm.saveThenRefetchData()
+				})
 			})
 			.sheet(isPresented: $isShowingEdit) {
 				DetailView.EditMode(vm: self.vm)
