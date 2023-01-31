@@ -19,7 +19,7 @@ extension DetailView {
 		private var isMarkingAsDone: Bool = false
 		
 		private let columns = [
-			GridItem(.adaptive(minimum: 150.0, maximum: 180.0))
+			GridItem(.adaptive(minimum: 150.0, maximum: 200.0))
 		]
 		
 		var body: some View {
