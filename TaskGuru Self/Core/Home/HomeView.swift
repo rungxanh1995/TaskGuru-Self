@@ -19,10 +19,10 @@ struct HomeView: View {
 		NavigationView {
 			Form {
 				Section {
-					if vm.personalTasks.isEmpty {
+					if vm.allTasks.isEmpty {
 						emptyTaskText
 					} else {
-						ForEach(vm.personalTasks) { task in
+						ForEach(vm.allTasks) { task in
 							NavigationLink {
 								DetailView(vm: .init(for: task, parentVM: self.vm))
 							} label: {
@@ -33,68 +33,8 @@ struct HomeView: View {
 					}
 				} header: {
 					HStack {
-						SFSymbols.personFilled
-						Text("Personal Tasks")
-					}
-				}
-
-				Section {
-					if vm.workTasks.isEmpty {
-						emptyTaskText
-					} else {
-						ForEach(vm.workTasks) { task in
-							NavigationLink {
-								DetailView(vm: .init(for: task, parentVM: self.vm))
-							} label: {
-								HomeListCell(task: task)
-							}
-						}
-						.onDelete(perform: vm.deleteWorkTasks)
-					}
-				} header: {
-					HStack {
-						SFSymbols.buildingFilled
-						Text("Work Tasks")
-					}
-				}
-				
-				Section {
-					if vm.schoolTasks.isEmpty {
-						emptyTaskText
-					} else {
-						ForEach(vm.schoolTasks) { task in
-							NavigationLink {
-								DetailView(vm: .init(for: task, parentVM: self.vm))
-							} label: {
-								HomeListCell(task: task)
-							}
-						}
-						.onDelete(perform: vm.deleteSchoolTasks)
-					}
-				} header: {
-					HStack {
-						SFSymbols.graduationCapFilled
-						Text("School Tasks")
-					}
-				}
-				
-				Section {
-					if vm.otherTasks.isEmpty {
-						emptyTaskText
-					} else {
-						ForEach(vm.otherTasks) { task in
-							NavigationLink {
-								DetailView(vm: .init(for: task, parentVM: self.vm))
-							} label: {
-								HomeListCell(task: task)
-							}
-						}
-						.onDelete(perform: vm.deleteOtherTasks)
-					}
-				} header: {
-					HStack {
 						SFSymbols.listFilled
-						Text("Other Tasks")
+						Text("All Tasks")
 					}
 				}
 			}
