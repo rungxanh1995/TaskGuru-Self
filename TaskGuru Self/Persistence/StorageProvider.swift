@@ -34,11 +34,6 @@ final class StorageProviderImpl: StorageProvider {
 	
 	func fetch<T>() -> T {
 		let fetchRequest: NSFetchRequest<CachedTask> = CachedTask.fetchRequest()
-		// Sort fetch results by due date ascending, then last updated on top
-		fetchRequest.sortDescriptors = [
-			NSSortDescriptor(keyPath: \CachedTask.dueDate, ascending: true),
-			NSSortDescriptor(keyPath: \CachedTask.lastUpdated, ascending: false)
-		]
 		return loadTasksAndHandleError(from: fetchRequest) as! T
 	}
 	
@@ -46,16 +41,15 @@ final class StorageProviderImpl: StorageProvider {
 		do {
 			return try context.fetch(request)
 		} catch let error {
-			print("Error fetching books. \(error.localizedDescription)")
+			print("Error fetching cached tasks. \(error.localizedDescription)")
 			return [CachedTask]()
 		}
 	}
 	
 	func saveAndHandleError() -> Void {
 		do {
-			if context.hasChanges {
-				try context.save()
-			}
+			try context.save()
+			print("Data cached successfully!")
 		} catch let error {
 			print("Error saving data. \(error.localizedDescription)")
 		}
