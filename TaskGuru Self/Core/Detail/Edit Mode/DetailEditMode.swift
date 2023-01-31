@@ -31,6 +31,12 @@ extension DetailView {
 								   displayedComponents: .date
 						)
 						
+						Picker("Type", selection: $vm.task.type) {
+							ForEach(TaskConstants.allTypes, id: \.self) {
+								Text($0.rawValue)
+							}
+						}
+						
 						Picker("Status", selection: $vm.task.status) {
 							ForEach(TaskConstants.allStatuses, id: \.self) {
 								Text($0.rawValue)

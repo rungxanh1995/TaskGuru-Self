@@ -15,6 +15,19 @@ struct HomeListCell: View {
 			VStack(alignment: .leading, spacing: 8) {
 				Text(task.name)
 					.font(.system(.headline, design: .rounded))
+				
+				HStack(spacing: 4) {
+					switch task.type {
+						case .personal: SFSymbols.personFilled
+						case .work: SFSymbols.buildingFilled
+						case .school: SFSymbols.graduationCapFilled
+						default: SFSymbols.listFilled
+					}
+					
+					Text(task.type.rawValue)
+				}
+				.font(.system(.caption, design: .rounded))
+				.foregroundColor(.secondary)
 			}
 			
 			Spacer()
