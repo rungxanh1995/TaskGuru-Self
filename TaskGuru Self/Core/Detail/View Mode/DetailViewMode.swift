@@ -70,8 +70,7 @@ extension DetailView {
 			.alert("Mark Task as Done?", isPresented: $isMarkingAsDone, actions: {
 				Button("Cancel", role: .cancel, action: {})
 				Button("OK", action: {
-					vm.task.status = .done
-					vm.saveThenRefetchData()
+					vm.markTaskAsDone()
 				})
 			})
 			.alert("Delete Task?", isPresented: $isDeletingTask, actions: {

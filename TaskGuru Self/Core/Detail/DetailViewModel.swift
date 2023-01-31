@@ -56,5 +56,10 @@ extension DetailView {
 			storageProvider.saveAndHandleError()
 			parentVM.fetchTasks()
 		}
+		
+		func markTaskAsDone() {
+			task.status = .done
+			saveThenRefetchData()
+		}
 	}
 }
