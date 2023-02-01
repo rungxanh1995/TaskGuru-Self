@@ -23,7 +23,7 @@ extension SettingsView {
 		let ostapGitHubLink: URL = URL(string: "https://github.com/ostap-sulyk")!
 		let raufGitHubLink: URL = URL(string: "https://github.com/drrauf")!
 		
-		func resetData() -> Void {
+		func resetData() {
 			// TODO: Implement if possible
 		}
 	}

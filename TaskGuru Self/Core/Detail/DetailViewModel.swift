@@ -9,8 +9,7 @@ import SwiftUI
 
 extension DetailView {
 	final class ViewModel: ObservableObject {
-		@Published
-		var task: TaskItem
+		@Published var task: TaskItem
 		
 		let parentVM: HomeView.ViewModel
 		
@@ -19,7 +18,7 @@ extension DetailView {
 			self.parentVM = parentVM
 		}
 		
-		func updateItemInItsSource() -> Void {
+		func updateItemInItsSource() {
 			parentVM.updateTasks(with: task)
 		}
 	}
