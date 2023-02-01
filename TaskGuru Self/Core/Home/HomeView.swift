@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
-	@StateObject
-	var vm: ViewModel
+	@StateObject var vm: ViewModel
 	
 	init(vm: HomeView.ViewModel = .init()) {
 		_vm = StateObject(wrappedValue: vm)
@@ -17,7 +16,7 @@ struct HomeView: View {
 	
 	var body: some View {
 		NavigationView {
-			Form {
+			List {
 				if vm.allTasks.isEmpty {
 					emptyTaskText
 				} else {
@@ -56,13 +55,14 @@ extension HomeView {
 	
 	private var overdueSection: some View {
 		Section {
-			ForEach(vm.searchResults.filter { $0.dueDate.isInThePast }) { task in
+			ForEach(vm.searchResults.filter { $0.dueDate.isPastToday }) { task in
 				NavigationLink {
 					DetailView(vm: .init(for: task, parentVM: vm))
 				} label: {
 					HomeListCell(task: task)
 				}
 			}
+			.onDelete(perform: vm.deleteTasks)
 		} header: { Text("Overdue") }
 	}
 	
@@ -75,6 +75,7 @@ extension HomeView {
 					HomeListCell(task: task)
 				}
 			}
+			.onDelete(perform: vm.deleteTasks)
 		} header: { Text("Due Today") }
 	}
 	
@@ -87,7 +88,8 @@ extension HomeView {
 					HomeListCell(task: task)
 				}
 			}
-		} header: { Text("Upcming") }
+			.onDelete(perform: vm.deleteTasks)
+		} header: { Text("Upcoming") }
 	}
 	
 	private var addTaskButton: some View {
