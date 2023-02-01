@@ -18,30 +18,20 @@ struct HomeView: View {
 	var body: some View {
 		NavigationView {
 			Form {
-				Section {
-					if vm.allTasks.isEmpty {
-						emptyTaskText
-					} else {
-						ForEach(vm.allTasks) { task in
-							NavigationLink {
-								DetailView(vm: .init(for: task, parentVM: self.vm))
-							} label: {
-								HomeListCell(task: task)
-							}
-						}
-						.onDelete(perform: vm.deletePersonalTasks)
-					}
-				} header: {
-					HStack {
-						SFSymbols.listFilled
-						Text("All Tasks")
-					}
+				if vm.allTasks.isEmpty {
+					emptyTaskText
+				} else {
+					personalTasksSection
+					schoolTasksSection
+					workTasksSection
+					otherTasksSection
 				}
 			}
 			.navigationTitle("TaskGuru")
 			.toolbar {
 				addTaskButton
 			}
+			.searchable(text: $vm.searchText)
 			.sheet(isPresented: $vm.isShowingAddTaskView) {
 				AddTask(vm: .init(parentVM: self.vm))
 			}
@@ -63,6 +53,78 @@ extension HomeView {
 			Spacer()
 		}
 		.onTapGesture { vm.isShowingAddTaskView.toggle() }
+	}
+	
+	private var personalTasksSection: some View {
+		Section {
+			ForEach(vm.searchResults.filter{ $0.type == .personal }) { task in
+				NavigationLink {
+					DetailView(vm: .init(for: task, parentVM: vm))
+				} label: {
+					HomeListCell(task: task)
+				}
+			}
+			.onDelete(perform: vm.deleteTasks)
+		} header: {
+			HStack {
+				SFSymbols.personFilled
+				Text("Personal Tasks")
+			}
+		}
+	}
+	
+	private var schoolTasksSection: some View {
+		Section {
+			ForEach(vm.searchResults.filter{ $0.type == .school }) { task in
+				NavigationLink {
+					DetailView(vm: .init(for: task, parentVM: vm))
+				} label: {
+					HomeListCell(task: task)
+				}
+			}
+			.onDelete(perform: vm.deleteTasks)
+		} header: {
+			HStack {
+				SFSymbols.graduationCapFilled
+				Text("School Tasks")
+			}
+		}
+	}
+	
+	private var workTasksSection: some View {
+		Section {
+			ForEach(vm.searchResults.filter{ $0.type == .work }) { task in
+				NavigationLink {
+					DetailView(vm: .init(for: task, parentVM: vm))
+				} label: {
+					HomeListCell(task: task)
+				}
+			}
+			.onDelete(perform: vm.deleteTasks)
+		} header: {
+			HStack {
+				SFSymbols.buildingFilled
+				Text("Work Tasks")
+			}
+		}
+	}
+	
+	private var otherTasksSection: some View {
+		Section {
+			ForEach(vm.searchResults.filter{ $0.type == .other }) { task in
+				NavigationLink {
+					DetailView(vm: .init(for: task, parentVM: vm))
+				} label: {
+					HomeListCell(task: task)
+				}
+			}
+			.onDelete(perform: vm.deleteTasks)
+		} header: {
+			HStack {
+				SFSymbols.listFilled
+				Text("Other Tasks")
+			}
+		}
 	}
 	
 	private var addTaskButton: some View {
