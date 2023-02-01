@@ -24,7 +24,7 @@ struct DetailView: View {
 				LazyVGrid(columns: columns) {
 					DetailGridCell(title: task.name, caption: "Name")
 					DetailGridCell(title: task.status.rawValue, caption: "Status", titleColor: task.colorForStatus())
-					DetailGridCell(title: task.shortDueDate, caption: "Due date", titleColor: task.colorForDueDate())
+					DetailGridCell(title: task.numericDueDate, caption: "Due date", titleColor: task.colorForDueDate())
 					DetailGridCell(title: task.type.rawValue, caption: "Type")
 				}
 				

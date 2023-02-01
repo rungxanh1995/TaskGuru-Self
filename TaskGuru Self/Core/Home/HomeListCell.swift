@@ -36,7 +36,7 @@ struct HomeListCell: View {
 			Spacer()
 			
 			VStack(alignment: .trailing, spacing: 8) {
-				Text("\(SFSymbols.calendarWithClock) \(task.numericDueDate)")
+				Text("\(SFSymbols.calendarWithClock) \(task.shortDueDate)")
 					.font(.system(.callout, design: .rounded))
 					.foregroundColor(task.colorForDueDate())
 				

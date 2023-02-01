@@ -18,18 +18,17 @@ struct HomeView: View {
     var body: some View {
 		NavigationView {
 			List {
+				// status-based
+				pendingSection
+				
+				// time-based
 				overdueSection
 				dueTodaySection
 				upcomingSection
 			}
 			.navigationTitle("TaskGuru")
 			.toolbar {
-				ToolbarItem(placement: .navigationBarTrailing) {
-					addTaskButton
-				}
-				ToolbarItem(placement: .navigationBarLeading) {
-					EditButton()
-				}
+				addTaskButton
 			}
 			.searchable(text: $searchText)
 			.sheet(isPresented: $isShowingAddTask) {
@@ -40,6 +39,22 @@ struct HomeView: View {
 }
 
 extension HomeView {
+	private var pendingSection: some View {
+		Section {
+			ForEach(TaskItem.mockData.filter { $0.status != .done }) { task in
+				NavigationLink {
+					DetailView(task: task)
+				} label: {
+					HomeListCell(task: task)
+				}
+			}
+		} header: {
+			Text("Pending")
+		} footer: {
+			Text("Don't stress yourself too much. You got it 💪")
+		}
+	}
+	
 	private var overdueSection: some View {
 		Section {
 			ForEach(TaskItem.mockData.filter { $0.dueDate.isPastToday }) { task in
