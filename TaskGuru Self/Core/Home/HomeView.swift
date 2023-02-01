@@ -27,7 +27,12 @@ struct HomeView: View {
 			}
 			.navigationTitle("TaskGuru")
 			.toolbar {
-				addTaskButton
+				ToolbarItem(placement: .navigationBarTrailing) {
+					addTaskButton
+				}
+				ToolbarItem(placement: .navigationBarLeading) {
+					EditButton()
+				}
 			}
 			.searchable(text: $vm.searchText)
 			.sheet(isPresented: $vm.isShowingAddTaskView) {
