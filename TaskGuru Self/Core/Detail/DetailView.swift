@@ -8,29 +8,34 @@
 import SwiftUI
 
 struct DetailView: View {
-	let task: String
+	let task: TaskItem
 	
-	@State
-	private var isShowingEdit: Bool = false
+	@State private var isShowingEdit: Bool = false
+	@State private var isMarkingAsDone: Bool = false
+	@State private var isDeletingTask: Bool = false
 	
 	private let columns = [
-		GridItem(.adaptive(minimum: 150.0, maximum: 180.0))
+		GridItem(.adaptive(minimum: 150.0, maximum: 200.0))
 	]
 	
     var body: some View {
 		ScrollView {
-			LazyVGrid(columns: columns) {
-				DetailGridCell(title: "Todo name", caption: "Name")
-				DetailGridCell(title: "Lorem ipsum amba", caption: "Notes")
-				DetailGridCell(title: "In Progress", caption: "Status", titleColor: .orange)
-				DetailGridCell(title: "2023-03-01", caption: "Due date", titleColor: .mint)
-				DetailGridCell(title: "Personal", caption: "Type")
+			VStack(spacing: 8) {
+				LazyVGrid(columns: columns) {
+					DetailGridCell(title: task.name, caption: "Name")
+					DetailGridCell(title: task.status.rawValue, caption: "Status", titleColor: task.colorForStatus())
+					DetailGridCell(title: task.shortDueDate, caption: "Due date", titleColor: task.colorForDueDate())
+					DetailGridCell(title: task.type.rawValue, caption: "Type")
+				}
+				
+				if task.notes.isEmpty == false {
+					DetailGridCell(title: task.notes, caption: "Notes")
+				}
 			}
-			
 			.padding([.horizontal, .bottom])
 			
 			Text("Last updated on 2023-01-29")
-				.font(.system(.caption, design: .rounded))
+				.font(.system(.caption))
 				.foregroundColor(.secondary)
 		}
 		.navigationTitle("Task Detail")
@@ -38,7 +43,7 @@ struct DetailView: View {
 		.toolbar {
 			ToolbarItemGroup(placement: .primaryAction) {
 				Button {
-					// toggle edit view
+					isMarkingAsDone.toggle()
 				} label: {
 					Label("Mark as Done", systemImage: "checkmark")
 				}
@@ -49,11 +54,23 @@ struct DetailView: View {
 					Label("Edit", systemImage: "square.and.pencil")
 				}
 				
-				Button(action: {}) {
+				Button(action: { isDeletingTask.toggle() }) {
 					Label("Delete", systemImage: "trash")
 				}
 			}
 		}
+		.alert("Mark Task as Done?", isPresented: $isMarkingAsDone, actions: {
+			Button("Cancel", role: .cancel, action: {})
+			Button("OK", action: {
+				// code here to mark task as done...
+			})
+		})
+		.alert("Delete Task?", isPresented: $isDeletingTask, actions: {
+			Button("Cancel", role: .cancel, action: {})
+			Button("OK", action: {
+				// code here to delete selected task...
+			})
+		})
 		.sheet(isPresented: $isShowingEdit) {
 			EditView()
 		}
@@ -63,7 +80,7 @@ struct DetailView: View {
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
 		NavigationView {
-			DetailView(task: "Do chores")
+			DetailView(task: TaskItem.mockData.first!)
 		}
     }
 }

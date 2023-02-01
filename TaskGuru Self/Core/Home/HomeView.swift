@@ -40,7 +40,7 @@ extension HomeView {
 		Section {
 			ForEach(TaskItem.mockData.filter{ $0.type == .personal }) { task in
 				NavigationLink {
-					DetailView(task: task.name)
+					DetailView(task: task)
 				} label: {
 					HomeListCell(task: task)
 				}
@@ -57,7 +57,7 @@ extension HomeView {
 		Section {
 			ForEach(TaskItem.mockData.filter{ $0.type == .school }) { task in
 				NavigationLink {
-					DetailView(task: task.name)
+					DetailView(task: task)
 				} label: {
 					HomeListCell(task: task)
 				}
@@ -74,7 +74,7 @@ extension HomeView {
 		Section {
 			ForEach(TaskItem.mockData.filter{ $0.type == .work }) { task in
 				NavigationLink {
-					DetailView(task: task.name)
+					DetailView(task: task)
 				} label: {
 					HomeListCell(task: task)
 				}
@@ -91,7 +91,7 @@ extension HomeView {
 		Section {
 			ForEach(TaskItem.mockData.filter{ $0.type == .other }) { task in
 				NavigationLink {
-					DetailView(task: task.name)
+					DetailView(task: task)
 				} label: {
 					HomeListCell(task: task)
 				}
