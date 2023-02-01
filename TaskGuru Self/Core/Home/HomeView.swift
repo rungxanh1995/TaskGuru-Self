@@ -62,6 +62,7 @@ extension HomeView {
 					HomeListCell(task: task)
 				}
 			}
+			.onDelete(perform: vm.deleteTasks)
 		} header: { Text("Overdue") }
 	}
 	
@@ -74,6 +75,7 @@ extension HomeView {
 					HomeListCell(task: task)
 				}
 			}
+			.onDelete(perform: vm.deleteTasks)
 		} header: { Text("Due Today") }
 	}
 	
@@ -86,7 +88,8 @@ extension HomeView {
 					HomeListCell(task: task)
 				}
 			}
-		} header: { Text("Upcming") }
+			.onDelete(perform: vm.deleteTasks)
+		} header: { Text("Upcoming") }
 	}
 	
 	private var addTaskButton: some View {
