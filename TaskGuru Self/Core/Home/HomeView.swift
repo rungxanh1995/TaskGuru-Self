@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
-	@StateObject
-	var vm: ViewModel
+	@StateObject var vm: ViewModel
 	
 	init(vm: HomeView.ViewModel = .init()) {
 		_vm = StateObject(wrappedValue: vm)
@@ -18,23 +17,18 @@ struct HomeView: View {
 	var body: some View {
 		NavigationView {
 			Form {
-				if vm.isFetchingData {
-					ProgressView()
-				} else if vm.allTasks.isEmpty {
+				if vm.allTasks.isEmpty {
 					emptyTaskText
 				} else {
-					personalTasksSection
-					schoolTasksSection
-					workTasksSection
-					otherTasksSection
+					overdueSection
+					dueTodaySection
+					upcomingSection
 				}
 			}
-			
 			.navigationTitle("TaskGuru")
 			.toolbar {
 				addTaskButton
 			}
-			.onAppear { vm.fetchTasks() }
 			.searchable(text: $vm.searchText)
 			.sheet(isPresented: $vm.isShowingAddTaskView) {
 				AddTask(vm: .init(parentVM: self.vm))
@@ -56,88 +50,48 @@ extension HomeView {
 				.foregroundColor(.secondary)
 			Spacer()
 		}
-		.onTapGesture {
-			vm.isShowingAddTaskView.toggle()
-			haptic(.success)
-		}
+		.onTapGesture { vm.isShowingAddTaskView.toggle() }
 	}
 	
-	private var personalTasksSection: some View {
+	private var overdueSection: some View {
 		Section {
-			ForEach(vm.searchResults.filter{ $0.type == .personal }) { task in
+			ForEach(vm.searchResults.filter { $0.dueDate.isInThePast }) { task in
 				NavigationLink {
 					DetailView(vm: .init(for: task))
 				} label: {
 					HomeListCell(task: task)
 				}
 			}
-			.onDelete(perform: vm.deleteTasks)
-		} header: {
-			HStack {
-				SFSymbols.personFilled
-				Text("Personal Tasks")
-			}
-		}
+		} header: { Text("Overdue") }
 	}
 	
-	private var schoolTasksSection: some View {
+	private var dueTodaySection: some View {
 		Section {
-			ForEach(vm.searchResults.filter{ $0.type == .school }) { task in
+			ForEach(vm.searchResults.filter { $0.dueDate.isWithinToday }) { task in
 				NavigationLink {
 					DetailView(vm: .init(for: task))
 				} label: {
 					HomeListCell(task: task)
 				}
 			}
-			.onDelete(perform: vm.deleteTasks)
-		} header: {
-			HStack {
-				SFSymbols.graduationCapFilled
-				Text("School Tasks")
-			}
-		}
+		} header: { Text("Due Today") }
 	}
 	
-	private var workTasksSection: some View {
+	private var upcomingSection: some View {
 		Section {
-			ForEach(vm.searchResults.filter{ $0.type == .work }) { task in
+			ForEach(vm.searchResults.filter { $0.dueDate.isInTheFuture }) { task in
 				NavigationLink {
 					DetailView(vm: .init(for: task))
 				} label: {
 					HomeListCell(task: task)
 				}
 			}
-			.onDelete(perform: vm.deleteTasks)
-		} header: {
-			HStack {
-				SFSymbols.buildingFilled
-				Text("Work Tasks")
-			}
-		}
-	}
-	
-	private var otherTasksSection: some View {
-		Section {
-			ForEach(vm.searchResults.filter{ $0.type == .other }) { task in
-				NavigationLink {
-					DetailView(vm: .init(for: task))
-				} label: {
-					HomeListCell(task: task)
-				}
-			}
-			.onDelete(perform: vm.deleteTasks)
-		} header: {
-			HStack {
-				SFSymbols.listFilled
-				Text("Other Tasks")
-			}
-		}
+		} header: { Text("Upcming") }
 	}
 	
 	private var addTaskButton: some View {
 		Button {
 			vm.isShowingAddTaskView.toggle()
-			haptic(.success)
 		} label: {
 			Label("Add Task", systemImage: "plus.circle")
 		}
@@ -145,8 +99,8 @@ extension HomeView {
 }
 
 struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView()
+	static var previews: some View {
+		HomeView()
 			.preferredColorScheme(.dark)
-    }
+	}
 }
