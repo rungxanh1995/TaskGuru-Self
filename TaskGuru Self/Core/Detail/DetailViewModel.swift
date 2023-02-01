@@ -32,6 +32,7 @@ extension DetailView {
 		
 		func markTaskAsDone() {
 			task.status = .done
+			updateItemInItsSource()
 		}
 	}
 }

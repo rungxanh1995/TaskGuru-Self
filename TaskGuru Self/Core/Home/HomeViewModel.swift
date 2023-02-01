@@ -49,8 +49,6 @@ extension HomeView {
 		}
 		
 		// UPDATE
-		#warning("Using 'searchResults' makes an edited task not updated on home view, even with this call.")
-		// This would be solved with persistence when we reload all tasks with .onAppear() in home view.
 		func updateTasks(with item: TaskItem) {
 			guard let index = getIndex(of: item) else { return }
 			allTasks[index] = item
