@@ -31,7 +31,7 @@ struct AddTask: View {
     var body: some View {
 		NavigationView {
 			Form {
-				Section(header: Text("General")) {
+				Section {
 					TextField("Name", text: $taskName)
 					
 					DatePicker("Due Date", selection: $dueDate,
@@ -50,10 +50,20 @@ struct AddTask: View {
 							Text($0)
 						}
 					}
+				} header: {
+					HStack {
+						SFSymbols.gridFilled
+						Text("General")
+					}
 				}
 				
-				Section(header: Text("Notes")) {
+				Section {
 					TextField("Notes", text: $taskNotes, prompt: Text("Any extra notes..."), axis: .vertical)
+				} header: {
+					HStack {
+						SFSymbols.pencilDrawing
+						Text("Notes")
+					}
 				}
 			}
 			.navigationTitle("Add Task")
