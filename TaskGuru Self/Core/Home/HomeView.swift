@@ -34,9 +34,6 @@ struct HomeView: View {
 						ToolbarItem(placement: .navigationBarTrailing) {
 							addTaskButton
 						}
-						ToolbarItem(placement: .navigationBarLeading) {
-							EditButton()
-						}
 					}
 					.searchable(text: $vm.searchText)
 					.sheet(isPresented: $vm.isShowingAddTaskView) {
@@ -73,7 +70,6 @@ extension HomeView {
 					HomeListCell(task: task)
 				}
 			}
-			.onDelete(perform: vm.deleteTasks)
 		} header: { Text("Overdue") }
 	}
 	
@@ -86,7 +82,6 @@ extension HomeView {
 					HomeListCell(task: task)
 				}
 			}
-			.onDelete(perform: vm.deleteTasks)
 		} header: { Text("Due Today") }
 	}
 	
@@ -99,7 +94,6 @@ extension HomeView {
 					HomeListCell(task: task)
 				}
 			}
-			.onDelete(perform: vm.deleteTasks)
 		} header: { Text("Upcoming") }
 	}
 	
