@@ -21,10 +21,9 @@ struct HomeView: View {
 				if vm.allTasks.isEmpty {
 					emptyTaskText
 				} else {
-					personalTasksSection
-					schoolTasksSection
-					workTasksSection
-					otherTasksSection
+					overdueSection
+					dueTodaySection
+					upcomingSection
 				}
 			}
 			.navigationTitle("TaskGuru")
@@ -55,76 +54,40 @@ extension HomeView {
 		.onTapGesture { vm.isShowingAddTaskView.toggle() }
 	}
 	
-	private var personalTasksSection: some View {
+	private var overdueSection: some View {
 		Section {
-			ForEach(vm.searchResults.filter{ $0.type == .personal }) { task in
+			ForEach(vm.searchResults.filter { $0.dueDate.isPastToday }) { task in
 				NavigationLink {
 					DetailView(vm: .init(for: task, parentVM: vm))
 				} label: {
 					HomeListCell(task: task)
 				}
 			}
-			.onDelete(perform: vm.deleteTasks)
-		} header: {
-			HStack {
-				SFSymbols.personFilled
-				Text("Personal Tasks")
-			}
-		}
+		} header: { Text("Overdue") }
 	}
 	
-	private var schoolTasksSection: some View {
+	private var dueTodaySection: some View {
 		Section {
-			ForEach(vm.searchResults.filter{ $0.type == .school }) { task in
+			ForEach(vm.searchResults.filter { $0.dueDate.isWithinToday }) { task in
 				NavigationLink {
 					DetailView(vm: .init(for: task, parentVM: vm))
 				} label: {
 					HomeListCell(task: task)
 				}
 			}
-			.onDelete(perform: vm.deleteTasks)
-		} header: {
-			HStack {
-				SFSymbols.graduationCapFilled
-				Text("School Tasks")
-			}
-		}
+		} header: { Text("Due Today") }
 	}
 	
-	private var workTasksSection: some View {
+	private var upcomingSection: some View {
 		Section {
-			ForEach(vm.searchResults.filter{ $0.type == .work }) { task in
+			ForEach(vm.searchResults.filter { $0.dueDate.isInTheFuture }) { task in
 				NavigationLink {
 					DetailView(vm: .init(for: task, parentVM: vm))
 				} label: {
 					HomeListCell(task: task)
 				}
 			}
-			.onDelete(perform: vm.deleteTasks)
-		} header: {
-			HStack {
-				SFSymbols.buildingFilled
-				Text("Work Tasks")
-			}
-		}
-	}
-	
-	private var otherTasksSection: some View {
-		Section {
-			ForEach(vm.searchResults.filter{ $0.type == .other }) { task in
-				NavigationLink {
-					DetailView(vm: .init(for: task, parentVM: vm))
-				} label: {
-					HomeListCell(task: task)
-				}
-			}
-			.onDelete(perform: vm.deleteTasks)
-		} header: {
-			HStack {
-				SFSymbols.listFilled
-				Text("Other Tasks")
-			}
-		}
+		} header: { Text("Upcming") }
 	}
 	
 	private var addTaskButton: some View {
