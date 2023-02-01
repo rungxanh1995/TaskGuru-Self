@@ -78,8 +78,9 @@ struct AddTask: View {
 }
 
 extension AddTask {
-	private func addNewTask() -> Void {
-		vm.addTask(name: &vm.taskName, dueDate: vm.dueDate, type: vm.taskType, status: vm.taskStatus, notes: vm.taskNotes)
+	private func addNewTask() {
+		vm.addNewTask()
+		haptic(.success)
 	}
 }
 

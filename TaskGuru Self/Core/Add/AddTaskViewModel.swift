@@ -33,7 +33,11 @@ extension AddTask {
 		@Published
 		var taskNotes: String = ""
 				
-		func addTask(name: inout String, dueDate: Date, type: TaskType,
+		func addNewTask() {
+			addTask(name: &taskName, dueDate: dueDate, type: taskType, status: taskStatus, notes: taskNotes)
+		}
+		
+		private func addTask(name: inout String, dueDate: Date, type: TaskType,
 					 status: TaskStatus, notes: String) -> Void {
 			assignDefaultTaskName(to: &name)
 			
@@ -45,7 +49,6 @@ extension AddTask {
 			newTask.type = type
 			newTask.status = status
 			newTask.notes = notes
-			
 			
 			saveThenRefetchData()
 		}
