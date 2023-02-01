@@ -11,6 +11,10 @@ extension DetailView {
 	final class ViewModel: ObservableObject {
 		@Published var task: TaskItem
 		
+		var taskIsNewOrInProgress: Bool {
+			return task.status == .new || task.status == .inProgress
+		}
+		
 		let parentVM: HomeView.ViewModel
 		
 		init(for task: TaskItem, parentVM: HomeView.ViewModel) {
@@ -20,6 +24,14 @@ extension DetailView {
 		
 		func updateItemInItsSource() {
 			parentVM.updateTasks(with: task)
+		}
+		
+		func deleteTask() {
+			// TODO: implement when persistence is deployed
+		}
+		
+		func markTaskAsDone() {
+			task.status = .done
 		}
 	}
 }
