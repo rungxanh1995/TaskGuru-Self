@@ -10,40 +10,48 @@ import SwiftUI
 struct EditView: View {
 	@Environment(\.dismiss) var dismissThisView
 	
-	@State
-	private var taskName: String = ""
-	
-	@State
-	private var dueDate: Date = .init()
-	let dateRangeFromToday: PartialRangeFrom<Date> = Date()...
-	
-	@State
-	private var statusSelected = "In progress"
-	private let statuses = ["New", "In progress", "Done"]
-	
-	@State
-	private var taskNotes = ""
+	@State private var taskName: String = ""
+	@State private var taskDueDate: Date = .init()
+	@State private var taskTypeSelected = TaskType.personal
+	@State private var taskStatusSelected = TaskStatus.inProgress
+	@State private var taskNotes = ""
 	
     var body: some View {
 		NavigationView {
 			Form {
-				Section(header: Text("General")) {
+				Section {
 					TextField("Name", text: $taskName)
 					
-					DatePicker("Due Date", selection: $dueDate,
-							   in: dateRangeFromToday,
+					DatePicker("Due Date", selection: $taskDueDate,
+							   in: TaskConstants.dateRangeFromToday,
 							   displayedComponents: .date
 					)
 					
-					Picker("Status", selection: $statusSelected) {
-						ForEach(statuses, id: \.self) {
-							Text($0)
+					Picker("Type", selection: $taskTypeSelected) {
+						ForEach(TaskConstants.allTypes, id: \.self) {
+							Text($0.rawValue)
 						}
+					}
+					
+					Picker("Status", selection: $taskStatusSelected) {
+						ForEach(TaskConstants.allStatuses, id: \.self) {
+							Text($0.rawValue)
+						}
+					}
+				} header: {
+					HStack {
+						SFSymbols.gridFilled
+						Text("General")
 					}
 				}
 				
-				Section(header: Text("Notes")) {
+				Section {
 					TextField("Notes", text: $taskNotes, prompt: Text("Any extra notes..."), axis: .vertical)
+				} header: {
+					HStack {
+						SFSymbols.pencilDrawing
+						Text("Notes")
+					}
 				}
 			}
 			.navigationTitle("Edit Task")
@@ -69,7 +77,6 @@ struct EditView: View {
 
 struct EditView_Previews: PreviewProvider {
     static var previews: some View {
-		
         EditView()
     }
 }

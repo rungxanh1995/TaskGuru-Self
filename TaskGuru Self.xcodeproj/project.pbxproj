@@ -13,6 +13,7 @@
 		2C218BE92989F8080094A9A1 /* HomeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C218BE82989F8080094A9A1 /* HomeListCell.swift */; };
 		2C218BEC2989F8410094A9A1 /* SFSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C218BEB2989F8410094A9A1 /* SFSymbols.swift */; };
 		2C218BEF2989F8960094A9A1 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C218BEE2989F8960094A9A1 /* Date.swift */; };
+		2C218BF12989FE7F0094A9A1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C218BF02989FE7F0094A9A1 /* Constants.swift */; };
 		2C2541B029849CDC00367BED /* DetailGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2541AF29849CDC00367BED /* DetailGridCell.swift */; };
 		2C33F6B329858293004893EF /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C33F6B229858293004893EF /* EditView.swift */; };
 		2C33F6B629858649004893EF /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C33F6B529858649004893EF /* Launch Screen.storyboard */; };
@@ -32,6 +33,7 @@
 		2C218BE82989F8080094A9A1 /* HomeListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListCell.swift; sourceTree = "<group>"; };
 		2C218BEB2989F8410094A9A1 /* SFSymbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbols.swift; sourceTree = "<group>"; };
 		2C218BEE2989F8960094A9A1 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		2C218BF02989FE7F0094A9A1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2C2541AF29849CDC00367BED /* DetailGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGridCell.swift; sourceTree = "<group>"; };
 		2C33F6B229858293004893EF /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		2C33F6B529858649004893EF /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 		2C218BEA2989F8390094A9A1 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				2C218BF02989FE7F0094A9A1 /* Constants.swift */,
 				2C218BEB2989F8410094A9A1 /* SFSymbols.swift */,
 			);
 			path = Utilities;
@@ -265,6 +268,7 @@
 				2C218BEC2989F8410094A9A1 /* SFSymbols.swift in Sources */,
 				2C218BE52989F4380094A9A1 /* TaskType.swift in Sources */,
 				2C218BE72989F44A0094A9A1 /* TaskStatus.swift in Sources */,
+				2C218BF12989FE7F0094A9A1 /* Constants.swift in Sources */,
 				2C218BEF2989F8960094A9A1 /* Date.swift in Sources */,
 				2CC25BCD29845D9A006972DF /* AddTask.swift in Sources */,
 			);
