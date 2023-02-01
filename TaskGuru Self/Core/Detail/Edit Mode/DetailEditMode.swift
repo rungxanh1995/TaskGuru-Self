@@ -82,6 +82,7 @@ extension DetailView {
 		
 		private func didTapSaveButton() -> Void {
 			vm.updateTask()
+			haptic(.success)
 			dismissThisView()
 		}
 	}

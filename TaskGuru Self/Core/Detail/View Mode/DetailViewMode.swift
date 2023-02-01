@@ -58,11 +58,17 @@ extension DetailView {
 				}
 				
 				ToolbarItemGroup(placement: .secondaryAction) {
-					Button(action: { isShowingEdit.toggle() }) {
+					Button(action: {
+						isShowingEdit.toggle()
+						haptic(.success)
+					}) {
 						Label("Edit", systemImage: "square.and.pencil")
 					}
 					
-					Button(action: { isDeletingTask.toggle() }) {
+					Button(action: {
+						isDeletingTask.toggle()
+						haptic(.warning)
+					}) {
 						Label("Delete", systemImage: "trash")
 					}
 				}
@@ -71,12 +77,14 @@ extension DetailView {
 				Button("Cancel", role: .cancel, action: {})
 				Button("OK", action: {
 					vm.markTaskAsDone()
+					haptic(.success)
 				})
 			})
 			.alert("Delete Task?", isPresented: $isDeletingTask, actions: {
 				Button("Cancel", role: .cancel, action: {})
 				Button("OK", action: {
 					vm.deleteTask()
+					haptic(.success)
 				})
 			})
 			.sheet(isPresented: $isShowingEdit) {

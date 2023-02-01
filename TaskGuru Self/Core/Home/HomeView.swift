@@ -18,7 +18,9 @@ struct HomeView: View {
 	var body: some View {
 		NavigationView {
 			Form {
-				if vm.allTasks.isEmpty {
+				if vm.isFetchingData {
+					ProgressView()
+				} else if vm.allTasks.isEmpty {
 					emptyTaskText
 				} else {
 					personalTasksSection
@@ -27,6 +29,7 @@ struct HomeView: View {
 					otherTasksSection
 				}
 			}
+			
 			.navigationTitle("TaskGuru")
 			.toolbar {
 				addTaskButton
@@ -53,7 +56,10 @@ extension HomeView {
 				.foregroundColor(.secondary)
 			Spacer()
 		}
-		.onTapGesture { vm.isShowingAddTaskView.toggle() }
+		.onTapGesture {
+			vm.isShowingAddTaskView.toggle()
+			haptic(.success)
+		}
 	}
 	
 	private var personalTasksSection: some View {
@@ -131,6 +137,7 @@ extension HomeView {
 	private var addTaskButton: some View {
 		Button {
 			vm.isShowingAddTaskView.toggle()
+			haptic(.success)
 		} label: {
 			Label("Add Task", systemImage: "plus.circle")
 		}
