@@ -15,10 +15,10 @@ extension SettingsView {
 		@AppStorage(UserDefaultsKey.systemTheme)
 		var systemTheme: Int = SchemeType.allCases.first!.rawValue
 		
-		@Published
-		var isConfirmingResetData: Bool = false
+		@Published var isConfirmingResetData: Bool = false
 		
 		let joeGitHubLink: URL = URL(string: "https://twitter.com/rungxanh1995")!
+		let marcoGitHubLink: URL = URL(string: "https://github.com/floydcoder")!
 		let ostapGitHubLink: URL = URL(string: "https://github.com/ostap-sulyk")!
 		let raufGitHubLink: URL = URL(string: "https://github.com/drrauf")!
 		
@@ -28,7 +28,7 @@ extension SettingsView {
 			self.storageProvider = storageProvider
 		}
 		
-		func resetData() -> Void {
+		func resetData() {
 			resetDefaults()
 			resetAllTasks()
 		}

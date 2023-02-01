@@ -20,5 +20,6 @@ enum SFSymbols {
 	static let gridFilled: Image = .init(systemName: "square.fill.text.grid.1x2")
 	static let pencilDrawing: Image = .init(systemName: "pencil.and.outline")
 	static let link: Image = .init(systemName: "link")
+	static let magicWand: Image = .init(systemName: "wand.and.stars")
 	static let handsSparklesFilled: Image = .init(systemName: "hands.sparkles.fill")
 }
