@@ -29,6 +29,7 @@ struct HomeView: View {
 							upcomingSection
 						}
 					}
+					.onAppear(perform: vm.fetchTasks)
 					.navigationTitle("TaskGuru")
 					.toolbar {
 						ToolbarItem(placement: .navigationBarTrailing) {
