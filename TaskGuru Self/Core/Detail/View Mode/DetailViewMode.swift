@@ -9,8 +9,9 @@ import SwiftUI
 
 extension DetailView {
 	struct ViewMode: View {
-		@ObservedObject
-		var vm: DetailView.ViewModel
+		@ObservedObject var vm: DetailView.ViewModel
+		
+		@Environment(\.dismiss) var dismissThisView
 				
 		@State
 		private var isShowingEdit: Bool = false
@@ -71,12 +72,14 @@ extension DetailView {
 				Button("Cancel", role: .cancel, action: {})
 				Button("OK", action: {
 					vm.markTaskAsDone()
+					dismissThisView()
 				})
 			})
 			.alert("Delete Task?", isPresented: $isDeletingTask, actions: {
 				Button("Cancel", role: .cancel, action: {})
 				Button("OK", action: {
 					vm.deleteTask()
+					dismissThisView()
 				})
 			})
 			.sheet(isPresented: $isShowingEdit) {
