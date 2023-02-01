@@ -16,22 +16,34 @@ struct HomeView: View {
 	
 	var body: some View {
 		NavigationView {
-			List {
-				if vm.allTasks.isEmpty {
-					emptyTaskText
+			ZStack {
+				if vm.isFetchingData {
+					ProgressView()
 				} else {
-					overdueSection
-					dueTodaySection
-					upcomingSection
+					List {
+						if vm.allTasks.isEmpty {
+							emptyTaskText
+						} else {
+							overdueSection
+							dueTodaySection
+							upcomingSection
+						}
+					}
+					.navigationTitle("TaskGuru")
+					.listStyle(.grouped)
+					.toolbar {
+						ToolbarItem(placement: .navigationBarTrailing) {
+							addTaskButton
+						}
+						ToolbarItem(placement: .navigationBarLeading) {
+							EditButton()
+						}
+					}
+					.searchable(text: $vm.searchText)
+					.sheet(isPresented: $vm.isShowingAddTaskView) {
+						AddTask(vm: .init(parentVM: self.vm))
+					}
 				}
-			}
-			.navigationTitle("TaskGuru")
-			.toolbar {
-				addTaskButton
-			}
-			.searchable(text: $vm.searchText)
-			.sheet(isPresented: $vm.isShowingAddTaskView) {
-				AddTask(vm: .init(parentVM: self.vm))
 			}
 		}
 	}
