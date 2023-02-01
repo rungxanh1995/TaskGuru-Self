@@ -18,43 +18,9 @@ struct SettingsView: View {
 	var body: some View {
 		NavigationView {
 			Form {
-				Section {
-					haptics
-					appTheme
-				} header: {
-					HStack {
-						SFSymbols.gearFilled
-						Text("General")
-					}
-				}
-				
-				Section {
-					resetAppButton
-				} footer: {
-					Text("Be careful, this removes all your data! Restart the app to see changes")
-				}
-				
-				Section {
-					HStack {
-						SFSymbols.link
-						Link("Joe Pham", destination: vm.joeGitHubLink)
-					}
-					
-					HStack {
-						SFSymbols.link
-						Link("Ostap Sulyk", destination: vm.ostapGitHubLink)
-					}
-					
-					HStack {
-						SFSymbols.link
-						Link("Rauf Anata", destination: vm.raufGitHubLink)
-					}
-				} header: {
-					HStack {
-						SFSymbols.handsSparklesFilled
-						Text("Meet The Team")
-					}
-				}
+				generalSection
+				advancedSection
+				devTeamSection
 			}
 			.navigationTitle("Settings")
 			.confirmationDialog(
@@ -73,7 +39,18 @@ struct SettingsView: View {
 }
 
 private extension SettingsView {
-	@ViewBuilder
+	private var generalSection: some View {
+		Section {
+			haptics
+			appTheme
+		} header: {
+			HStack {
+				SFSymbols.gearFilled
+				Text("General")
+			}
+		}
+	}
+	
 	private var haptics: some View {
 		Toggle(
 			"Enable Haptics",
@@ -82,7 +59,6 @@ private extension SettingsView {
 		.tint(.teal)
 	}
 	
-	@ViewBuilder
 	private var appTheme: some View {
 		Picker("Color Theme", selection: $vm.systemTheme) {
 			ForEach(SchemeType.allCases) { (theme) in
@@ -92,10 +68,51 @@ private extension SettingsView {
 		}
 	}
 	
-	@ViewBuilder
+	private var advancedSection: some View {
+		Section {
+			resetAppButton
+		} header: {
+			HStack {
+				SFSymbols.magicWand
+				Text("Advanced")
+			}
+		} footer: {
+			Text("Be careful, this removes all your data! Restart the app to see all changes")
+		}
+	}
+	
 	private var resetAppButton: some View {
 		Button("Reset to Original", role: .destructive) {
 			vm.isConfirmingResetData.toggle()
+		}
+	}
+	
+	private var devTeamSection: some View {
+		Section {
+			HStack {
+				SFSymbols.link
+				Link("Joe Pham", destination: vm.joeGitHubLink)
+			}
+			
+			HStack {
+				SFSymbols.link
+				Link("Marco Stevanella", destination: vm.marcoGitHubLink)
+			}
+			
+			HStack {
+				SFSymbols.link
+				Link("Ostap Sulyk", destination: vm.ostapGitHubLink)
+			}
+			
+			HStack {
+				SFSymbols.link
+				Link("Rauf Anata", destination: vm.raufGitHubLink)
+			}
+		} header: {
+			HStack {
+				SFSymbols.handsSparklesFilled
+				Text("Meet The Team")
+			}
 		}
 	}
 }

@@ -19,6 +19,7 @@ extension SettingsView {
 		var isConfirmingResetData: Bool = false
 		
 		let joeGitHubLink: URL = URL(string: "https://twitter.com/rungxanh1995")!
+		let marcoGitHubLink: URL = URL(string: "https://github.com/floydcoder")!
 		let ostapGitHubLink: URL = URL(string: "https://github.com/ostap-sulyk")!
 		let raufGitHubLink: URL = URL(string: "https://github.com/drrauf")!
 		
