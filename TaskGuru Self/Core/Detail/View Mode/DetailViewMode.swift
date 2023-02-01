@@ -11,6 +11,8 @@ extension DetailView {
 	struct ViewMode: View {
 		@ObservedObject
 		var vm: DetailView.ViewModel
+		
+		@Environment(\.dismiss) var dismissThisView
 				
 		@State
 		private var isShowingEdit: Bool = false
@@ -77,6 +79,7 @@ extension DetailView {
 				Button("Cancel", role: .cancel, action: {})
 				Button("OK", action: {
 					vm.markTaskAsDone()
+					dismissThisView()
 					haptic(.success)
 				})
 			})
@@ -84,6 +87,7 @@ extension DetailView {
 				Button("Cancel", role: .cancel, action: {})
 				Button("OK", action: {
 					vm.deleteTask()
+					dismissThisView()
 					haptic(.success)
 				})
 			})
