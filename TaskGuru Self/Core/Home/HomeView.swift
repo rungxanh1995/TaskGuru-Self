@@ -18,10 +18,9 @@ struct HomeView: View {
     var body: some View {
 		NavigationView {
 			Form {
-				personalTasksSection
-				schoolTasksSection
-				workTasksSection
-				otherTasksSection
+				overdueSection
+				dueTodaySection
+				upcomingSection
 			}
 			.navigationTitle("TaskGuru")
 			.toolbar {
@@ -36,72 +35,40 @@ struct HomeView: View {
 }
 
 extension HomeView {
-	private var personalTasksSection: some View {
+	private var overdueSection: some View {
 		Section {
-			ForEach(TaskItem.mockData.filter{ $0.type == .personal }) { task in
+			ForEach(TaskItem.mockData.filter { $0.dueDate.isPastToday }) { task in
 				NavigationLink {
 					DetailView(task: task)
 				} label: {
 					HomeListCell(task: task)
 				}
 			}
-		} header: {
-			HStack {
-				SFSymbols.personFilled
-				Text("Personal Tasks")
-			}
-		}
+		} header: { Text("Overdue") }
 	}
 	
-	private var schoolTasksSection: some View {
+	private var dueTodaySection: some View {
 		Section {
-			ForEach(TaskItem.mockData.filter{ $0.type == .school }) { task in
+			ForEach(TaskItem.mockData.filter { $0.dueDate.isWithinToday }) { task in
 				NavigationLink {
 					DetailView(task: task)
 				} label: {
 					HomeListCell(task: task)
 				}
 			}
-		} header: {
-			HStack {
-				SFSymbols.graduationCapFilled
-				Text("School Tasks")
-			}
-		}
+		} header: { Text("Due Today") }
 	}
 	
-	private var workTasksSection: some View {
+	private var upcomingSection: some View {
 		Section {
-			ForEach(TaskItem.mockData.filter{ $0.type == .work }) { task in
+			ForEach(TaskItem.mockData.filter { $0.dueDate.isInTheFuture }) { task in
 				NavigationLink {
 					DetailView(task: task)
 				} label: {
 					HomeListCell(task: task)
 				}
 			}
-		} header: {
-			HStack {
-				SFSymbols.buildingFilled
-				Text("Work Tasks")
-			}
-		}
-	}
-	
-	private var otherTasksSection: some View {
-		Section {
-			ForEach(TaskItem.mockData.filter{ $0.type == .other }) { task in
-				NavigationLink {
-					DetailView(task: task)
-				} label: {
-					HomeListCell(task: task)
-				}
-			}
-		} header: {
-			HStack {
-				SFSymbols.listFilled
-				Text("Other Tasks")
-			}
-		}
+		} header: { Text("Upcoming") }
 	}
 	
 	private var addTaskButton: some View {
