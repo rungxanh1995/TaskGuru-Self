@@ -7,11 +7,9 @@
 
 import Foundation
 
-extension TaskItem {
-	internal enum TaskType: String, Codable, CaseIterable {
-		case personal = "Personal"
-		case work = "Work"
-		case school = "School"
-		case other = "Other"
-	}
+enum TaskType: String, Codable, CaseIterable {
+	case personal = "Personal"
+	case work = "Work"
+	case school = "School"
+	case other = "Other"
 }

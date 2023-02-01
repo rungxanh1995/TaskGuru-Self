@@ -19,11 +19,11 @@ extension HomeView {
 		
 		// ADD
 		
-		func addTask(name: inout String, type: TaskItem.TaskType, dueDate: Date,
-					 status: TaskItem.TaskStatus, notes: String) -> Void {
+		func addTask(name: inout String, type: TaskType, dueDate: Date,
+					 status: TaskStatus, notes: String) -> Void {
 			assignDefaultTaskName(to: &name)
 			
-			let newItem = TaskItem(name: name, type: type, dueDate: dueDate, status: status, notes: notes)
+			let newItem = TaskItem(name: name, dueDate: dueDate, lastUpdated: .now, type: type, status: status, notes: notes)
 			addTask(newItem)
 		}
 		

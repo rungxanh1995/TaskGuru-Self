@@ -9,6 +9,6 @@ import Foundation
 
 enum TaskConstants {
 	static let dateRangeFromToday: PartialRangeFrom<Date> = Date()...
-	static let allTypes: [TaskItem.TaskType] = TaskItem.TaskType.allCases
-	static let allStatuses: [TaskItem.TaskStatus] = TaskItem.TaskStatus.allCases
+	static let allTypes: [TaskType] = TaskType.allCases
+	static let allStatuses: [TaskStatus] = TaskStatus.allCases
 }
