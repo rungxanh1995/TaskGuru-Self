@@ -8,50 +8,26 @@
 import SwiftUI
 
 struct HomeView: View {
-	private let personalTasks = ["Meditate", "Read books", "Do groceries"]
-	private let workTasks = ["Complete Q3 reports", "Onboard new comers", "Review customer service stats"]
-	private let schoolTasks = ["Research papers", "Prepping for exams", "Group project presentation"]
 	
 	@State
-	var isShowingAddTask: Bool = false
+	private var isShowingAddTask: Bool = false
+	
+	@State
+	private var searchText: String = ""
 	
     var body: some View {
-		
 		NavigationView {
 			Form {
-				Section(header: Text("Personal Tasks")) {
-					ForEach(personalTasks, id:\.self) { task in
-						NavigationLink(task) {
-							DetailView(task: task)
-						}
-					}
-				}
-				
-				Section(header: Text("Work Tasks")) {
-					ForEach(workTasks, id:\.self) { task in
-						NavigationLink(task) {
-							DetailView(task: task)
-						}
-					}
-				}
-				
-				Section(header: Text("School Tasks")) {
-					ForEach(schoolTasks, id:\.self) { task in
-						NavigationLink(task) {
-							DetailView(task: task)
-						}
-					}
-				}
+				personalTasksSection
+				schoolTasksSection
+				workTasksSection
+				otherTasksSection
 			}
 			.navigationTitle("TaskGuru")
 			.toolbar {
-				Button {
-					// toggle adding new task view
-					isShowingAddTask.toggle()
-				} label: {
-					Image(systemName: "plus.circle")
-				}
+				addTaskButton
 			}
+			.searchable(text: $searchText)
 			.sheet(isPresented: $isShowingAddTask) {
 				AddTask()
 			}
@@ -59,9 +35,86 @@ struct HomeView: View {
     }
 }
 
+extension HomeView {
+	private var personalTasksSection: some View {
+		Section {
+			ForEach(TaskItem.mockData.filter{ $0.type == .personal }) { task in
+				NavigationLink {
+					DetailView(task: task.name)
+				} label: {
+					HomeListCell(task: task)
+				}
+			}
+		} header: {
+			HStack {
+				SFSymbols.personFilled
+				Text("Personal Tasks")
+			}
+		}
+	}
+	
+	private var schoolTasksSection: some View {
+		Section {
+			ForEach(TaskItem.mockData.filter{ $0.type == .school }) { task in
+				NavigationLink {
+					DetailView(task: task.name)
+				} label: {
+					HomeListCell(task: task)
+				}
+			}
+		} header: {
+			HStack {
+				SFSymbols.graduationCapFilled
+				Text("School Tasks")
+			}
+		}
+	}
+	
+	private var workTasksSection: some View {
+		Section {
+			ForEach(TaskItem.mockData.filter{ $0.type == .work }) { task in
+				NavigationLink {
+					DetailView(task: task.name)
+				} label: {
+					HomeListCell(task: task)
+				}
+			}
+		} header: {
+			HStack {
+				SFSymbols.buildingFilled
+				Text("Work Tasks")
+			}
+		}
+	}
+	
+	private var otherTasksSection: some View {
+		Section {
+			ForEach(TaskItem.mockData.filter{ $0.type == .other }) { task in
+				NavigationLink {
+					DetailView(task: task.name)
+				} label: {
+					HomeListCell(task: task)
+				}
+			}
+		} header: {
+			HStack {
+				SFSymbols.listFilled
+				Text("Other Tasks")
+			}
+		}
+	}
+	
+	private var addTaskButton: some View {
+		Button {
+			isShowingAddTask.toggle()
+		} label: {
+			Label("Add Task", systemImage: "plus.circle")
+		}
+	}
+}
+
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
-			.preferredColorScheme(.dark)
     }
 }

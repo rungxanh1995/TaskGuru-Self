@@ -10,6 +10,9 @@
 		2C218BE32989F3BF0094A9A1 /* TaskItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C218BE22989F3BF0094A9A1 /* TaskItem.swift */; };
 		2C218BE52989F4380094A9A1 /* TaskType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C218BE42989F4380094A9A1 /* TaskType.swift */; };
 		2C218BE72989F44A0094A9A1 /* TaskStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C218BE62989F44A0094A9A1 /* TaskStatus.swift */; };
+		2C218BE92989F8080094A9A1 /* HomeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C218BE82989F8080094A9A1 /* HomeListCell.swift */; };
+		2C218BEC2989F8410094A9A1 /* SFSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C218BEB2989F8410094A9A1 /* SFSymbols.swift */; };
+		2C218BEF2989F8960094A9A1 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C218BEE2989F8960094A9A1 /* Date.swift */; };
 		2C2541B029849CDC00367BED /* DetailGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2541AF29849CDC00367BED /* DetailGridCell.swift */; };
 		2C33F6B329858293004893EF /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C33F6B229858293004893EF /* EditView.swift */; };
 		2C33F6B629858649004893EF /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C33F6B529858649004893EF /* Launch Screen.storyboard */; };
@@ -26,6 +29,9 @@
 		2C218BE22989F3BF0094A9A1 /* TaskItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskItem.swift; sourceTree = "<group>"; };
 		2C218BE42989F4380094A9A1 /* TaskType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskType.swift; sourceTree = "<group>"; };
 		2C218BE62989F44A0094A9A1 /* TaskStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskStatus.swift; sourceTree = "<group>"; };
+		2C218BE82989F8080094A9A1 /* HomeListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListCell.swift; sourceTree = "<group>"; };
+		2C218BEB2989F8410094A9A1 /* SFSymbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbols.swift; sourceTree = "<group>"; };
+		2C218BEE2989F8960094A9A1 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		2C2541AF29849CDC00367BED /* DetailGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGridCell.swift; sourceTree = "<group>"; };
 		2C33F6B229858293004893EF /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		2C33F6B529858649004893EF /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
@@ -58,6 +64,22 @@
 				2C218BE62989F44A0094A9A1 /* TaskStatus.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		2C218BEA2989F8390094A9A1 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				2C218BEB2989F8410094A9A1 /* SFSymbols.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		2C218BED2989F8900094A9A1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2C218BEE2989F8960094A9A1 /* Date.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		2C33F6B129858289004893EF /* Edit */ = {
@@ -108,6 +130,8 @@
 				2CC25BBB298459BA006972DF /* TaskGuru_SelfApp.swift */,
 				2C218BE12989F3B40094A9A1 /* Models */,
 				2CC25BC929845A20006972DF /* Core */,
+				2C218BED2989F8900094A9A1 /* Extensions */,
+				2C218BEA2989F8390094A9A1 /* Utilities */,
 				2C33F6B729858659004893EF /* Resources */,
 				2CC25BC1298459BB006972DF /* Preview Content */,
 			);
@@ -138,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				2CC25BBD298459BA006972DF /* HomeView.swift */,
+				2C218BE82989F8080094A9A1 /* HomeListCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -236,8 +261,11 @@
 				2CC25BBC298459BA006972DF /* TaskGuru_SelfApp.swift in Sources */,
 				2C33F6B329858293004893EF /* EditView.swift in Sources */,
 				2C8C35DF298489DA00DCEA67 /* DetailView.swift in Sources */,
+				2C218BE92989F8080094A9A1 /* HomeListCell.swift in Sources */,
+				2C218BEC2989F8410094A9A1 /* SFSymbols.swift in Sources */,
 				2C218BE52989F4380094A9A1 /* TaskType.swift in Sources */,
 				2C218BE72989F44A0094A9A1 /* TaskStatus.swift in Sources */,
+				2C218BEF2989F8960094A9A1 /* Date.swift in Sources */,
 				2CC25BCD29845D9A006972DF /* AddTask.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

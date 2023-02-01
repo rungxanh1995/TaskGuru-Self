@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TaskItem {
+struct TaskItem: Identifiable {
 	var id: UUID = UUID()
 	
 	var name: String {
@@ -58,4 +58,25 @@ extension TaskItem {
 		TaskItem(name: "Final implementation", dueDate: Date(timeIntervalSinceNow: 60*60*24*90), lastUpdated: .now,
 				 type: .school, status: .new, notes: "")
 	]
+}
+
+extension TaskItem {
+	func colorForStatus() -> Color {
+		switch status {
+			case .new: return Color.gray
+			case .inProgress: return Color.orange
+			case .done: return Color.mint
+		}
+	}
+	
+	/// Shows green when not approaching today's date, orange on today's date, and red when passed today's date
+	func colorForDueDate() -> Color {
+		if dueDate.isWithinToday {
+			return Color.orange
+		} else if dueDate > Date.now {
+			return Color.mint
+		} else {
+			return Color.red
+		}
+	}
 }
