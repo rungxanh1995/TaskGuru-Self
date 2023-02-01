@@ -24,6 +24,10 @@ struct HomeView: View {
 						if vm.allTasks.isEmpty {
 							emptyTaskText
 						} else {
+							// status-based
+							pendingSection
+							
+							// time-based
 							overdueSection
 							dueTodaySection
 							upcomingSection
@@ -60,6 +64,22 @@ extension HomeView {
 			Spacer()
 		}
 		.onTapGesture { vm.isShowingAddTaskView.toggle() }
+	}
+	
+	private var pendingSection: some View {
+		Section {
+			ForEach(vm.searchResults.filter { $0.status != .done }) { task in
+				NavigationLink {
+					DetailView(vm: .init(for: task))
+				} label: {
+					HomeListCell(task: task)
+				}
+			}
+		} header: {
+			Text("Pending")
+		} footer: {
+			Text("Don't stress yourself too much. You got it 💪")
+		}
 	}
 	
 	private var overdueSection: some View {
