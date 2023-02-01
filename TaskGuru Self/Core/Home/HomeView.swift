@@ -30,7 +30,6 @@ struct HomeView: View {
 						}
 					}
 					.navigationTitle("TaskGuru")
-					.listStyle(.grouped)
 					.toolbar {
 						ToolbarItem(placement: .navigationBarTrailing) {
 							addTaskButton
