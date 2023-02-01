@@ -56,7 +56,7 @@ extension HomeView {
 	
 	private var overdueSection: some View {
 		Section {
-			ForEach(vm.searchResults.filter { $0.dueDate.isPastToday }) { task in
+			ForEach(vm.searchResults.filter { $0.dueDate.isInThePast }) { task in
 				NavigationLink {
 					DetailView(vm: .init(for: task, parentVM: vm))
 				} label: {
