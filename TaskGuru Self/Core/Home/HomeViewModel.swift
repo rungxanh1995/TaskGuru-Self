@@ -37,15 +37,9 @@ extension HomeView {
 		// ADD
 		
 		func addTask(name: inout String, type: TaskType, dueDate: Date, status: TaskStatus, notes: String) {
-			assignDefaultTaskName(to: &name)
-			
 			let newItem = TaskItem(name: name, dueDate: dueDate, lastUpdated: .now,
 								   type: type, status: status, notes: notes)
 			allTasks.append(newItem)
-		}
-		
-		fileprivate func assignDefaultTaskName(to name: inout String) {
-			if name == "" { name = "Untitled Task" }
 		}
 		
 		// UPDATE
@@ -56,11 +50,6 @@ extension HomeView {
 		
 		fileprivate func getIndex(of item: TaskItem) -> Int? {
 			return allTasks.firstIndex { $0.id == item.id }
-		}
-		
-		// DELETE
-		func deleteTasks(at offsets: IndexSet) {
-			allTasks.remove(atOffsets: offsets)
 		}
 	}
 }

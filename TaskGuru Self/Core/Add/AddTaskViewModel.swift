@@ -23,7 +23,12 @@ extension AddTask {
 				
 		func addTask(name: inout String, dueDate: Date, type: TaskType,
 					 status: TaskStatus, notes: String) {
+			assignDefaultTaskName(to: &name)
 			listViewModel.addTask(name: &name, type: type, dueDate: dueDate, status: status, notes: notes)
+		}
+		
+		fileprivate func assignDefaultTaskName(to name: inout String) {
+			if name == "" { name = "Untitled Task" }
 		}
 	}
 }
