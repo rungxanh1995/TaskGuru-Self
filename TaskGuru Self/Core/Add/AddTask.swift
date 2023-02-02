@@ -10,23 +10,11 @@ import SwiftUI
 struct AddTask: View {
 	@Environment(\.dismiss) var dismissThisView
 	
-	@State
-	private var taskName: String = ""
-	
-	private let taskTypes = ["Personal", "Work", "School"]
-	@State
-	private var taskTypeSelected = "Personal"
-	
-	@State
-	private var dueDate: Date = .init()
-	let dateRangeFromToday: PartialRangeFrom<Date> = Date()...
-	
-	@State
-	private var statusSelected = "New"
-	private let statuses = ["New", "In progress", "Done"]
-	
-	@State
-	private var taskNotes = ""
+	@State private var taskName: String = ""
+	@State private var dueDate: Date = .init()
+	@State private var taskTypeSelected: TaskType = .personal
+	@State private var statusSelected: TaskStatus = .new
+	@State private var taskNotes = ""
 	
     var body: some View {
 		NavigationView {
@@ -35,19 +23,19 @@ struct AddTask: View {
 					TextField("Name", text: $taskName)
 					
 					DatePicker("Due Date", selection: $dueDate,
-							   in: dateRangeFromToday,
+							   in: TaskConstants.dateRangeFromToday,
 							   displayedComponents: .date
 					)
 					
 					Picker("Type", selection: $taskTypeSelected) {
-						ForEach(taskTypes, id: \.self) {
-							Text($0)
+						ForEach(TaskConstants.allTypes, id: \.self) {
+							Text($0.rawValue)
 						}
 					}
 					
 					Picker("Status", selection: $statusSelected) {
-						ForEach(statuses, id: \.self) {
-							Text($0)
+						ForEach(TaskConstants.allStatuses, id: \.self) {
+							Text($0.rawValue)
 						}
 					}
 				} header: {
