@@ -11,43 +11,64 @@ struct HomeListCell: View {
 	@ObservedObject
 	var task: TaskItem
 	
-    var body: some View {
+	var body: some View {
 		HStack(alignment: .top) {
 			VStack(alignment: .leading, spacing: 8) {
-				Text(task.name)
-					.font(.system(.headline, design: .rounded))
-				
-				HStack(spacing: 4) {
-					switch task.type {
-						case .personal: SFSymbols.personFilled
-						case .work: SFSymbols.buildingFilled
-						case .school: SFSymbols.graduationCapFilled
-						default: SFSymbols.listFilled
-					}
-					
-					Text(task.type.rawValue)
-				}
-				.font(.system(.caption, design: .rounded))
-				.foregroundColor(.secondary)
+				taskName
+				taskType
 			}
 			
 			Spacer()
 			
 			VStack(alignment: .trailing, spacing: 8) {
-				Text("\(SFSymbols.calendarWithClock) \(task.shortDueDate)")
-					.font(.system(.callout, design: .rounded))
-					.foregroundColor(task.colorForDueDate())
-				
-				HStack(spacing: 4) {
-					SFSymbols.circleFilled
-					Text(task.status.rawValue)
-				}
-				.font(.system(.caption, design: .rounded))
-				.foregroundColor(task.colorForStatus())
+				taskDueDate
+				taskStatus
 			}
-			
 		}
-    }
+	}
+}
+
+extension HomeListCell {
+	private var taskName: some View {
+		Text(task.name)
+			.font(.system(.body))
+	}
+	
+	private var taskType: some View {
+		HStack(spacing: 4) {
+			Group {
+				switch task.type {
+					case .personal: SFSymbols.personFilled
+					case .work: SFSymbols.buildingFilled
+					case .school: SFSymbols.graduationCapFilled
+					default: SFSymbols.listFilled
+				}
+			}
+			.font(.system(.caption2))
+			
+			Text(task.type.rawValue)
+		}
+		.font(.system(.footnote))
+		.foregroundColor(.secondary)
+	}
+	
+	private var taskDueDate: some View {
+		HStack(spacing: 6) {
+			SFSymbols.calendarWithClock.font(.callout)
+			Text(task.shortDueDate)
+		}
+		.font(.system(.body))
+		.foregroundColor(task.colorForDueDate())
+	}
+	
+	private var taskStatus: some View {
+		HStack(spacing: 4) {
+			SFSymbols.circleFilled.font(.system(.caption2))
+			Text(task.status.rawValue)
+		}
+		.font(.system(.footnote))
+		.foregroundColor(task.colorForStatus())
+	}
 }
 
 struct HomeListCell_Previews: PreviewProvider {
