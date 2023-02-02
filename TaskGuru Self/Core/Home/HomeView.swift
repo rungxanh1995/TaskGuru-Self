@@ -21,10 +21,7 @@ struct HomeView: View {
 				// status-based
 				pendingSection
 				
-				// time-based
-				overdueSection
-				dueTodaySection
-				upcomingSection
+				timeBasedSections
 			}
 			.navigationTitle("TaskGuru")
 			.toolbar {
@@ -49,10 +46,22 @@ extension HomeView {
 				}
 			}
 		} header: {
-			Text("Pending")
+			Text("Pending Tasks")
 		} footer: {
 			Text("Don't stress yourself too much. You got it 💪")
 		}
+		.headerProminence(.increased)
+	}
+	
+	private var timeBasedSections: some View {
+		Section {
+			overdueSection
+			dueTodaySection
+			upcomingSection
+		} header: {
+			Text("All Tasks")
+		}
+		.headerProminence(.increased)
 	}
 	
 	private var overdueSection: some View {
@@ -64,7 +73,11 @@ extension HomeView {
 					HomeListCell(task: task)
 				}
 			}
-		} header: { Text("Overdue") }
+		} header: {
+			Text("Overdue")
+				.bold()
+				.foregroundColor(.red)
+		}
 	}
 	
 	private var dueTodaySection: some View {
@@ -76,7 +89,11 @@ extension HomeView {
 					HomeListCell(task: task)
 				}
 			}
-		} header: { Text("Due Today") }
+		} header: {
+			Text("Due Today")
+			.bold()
+			.foregroundColor(.orange)
+		}
 	}
 	
 	private var upcomingSection: some View {
@@ -88,7 +105,11 @@ extension HomeView {
 					HomeListCell(task: task)
 				}
 			}
-		} header: { Text("Upcoming") }
+		} header: {
+			Text("Upcoming")
+			.bold()
+			.foregroundColor(.mint)
+		}
 	}
 	
 	private var addTaskButton: some View {
