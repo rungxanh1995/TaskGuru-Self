@@ -77,7 +77,7 @@ extension TaskItem {
 	func colorForDueDate() -> Color {
 		if dueDate.isWithinToday {
 			return Color.orange
-		} else if dueDate > Date.now {
+		} else if dueDate.isInTheFuture {
 			return Color.mint
 		} else {
 			return Color.red
