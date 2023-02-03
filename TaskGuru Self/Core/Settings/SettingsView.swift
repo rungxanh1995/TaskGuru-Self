@@ -51,7 +51,7 @@ private extension SettingsView {
 	
 	private var haptics: some View {
 		Toggle("Enable Haptics", isOn: $isHapticEnabled)
-			.tint(.teal)
+			.tint(.accentColor)
 	}
 	
 	private var appTheme: some View {
