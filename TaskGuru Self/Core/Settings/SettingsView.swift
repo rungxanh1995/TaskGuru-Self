@@ -56,7 +56,7 @@ private extension SettingsView {
 			"Enable Haptics",
 			isOn: $vm.isHapticsEnabled
 		)
-		.tint(Color.accentColor)
+		.tint(.accentColor)
 	}
 	
 	private var appTheme: some View {
