@@ -41,21 +41,21 @@ extension DetailView {
 			task.type = taskType
 			task.status = taskStatus
 			task.notes = taskNotes
-			saveThenRefetchData()
+			saveAndHandleError()
 		}
 
 		func deleteTask() {
 			storageProvider.context.delete(task)
-			saveThenRefetchData()
+			saveAndHandleError()
 		}
 
-		func saveThenRefetchData() {
+		private func saveAndHandleError() {
 			storageProvider.saveAndHandleError()
 		}
 
 		func markTaskAsDone() {
 			task.status = .done
-			saveThenRefetchData()
+			saveAndHandleError()
 		}
 	}
 }
