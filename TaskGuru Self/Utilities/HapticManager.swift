@@ -7,12 +7,12 @@
 
 import UIKit
 
-fileprivate final class HapticManager {
+private final class HapticManager {
 	static let shared: HapticManager = .init()
 	private let feedback: UINotificationFeedbackGenerator = .init()
-	
+
 	private init() { }
-	
+
 	func trigger(_ notifType: UINotificationFeedbackGenerator.FeedbackType) {
 		feedback.notificationOccurred(notifType)
 	}

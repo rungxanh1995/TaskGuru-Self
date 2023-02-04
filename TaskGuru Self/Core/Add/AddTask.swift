@@ -9,30 +9,30 @@ import SwiftUI
 
 struct AddTask: View {
 	internal enum FocusField { case name, notes }
-	
+
 	@FocusState
 	private var focusField: FocusField?
-	
+
 	@Environment(\.dismiss) var dismissThisView
-	
+
 	@ObservedObject
 	var vm: AddTask.ViewModel
-	
+
     var body: some View {
 		NavigationView {
 			Form {
 				Section {
 					TextField("Name", text: $vm.taskName)
 						.focused($focusField, equals: .name)
-					
+
 					DatePicker("Due Date", selection: $vm.dueDate, in: TaskConstants.dateRangeFromToday, displayedComponents: .date)
-					
+
 					Picker("Type", selection: $vm.taskType) {
 						ForEach(TaskConstants.allTypes, id: \.self) {
 							Text($0.rawValue)
 						}
 					}
-					
+
 					Picker("Status", selection: $vm.taskStatus) {
 						ForEach(TaskConstants.allStatuses, id: \.self) {
 							Text($0.rawValue)
@@ -64,7 +64,7 @@ struct AddTask: View {
 				ToolbarItem(placement: .navigationBarLeading) {
 					Button("Cancel") { dismissThisView() }
 				}
-				
+
 				ToolbarItem(placement: .navigationBarTrailing) {
 					Button("Add", action: {
 						addNewTask()

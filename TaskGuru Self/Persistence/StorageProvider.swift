@@ -10,18 +10,18 @@ import CoreData
 protocol StorageProvider {
 	var context: NSManagedObjectContext { get }
 	func fetch<T>() -> T
-	func saveAndHandleError() -> Void
+	func saveAndHandleError()
 }
 
 /// Implementation of a `StorageProvider` for a desired Core Data entity
 final class StorageProviderImpl: StorageProvider {
-	
+
 	/// Singleton instance to use in the app
 	static let standard: StorageProviderImpl = .init()
-	
+
 	private let container: NSPersistentContainer
 	let context: NSManagedObjectContext
-	
+
 	private init() {
 		container = .init(name: "TaskGuru")
 		container.loadPersistentStores { (_, error) in
@@ -31,16 +31,17 @@ final class StorageProviderImpl: StorageProvider {
 		}
 		context = container.viewContext
 	}
-	
+
 	func fetch<T>() -> T {
 		let fetchRequest: NSFetchRequest<TaskItem> = TaskItem.fetchRequest()
 		fetchRequest.sortDescriptors = [
 			NSSortDescriptor(key: "cd_dueDate", ascending: true),
 			NSSortDescriptor(key: "cd_name", ascending: true)
 		]
+		// swiftlint:disable force_cast
 		return loadTasksAndHandleError(from: fetchRequest) as! T
 	}
-	
+
 	func loadTasksAndHandleError(from request: NSFetchRequest<TaskItem>) -> [TaskItem] {
 		do {
 			return try context.fetch(request)
@@ -49,8 +50,8 @@ final class StorageProviderImpl: StorageProvider {
 			return [TaskItem]()
 		}
 	}
-	
-	func saveAndHandleError() -> Void {
+
+	func saveAndHandleError() {
 		do {
 			if context.hasChanges {
 				try context.save()

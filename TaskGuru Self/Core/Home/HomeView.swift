@@ -9,11 +9,11 @@ import SwiftUI
 
 struct HomeView: View {
 	@StateObject var vm: ViewModel
-	
+
 	init(vm: HomeView.ViewModel = .init()) {
 		_vm = StateObject(wrappedValue: vm)
 	}
-	
+
 	var body: some View {
 		NavigationView {
 			ZStack {
@@ -26,7 +26,7 @@ struct HomeView: View {
 						} else {
 							// status-based
 							pendingSection
-							
+
 							timeBasedSections
 						}
 					}
@@ -50,9 +50,9 @@ struct HomeView: View {
 extension HomeView {
 	@ViewBuilder
 	private var emptyTaskText: some View {
-		
+
 		let emptyTaskListSentence: LocalizedStringKey = "Nothing yet. Tap here or \(SFSymbols.plusCircled) to add more"
-		
+
 		HStack {
 			Spacer()
 			Text(emptyTaskListSentence)
@@ -62,7 +62,7 @@ extension HomeView {
 		}
 		.onTapGesture { vm.isShowingAddTaskView.toggle() }
 	}
-	
+
 	private var pendingSection: some View {
 		Section {
 			ForEach(vm.searchResults.filter { $0.status != .done }) { task in
@@ -79,8 +79,7 @@ extension HomeView {
 		}
 		.headerProminence(.increased)
 	}
-	
-	
+
 	private var timeBasedSections: some View {
 		Section {
 			overdueSection
@@ -91,7 +90,7 @@ extension HomeView {
 		}
 		.headerProminence(.increased)
 	}
-	
+
 	private var overdueSection: some View {
 		Section {
 			ForEach(vm.searchResults.filter { $0.dueDate.isPastToday }) { task in
@@ -107,7 +106,7 @@ extension HomeView {
 				.foregroundColor(.red)
 		}
 	}
-	
+
 	private var dueTodaySection: some View {
 		Section {
 			ForEach(vm.searchResults.filter { $0.dueDate.isWithinToday }) { task in
@@ -123,7 +122,7 @@ extension HomeView {
 			.foregroundColor(.orange)
 		}
 	}
-	
+
 	private var upcomingSection: some View {
 		Section {
 			ForEach(vm.searchResults.filter { $0.dueDate.isInTheFuture }) { task in
@@ -139,7 +138,7 @@ extension HomeView {
 			.foregroundColor(.mint)
 		}
 	}
-	
+
 	private var addTaskButton: some View {
 		Button {
 			vm.isShowingAddTaskView.toggle()

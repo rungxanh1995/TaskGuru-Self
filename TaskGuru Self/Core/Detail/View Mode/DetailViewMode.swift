@@ -11,22 +11,22 @@ extension DetailView {
 	struct ViewMode: View {
 		@ObservedObject
 		var vm: DetailView.ViewModel
-		
+
 		@Environment(\.dismiss) var dismissThisView
-				
+
 		@State
 		private var isShowingEdit: Bool = false
-		
+
 		@State
 		private var isMarkingAsDone: Bool = false
-				
+
 		@State
 		private var isDeletingTask: Bool = false
-		
+
 		private let columns = [
 			GridItem(.adaptive(minimum: 150.0, maximum: 200.0))
 		]
-		
+
 		var body: some View {
 			ScrollView {
 				VStack(spacing: 8) {
@@ -36,14 +36,14 @@ extension DetailView {
 						DetailGridCell(title: vm.task.numericDueDate, caption: "Due date", titleColor: vm.task.colorForDueDate())
 						DetailGridCell(title: vm.task.type.rawValue, caption: "Type")
 					}
-					
+
 					if vm.task.notes.isEmpty == false {
 						DetailGridCell(title: vm.task.notes, caption: "Notes")
 					}
-					
+
 				}
 				.padding([.horizontal, .bottom])
-				
+
 				Text("Last updated on 2023-01-29")
 					.font(.system(.caption, design: .rounded))
 					.foregroundColor(.secondary)
@@ -51,6 +51,7 @@ extension DetailView {
 			.navigationTitle("Task Detail")
 			.navigationBarTitleDisplayMode(.inline)
 			.toolbar {
+				// swiftlint:disable multiple_closures_with_trailing_closure
 				if vm.taskIsNewOrInProgress {
 					ToolbarItemGroup(placement: .primaryAction) {
 						Button(action: {isMarkingAsDone.toggle()}) {
@@ -58,7 +59,7 @@ extension DetailView {
 						}
 					}
 				}
-				
+
 				ToolbarItemGroup(placement: .secondaryAction) {
 					Button(action: {
 						isShowingEdit.toggle()
@@ -66,7 +67,7 @@ extension DetailView {
 					}) {
 						Label("Edit", systemImage: "square.and.pencil")
 					}
-					
+
 					Button(action: {
 						isDeletingTask.toggle()
 						haptic(.warning)

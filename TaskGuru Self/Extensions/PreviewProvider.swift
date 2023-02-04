@@ -14,11 +14,12 @@ extension PreviewProvider {
 final class DeveloperPreview {
 	static let instance: DeveloperPreview = .init()
 	private init() {}
-	
+
 	let homeVM: HomeView.ViewModel = .init()
 	let task: TaskItem = makeSampleTask()
-	
+
 	fileprivate static func makeSampleTask() -> TaskItem {
+		// swiftlint:disable line_length
 		let task: TaskItem = TaskItem(context: StorageProviderImpl.standard.context)
 		task.id = UUID()
 		task.name = "Group project presentation"
@@ -26,7 +27,7 @@ final class DeveloperPreview {
 		task.status = .inProgress
 		task.dueDate = .now
 		task.notes = "An advanced ToDo application with several types of tasks and ability to create new tasks and new kinds of tasks."
-		
+
 		return task
 	}
 }

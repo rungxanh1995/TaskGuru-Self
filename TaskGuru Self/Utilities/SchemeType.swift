@@ -17,9 +17,9 @@ enum SchemeType: Int, Identifiable, CaseIterable {
 extension SchemeType {
 	var title: String {
 		switch self {
-			case .system: return "System"
-			case .light: return "Light"
-			case .dark: return "Dark"
+		case .system: return "System"
+		case .light: return "Light"
+		case .dark: return "Dark"
 		}
 	}
 }

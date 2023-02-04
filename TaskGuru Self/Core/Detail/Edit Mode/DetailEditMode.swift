@@ -9,34 +9,35 @@ import SwiftUI
 
 extension DetailView {
 	struct EditMode: View {
+		// swiftlint:disable nesting
 		internal enum FocusField { case name, notes }
-		
+
 		@FocusState
 		private var focusField: FocusField?
-		
+
 		@Environment(\.dismiss) var dismissThisView
-		
+
 		@ObservedObject
 		var vm: DetailView.ViewModel
-		
+
 		var body: some View {
 			NavigationView {
 				Form {
 					Section {
 						TextField("Name", text: $vm.taskName)
 							.focused($focusField, equals: .name)
-						
+
 						DatePicker("Due Date", selection: $vm.taskDueDate,
 								   in: TaskConstants.dateRangeFromToday,
 								   displayedComponents: .date
 						)
-						
+
 						Picker("Type", selection: $vm.taskType) {
 							ForEach(TaskConstants.allTypes, id: \.self) {
 								Text($0.rawValue)
 							}
 						}
-						
+
 						Picker("Status", selection: $vm.taskStatus) {
 							ForEach(TaskConstants.allStatuses, id: \.self) {
 								Text($0.rawValue)
@@ -48,7 +49,7 @@ extension DetailView {
 							Text("General")
 						}
 					}
-					
+
 					Section {
 						TextField("Notes", text: $vm.taskNotes, prompt: Text("Any extra notes..."), axis: .vertical)
 							.focused($focusField, equals: .notes)
@@ -69,7 +70,7 @@ extension DetailView {
 							dismissThisView()
 						}
 					}
-					
+
 					ToolbarItem(placement: .navigationBarTrailing) {
 						Button("Save") {
 							didTapSaveButton()
@@ -79,8 +80,8 @@ extension DetailView {
 				}
 			}
 		}
-		
-		private func didTapSaveButton() -> Void {
+
+		private func didTapSaveButton() {
 			vm.updateTask()
 			haptic(.success)
 			dismissThisView()

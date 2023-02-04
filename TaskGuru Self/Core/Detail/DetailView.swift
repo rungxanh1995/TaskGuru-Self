@@ -10,7 +10,7 @@ import SwiftUI
 struct DetailView: View {
 	@ObservedObject
 	var vm: DetailView.ViewModel
-	
+
     var body: some View {
 		DetailView.ViewMode(vm: vm)
     }

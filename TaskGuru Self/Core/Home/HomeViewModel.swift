@@ -9,13 +9,13 @@ import Foundation
 
 extension HomeView {
 	final class ViewModel: ObservableObject {
-		
+
 		@Published
 		private(set) var allTasks: [TaskItem] = .init()
-		
+
 		@Published
 		var searchText = ""
-		
+
 		var searchResults: [TaskItem] {
 			if searchText.isEmpty {
 				return allTasks
@@ -29,27 +29,27 @@ extension HomeView {
 				}
 			}
 		}
-		
+
 		@Published
 		var isShowingAddTaskView: Bool = false
-		
+
 		@Published
 		var isFetchingData: Bool = false
-		
+
 		private let storageProvider: StorageProvider
-		
+
 		init(storageProvider: StorageProvider = StorageProviderImpl.standard) {
 			self.storageProvider = storageProvider
 			fetchTasks()
 		}
-		
+
 		func fetchTasks() {
 			isFetchingData = true
 			defer {
 				print("Finished fetching cached data")
 				isFetchingData = false
 			}
-			
+
 			print("Fetching cached tasks from Core Data")
 			self.allTasks = self.storageProvider.fetch()
 		}

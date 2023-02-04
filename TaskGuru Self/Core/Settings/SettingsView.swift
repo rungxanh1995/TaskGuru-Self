@@ -10,11 +10,11 @@ import SwiftUI
 struct SettingsView: View {
 	@StateObject
 	private var vm: ViewModel
-	
+
 	init(vm: SettingsView.ViewModel = .init()) {
 		_vm = StateObject(wrappedValue: vm)
 	}
-	
+
 	var body: some View {
 		NavigationView {
 			Form {
@@ -50,7 +50,7 @@ private extension SettingsView {
 			}
 		}
 	}
-	
+
 	private var haptics: some View {
 		Toggle(
 			"Enable Haptics",
@@ -58,7 +58,7 @@ private extension SettingsView {
 		)
 		.tint(.accentColor)
 	}
-	
+
 	private var appTheme: some View {
 		Picker("Color Theme", selection: $vm.systemTheme) {
 			ForEach(SchemeType.allCases) { (theme) in
@@ -67,7 +67,7 @@ private extension SettingsView {
 			}
 		}
 	}
-	
+
 	private var advancedSection: some View {
 		Section {
 			resetAppButton
@@ -80,30 +80,30 @@ private extension SettingsView {
 			Text("Be careful, this removes all your data! Restart the app to see all changes")
 		}
 	}
-	
+
 	private var resetAppButton: some View {
 		Button("Reset to Original", role: .destructive) {
 			vm.isConfirmingResetData.toggle()
 		}
 	}
-	
+
 	private var devTeamSection: some View {
 		Section {
 			HStack {
 				SFSymbols.link
 				Link("Joe Pham", destination: vm.joeGitHubLink)
 			}
-			
+
 			HStack {
 				SFSymbols.link
 				Link("Marco Stevanella", destination: vm.marcoGitHubLink)
 			}
-			
+
 			HStack {
 				SFSymbols.link
 				Link("Ostap Sulyk", destination: vm.ostapGitHubLink)
 			}
-			
+
 			HStack {
 				SFSymbols.link
 				Link("Rauf Anata", destination: vm.raufGitHubLink)
