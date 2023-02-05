@@ -72,6 +72,7 @@ struct AddTask: View {
 				}
 			}
 		}
+		.interactiveDismissDisabled()
     }
 }
 

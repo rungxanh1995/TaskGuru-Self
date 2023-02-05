@@ -15,7 +15,8 @@ struct DetailView: View {
 	@State private var isDeletingTask: Bool = false
 	
 	private let columns = [
-		GridItem(.adaptive(minimum: 150.0, maximum: 200.0))
+		GridItem(.flexible(minimum: 150.0, maximum: 200.0)),
+		GridItem(.flexible(minimum: 150.0, maximum: 200.0))
 	]
 	
     var body: some View {
@@ -32,11 +33,12 @@ struct DetailView: View {
 					DetailGridCell(title: task.notes, caption: "Notes")
 				}
 			}
-			.padding([.horizontal, .bottom])
+			.padding()
 			
 			Text("Last updated on 2023-01-29")
 				.font(.system(.caption))
 				.foregroundColor(.secondary)
+				.padding([.bottom])
 		}
 		.navigationTitle("Task Detail")
 		.navigationBarTitleDisplayMode(.inline)

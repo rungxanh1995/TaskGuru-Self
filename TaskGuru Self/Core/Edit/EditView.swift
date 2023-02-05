@@ -72,6 +72,7 @@ struct EditView: View {
 				}
 			}
 		}
+		.interactiveDismissDisabled()
     }
 }
 

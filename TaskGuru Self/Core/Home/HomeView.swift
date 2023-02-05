@@ -9,11 +9,10 @@ import SwiftUI
 
 struct HomeView: View {
 	
-	@State
-	private var isShowingAddTask: Bool = false
-	
-	@State
-	private var searchText: String = ""
+	@State private var isShowingAddTask: Bool = false
+	@State private var selectedTask: TaskItem?
+
+	@State private var searchText: String = ""
 	
     var body: some View {
 		NavigationView {
@@ -31,6 +30,9 @@ struct HomeView: View {
 			.sheet(isPresented: $isShowingAddTask) {
 				AddTask()
 			}
+			.fullScreenCover(item: $selectedTask) { _ in
+				EditView()
+			}
 		}
     }
 }
@@ -44,6 +46,28 @@ extension HomeView {
 				} label: {
 					HomeListCell(task: task)
 				}
+				.contextMenu {
+					if task.status != .done {
+						Button {} label: {
+							Label("Mark as Done", systemImage: "checkmark")
+						}
+					}
+					Button { selectedTask = task } label: {
+						Label("Edit", systemImage: "square.and.pencil")
+					}
+					Divider()
+					
+					Menu {
+						Button(role: .cancel) {} label: {
+							Label("Cancel", systemImage: "xmark")
+						}
+						Button(role: .destructive) {} label: {
+							Label("Delete", systemImage: "trash")
+						}
+					} label: {
+						Label("Delete", systemImage: "trash")
+					}
+				} preview: { DetailView(task: task) }
 			}
 		} header: {
 			Text("Pending Tasks")
@@ -72,6 +96,28 @@ extension HomeView {
 				} label: {
 					HomeListCell(task: task)
 				}
+				.contextMenu {
+					if task.status != .done {
+						Button {} label: {
+							Label("Mark as Done", systemImage: "checkmark")
+						}
+					}
+					Button { selectedTask = task } label: {
+						Label("Edit", systemImage: "square.and.pencil")
+					}
+					Divider()
+					
+					Menu {
+						Button(role: .cancel) {} label: {
+							Label("Cancel", systemImage: "xmark")
+						}
+						Button(role: .destructive) {} label: {
+							Label("Delete", systemImage: "trash")
+						}
+					} label: {
+						Label("Delete", systemImage: "trash")
+					}
+				} preview: { DetailView(task: task) }
 			}
 		} header: {
 			Text("Overdue")
@@ -88,6 +134,28 @@ extension HomeView {
 				} label: {
 					HomeListCell(task: task)
 				}
+				.contextMenu {
+					if task.status != .done {
+						Button {} label: {
+							Label("Mark as Done", systemImage: "checkmark")
+						}
+					}
+					Button { selectedTask = task } label: {
+						Label("Edit", systemImage: "square.and.pencil")
+					}
+					Divider()
+					
+					Menu {
+						Button(role: .cancel) {} label: {
+							Label("Cancel", systemImage: "xmark")
+						}
+						Button(role: .destructive) {} label: {
+							Label("Delete", systemImage: "trash")
+						}
+					} label: {
+						Label("Delete", systemImage: "trash")
+					}
+				} preview: { DetailView(task: task) }
 			}
 		} header: {
 			Text("Due Today")
@@ -104,6 +172,28 @@ extension HomeView {
 				} label: {
 					HomeListCell(task: task)
 				}
+				.contextMenu {
+					if task.status != .done {
+						Button {} label: {
+							Label("Mark as Done", systemImage: "checkmark")
+						}
+					}
+					Button { selectedTask = task } label: {
+						Label("Edit", systemImage: "square.and.pencil")
+					}
+					Divider()
+					
+					Menu {
+						Button(role: .cancel) {} label: {
+							Label("Cancel", systemImage: "xmark")
+						}
+						Button(role: .destructive) {} label: {
+							Label("Delete", systemImage: "trash")
+						}
+					} label: {
+						Label("Delete", systemImage: "trash")
+					}
+				} preview: { DetailView(task: task) }
 			}
 		} header: {
 			Text("Upcoming")
