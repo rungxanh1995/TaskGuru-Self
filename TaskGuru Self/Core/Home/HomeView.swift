@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
 	@StateObject var vm: ViewModel
+	@State private var selectedTask: TaskItem?
 
 	init(vm: HomeView.ViewModel = .init()) {
 		_vm = StateObject(wrappedValue: vm)
@@ -40,6 +41,9 @@ struct HomeView: View {
 					.searchable(text: $vm.searchText)
 					.sheet(isPresented: $vm.isShowingAddTaskView) {
 						AddTask(vm: .init(parentVM: self.vm))
+					}
+					.fullScreenCover(item: $selectedTask) { task in
+						DetailView.EditMode(vm: .init(for: task))
 					}
 				}
 			}
@@ -76,8 +80,11 @@ extension HomeView {
 						Button { vm.markAsDone(task) } label: {
 							Label("Mark as Done", systemImage: "checkmark")
 						}
-						Divider()
 					}
+					Button { selectedTask = task } label: {
+						Label("Edit", systemImage: "square.and.pencil")
+					}
+					Divider()
 
 					Menu {
 						Button(role: .cancel) {} label: {
@@ -123,8 +130,11 @@ extension HomeView {
 						Button { vm.markAsDone(task) } label: {
 							Label("Mark as Done", systemImage: "checkmark")
 						}
-						Divider()
 					}
+					Button { selectedTask = task } label: {
+						Label("Edit", systemImage: "square.and.pencil")
+					}
+					Divider()
 
 					Menu {
 						Button(role: .cancel) {} label: {
@@ -158,8 +168,11 @@ extension HomeView {
 						Button { vm.markAsDone(task) } label: {
 							Label("Mark as Done", systemImage: "checkmark")
 						}
-						Divider()
 					}
+					Button { selectedTask = task } label: {
+						Label("Edit", systemImage: "square.and.pencil")
+					}
+					Divider()
 
 					Menu {
 						Button(role: .cancel) {} label: {
@@ -193,8 +206,11 @@ extension HomeView {
 						Button { vm.markAsDone(task) } label: {
 							Label("Mark as Done", systemImage: "checkmark")
 						}
-						Divider()
 					}
+					Button { selectedTask = task } label: {
+						Label("Edit", systemImage: "square.and.pencil")
+					}
+					Divider()
 
 					Menu {
 						Button(role: .cancel) {} label: {
