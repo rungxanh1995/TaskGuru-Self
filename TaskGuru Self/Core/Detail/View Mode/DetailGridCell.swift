@@ -15,7 +15,7 @@ struct DetailGridCell: View {
     var body: some View {
 		VStack {
 			Text(title)
-				.font(.system(.headline).bold())
+				.font(.system(.headline))
 				.multilineTextAlignment(.center)
 				.padding()
 				.foregroundColor(titleColor)

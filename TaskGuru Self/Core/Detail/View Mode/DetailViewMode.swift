@@ -24,8 +24,8 @@ extension DetailView {
 		private var isDeletingTask: Bool = false
 
 		private let columns = [
-			GridItem(.flexible(minimum: 150.0, maximum: 200.0)),
-			GridItem(.flexible(minimum: 150.0, maximum: 200.0))
+			GridItem(.flexible(minimum: 120.0, maximum: 600.0)),
+			GridItem(.flexible(minimum: 120.0, maximum: 600.0))
 		]
 
 		var body: some View {
@@ -41,7 +41,6 @@ extension DetailView {
 					if vm.task.notes.isEmpty == false {
 						DetailGridCell(title: vm.task.notes, caption: "Notes")
 					}
-
 				}
 				.padding()
 
