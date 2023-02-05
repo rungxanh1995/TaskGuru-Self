@@ -79,6 +79,7 @@ extension DetailView {
 					}
 				}
 			}
+			.interactiveDismissDisabled()
 		}
 
 		private func didTapSaveButton() {
