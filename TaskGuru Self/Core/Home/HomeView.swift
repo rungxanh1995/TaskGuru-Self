@@ -121,7 +121,7 @@ extension HomeView {
 						}
 						Divider()
 					}
-					
+
 					Menu("Delete") {
 						Button("Cancel") {}
 						Button(role: .destructive) { vm.delete(task) } label: {
@@ -152,7 +152,7 @@ extension HomeView {
 						}
 						Divider()
 					}
-					
+
 					Menu("Delete") {
 						Button("Cancel") {}
 						Button(role: .destructive) { vm.delete(task) } label: {
@@ -183,7 +183,7 @@ extension HomeView {
 						}
 						Divider()
 					}
-					
+
 					Menu("Delete") {
 						Button("Cancel") {}
 						Button(role: .destructive) { vm.delete(task) } label: {
