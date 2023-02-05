@@ -32,6 +32,7 @@ struct HomeView: View {
 						}
 					}
 					.onAppear(perform: vm.fetchTasks)
+					.onChange(of: selectedTask) { _ in vm.fetchTasks() }
 					.navigationTitle("TaskGuru")
 					.toolbar {
 						ToolbarItem(placement: .navigationBarTrailing) {
