@@ -79,11 +79,15 @@ extension HomeView {
 						Divider()
 					}
 
-					Menu("Delete") {
-						Button("Cancel") {}
+					Menu {
+						Button(role: .cancel) {} label: {
+							Label("Cancel", systemImage: "xmark")
+						}
 						Button(role: .destructive) { vm.delete(task) } label: {
 							Label("Delete", systemImage: "trash")
 						}
+					} label: {
+						Label("Delete", systemImage: "trash")
 					}
 				} preview: { DetailView(vm: .init(for: task)) }
 			}
@@ -122,11 +126,15 @@ extension HomeView {
 						Divider()
 					}
 
-					Menu("Delete") {
-						Button("Cancel") {}
+					Menu {
+						Button(role: .cancel) {} label: {
+							Label("Cancel", systemImage: "xmark")
+						}
 						Button(role: .destructive) { vm.delete(task) } label: {
 							Label("Delete", systemImage: "trash")
 						}
+					} label: {
+						Label("Delete", systemImage: "trash")
 					}
 				} preview: { DetailView(vm: .init(for: task)) }
 			}
@@ -153,11 +161,15 @@ extension HomeView {
 						Divider()
 					}
 
-					Menu("Delete") {
-						Button("Cancel") {}
+					Menu {
+						Button(role: .cancel) {} label: {
+							Label("Cancel", systemImage: "xmark")
+						}
 						Button(role: .destructive) { vm.delete(task) } label: {
 							Label("Delete", systemImage: "trash")
 						}
+					} label: {
+						Label("Delete", systemImage: "trash")
 					}
 				} preview: { DetailView(vm: .init(for: task)) }
 			}
@@ -184,11 +196,15 @@ extension HomeView {
 						Divider()
 					}
 
-					Menu("Delete") {
-						Button("Cancel") {}
+					Menu {
+						Button(role: .cancel) {} label: {
+							Label("Cancel", systemImage: "xmark")
+						}
 						Button(role: .destructive) { vm.delete(task) } label: {
 							Label("Delete", systemImage: "trash")
 						}
+					} label: {
+						Label("Delete", systemImage: "trash")
 					}
 				} preview: { DetailView(vm: .init(for: task)) }
 			}
