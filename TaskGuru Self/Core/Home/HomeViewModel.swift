@@ -53,5 +53,23 @@ extension HomeView {
 			print("Fetching cached tasks from Core Data")
 			self.allTasks = self.storageProvider.fetch()
 		}
+
+		func delete(_ task: TaskItem) {
+			storageProvider.context.delete(task)
+			saveAndHandleError()
+			fetchTasks()
+			haptic(.success)
+		}
+
+		private func saveAndHandleError() {
+			storageProvider.saveAndHandleError()
+		}
+
+		func markAsDone(_ task: TaskItem) {
+			task.status = .done
+			saveAndHandleError()
+			fetchTasks()
+			haptic(.success)
+		}
 	}
 }

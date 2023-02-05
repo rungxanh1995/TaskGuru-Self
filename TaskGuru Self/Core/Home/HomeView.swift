@@ -71,6 +71,21 @@ extension HomeView {
 				} label: {
 					HomeListCell(task: task)
 				}
+				.contextMenu {
+					if task.status != .done {
+						Button { vm.markAsDone(task) } label: {
+							Label("Mark as Done", systemImage: "checkmark")
+						}
+						Divider()
+					}
+
+					Menu("Delete") {
+						Button("Cancel") {}
+						Button(role: .destructive) { vm.delete(task) } label: {
+							Label("Delete", systemImage: "trash")
+						}
+					}
+				} preview: { DetailView(vm: .init(for: task)) }
 			}
 		} header: {
 			Text("Pending Tasks")
@@ -99,6 +114,21 @@ extension HomeView {
 				} label: {
 					HomeListCell(task: task)
 				}
+				.contextMenu {
+					if task.status != .done {
+						Button { vm.markAsDone(task) } label: {
+							Label("Mark as Done", systemImage: "checkmark")
+						}
+						Divider()
+					}
+					
+					Menu("Delete") {
+						Button("Cancel") {}
+						Button(role: .destructive) { vm.delete(task) } label: {
+							Label("Delete", systemImage: "trash")
+						}
+					}
+				} preview: { DetailView(vm: .init(for: task)) }
 			}
 		} header: {
 			Text("Overdue")
@@ -115,6 +145,21 @@ extension HomeView {
 				} label: {
 					HomeListCell(task: task)
 				}
+				.contextMenu {
+					if task.status != .done {
+						Button { vm.markAsDone(task) } label: {
+							Label("Mark as Done", systemImage: "checkmark")
+						}
+						Divider()
+					}
+					
+					Menu("Delete") {
+						Button("Cancel") {}
+						Button(role: .destructive) { vm.delete(task) } label: {
+							Label("Delete", systemImage: "trash")
+						}
+					}
+				} preview: { DetailView(vm: .init(for: task)) }
 			}
 		} header: {
 			Text("Due Today")
@@ -131,6 +176,21 @@ extension HomeView {
 				} label: {
 					HomeListCell(task: task)
 				}
+				.contextMenu {
+					if task.status != .done {
+						Button { vm.markAsDone(task) } label: {
+							Label("Mark as Done", systemImage: "checkmark")
+						}
+						Divider()
+					}
+					
+					Menu("Delete") {
+						Button("Cancel") {}
+						Button(role: .destructive) { vm.delete(task) } label: {
+							Label("Delete", systemImage: "trash")
+						}
+					}
+				} preview: { DetailView(vm: .init(for: task)) }
 			}
 		} header: {
 			Text("Upcoming")
