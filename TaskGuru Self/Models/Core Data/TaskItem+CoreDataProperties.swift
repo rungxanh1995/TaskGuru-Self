@@ -80,6 +80,8 @@ extension TaskItem: Identifiable {
 		}
 	}
 
+	var isNotDone: Bool { status != .done }
+
 	var notes: String {
 		get { cd_notes ?? "" }
 		set {

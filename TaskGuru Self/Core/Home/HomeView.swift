@@ -69,14 +69,14 @@ extension HomeView {
 
 	private var pendingSection: some View {
 		Section {
-			ForEach(vm.searchResults.filter { $0.status != .done }) { task in
+			ForEach(vm.searchResults.filter { $0.isNotDone }) { task in
 				NavigationLink {
 					DetailView(vm: .init(for: task))
 				} label: {
 					HomeListCell(task: task)
 				}
 				.contextMenu {
-					if task.status != .done {
+					if task.isNotDone {
 						Button { vm.markAsDone(task) } label: {
 							Label("Mark as Done", systemImage: "checkmark")
 						}
@@ -126,7 +126,7 @@ extension HomeView {
 					HomeListCell(task: task)
 				}
 				.contextMenu {
-					if task.status != .done {
+					if task.isNotDone {
 						Button { vm.markAsDone(task) } label: {
 							Label("Mark as Done", systemImage: "checkmark")
 						}
@@ -164,7 +164,7 @@ extension HomeView {
 					HomeListCell(task: task)
 				}
 				.contextMenu {
-					if task.status != .done {
+					if task.isNotDone {
 						Button { vm.markAsDone(task) } label: {
 							Label("Mark as Done", systemImage: "checkmark")
 						}
@@ -202,7 +202,7 @@ extension HomeView {
 					HomeListCell(task: task)
 				}
 				.contextMenu {
-					if task.status != .done {
+					if task.isNotDone {
 						Button { vm.markAsDone(task) } label: {
 							Label("Mark as Done", systemImage: "checkmark")
 						}
