@@ -16,15 +16,15 @@ struct AddTask: View {
 	@State private var statusSelected: TaskStatus = .new
 	@State private var taskNotes = ""
 	
-    var body: some View {
+	var body: some View {
 		NavigationView {
 			Form {
 				Section {
 					TextField("Name", text: $taskName)
 					
 					DatePicker("Due Date", selection: $dueDate,
-							   in: TaskConstants.dateRangeFromToday,
-							   displayedComponents: .date
+										 in: TaskConstants.dateRangeFromToday,
+										 displayedComponents: .date
 					)
 					
 					Picker("Type", selection: $taskTypeSelected) {
@@ -73,11 +73,11 @@ struct AddTask: View {
 			}
 		}
 		.interactiveDismissDisabled()
-    }
+	}
 }
 
 struct AddTask_Previews: PreviewProvider {
-    static var previews: some View {
-        AddTask()
-    }
+	static var previews: some View {
+		AddTask()
+	}
 }

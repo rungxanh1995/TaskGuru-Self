@@ -15,7 +15,7 @@ struct SettingsView: View {
 	
 	@State private var isConfirmingResetData = false
 	
-    var body: some View {
+	var body: some View {
 		NavigationView {
 			Form {
 				generalSection
@@ -32,7 +32,7 @@ struct SettingsView: View {
 				Button("Cancel", role: .cancel) {}
 			}
 		}
-    }
+	}
 }
 
 private extension SettingsView {
@@ -113,7 +113,7 @@ private extension SettingsView {
 }
 
 struct SettingsView_Previews: PreviewProvider {
-    static var previews: some View {
-        SettingsView()
-    }
+	static var previews: some View {
+		SettingsView()
+	}
 }

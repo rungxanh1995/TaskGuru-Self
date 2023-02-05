@@ -40,10 +40,10 @@ extension HomeListCell {
 		HStack(spacing: 4) {
 			Group {
 				switch task.type {
-					case .personal: SFSymbols.personFilled
-					case .work: SFSymbols.buildingFilled
-					case .school: SFSymbols.graduationCapFilled
-					default: SFSymbols.listFilled
+				case .personal: SFSymbols.personFilled
+				case .work: SFSymbols.buildingFilled
+				case .school: SFSymbols.graduationCapFilled
+				default: SFSymbols.listFilled
 				}
 			}
 			.font(.system(.caption2))

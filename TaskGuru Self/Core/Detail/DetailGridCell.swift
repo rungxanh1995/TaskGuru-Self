@@ -12,7 +12,7 @@ struct DetailGridCell: View {
 	let caption: LocalizedStringKey
 	var titleColor: Color = .primary
 	
-    var body: some View {
+	var body: some View {
 		VStack {
 			Text(title)
 				.font(.system(.headline))
@@ -32,11 +32,11 @@ struct DetailGridCell: View {
 		.background(.thinMaterial)
 		.clipShape(RoundedRectangle(cornerRadius: 8))
 		
-    }
+	}
 }
 
 struct DetailGridCell_Previews: PreviewProvider {
-    static var previews: some View {
-        DetailGridCell(title: "Todo name", caption: "Name")
-    }
+	static var previews: some View {
+		DetailGridCell(title: "Todo name", caption: "Name")
+	}
 }

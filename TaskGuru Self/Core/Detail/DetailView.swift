@@ -19,7 +19,7 @@ struct DetailView: View {
 		GridItem(.flexible(minimum: 120.0, maximum: 600.0))
 	]
 	
-    var body: some View {
+	var body: some View {
 		ScrollView {
 			VStack(spacing: 8) {
 				LazyVGrid(columns: columns) {
@@ -76,13 +76,13 @@ struct DetailView: View {
 		.sheet(isPresented: $isShowingEdit) {
 			EditView()
 		}
-    }
+	}
 }
 
 struct DetailView_Previews: PreviewProvider {
-    static var previews: some View {
+	static var previews: some View {
 		NavigationView {
 			DetailView(task: TaskItem.mockData.first!)
 		}
-    }
+	}
 }

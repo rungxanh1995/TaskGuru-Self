@@ -11,10 +11,10 @@ struct HomeView: View {
 	
 	@State private var isShowingAddTask: Bool = false
 	@State private var selectedTask: TaskItem?
-
+	
 	@State private var searchText: String = ""
 	
-    var body: some View {
+	var body: some View {
 		NavigationView {
 			List {
 				// status-based
@@ -34,7 +34,7 @@ struct HomeView: View {
 				EditView()
 			}
 		}
-    }
+	}
 }
 
 extension HomeView {
@@ -159,8 +159,8 @@ extension HomeView {
 			}
 		} header: {
 			Text("Due Today")
-			.bold()
-			.foregroundColor(.orange)
+				.bold()
+				.foregroundColor(.orange)
 		}
 	}
 	
@@ -197,8 +197,8 @@ extension HomeView {
 			}
 		} header: {
 			Text("Upcoming")
-			.bold()
-			.foregroundColor(.mint)
+				.bold()
+				.foregroundColor(.mint)
 		}
 	}
 	
@@ -212,7 +212,7 @@ extension HomeView {
 }
 
 struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView()
-    }
+	static var previews: some View {
+		HomeView()
+	}
 }

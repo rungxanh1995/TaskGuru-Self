@@ -16,15 +16,15 @@ struct EditView: View {
 	@State private var taskStatusSelected = TaskStatus.inProgress
 	@State private var taskNotes = ""
 	
-    var body: some View {
+	var body: some View {
 		NavigationView {
 			Form {
 				Section {
 					TextField("Name", text: $taskName)
 					
 					DatePicker("Due Date", selection: $taskDueDate,
-							   in: TaskConstants.dateRangeFromToday,
-							   displayedComponents: .date
+										 in: TaskConstants.dateRangeFromToday,
+										 displayedComponents: .date
 					)
 					
 					Picker("Type", selection: $taskTypeSelected) {
@@ -73,11 +73,11 @@ struct EditView: View {
 			}
 		}
 		.interactiveDismissDisabled()
-    }
+	}
 }
 
 struct EditView_Previews: PreviewProvider {
-    static var previews: some View {
-        EditView()
-    }
+	static var previews: some View {
+		EditView()
+	}
 }
