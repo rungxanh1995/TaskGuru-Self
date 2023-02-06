@@ -73,18 +73,27 @@ extension HomeView {
 
 	private var pendingSection: some View {
 		Section {
-			ForEach(vm.searchResults.filter { $0.isNotDone }) { task in
-				NavigationLink(value: task) {
-					HomeListCell(task: task)
+			if vm.noPendingTasksLeft {
+				makeCheerfulDecorativeImage()
+					.grayscale(1.0)
+			} else {
+				ForEach(vm.searchResults.filter { $0.isNotDone }) { task in
+					NavigationLink(value: task) {
+						HomeListCell(task: task)
+					}
+					.contextMenu {
+						makeContextMenu(for: task)
+					} preview: { DetailView(vm: .init(for: task)) }
 				}
-				.contextMenu {
-					makeContextMenu(for: task)
-				} preview: { DetailView(vm: .init(for: task)) }
 			}
 		} header: {
 			Text("Pending Tasks")
 		} footer: {
-			Text("Don't stress yourself too much. You got it 💪")
+			if vm.noPendingTasksLeft {
+				Text("You're free! Enjoy your much deserved time 🥳")
+			} else {
+				Text("Don't stress yourself too much. You got it 💪")
+			}
 		}
 		.headerProminence(.increased)
 	}
