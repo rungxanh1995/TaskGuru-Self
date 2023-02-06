@@ -47,7 +47,7 @@ extension DetailView {
 			.navigationTitle("Task Detail")
 			.navigationBarTitleDisplayMode(.inline)
 			.toolbar {
-				if vm.taskIsNewOrInProgress {
+				if vm.task.isNotDone {
 					ToolbarItemGroup(placement: .primaryAction) {
 						Button(action: {isMarkingAsDone.toggle()}) {
 							Label("Mark as Done", systemImage: "checkmark")
@@ -60,7 +60,10 @@ extension DetailView {
 						Label("Edit", systemImage: "square.and.pencil")
 					}
 					
-					Button(action: { isDeletingTask.toggle() }) {
+					Button(action: {
+						isDeletingTask.toggle()
+						haptic(.warning)
+					}) {
 						Label("Delete", systemImage: "trash")
 					}
 				}
@@ -70,6 +73,7 @@ extension DetailView {
 				Button("OK", action: {
 					vm.markTaskAsDone()
 					dismissThisView()
+					haptic(.success)
 				})
 			})
 			.alert("Delete Task?", isPresented: $isDeletingTask, actions: {
@@ -77,6 +81,7 @@ extension DetailView {
 				Button("OK", action: {
 					vm.deleteTask()
 					dismissThisView()
+					haptic(.success)
 				})
 			})
 			.sheet(isPresented: $isShowingEdit) {

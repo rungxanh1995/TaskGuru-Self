@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HomeListCell: View {
-	let task: TaskItem
+	var task: TaskItem
 	
 	var body: some View {
 		HStack(alignment: .top) {

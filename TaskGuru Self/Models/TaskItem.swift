@@ -23,7 +23,7 @@ struct TaskItem: Identifiable {
 	}
 	
 	var shortDueDate: String {
-		dueDate.formatted(date: .abbreviated, time: .omitted)
+		dueDate.formatted(.dateTime.day().month())
 	}
 	
 	var lastUpdated: Date
@@ -40,9 +40,15 @@ struct TaskItem: Identifiable {
 		didSet { lastUpdated = .now }
 	}
 	
+	var isNotDone: Bool { status != .done }
+	
 	var notes: String  {
 		didSet { lastUpdated = .now }
 	}
+}
+
+extension TaskItem: Hashable {
+	func hash(into hasher: inout Hasher) { hasher.combine(id) }
 }
 
 extension TaskItem {
@@ -77,7 +83,7 @@ extension TaskItem {
 	func colorForDueDate() -> Color {
 		if dueDate.isWithinToday {
 			return Color.orange
-		} else if dueDate > Date.now {
+		} else if dueDate.isInTheFuture {
 			return Color.mint
 		} else {
 			return Color.red

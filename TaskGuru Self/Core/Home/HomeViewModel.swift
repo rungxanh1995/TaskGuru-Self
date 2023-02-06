@@ -51,5 +51,18 @@ extension HomeView {
 		fileprivate func getIndex(of item: TaskItem) -> Int? {
 			return allTasks.firstIndex { $0.id == item.id }
 		}
+		
+		func delete(_ task: TaskItem) {
+			guard let index = getIndex(of: task) else { return }
+			allTasks.remove(at: index)
+			haptic(.success)
+		}
+		
+		func markAsDone(_ task: TaskItem) {
+			// TODO: mark task as done in final implementation stage
+			// Unable to do now, as `TaskItem` is a struct, and a mutating func
+			// couldn't modify its `status` property either.
+			haptic(.success)
+		}
 	}
 }

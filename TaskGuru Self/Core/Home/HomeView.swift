@@ -9,13 +9,14 @@ import SwiftUI
 
 struct HomeView: View {
 	@StateObject var vm: ViewModel
+	@State private var selectedTask: TaskItem?
 	
 	init(vm: HomeView.ViewModel = .init()) {
 		_vm = StateObject(wrappedValue: vm)
 	}
 	
 	var body: some View {
-		NavigationView {
+		NavigationStack {
 			List {
 				if vm.allTasks.isEmpty {
 					emptyTaskText
@@ -24,6 +25,13 @@ struct HomeView: View {
 					timeBasedSections
 				}
 			}
+			.onChange(of: selectedTask) { _ in
+				guard let selectedTask else { return }
+				vm.updateTasks(with: selectedTask)
+			}
+			.navigationDestination(for: TaskItem.self) { task in
+				DetailView(vm: .init(for: task, parentVM: vm))
+			}
 			.navigationTitle("TaskGuru")
 			.toolbar {
 				addTaskButton
@@ -31,6 +39,9 @@ struct HomeView: View {
 			.searchable(text: $vm.searchText)
 			.sheet(isPresented: $vm.isShowingAddTaskView) {
 				AddTask(vm: .init(parentVM: self.vm))
+			}
+			.fullScreenCover(item: $selectedTask) { task in
+				DetailView.EditMode(vm: .init(for: task, parentVM: vm))
 			}
 		}
 	}
@@ -54,11 +65,14 @@ extension HomeView {
 	
 	private var pendingSection: some View {
 		Section {
-			ForEach(vm.searchResults.filter { $0.status != .done }) { task in
-				NavigationLink {
-					DetailView(vm: .init(for: task, parentVM: vm))
-				} label: {
+			ForEach(vm.searchResults.filter { $0.isNotDone }) { task in
+				NavigationLink(value: task) {
 					HomeListCell(task: task)
+				}
+				.contextMenu {
+					makeContextMenu(for: task)
+				} preview: {
+					DetailView(vm: .init(for: task, parentVM: vm))
 				}
 			}
 		} header: {
@@ -83,10 +97,13 @@ extension HomeView {
 	private var overdueSection: some View {
 		Section {
 			ForEach(vm.searchResults.filter { $0.dueDate.isPastToday }) { task in
-				NavigationLink {
-					DetailView(vm: .init(for: task, parentVM: vm))
-				} label: {
+				NavigationLink(value: task) {
 					HomeListCell(task: task)
+				}
+				.contextMenu {
+					makeContextMenu(for: task)
+				} preview: {
+					DetailView(vm: .init(for: task, parentVM: vm))
 				}
 			}
 		} header: {
@@ -99,10 +116,13 @@ extension HomeView {
 	private var dueTodaySection: some View {
 		Section {
 			ForEach(vm.searchResults.filter { $0.dueDate.isWithinToday }) { task in
-				NavigationLink {
-					DetailView(vm: .init(for: task, parentVM: vm))
-				} label: {
+				NavigationLink(value: task) {
 					HomeListCell(task: task)
+				}
+				.contextMenu {
+					makeContextMenu(for: task)
+				} preview: {
+					DetailView(vm: .init(for: task, parentVM: vm))
 				}
 			}
 		} header: {
@@ -115,16 +135,47 @@ extension HomeView {
 	private var upcomingSection: some View {
 		Section {
 			ForEach(vm.searchResults.filter { $0.dueDate.isInTheFuture }) { task in
-				NavigationLink {
-					DetailView(vm: .init(for: task, parentVM: vm))
-				} label: {
+				NavigationLink(value: task) {
 					HomeListCell(task: task)
+				}
+				.contextMenu {
+					makeContextMenu(for: task)
+				} preview: {
+					DetailView(vm: .init(for: task, parentVM: vm))
 				}
 			}
 		} header: {
 			Text("Upcoming")
 			.bold()
 			.foregroundColor(.mint)
+		}
+	}
+	
+	@ViewBuilder
+	private func makeContextMenu(for task: TaskItem) -> some View {
+		if task.isNotDone {
+			Button {
+				vm.markAsDone(task)
+			} label: {
+				Label("Mark as Done", systemImage: "checkmark")
+			}
+		}
+		Button { selectedTask = task } label: {
+			Label("Edit", systemImage: "square.and.pencil")
+		}
+		Divider()
+		
+		Menu {
+			Button(role: .cancel) {} label: {
+				Label("Cancel", systemImage: "xmark")
+			}
+			Button(role: .destructive) {
+				vm.delete(task)
+			} label: {
+				Label("Delete", systemImage: "trash")
+			}
+		} label: {
+			Label("Delete", systemImage: "trash")
 		}
 	}
 	

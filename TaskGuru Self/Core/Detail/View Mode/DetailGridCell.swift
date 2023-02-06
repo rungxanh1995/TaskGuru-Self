@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct DetailGridCell: View {
-	let title: String
-	let caption: LocalizedStringKey
+	var title: String
+	var caption: LocalizedStringKey
 	var titleColor: Color = .primary
 	
     var body: some View {
