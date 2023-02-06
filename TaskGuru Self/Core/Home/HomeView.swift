@@ -163,7 +163,9 @@ extension HomeView {
 	@ViewBuilder
 	private func makeContextMenu(for task: TaskItem) -> some View {
 		if task.isNotDone {
-			Button { vm.markAsDone(task) } label: {
+			Button {
+				withAnimation { vm.markAsDone(task) }
+			} label: {
 				Label("Mark as Done", systemImage: "checkmark")
 			}
 		}
@@ -176,7 +178,9 @@ extension HomeView {
 			Button(role: .cancel) {} label: {
 				Label("Cancel", systemImage: "xmark")
 			}
-			Button(role: .destructive) { vm.delete(task) } label: {
+			Button(role: .destructive) {
+				withAnimation { vm.delete(task) }
+			} label: {
 				Label("Delete", systemImage: "trash")
 			}
 		} label: {
