@@ -10,8 +10,8 @@ import SwiftUI
 // swiftlint:disable type_name
 @main
 struct TaskGuru_SelfApp: App {
-    var body: some Scene {
-        WindowGroup {
+	var body: some Scene {
+		WindowGroup {
 			TabView {
 				HomeView()
 					.tabItem {
@@ -25,6 +25,6 @@ struct TaskGuru_SelfApp: App {
 					}
 			}
 			.setUpColorTheme()
-        }
-    }
+		}
+	}
 }
