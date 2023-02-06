@@ -45,6 +45,10 @@ struct TaskItem: Identifiable {
 	}
 }
 
+extension TaskItem: Hashable {
+	func hash(into hasher: inout Hasher) { hasher.combine(id) }
+}
+
 extension TaskItem {
 	static let mockData: [TaskItem] = [
 		TaskItem(name: "Register schedule 🎓", dueDate: Date(timeIntervalSinceNow: -60*60*24),

@@ -15,12 +15,15 @@ struct HomeView: View {
 	@State private var searchText: String = ""
 	
 	var body: some View {
-		NavigationView {
+		NavigationStack {
 			List {
 				// status-based
 				pendingSection
 				
 				timeBasedSections
+			}
+			.navigationDestination(for: TaskItem.self) { taskItem in
+				DetailView(task: taskItem)
 			}
 			.navigationTitle("TaskGuru")
 			.toolbar {
@@ -41,9 +44,7 @@ extension HomeView {
 	private var pendingSection: some View {
 		Section {
 			ForEach(TaskItem.mockData.filter { $0.status != .done }) { task in
-				NavigationLink {
-					DetailView(task: task)
-				} label: {
+				NavigationLink(value: task) {
 					HomeListCell(task: task)
 				}
 				.contextMenu {
@@ -91,9 +92,7 @@ extension HomeView {
 	private var overdueSection: some View {
 		Section {
 			ForEach(TaskItem.mockData.filter { $0.dueDate.isPastToday }) { task in
-				NavigationLink {
-					DetailView(task: task)
-				} label: {
+				NavigationLink(value: task) {
 					HomeListCell(task: task)
 				}
 				.contextMenu {
@@ -129,9 +128,7 @@ extension HomeView {
 	private var dueTodaySection: some View {
 		Section {
 			ForEach(TaskItem.mockData.filter { $0.dueDate.isWithinToday }) { task in
-				NavigationLink {
-					DetailView(task: task)
-				} label: {
+				NavigationLink(value: task) {
 					HomeListCell(task: task)
 				}
 				.contextMenu {
@@ -167,9 +164,7 @@ extension HomeView {
 	private var upcomingSection: some View {
 		Section {
 			ForEach(TaskItem.mockData.filter { $0.dueDate.isInTheFuture }) { task in
-				NavigationLink {
-					DetailView(task: task)
-				} label: {
+				NavigationLink(value: task) {
 					HomeListCell(task: task)
 				}
 				.contextMenu {
