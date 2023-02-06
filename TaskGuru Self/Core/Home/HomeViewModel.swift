@@ -31,7 +31,7 @@ extension HomeView {
 		@Published var isShowingAddTaskView: Bool = false
 		@Published var isFetchingData: Bool = false
 
-		var noPendingTasksLeft: Bool { searchResults.filter { $0.isNotDone }.count == 0 }
+		var noPendingTasksLeft: Bool { searchResults.filter { $0.isNotDone }.isEmpty }
 
 		private let storageProvider: StorageProvider
 
