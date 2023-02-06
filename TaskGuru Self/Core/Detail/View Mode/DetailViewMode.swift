@@ -38,7 +38,7 @@ extension DetailView {
 				}
 				.padding()
 
-				Text("Last updated on 2023-01-29")
+				Text("Last updated on \(vm.task.formattedLastUpdated)")
 					.font(.system(.caption, design: .rounded))
 					.foregroundColor(.secondary)
 					.padding([.bottom])
