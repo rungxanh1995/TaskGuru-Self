@@ -17,20 +17,11 @@ extension AddTask {
 			self.storageProvider = storageProvider
 		}
 
-		@Published
-		var taskName: String = ""
-
-		@Published
-		var dueDate: Date = .now
-
-		@Published
-		var taskType: TaskType = .personal
-
-		@Published
-		var taskStatus: TaskStatus = .new
-
-		@Published
-		var taskNotes: String = ""
+		@Published var taskName: String = ""
+		@Published var dueDate: Date = .now
+		@Published var taskType: TaskType = .personal
+		@Published var taskStatus: TaskStatus = .new
+		@Published var taskNotes: String = ""
 
 		func addNewTask() {
 			addTask(name: &taskName, dueDate: dueDate, type: taskType, status: taskStatus, notes: taskNotes)

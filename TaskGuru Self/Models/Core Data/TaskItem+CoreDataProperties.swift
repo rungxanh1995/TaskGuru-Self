@@ -12,19 +12,19 @@ import SwiftUI
 
 extension TaskItem: Identifiable {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<TaskItem> {
-        return NSFetchRequest<TaskItem>(entityName: "TaskItem")
-    }
+	@nonobjc public class func fetchRequest() -> NSFetchRequest<TaskItem> {
+		return NSFetchRequest<TaskItem>(entityName: "TaskItem")
+	}
 
 	// MARK: - Raw properties managed by Core Data
 	// swiftlint:disable identifier_name
-    @NSManaged private var cd_id: UUID?
-    @NSManaged private var cd_name: String?
-    @NSManaged private var cd_dueDate: Date?
-    @NSManaged private var cd_lastUpdated: Date?
-    @NSManaged private var cd_type: String?
-    @NSManaged private var cd_status: String?
-    @NSManaged private var cd_notes: String?
+	@NSManaged private var cd_id: UUID?
+	@NSManaged private var cd_name: String?
+	@NSManaged private var cd_dueDate: Date?
+	@NSManaged private var cd_lastUpdated: Date?
+	@NSManaged private var cd_type: String?
+	@NSManaged private var cd_status: String?
+	@NSManaged private var cd_notes: String?
 
 	// MARK: - Unwrapped properties
 	public var id: UUID {

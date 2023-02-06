@@ -10,11 +10,9 @@ import Foundation
 extension HomeView {
 	final class ViewModel: ObservableObject {
 
-		@Published
-		private(set) var allTasks: [TaskItem] = .init()
+		@Published private(set) var allTasks: [TaskItem] = .init()
 
-		@Published
-		var searchText = ""
+		@Published var searchText = ""
 
 		var searchResults: [TaskItem] {
 			if searchText.isEmpty {
@@ -30,11 +28,8 @@ extension HomeView {
 			}
 		}
 
-		@Published
-		var isShowingAddTaskView: Bool = false
-
-		@Published
-		var isFetchingData: Bool = false
+		@Published var isShowingAddTaskView: Bool = false
+		@Published var isFetchingData: Bool = false
 
 		private let storageProvider: StorageProvider
 

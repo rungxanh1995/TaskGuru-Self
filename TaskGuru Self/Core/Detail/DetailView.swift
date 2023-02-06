@@ -11,13 +11,13 @@ struct DetailView: View {
 	@ObservedObject
 	var vm: DetailView.ViewModel
 
-    var body: some View {
+	var body: some View {
 		DetailView.ViewMode(vm: vm)
-    }
+	}
 }
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
 		DetailView(vm: .init(for: dev.task))
-    }
+	}
 }

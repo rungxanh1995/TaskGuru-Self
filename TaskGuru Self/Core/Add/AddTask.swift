@@ -75,7 +75,7 @@ struct AddTask: View {
 			}
 		}
 		.interactiveDismissDisabled()
-    }
+	}
 }
 
 extension AddTask {
@@ -88,5 +88,5 @@ extension AddTask {
 struct AddTask_Previews: PreviewProvider {
     static var previews: some View {
 		AddTask(vm: .init(parentVM: dev.homeVM))
-    }
+	}
 }

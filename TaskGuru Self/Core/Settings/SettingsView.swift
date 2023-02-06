@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct SettingsView: View {
-	@StateObject
-	private var vm: ViewModel
+	@StateObject private var vm: ViewModel
 
 	init(vm: SettingsView.ViewModel = .init()) {
 		_vm = StateObject(wrappedValue: vm)

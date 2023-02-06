@@ -9,19 +9,13 @@ import SwiftUI
 
 extension DetailView {
 	struct ViewMode: View {
-		@ObservedObject
-		var vm: DetailView.ViewModel
+		@ObservedObject var vm: DetailView.ViewModel
 
 		@Environment(\.dismiss) var dismissThisView
 
-		@State
-		private var isShowingEdit: Bool = false
-
-		@State
-		private var isMarkingAsDone: Bool = false
-
-		@State
-		private var isDeletingTask: Bool = false
+		@State private var isShowingEdit: Bool = false
+		@State private var isMarkingAsDone: Bool = false
+		@State private var isDeletingTask: Bool = false
 
 		private let columns = [
 			GridItem(.flexible(minimum: 120.0, maximum: 600.0)),

@@ -12,13 +12,11 @@ extension DetailView {
 		// swiftlint:disable nesting
 		internal enum FocusField { case name, notes }
 
-		@FocusState
-		private var focusField: FocusField?
+		@FocusState private var focusField: FocusField?
 
 		@Environment(\.dismiss) var dismissThisView
 
-		@ObservedObject
-		var vm: DetailView.ViewModel
+		@ObservedObject var vm: DetailView.ViewModel
 
 		var body: some View {
 			NavigationView {
