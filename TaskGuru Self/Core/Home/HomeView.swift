@@ -14,6 +14,10 @@ struct HomeView: View {
 	
 	@State private var searchText: String = ""
 	
+	var noPendingTasksLeft: Bool {
+		TaskItem.mockData.filter{ $0.isNotDone }.isEmpty
+	}
+	
 	var body: some View {
 		NavigationStack {
 			List {
@@ -43,18 +47,27 @@ struct HomeView: View {
 extension HomeView {
 	private var pendingSection: some View {
 		Section {
-			ForEach(TaskItem.mockData.filter { $0.status != .done }) { task in
-				NavigationLink(value: task) {
-					HomeListCell(task: task)
+			if noPendingTasksLeft {
+				makeCheerfulDecorativeImage()
+					.grayscale(1.0)
+			} else {
+				ForEach(TaskItem.mockData.filter { $0.status != .done }) { task in
+					NavigationLink(value: task) {
+						HomeListCell(task: task)
+					}
+					.contextMenu {
+						makeContextMenu(for: task)
+					} preview: { DetailView(task: task) }
 				}
-				.contextMenu {
-					makeContextMenu(for: task)
-				} preview: { DetailView(task: task) }
 			}
 		} header: {
 			Text("Pending Tasks")
 		} footer: {
-			Text("Don't stress yourself too much. You got it 💪")
+			if noPendingTasksLeft {
+				Text("You're free! Enjoy your much deserved time 🥳")
+			} else {
+				Text("Don't stress yourself too much. You got it 💪")
+			}
 		}
 		.headerProminence(.increased)
 	}
