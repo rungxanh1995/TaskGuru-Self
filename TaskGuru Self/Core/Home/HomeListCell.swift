@@ -15,14 +15,14 @@ struct HomeListCell: View {
 	
 	var body: some View {
 		HStack(alignment: .top) {
-			VStack(alignment: .leading, spacing: 8) {
+			VStack(alignment: .leading, spacing: 0) {
 				taskName
 				taskType
 			}
 			
 			Spacer()
 			
-			VStack(alignment: .trailing, spacing: 8) {
+			VStack(alignment: .trailing, spacing: 0) {
 				taskDueDate
 				taskStatus
 			}
