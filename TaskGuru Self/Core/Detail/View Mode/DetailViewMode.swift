@@ -13,17 +13,13 @@ extension DetailView {
 		
 		@Environment(\.dismiss) var dismissThisView
 				
-		@State
-		private var isShowingEdit: Bool = false
-		
-		@State
-		private var isMarkingAsDone: Bool = false
-				
-		@State
-		private var isDeletingTask: Bool = false
+		@State private var isShowingEdit: Bool = false
+		@State private var isMarkingAsDone: Bool = false
+		@State private var isDeletingTask: Bool = false
 		
 		private let columns = [
-			GridItem(.adaptive(minimum: 150.0, maximum: 200.0))
+			GridItem(.flexible(minimum: 120.0, maximum: 600.0)),
+			GridItem(.flexible(minimum: 120.0, maximum: 600.0))
 		]
 		
 		var body: some View {
@@ -41,11 +37,12 @@ extension DetailView {
 					}
 					
 				}
-				.padding([.horizontal, .bottom])
+				.padding()
 				
-				Text("Last updated on 2023-01-29")
+				Text("Last updated on \(vm.task.formattedLastUpdated)")
 					.font(.system(.caption, design: .rounded))
 					.foregroundColor(.secondary)
+					.padding([.bottom])
 			}
 			.navigationTitle("Task Detail")
 			.navigationBarTitleDisplayMode(.inline)

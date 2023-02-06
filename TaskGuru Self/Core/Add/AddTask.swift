@@ -74,7 +74,8 @@ struct AddTask: View {
 				}
 			}
 		}
-    }
+		.interactiveDismissDisabled()
+	}
 }
 
 extension AddTask {
