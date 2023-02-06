@@ -48,26 +48,7 @@ extension HomeView {
 					HomeListCell(task: task)
 				}
 				.contextMenu {
-					if task.status != .done {
-						Button {} label: {
-							Label("Mark as Done", systemImage: "checkmark")
-						}
-					}
-					Button { selectedTask = task } label: {
-						Label("Edit", systemImage: "square.and.pencil")
-					}
-					Divider()
-					
-					Menu {
-						Button(role: .cancel) {} label: {
-							Label("Cancel", systemImage: "xmark")
-						}
-						Button(role: .destructive) {} label: {
-							Label("Delete", systemImage: "trash")
-						}
-					} label: {
-						Label("Delete", systemImage: "trash")
-					}
+					makeContextMenu(for: task)
 				} preview: { DetailView(task: task) }
 			}
 		} header: {
@@ -96,26 +77,7 @@ extension HomeView {
 					HomeListCell(task: task)
 				}
 				.contextMenu {
-					if task.status != .done {
-						Button {} label: {
-							Label("Mark as Done", systemImage: "checkmark")
-						}
-					}
-					Button { selectedTask = task } label: {
-						Label("Edit", systemImage: "square.and.pencil")
-					}
-					Divider()
-					
-					Menu {
-						Button(role: .cancel) {} label: {
-							Label("Cancel", systemImage: "xmark")
-						}
-						Button(role: .destructive) {} label: {
-							Label("Delete", systemImage: "trash")
-						}
-					} label: {
-						Label("Delete", systemImage: "trash")
-					}
+					makeContextMenu(for: task)
 				} preview: { DetailView(task: task) }
 			}
 		} header: {
@@ -132,26 +94,7 @@ extension HomeView {
 					HomeListCell(task: task)
 				}
 				.contextMenu {
-					if task.status != .done {
-						Button {} label: {
-							Label("Mark as Done", systemImage: "checkmark")
-						}
-					}
-					Button { selectedTask = task } label: {
-						Label("Edit", systemImage: "square.and.pencil")
-					}
-					Divider()
-					
-					Menu {
-						Button(role: .cancel) {} label: {
-							Label("Cancel", systemImage: "xmark")
-						}
-						Button(role: .destructive) {} label: {
-							Label("Delete", systemImage: "trash")
-						}
-					} label: {
-						Label("Delete", systemImage: "trash")
-					}
+					makeContextMenu(for: task)
 				} preview: { DetailView(task: task) }
 			}
 		} header: {
@@ -168,32 +111,41 @@ extension HomeView {
 					HomeListCell(task: task)
 				}
 				.contextMenu {
-					if task.status != .done {
-						Button {} label: {
-							Label("Mark as Done", systemImage: "checkmark")
-						}
-					}
-					Button { selectedTask = task } label: {
-						Label("Edit", systemImage: "square.and.pencil")
-					}
-					Divider()
-					
-					Menu {
-						Button(role: .cancel) {} label: {
-							Label("Cancel", systemImage: "xmark")
-						}
-						Button(role: .destructive) {} label: {
-							Label("Delete", systemImage: "trash")
-						}
-					} label: {
-						Label("Delete", systemImage: "trash")
-					}
+					makeContextMenu(for: task)
 				} preview: { DetailView(task: task) }
 			}
 		} header: {
 			Text("Upcoming")
 				.bold()
 				.foregroundColor(.mint)
+		}
+	}
+	
+	@ViewBuilder
+	private func makeContextMenu(for task: TaskItem) -> some View {
+		if task.isNotDone {
+			Button {
+				// mark task as done here...
+			} label: {
+				Label("Mark as Done", systemImage: "checkmark")
+			}
+		}
+		Button { selectedTask = task } label: {
+			Label("Edit", systemImage: "square.and.pencil")
+		}
+		Divider()
+		
+		Menu {
+			Button(role: .cancel) {} label: {
+				Label("Cancel", systemImage: "xmark")
+			}
+			Button(role: .destructive) {
+				// delete task here...
+			} label: {
+				Label("Delete", systemImage: "trash")
+			}
+		} label: {
+			Label("Delete", systemImage: "trash")
 		}
 	}
 	

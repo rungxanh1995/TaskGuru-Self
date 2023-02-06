@@ -40,6 +40,8 @@ struct TaskItem: Identifiable {
 		didSet { lastUpdated = .now }
 	}
 	
+	var isNotDone: Bool { status != .done }
+	
 	var notes: String  {
 		didSet { lastUpdated = .now }
 	}
