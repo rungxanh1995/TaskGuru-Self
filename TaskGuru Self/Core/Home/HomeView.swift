@@ -16,7 +16,7 @@ struct HomeView: View {
 	}
 
 	var body: some View {
-		NavigationView {
+		NavigationStack {
 			ZStack {
 				if vm.isFetchingData {
 					ProgressView()
@@ -33,6 +33,9 @@ struct HomeView: View {
 					}
 					.onAppear(perform: vm.fetchTasks)
 					.onChange(of: selectedTask) { _ in vm.fetchTasks() }
+					.navigationDestination(for: TaskItem.self) { task in
+						DetailView(vm: .init(for: task))
+					}
 					.navigationTitle("TaskGuru")
 					.toolbar {
 						ToolbarItem(placement: .navigationBarTrailing) {
@@ -71,9 +74,7 @@ extension HomeView {
 	private var pendingSection: some View {
 		Section {
 			ForEach(vm.searchResults.filter { $0.isNotDone }) { task in
-				NavigationLink {
-					DetailView(vm: .init(for: task))
-				} label: {
+				NavigationLink(value: task) {
 					HomeListCell(task: task)
 				}
 				.contextMenu {
@@ -102,9 +103,7 @@ extension HomeView {
 	private var overdueSection: some View {
 		Section {
 			ForEach(vm.searchResults.filter { $0.dueDate.isPastToday }) { task in
-				NavigationLink {
-					DetailView(vm: .init(for: task))
-				} label: {
+				NavigationLink(value: task) {
 					HomeListCell(task: task)
 				}
 				.contextMenu {
@@ -121,9 +120,7 @@ extension HomeView {
 	private var dueTodaySection: some View {
 		Section {
 			ForEach(vm.searchResults.filter { $0.dueDate.isWithinToday }) { task in
-				NavigationLink {
-					DetailView(vm: .init(for: task))
-				} label: {
+				NavigationLink(value: task) {
 					HomeListCell(task: task)
 				}
 				.contextMenu {
@@ -140,9 +137,7 @@ extension HomeView {
 	private var upcomingSection: some View {
 		Section {
 			ForEach(vm.searchResults.filter { $0.dueDate.isInTheFuture }) { task in
-				NavigationLink {
-					DetailView(vm: .init(for: task))
-				} label: {
+				NavigationLink(value: task) {
 					HomeListCell(task: task)
 				}
 				.contextMenu {
