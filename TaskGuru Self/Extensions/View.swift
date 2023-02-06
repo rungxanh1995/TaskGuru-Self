@@ -12,4 +12,15 @@ extension View {
 	func setUpColorTheme() -> some View {
 		modifier(SchemeModifier())
 	}
+	
+	func makeCheerfulDecorativeImage() -> some View {
+		HStack {
+			Spacer()
+			Image("happy-sun")
+				.resizable()
+				.scaledToFit()
+				.frame(width: 200, height: 200)
+			Spacer()
+		}
+	}
 }
