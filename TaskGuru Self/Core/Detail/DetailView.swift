@@ -35,7 +35,7 @@ struct DetailView: View {
 			}
 			.padding()
 			
-			Text("Last updated on 2023-01-29")
+			Text("Last updated on \(task.formattedLastUpdated)")
 				.font(.system(.caption))
 				.foregroundColor(.secondary)
 				.padding([.bottom])
