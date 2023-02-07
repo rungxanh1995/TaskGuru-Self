@@ -42,7 +42,7 @@ final class StorageProviderImpl: StorageProvider {
 		return loadTasksAndHandleError(from: fetchRequest) as! T
 	}
 
-	func loadTasksAndHandleError(from request: NSFetchRequest<TaskItem>) -> [TaskItem] {
+	private func loadTasksAndHandleError(from request: NSFetchRequest<TaskItem>) -> [TaskItem] {
 		do {
 			return try context.fetch(request)
 		} catch let error {
