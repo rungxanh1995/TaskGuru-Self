@@ -31,6 +31,7 @@ struct HomeView: View {
 							timeBasedSections
 						}
 					}
+					.listStyle(.sidebar)
 					.onAppear(perform: vm.fetchTasks)
 					.onChange(of: selectedTask) { _ in vm.fetchTasks() }
 					.navigationDestination(for: TaskItem.self) { task in
@@ -64,7 +65,7 @@ extension HomeView {
 		HStack {
 			Spacer()
 			Text(emptyTaskListSentence)
-				.font(.system(.callout, design: .rounded))
+				.font(.system(.callout))
 				.foregroundColor(.secondary)
 			Spacer()
 		}
