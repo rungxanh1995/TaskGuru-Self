@@ -10,6 +10,8 @@ import SwiftUI
 // swiftlint:disable type_name
 @main
 struct TaskGuru_SelfApp: App {
+	private var appState: AppState = .init()
+
 	var body: some Scene {
 		WindowGroup {
 			TabView {
@@ -18,6 +20,7 @@ struct TaskGuru_SelfApp: App {
 						SFSymbols.house
 						Text("Home")
 					}
+					.environmentObject(appState)
 				SettingsView()
 					.tabItem {
 						SFSymbols.gear

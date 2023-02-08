@@ -10,13 +10,14 @@ import SwiftUI
 struct HomeView: View {
 	@StateObject var vm: ViewModel
 	@State private var selectedTask: TaskItem?
+	@EnvironmentObject private var appState: AppState
 
 	init(vm: HomeView.ViewModel = .init()) {
 		_vm = StateObject(wrappedValue: vm)
 	}
 
 	var body: some View {
-		NavigationStack {
+		NavigationStack(path: $appState.navPath) {
 			ZStack {
 				if vm.isFetchingData {
 					ProgressView()
@@ -199,5 +200,6 @@ extension HomeView {
 struct HomeView_Previews: PreviewProvider {
 	static var previews: some View {
 		HomeView()
+			.environmentObject(AppState())
 	}
 }
