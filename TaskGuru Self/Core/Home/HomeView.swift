@@ -25,6 +25,7 @@ struct HomeView: View {
 					timeBasedSections
 				}
 			}
+			.listStyle(.sidebar)
 			.onChange(of: selectedTask) { _ in
 				guard let selectedTask else { return }
 				vm.updateTasks(with: selectedTask)
@@ -56,7 +57,7 @@ extension HomeView {
 		HStack {
 			Spacer()
 			Text(emptyTaskListSentence)
-				.font(.system(.callout, design: .rounded))
+				.font(.system(.callout))
 				.foregroundColor(.secondary)
 			Spacer()
 		}
