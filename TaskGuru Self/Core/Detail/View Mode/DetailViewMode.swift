@@ -50,7 +50,7 @@ extension DetailView {
 				if vm.taskIsNewOrInProgress {
 					ToolbarItemGroup(placement: .primaryAction) {
 						Button(action: {isMarkingAsDone.toggle()}) {
-							Label("Mark as Done", systemImage: "checkmark")
+							Label { Text("Mark as Done") } icon: { SFSymbols.checkmark }
 						}
 					}
 				}
@@ -60,14 +60,14 @@ extension DetailView {
 						isShowingEdit.toggle()
 						haptic(.success)
 					}) {
-						Label("Edit", systemImage: "square.and.pencil")
+						Label { Text("Edit") } icon: { SFSymbols.pencilSquare }
 					}
 
-					Button(action: {
+					Button(role: .destructive) {
 						isDeletingTask.toggle()
 						haptic(.warning)
-					}) {
-						Label("Delete", systemImage: "trash")
+					} label: {
+						Label { Text("Delete") } icon: { SFSymbols.trash }
 					}
 				}
 			}

@@ -12,14 +12,14 @@ struct HomeListCell: View {
 
 	var body: some View {
 		HStack(alignment: .top) {
-			VStack(alignment: .leading, spacing: 0) {
+			VStack(alignment: .leading, spacing: 4) {
 				taskName
 				taskType
 			}
 
 			Spacer()
 
-			VStack(alignment: .trailing, spacing: 0) {
+			VStack(alignment: .trailing, spacing: 4) {
 				taskDueDate
 				taskStatus
 			}
@@ -47,7 +47,7 @@ extension HomeListCell {
 
 			Text(task.type.rawValue)
 		}
-		.font(.system(.footnote))
+		.font(.system(.subheadline))
 		.foregroundColor(.secondary)
 	}
 
@@ -62,10 +62,18 @@ extension HomeListCell {
 
 	private var taskStatus: some View {
 		HStack(spacing: 4) {
-			SFSymbols.circleFilled.font(.system(.caption2))
+			Group {
+				switch task.status {
+				case .new: SFSymbols.sparkles
+				case .inProgress: SFSymbols.circleArrows
+				case .done: SFSymbols.checkmark
+				}
+			}
+			.font(.system(.caption2))
+
 			Text(task.status.rawValue)
 		}
-		.font(.system(.footnote))
+		.font(.system(.subheadline))
 		.foregroundColor(task.colorForStatus())
 	}
 }

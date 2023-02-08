@@ -25,13 +25,11 @@ struct HomeView: View {
 						if vm.allTasks.isEmpty {
 							emptyTaskText
 						} else {
-							// status-based
 							pendingSection
-
 							timeBasedSections
 						}
 					}
-					.listStyle(.sidebar)
+					.listStyle(.grouped)
 					.onAppear(perform: vm.fetchTasks)
 					.onChange(of: selectedTask) { _ in vm.fetchTasks() }
 					.navigationDestination(for: TaskItem.self) { task in
@@ -167,25 +165,25 @@ extension HomeView {
 			Button {
 				withAnimation { vm.markAsDone(task) }
 			} label: {
-				Label("Mark as Done", systemImage: "checkmark")
+				Label { Text("Mark as Done") } icon: { SFSymbols.checkmark }
 			}
 		}
 		Button { selectedTask = task } label: {
-			Label("Edit", systemImage: "square.and.pencil")
+			Label { Text("Edit") } icon: { SFSymbols.pencilSquare }
 		}
 		Divider()
 
 		Menu {
 			Button(role: .cancel) {} label: {
-				Label("Cancel", systemImage: "xmark")
+				Label { Text("Cancel") } icon: { SFSymbols.xmark }
 			}
 			Button(role: .destructive) {
 				withAnimation { vm.delete(task) }
 			} label: {
-				Label("Delete", systemImage: "trash")
+				Label { Text("Delete") } icon: { SFSymbols.trash }
 			}
 		} label: {
-			Label("Delete", systemImage: "trash")
+			Label { Text("Delete") } icon: { SFSymbols.trash }
 		}
 	}
 
@@ -193,7 +191,7 @@ extension HomeView {
 		Button {
 			vm.isShowingAddTaskView.toggle()
 		} label: {
-			Label("Add Task", systemImage: "plus.circle")
+			Label { Text("Add Task") } icon: { SFSymbols.plus }
 		}
 	}
 }
