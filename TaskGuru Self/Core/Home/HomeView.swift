@@ -21,11 +21,10 @@ struct HomeView: View {
 	var body: some View {
 		NavigationStack {
 			List {
-				// status-based
 				pendingSection
-				
 				timeBasedSections
 			}
+			.listStyle(.sidebar)
 			.navigationDestination(for: TaskItem.self) { taskItem in
 				DetailView(task: taskItem)
 			}
