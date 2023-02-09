@@ -47,17 +47,18 @@ struct DetailView: View {
 				Button {
 					isMarkingAsDone.toggle()
 				} label: {
-					Label("Mark as Done", systemImage: "checkmark")
+					Label { Text("Mark as Done") } icon: { SFSymbols.checkmark }
 				}
 			}
 			
 			ToolbarItemGroup(placement: .secondaryAction) {
 				Button(action: { isShowingEdit.toggle() }) {
-					Label("Edit", systemImage: "square.and.pencil")
+					Label { Text("Edit") } icon: { SFSymbols.pencilSquare }
 				}
-				
-				Button(action: { isDeletingTask.toggle() }) {
-					Label("Delete", systemImage: "trash")
+				Button(role: .destructive) {
+					isDeletingTask.toggle()
+				} label: {
+					Label { Text("Delete") } icon: { SFSymbols.trash }
 				}
 			}
 		}

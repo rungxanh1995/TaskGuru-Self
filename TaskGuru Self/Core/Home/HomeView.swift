@@ -24,7 +24,7 @@ struct HomeView: View {
 				pendingSection
 				timeBasedSections
 			}
-			.listStyle(.sidebar)
+			.listStyle(.grouped)
 			.navigationDestination(for: TaskItem.self) { taskItem in
 				DetailView(task: taskItem)
 			}
@@ -139,25 +139,25 @@ extension HomeView {
 			Button {
 				// mark task as done here...
 			} label: {
-				Label("Mark as Done", systemImage: "checkmark")
+				Label { Text("Mark as Done") } icon: { SFSymbols.checkmark }
 			}
 		}
 		Button { selectedTask = task } label: {
-			Label("Edit", systemImage: "square.and.pencil")
+			Label { Text("Edit") } icon: { SFSymbols.pencilSquare }
 		}
 		Divider()
 		
 		Menu {
 			Button(role: .cancel) {} label: {
-				Label("Cancel", systemImage: "xmark")
+				Label { Text("Cancel") } icon: { SFSymbols.xmark }
 			}
 			Button(role: .destructive) {
 				// delete task here...
 			} label: {
-				Label("Delete", systemImage: "trash")
+				Label { Text("Delete") } icon: { SFSymbols.trash }
 			}
 		} label: {
-			Label("Delete", systemImage: "trash")
+			Label { Text("Delete") } icon: { SFSymbols.trash }
 		}
 	}
 	
@@ -165,7 +165,7 @@ extension HomeView {
 		Button {
 			isShowingAddTask.toggle()
 		} label: {
-			Label("Add Task", systemImage: "plus.circle")
+			Label { Text("Add Task") } icon: { SFSymbols.plus }
 		}
 	}
 }
