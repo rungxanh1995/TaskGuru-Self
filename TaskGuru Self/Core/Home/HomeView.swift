@@ -22,7 +22,9 @@ struct HomeView: View {
 						if vm.allTasks.isEmpty {
 							emptyTaskText
 						} else {
-							timeBasedSections
+							overdueSection
+							dueTodaySection
+							upcomingSection
 						}
 					}
 					.onAppear(perform: vm.fetchTasks)
@@ -65,65 +67,82 @@ extension HomeView {
 		.onTapGesture { vm.isShowingAddTaskView.toggle() }
 	}
 
-	private var timeBasedSections: some View {
-		Section {
-			overdueSection
-			dueTodaySection
-			upcomingSection
-		} header: {
-			Text("All Tasks")
+	@ViewBuilder
+	private var emptyFilteredListText: some View {
+		let emptyListSentence: LocalizedStringKey = "No tasks"
+
+		HStack {
+			Spacer()
+			Text(emptyListSentence)
+				.font(.system(.callout))
+				.foregroundColor(.secondary)
+			Spacer()
 		}
-		.headerProminence(.increased)
 	}
 
+	@ViewBuilder
 	private var overdueSection: some View {
+		let overdues = vm.searchResults.filter { $0.dueDate.isPastToday }
+
 		Section {
-			ForEach(vm.searchResults.filter { $0.dueDate.isPastToday }) { task in
-				NavigationLink(value: task) {
-					HomeListCell(task: task)
+			if overdues.isEmpty {
+				emptyFilteredListText
+			} else {
+				ForEach(overdues) { task in
+					NavigationLink(value: task) {
+						HomeListCell(task: task)
+					}
+					.contextMenu {
+						makeContextMenu(for: task)
+					} preview: { DetailView(vm: .init(for: task)) }
 				}
-				.contextMenu {
-					makeContextMenu(for: task)
-				} preview: { DetailView(vm: .init(for: task)) }
 			}
 		} header: {
-			Text("Overdue")
-				.bold()
-				.foregroundColor(.red)
+			Text("Overdue").bold().foregroundColor(.red)
 		}
 	}
 
+	@ViewBuilder
 	private var dueTodaySection: some View {
+		let dues = vm.searchResults.filter { $0.dueDate.isWithinToday }
+
 		Section {
-			ForEach(vm.searchResults.filter { $0.dueDate.isWithinToday }) { task in
-				NavigationLink(value: task) {
-					HomeListCell(task: task)
+			if dues.isEmpty {
+				emptyFilteredListText
+			} else {
+				ForEach(dues) { task in
+					NavigationLink(value: task) {
+						HomeListCell(task: task)
+					}
+					.contextMenu {
+						makeContextMenu(for: task)
+					} preview: { DetailView(vm: .init(for: task)) }
 				}
-				.contextMenu {
-					makeContextMenu(for: task)
-				} preview: { DetailView(vm: .init(for: task)) }
 			}
 		} header: {
-			Text("Due Today")
-			.bold()
-			.foregroundColor(.orange)
+			Text("Due Today").bold().foregroundColor(.orange)
 		}
 	}
 
+	@ViewBuilder
 	private var upcomingSection: some View {
+		let upcomings = vm.searchResults.filter { $0.dueDate.isInTheFuture }
+
 		Section {
-			ForEach(vm.searchResults.filter { $0.dueDate.isInTheFuture }) { task in
-				NavigationLink(value: task) {
-					HomeListCell(task: task)
+			if upcomings.isEmpty {
+				emptyFilteredListText
+			} else {
+				ForEach(upcomings) { task in
+					NavigationLink(value: task) {
+						HomeListCell(task: task)
+					}
+					.contextMenu {
+						makeContextMenu(for: task)
+					} preview: { DetailView(vm: .init(for: task)) }
 				}
-				.contextMenu {
-					makeContextMenu(for: task)
-				} preview: { DetailView(vm: .init(for: task)) }
 			}
 		} header: {
-			Text("Upcoming")
-			.bold()
-			.foregroundColor(.mint)
+			Text("Upcoming").bold().foregroundColor(.mint)
 		}
 	}
 
@@ -167,6 +186,7 @@ extension HomeView {
 struct HomeView_Previews: PreviewProvider {
 	static var previews: some View {
 		HomeView()
+			.environmentObject(HomeViewModel())
 			.environmentObject(AppState())
 	}
 }
