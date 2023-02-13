@@ -14,6 +14,7 @@ struct TaskGuru_SelfApp: App {
 
 	private var homeVM: HomeViewModel = .init()
 	private var appState: AppState = .init()
+	@State private var pendingTasksCount: Int = 0
 
 	init() {
 		UIView.appearance(for: UITraitCollection(userInterfaceStyle: .light),
@@ -38,11 +39,15 @@ struct TaskGuru_SelfApp: App {
 						SFSymbols.clock
 						Text("Pending")
 					}
+					.badge(pendingTasksCount)
 				SettingsView()
 					.tabItem {
 						SFSymbols.gear
 						Text("Settings")
 					}
+			}
+			.onReceive(homeVM.$isFetchingData) { _ in
+				pendingTasksCount = homeVM.pendingTasks.count
 			}
 			.environmentObject(homeVM)
 			.environmentObject(appState)
