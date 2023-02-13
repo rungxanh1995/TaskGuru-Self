@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SettingsView: View {
 	@StateObject private var vm: ViewModel
+	@State private var isShowingOnboarding: Bool = false
 
 	init(vm: SettingsView.ViewModel = .init()) {
 		_vm = StateObject(wrappedValue: vm)
@@ -22,6 +23,9 @@ struct SettingsView: View {
 				devTeamSection
 			}
 			.navigationTitle("Settings")
+			.sheet(isPresented: $isShowingOnboarding, content: {
+				OnboardContainerView()
+			})
 			.confirmationDialog(
 				"App settings would reset.\nThis action cannot be undone",
 				isPresented: $vm.isConfirmingResetSettings,
@@ -51,6 +55,7 @@ struct SettingsView: View {
 private extension SettingsView {
 	private var generalSection: some View {
 		Section {
+			onboarding
 			haptics
 			appTheme
 		} header: {
@@ -77,6 +82,14 @@ private extension SettingsView {
 				Text(theme.title)
 					.tag(theme.rawValue)
 			}
+		}
+	}
+
+	private var onboarding: some View {
+		Button {
+			isShowingOnboarding.toggle()
+		} label: {
+			Text("Show Onboarding screen")
 		}
 	}
 

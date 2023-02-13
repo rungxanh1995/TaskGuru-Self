@@ -25,7 +25,7 @@ extension OnboardFeature {
 			title: "Pending Tasks tab",
 			description: "Find tasks not completed here"),
 		OnboardFeature(
-			icon: SFSymbols.listFilled,
+			icon: SFSymbols.menu,
 			title: "Quick Actions",
 			description: "Tap and hold each task from the list to use quick actions")
 	]

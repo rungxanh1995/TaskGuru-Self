@@ -23,13 +23,14 @@ struct OnboardContainerView: View {
 			}
 			.tabViewStyle(.page(indexDisplayMode: .always))
 			.indexViewStyle(.page(backgroundDisplayMode: .always))
+			.padding(.bottom, 20)
 
-			Spacer()
-
-			Button("Get Started") {
-				withAnimation {	isOnboarding = false }
+			if isOnboarding == nil {
+				Button("Get Started") {
+					withAnimation {	isOnboarding = false }
+				}
+				.buttonStyle(.borderedProminent)
 			}
-			.buttonStyle(.borderedProminent)
 		}
 	}
 }

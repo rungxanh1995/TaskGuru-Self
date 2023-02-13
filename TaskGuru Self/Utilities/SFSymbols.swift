@@ -16,6 +16,7 @@ enum SFSymbols {
 	static let personFilled: Image = .init(systemName: "person.fill")
 	static let buildingFilled: Image = .init(systemName: "building.2.fill")
 	static let graduationCapFilled: Image = .init(systemName: "graduationcap.fill")
+	static let menu: Image = .init(systemName: "filemenu.and.selection")
 	static let listFilled: Image = .init(systemName: "list.bullet.rectangle.portrait.fill")
 	static let plus: Image = .init(systemName: "plus")
 	static let plusCircled: Image = .init(systemName: "plus.circle")
