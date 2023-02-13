@@ -11,6 +11,7 @@ import SwiftUI
 // swiftlint:disable type_name
 @main
 struct TaskGuru_SelfApp: App {
+	@AppStorage(UserDefaultsKey.isOnboarding) private var isOnboarding: Bool = true
 
 	private var homeVM: HomeViewModel = .init()
 	private var appState: AppState = .init()
@@ -28,30 +29,35 @@ struct TaskGuru_SelfApp: App {
 
 	var body: some Scene {
 		WindowGroup {
-			TabView {
-				HomeView()
-					.tabItem {
-						SFSymbols.house
-						Text("Home")
-					}
-				PendingView()
-					.tabItem {
-						SFSymbols.clock
-						Text("Pending")
-					}
-					.badge(pendingTasksCount)
-				SettingsView()
-					.tabItem {
-						SFSymbols.gear
-						Text("Settings")
-					}
+			if isOnboarding {
+				OnboardContainerView()
+					.setUpColorTheme()
+			} else {
+				TabView {
+					HomeView()
+						.tabItem {
+							SFSymbols.house
+							Text("Home")
+						}
+					PendingView()
+						.tabItem {
+							SFSymbols.clock
+							Text("Pending")
+						}
+						.badge(pendingTasksCount)
+					SettingsView()
+						.tabItem {
+							SFSymbols.gear
+							Text("Settings")
+						}
+				}
+				.onReceive(homeVM.$isFetchingData) { _ in
+					pendingTasksCount = homeVM.pendingTasks.count
+				}
+				.environmentObject(homeVM)
+				.environmentObject(appState)
+				.setUpColorTheme()
 			}
-			.onReceive(homeVM.$isFetchingData) { _ in
-				pendingTasksCount = homeVM.pendingTasks.count
-			}
-			.environmentObject(homeVM)
-			.environmentObject(appState)
-			.setUpColorTheme()
 		}
 	}
 }
