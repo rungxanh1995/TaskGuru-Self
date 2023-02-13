@@ -16,48 +16,49 @@ struct PendingView: View {
 		NavigationStack(path: $appState.navPath) {
 			ZStack {
 				if vm.isFetchingData {
-					ProgressView()
+					ProgressView { Text("Fetching data") }
+				} else if vm.noPendingTasksLeft {
+					emptyStateImage.padding()
 				} else {
-					List {
-						pendingSection
-					}
-					.onAppear(perform: vm.fetchTasks)
-					.onChange(of: selectedTask) { _ in vm.fetchTasks() }
-					.navigationDestination(for: TaskItem.self) { task in
-						DetailView(vm: .init(for: task))
-					}
-					.navigationTitle("Pending Tasks")
-					.fullScreenCover(item: $selectedTask) { task in
-						DetailView.EditMode(vm: .init(for: task))
-					}
+					List { pendingSection }
 				}
+			}
+			.onAppear(perform: vm.fetchTasks)
+			.onChange(of: selectedTask) { _ in vm.fetchTasks() }
+			.navigationDestination(for: TaskItem.self) { task in
+				DetailView(vm: .init(for: task))
+			}
+			.navigationTitle("Pending Tasks")
+			.fullScreenCover(item: $selectedTask) { task in
+				DetailView.EditMode(vm: .init(for: task))
 			}
 		}
 	}
 }
 
 extension PendingView {
+	private var emptyStateImage: some View {
+		VStack {
+			makeCheerfulDecorativeImage()
+
+			Text("You're free! Enjoy your much deserved time 🥳")
+				.font(.footnote)
+				.foregroundColor(.secondary)
+		}
+	}
+
 	private var pendingSection: some View {
 		Section {
-			if vm.noPendingTasksLeft {
-				makeCheerfulDecorativeImage()
-					.grayscale(1.0)
-			} else {
-				ForEach(vm.pendingTasks) { task in
-					NavigationLink(value: task) {
-						HomeListCell(task: task)
-					}
-					.contextMenu {
-						makeContextMenu(for: task)
-					} preview: { DetailView(vm: .init(for: task)) }
+			ForEach(vm.pendingTasks) { task in
+				NavigationLink(value: task) {
+					HomeListCell(task: task)
 				}
+				.contextMenu {
+					makeContextMenu(for: task)
+				} preview: { DetailView(vm: .init(for: task)) }
 			}
 		} footer: {
-			if vm.noPendingTasksLeft {
-				Text("You're free! Enjoy your much deserved time 🥳")
-			} else {
-				Text("Don't stress yourself too much. You got it 💪")
-			}
+			Text("Don't stress yourself too much. You got it 💪")
 		}
 		.headerProminence(.increased)
 	}
