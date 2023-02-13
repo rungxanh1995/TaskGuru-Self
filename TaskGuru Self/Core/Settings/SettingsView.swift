@@ -47,6 +47,8 @@ private extension SettingsView {
 				SFSymbols.gearFilled
 				Text("General")
 			}
+		} footer: {
+			Text("App Version: \(vm.appVersionNumber) (\(vm.appBuildNumber))")
 		}
 	}
 

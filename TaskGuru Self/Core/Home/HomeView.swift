@@ -30,7 +30,7 @@ struct HomeView: View {
 							timeBasedSections
 						}
 					}
-					.listStyle(.grouped)
+					.listStyle(.sidebar)
 					.onAppear(perform: vm.fetchTasks)
 					.onChange(of: selectedTask) { _ in vm.fetchTasks() }
 					.navigationDestination(for: TaskItem.self) { task in

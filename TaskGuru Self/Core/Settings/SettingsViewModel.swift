@@ -17,6 +17,14 @@ extension SettingsView {
 
 		@Published var isConfirmingResetData: Bool = false
 
+		var appVersionNumber: String {
+			Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? ""
+		}
+
+		var appBuildNumber: String {
+			Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? ""
+		}
+
 		let joeGitHubLink: URL = URL(string: "https://twitter.com/rungxanh1995")!
 		let marcoGitHubLink: URL = URL(string: "https://github.com/floydcoder")!
 		let ostapGitHubLink: URL = URL(string: "https://github.com/ostap-sulyk")!
