@@ -15,7 +15,8 @@ extension SettingsView {
 		@AppStorage(UserDefaultsKey.systemTheme)
 		var systemTheme: Int = SchemeType.allCases.first!.rawValue
 
-		@Published var isConfirmingResetData: Bool = false
+		@Published var isConfirmingResetSettings: Bool = false
+		@Published var isConfirmingResetUserData: Bool = false
 
 		var appVersionNumber: String {
 			Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? ""
@@ -36,18 +37,13 @@ extension SettingsView {
 			self.storageProvider = storageProvider
 		}
 
-		func resetData() {
-			resetDefaults()
-			resetAllTasks()
-		}
-
-		private func resetDefaults() {
+		func resetDefaults() {
 			let defaults = UserDefaults.standard
 			let dictionary = defaults.dictionaryRepresentation()
 			dictionary.keys.forEach { defaults.removeObject(forKey: $0) }
 		}
 
-		private func resetAllTasks() {
+		func resetAllTasks() {
 			let allTasks: [TaskItem] = storageProvider.fetch()
 			allTasks.forEach { storageProvider.context.delete($0) }
 			storageProvider.saveAndHandleError()

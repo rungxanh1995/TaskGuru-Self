@@ -23,12 +23,23 @@ struct SettingsView: View {
 			}
 			.navigationTitle("Settings")
 			.confirmationDialog(
-				"This action cannot be undone",
-				isPresented: $vm.isConfirmingResetData,
+				"App settings would reset.\nThis action cannot be undone",
+				isPresented: $vm.isConfirmingResetSettings,
 				titleVisibility: .visible
 			) {
 				Button("Delete", role: .destructive) {
-					vm.resetData()
+					vm.resetDefaults()
+					haptic(.success)
+				}
+				Button("Cancel", role: .cancel) { }
+			}
+			.confirmationDialog(
+				"All your tasks would be deleted.\nThis action cannot be undone",
+				isPresented: $vm.isConfirmingResetUserData,
+				titleVisibility: .visible
+			) {
+				Button("Delete", role: .destructive) {
+					vm.resetAllTasks()
 					haptic(.success)
 				}
 				Button("Cancel", role: .cancel) { }
@@ -71,20 +82,39 @@ private extension SettingsView {
 
 	private var advancedSection: some View {
 		Section {
-			resetAppButton
+			resetAppSettingsButton
+			resetAppDataButton
 		} header: {
 			HStack {
 				SFSymbols.magicWand
 				Text("Advanced")
 			}
 		} footer: {
-			Text("Be careful, this removes all your data! Restart the app to see all changes")
+			Text("Be careful, these remove all your data! Restart the app to see all changes")
 		}
 	}
 
-	private var resetAppButton: some View {
-		Button("Reset to Original", role: .destructive) {
-			vm.isConfirmingResetData.toggle()
+	private var resetAppSettingsButton: some View {
+		Button(role: .destructive) {
+			vm.isConfirmingResetSettings.toggle()
+		} label: {
+			Label {
+				Text("Reset App Settings")
+			} icon: {
+				SFSymbols.gear.foregroundColor(.red)
+			}
+		}
+	}
+
+	private var resetAppDataButton: some View {
+		Button(role: .destructive) {
+			vm.isConfirmingResetUserData.toggle()
+		} label: {
+			Label {
+				Text("Reset Your Data")
+			} icon: {
+				SFSymbols.personFolder.foregroundColor(.red)
+			}
 		}
 	}
 

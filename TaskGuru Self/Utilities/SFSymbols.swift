@@ -32,4 +32,5 @@ enum SFSymbols {
 	static let link: Image = .init(systemName: "link")
 	static let magicWand: Image = .init(systemName: "wand.and.stars")
 	static let handsSparklesFilled: Image = .init(systemName: "hands.sparkles.fill")
+	static let personFolder: Image = .init(systemName: "folder.badge.person.crop")
 }
