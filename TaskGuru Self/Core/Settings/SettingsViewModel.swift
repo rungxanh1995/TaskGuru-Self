@@ -9,6 +9,9 @@ import SwiftUI
 
 extension SettingsView {
 	final class ViewModel: ObservableObject {
+		@AppStorage(UserDefaultsKey.isShowingTabBadge)
+		var isShowingTabBadge: Bool = true
+
 		@AppStorage(UserDefaultsKey.hapticsReduced)
 		var isHapticsReduced: Bool = true
 

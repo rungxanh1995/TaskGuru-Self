@@ -56,6 +56,7 @@ private extension SettingsView {
 	private var generalSection: some View {
 		Section {
 			onboarding
+			tabBadge
 			haptics
 			appTheme
 		} header: {
@@ -66,6 +67,11 @@ private extension SettingsView {
 		} footer: {
 			Text("App Version: \(vm.appVersionNumber) (\(vm.appBuildNumber))")
 		}
+	}
+
+	private var tabBadge: some View {
+		Toggle("Show Tab Badge", isOn: $vm.isShowingTabBadge)
+			.tint(.accentColor)
 	}
 
 	private var haptics: some View {

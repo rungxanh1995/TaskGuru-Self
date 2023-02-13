@@ -12,6 +12,7 @@ import SwiftUI
 @main
 struct TaskGuru_SelfApp: App {
 	@AppStorage(UserDefaultsKey.isOnboarding) private var isOnboarding: Bool = true
+	@AppStorage(UserDefaultsKey.isShowingTabBadge) private var isShowingTabBadge: Bool?
 
 	private var homeVM: HomeViewModel = .init()
 	private var appState: AppState = .init()
@@ -44,7 +45,7 @@ struct TaskGuru_SelfApp: App {
 							SFSymbols.clock
 							Text("Pending")
 						}
-						.badge(pendingTasksCount)
+						.badge((isShowingTabBadge ?? true) ? pendingTasksCount : 0)
 					SettingsView()
 						.tabItem {
 							SFSymbols.gear
