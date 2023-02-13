@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PendingView: View {
-	@EnvironmentObject var vm: HomeViewModel
+	@EnvironmentObject private var vm: HomeViewModel
 	@EnvironmentObject private var appState: AppState
 	@State private var selectedTask: TaskItem?
 
@@ -89,5 +89,13 @@ extension PendingView {
 		} label: {
 			Label { Text("Delete") } icon: { SFSymbols.trash }
 		}
+	}
+}
+
+struct PendingView_Previews: PreviewProvider {
+	static var previews: some View {
+		PendingView()
+			.environmentObject(HomeViewModel())
+			.environmentObject(AppState())
 	}
 }
