@@ -54,8 +54,8 @@ private extension SettingsView {
 
 	private var haptics: some View {
 		Toggle(
-			"Enable Haptics",
-			isOn: $vm.isHapticsEnabled
+			"Reduce Haptics",
+			isOn: $vm.isHapticsReduced
 		)
 		.tint(.accentColor)
 	}
