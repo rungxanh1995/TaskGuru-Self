@@ -29,6 +29,14 @@ struct PendingView: View {
 				DetailView(vm: .init(for: task))
 			}
 			.navigationTitle("Pending Tasks")
+			.toolbar {
+				ToolbarItem(placement: .primaryAction) {
+					addTaskButton
+				}
+			}
+			.sheet(isPresented: $vm.isShowingAddTaskView) {
+				AddTask(vm: .init(parentVM: self.vm))
+			}
 			.fullScreenCover(item: $selectedTask) { task in
 				DetailView.EditMode(vm: .init(for: task))
 			}
@@ -88,6 +96,14 @@ extension PendingView {
 			}
 		} label: {
 			Label { Text("Delete") } icon: { SFSymbols.trash }
+		}
+	}
+
+	private var addTaskButton: some View {
+		Button {
+			vm.isShowingAddTaskView.toggle()
+		} label: {
+			Label { Text("Add Task") } icon: { SFSymbols.plus }
 		}
 	}
 }
