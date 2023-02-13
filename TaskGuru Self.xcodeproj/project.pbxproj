@@ -213,10 +213,10 @@
 		2CC25BC929845A20006972DF /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				2C0000682999E7AF0065CA3E /* Pending */,
 				2CC25BCA29845A24006972DF /* Home */,
 				2CC25BCB29845D82006972DF /* Add */,
 				2C8C35DD298489C700DCEA67 /* Detail */,
+				2C0000682999E7AF0065CA3E /* Pending */,
 				2CC25BCE298462F0006972DF /* Settings */,
 			);
 			path = Core;

@@ -43,7 +43,7 @@ extension PendingView {
 				makeCheerfulDecorativeImage()
 					.grayscale(1.0)
 			} else {
-				ForEach(vm.searchResults.filter { $0.isNotDone }) { task in
+				ForEach(vm.pendingTasks) { task in
 					NavigationLink(value: task) {
 						HomeListCell(task: task)
 					}

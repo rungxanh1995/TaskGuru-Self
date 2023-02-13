@@ -27,6 +27,8 @@ final class HomeViewModel: ObservableObject {
 		}
 	}
 
+	var pendingTasks: [TaskItem] { allTasks.filter { $0.isNotDone } }
+
 	@Published var isShowingAddTaskView: Bool = false
 	@Published var isFetchingData: Bool = false
 
