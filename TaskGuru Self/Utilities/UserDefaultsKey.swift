@@ -8,6 +8,8 @@
 import Foundation
 
 enum UserDefaultsKey {
-	static let hapticsEnabled: String = "hapticsEnabled"
+	static let hapticsReduced: String = "hapticsReduced"
 	static let systemTheme: String = "systemTheme"
+	static let isOnboarding: String = "isOnboarding"
+	static let isShowingTabBadge: String = "isShowingTabBadge"
 }

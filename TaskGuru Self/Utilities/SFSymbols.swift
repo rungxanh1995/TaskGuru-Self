@@ -9,11 +9,14 @@ import SwiftUI
 
 enum SFSymbols {
 	static let house: Image = .init(systemName: "house")
+	static let clock: Image = .init(systemName: "clock")
+	static let clockBadge: Image = .init(systemName: "clock.badge").symbolRenderingMode(.multicolor)
 	static let gear: Image = .init(systemName: "gearshape")
 	static let gearFilled: Image = .init(systemName: "gearshape.fill")
 	static let personFilled: Image = .init(systemName: "person.fill")
 	static let buildingFilled: Image = .init(systemName: "building.2.fill")
 	static let graduationCapFilled: Image = .init(systemName: "graduationcap.fill")
+	static let menu: Image = .init(systemName: "filemenu.and.selection")
 	static let listFilled: Image = .init(systemName: "list.bullet.rectangle.portrait.fill")
 	static let plus: Image = .init(systemName: "plus")
 	static let plusCircled: Image = .init(systemName: "plus.circle")
@@ -30,4 +33,5 @@ enum SFSymbols {
 	static let link: Image = .init(systemName: "link")
 	static let magicWand: Image = .init(systemName: "wand.and.stars")
 	static let handsSparklesFilled: Image = .init(systemName: "hands.sparkles.fill")
+	static let personFolder: Image = .init(systemName: "folder.badge.person.crop")
 }
