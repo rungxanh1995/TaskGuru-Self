@@ -15,7 +15,7 @@ final class DeveloperPreview {
 	static let instance: DeveloperPreview = .init()
 	private init() {}
 
-	let homeVM: HomeView.ViewModel = .init()
+	let homeVM: HomeViewModel = .init()
 	let task: TaskItem = makeSampleTask()
 
 	fileprivate static func makeSampleTask() -> TaskItem {

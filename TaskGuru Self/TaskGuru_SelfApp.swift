@@ -10,6 +10,7 @@ import SwiftUI
 // swiftlint:disable type_name
 @main
 struct TaskGuru_SelfApp: App {
+	private var homeVM: HomeViewModel = .init()
 	private var appState: AppState = .init()
 
 	var body: some Scene {
@@ -20,13 +21,19 @@ struct TaskGuru_SelfApp: App {
 						SFSymbols.house
 						Text("Home")
 					}
-					.environmentObject(appState)
+				PendingView()
+					.tabItem {
+						SFSymbols.clock
+						Text("Pending")
+					}
 				SettingsView()
 					.tabItem {
 						SFSymbols.gear
 						Text("Settings")
 					}
 			}
+			.environmentObject(homeVM)
+			.environmentObject(appState)
 			.setUpColorTheme()
 		}
 	}

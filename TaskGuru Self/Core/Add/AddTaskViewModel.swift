@@ -9,10 +9,10 @@ import Foundation
 
 extension AddTask {
 	final class ViewModel: ObservableObject {
-		private let listViewModel: HomeView.ViewModel
+		private let listViewModel: HomeViewModel
 		private let storageProvider: StorageProvider
 
-		init(parentVM: HomeView.ViewModel, storageProvider: StorageProvider = StorageProviderImpl.standard) {
+		init(parentVM: HomeViewModel, storageProvider: StorageProvider = StorageProviderImpl.standard) {
 			listViewModel = parentVM
 			self.storageProvider = storageProvider
 		}

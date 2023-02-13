@@ -9,6 +9,7 @@ import SwiftUI
 
 enum SFSymbols {
 	static let house: Image = .init(systemName: "house")
+	static let clock: Image = .init(systemName: "clock")
 	static let gear: Image = .init(systemName: "gearshape")
 	static let gearFilled: Image = .init(systemName: "gearshape.fill")
 	static let personFilled: Image = .init(systemName: "person.fill")

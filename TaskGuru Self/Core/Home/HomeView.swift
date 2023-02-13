@@ -8,13 +8,9 @@
 import SwiftUI
 
 struct HomeView: View {
-	@StateObject var vm: ViewModel
+	@EnvironmentObject var vm: HomeViewModel
 	@State private var selectedTask: TaskItem?
 	@EnvironmentObject private var appState: AppState
-
-	init(vm: HomeView.ViewModel = .init()) {
-		_vm = StateObject(wrappedValue: vm)
-	}
 
 	var body: some View {
 		NavigationStack(path: $appState.navPath) {
@@ -26,11 +22,9 @@ struct HomeView: View {
 						if vm.allTasks.isEmpty {
 							emptyTaskText
 						} else {
-							pendingSection
 							timeBasedSections
 						}
 					}
-					.listStyle(.sidebar)
 					.onAppear(perform: vm.fetchTasks)
 					.onChange(of: selectedTask) { _ in vm.fetchTasks() }
 					.navigationDestination(for: TaskItem.self) { task in
@@ -69,33 +63,6 @@ extension HomeView {
 			Spacer()
 		}
 		.onTapGesture { vm.isShowingAddTaskView.toggle() }
-	}
-
-	private var pendingSection: some View {
-		Section {
-			if vm.noPendingTasksLeft {
-				makeCheerfulDecorativeImage()
-					.grayscale(1.0)
-			} else {
-				ForEach(vm.searchResults.filter { $0.isNotDone }) { task in
-					NavigationLink(value: task) {
-						HomeListCell(task: task)
-					}
-					.contextMenu {
-						makeContextMenu(for: task)
-					} preview: { DetailView(vm: .init(for: task)) }
-				}
-			}
-		} header: {
-			Text("Pending Tasks")
-		} footer: {
-			if vm.noPendingTasksLeft {
-				Text("You're free! Enjoy your much deserved time 🥳")
-			} else {
-				Text("Don't stress yourself too much. You got it 💪")
-			}
-		}
-		.headerProminence(.increased)
 	}
 
 	private var timeBasedSections: some View {
