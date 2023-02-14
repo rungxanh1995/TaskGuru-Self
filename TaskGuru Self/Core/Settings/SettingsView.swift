@@ -19,8 +19,8 @@ struct SettingsView: View {
 		NavigationView {
 			Form {
 				generalSection
-				advancedSection
 				devTeamSection
+				advancedSection
 			}
 			.navigationTitle("Settings")
 			.sheet(isPresented: $isShowingOnboarding, content: {
@@ -61,10 +61,7 @@ private extension SettingsView {
 			haptics
 			appTheme
 		} header: {
-			HStack {
-				SFSymbols.gearFilled
-				Text("General")
-			}
+			Label { Text("General") } icon: { SFSymbols.gearFilled }
 		} footer: {
 			Text("App Version: \(vm.appVersionNumber) (\(vm.appBuildNumber))")
 		}
@@ -110,10 +107,7 @@ private extension SettingsView {
 			resetAppSettingsButton
 			resetAppDataButton
 		} header: {
-			HStack {
-				SFSymbols.magicWand
-				Text("Advanced")
-			}
+			Label { Text("Advanced") } icon: { SFSymbols.magicWand }
 		} footer: {
 			Text("Be careful, these remove all your data! Restart the app to see all changes")
 		}
@@ -165,10 +159,7 @@ private extension SettingsView {
 				Link("Rauf Anata", destination: vm.raufGitHubLink)
 			}
 		} header: {
-			HStack {
-				SFSymbols.handsSparklesFilled
-				Text("Meet The Team")
-			}
+			Label { Text("Meet The Team") } icon: { SFSymbols.handsSparklesFilled }
 		}
 	}
 }
