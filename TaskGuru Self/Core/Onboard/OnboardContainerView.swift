@@ -23,11 +23,12 @@ struct OnboardContainerView: View {
 			}
 			.tabViewStyle(.page(indexDisplayMode: .always))
 			.indexViewStyle(.page(backgroundDisplayMode: .always))
-			.padding(.bottom, 20)
+			.padding(.bottom)
 
 			if isOnboarding == nil {
 				Button("Get Started") {
 					withAnimation {	isOnboarding = false }
+					haptic(.success)
 				}
 				.bold()
 				.buttonStyle(.bordered)

@@ -13,7 +13,7 @@ struct OnboardView: View {
 	let description: LocalizedStringKey
 
 	var body: some View {
-		VStack(alignment: .center, spacing: 20) {
+		VStack(alignment: .center, spacing: 12) {
 			icon
 				.resizable()
 				.scaledToFit()

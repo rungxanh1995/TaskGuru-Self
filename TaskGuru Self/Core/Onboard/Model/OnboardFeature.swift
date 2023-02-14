@@ -19,11 +19,11 @@ extension OnboardFeature {
 		OnboardFeature(
 			icon: SFSymbols.house,
 			title: "Home tab",
-			description: "All your tasks in sections, so you can easily track which ones are overdue, due today, or upcoming"),
+			description: "Tasks categorized by section to easily track overdue, due today, and upcoming ones"),
 		OnboardFeature(
 			icon: SFSymbols.clockBadge,
 			title: "Pending Tasks tab",
-			description: "Find tasks not completed here"),
+			description: "Find your undone tasks here"),
 		OnboardFeature(
 			icon: SFSymbols.menu,
 			title: "Quick Actions",
