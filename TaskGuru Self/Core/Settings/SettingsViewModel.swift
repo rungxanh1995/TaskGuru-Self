@@ -12,6 +12,9 @@ extension SettingsView {
 		@AppStorage(UserDefaultsKey.isShowingTabBadge)
 		var isShowingTabBadge: Bool = true
 
+		@AppStorage(UserDefaultsKey.isLockedInPortrait)
+		var isLockedInPortrait: Bool = false
+
 		@AppStorage(UserDefaultsKey.hapticsReduced)
 		var isHapticsReduced: Bool = true
 

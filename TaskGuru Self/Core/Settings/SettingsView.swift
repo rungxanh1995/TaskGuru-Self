@@ -57,6 +57,7 @@ private extension SettingsView {
 		Section {
 			onboarding
 			tabBadge
+			portraitLock
 			haptics
 			appTheme
 		} header: {
@@ -71,6 +72,11 @@ private extension SettingsView {
 
 	private var tabBadge: some View {
 		Toggle("Show Tab Badge", isOn: $vm.isShowingTabBadge)
+			.tint(.accentColor)
+	}
+
+	private var portraitLock: some View {
+		Toggle("Portrait Lock", isOn: $vm.isLockedInPortrait)
 			.tint(.accentColor)
 	}
 

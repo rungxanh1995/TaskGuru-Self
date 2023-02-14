@@ -17,6 +17,7 @@
 		2C33F6C229858E5E004893EF /* AddTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C33F6C129858E5E004893EF /* AddTaskViewModel.swift */; };
 		2C33F6C529858FEA004893EF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C33F6C429858FEA004893EF /* Constants.swift */; };
 		2C33F6C82985929C004893EF /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C33F6C72985929C004893EF /* PreviewProvider.swift */; };
+		2C7E9D49299C21DF00437EB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7E9D48299C21DF00437EB4 /* AppDelegate.swift */; };
 		2C8C35DF298489DA00DCEA67 /* DetailViewMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8C35DE298489DA00DCEA67 /* DetailViewMode.swift */; };
 		2CBACA3C299A9F1700D30C35 /* OnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBACA3B299A9F1700D30C35 /* OnboardView.swift */; };
 		2CBACA3E299AA30700D30C35 /* OnboardContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBACA3D299AA30700D30C35 /* OnboardContainerView.swift */; };
@@ -56,6 +57,7 @@
 		2C33F6C129858E5E004893EF /* AddTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewModel.swift; sourceTree = "<group>"; };
 		2C33F6C429858FEA004893EF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2C33F6C72985929C004893EF /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
+		2C7E9D48299C21DF00437EB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C8C35DE298489DA00DCEA67 /* DetailViewMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewMode.swift; sourceTree = "<group>"; };
 		2CBACA3B299A9F1700D30C35 /* OnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardView.swift; sourceTree = "<group>"; };
 		2CBACA3D299AA30700D30C35 /* OnboardContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardContainerView.swift; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 				2C33F6C329858FD2004893EF /* Utilities */,
 				2C33F6B729858659004893EF /* Resources */,
 				2CC25BC1298459BB006972DF /* Preview Content */,
+				2C7E9D48299C21DF00437EB4 /* AppDelegate.swift */,
 			);
 			path = "TaskGuru Self";
 			sourceTree = "<group>";
@@ -418,6 +421,7 @@
 				2CEF151B2988A142002FF516 /* StorageProvider.swift in Sources */,
 				2CCB0B4F2985BC6800D489DD /* SchemeType.swift in Sources */,
 				2C00006A2999E7C40065CA3E /* PendingView.swift in Sources */,
+				2C7E9D49299C21DF00437EB4 /* AppDelegate.swift in Sources */,
 				2CCB0B4D2985BC4500D489DD /* UserDefaultsKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -545,7 +549,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 111;
+				CURRENT_PROJECT_VERSION = 112;
 				DEVELOPMENT_ASSET_PATHS = "\"TaskGuru Self/Preview Content\"";
 				DEVELOPMENT_TEAM = 8R3P49X4ZM;
 				ENABLE_PREVIEWS = YES;
@@ -578,7 +582,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 111;
+				CURRENT_PROJECT_VERSION = 112;
 				DEVELOPMENT_ASSET_PATHS = "\"TaskGuru Self/Preview Content\"";
 				DEVELOPMENT_TEAM = 8R3P49X4ZM;
 				ENABLE_PREVIEWS = YES;

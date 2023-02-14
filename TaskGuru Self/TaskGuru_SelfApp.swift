@@ -11,8 +11,11 @@ import SwiftUI
 // swiftlint:disable type_name
 @main
 struct TaskGuru_SelfApp: App {
+	@UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+
 	@AppStorage(UserDefaultsKey.isOnboarding) private var isOnboarding: Bool = true
 	@AppStorage(UserDefaultsKey.isShowingTabBadge) private var isShowingTabBadge: Bool?
+	@AppStorage(UserDefaultsKey.isLockedInPortrait) private var isLockedInPortrait: Bool?
 
 	private var homeVM: HomeViewModel = .init()
 	private var appState: AppState = .init()
@@ -55,6 +58,12 @@ struct TaskGuru_SelfApp: App {
 				}
 				.onReceive(homeVM.$isFetchingData) { _ in
 					pendingTasksCount = homeVM.pendingTasks.count
+				}
+				.onAppear {
+					(isLockedInPortrait ?? false) ? appDelegate.lockInPortraitMode() : appDelegate.unlockPortraitMode()
+				}
+				.onChange(of: isLockedInPortrait) { _ in
+					(isLockedInPortrait ?? false) ? appDelegate.lockInPortraitMode() : appDelegate.unlockPortraitMode()
 				}
 				.environmentObject(homeVM)
 				.environmentObject(appState)
