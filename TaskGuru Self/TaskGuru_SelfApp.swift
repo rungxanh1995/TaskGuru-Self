@@ -32,6 +32,7 @@ struct TaskGuru_SelfApp: App {
 		WindowGroup {
 			if isOnboarding {
 				OnboardContainerView()
+					.transition(.asymmetric(insertion: .opacity.animation(.default), removal: .opacity))
 					.setUpColorTheme()
 			} else {
 				TabView {
@@ -57,6 +58,7 @@ struct TaskGuru_SelfApp: App {
 				}
 				.environmentObject(homeVM)
 				.environmentObject(appState)
+				.transition(.asymmetric(insertion: .opacity.animation(.default), removal: .opacity))
 				.setUpColorTheme()
 			}
 		}
