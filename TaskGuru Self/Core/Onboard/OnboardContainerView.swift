@@ -29,7 +29,9 @@ struct OnboardContainerView: View {
 				Button("Get Started") {
 					withAnimation {	isOnboarding = false }
 				}
-				.buttonStyle(.borderedProminent)
+				.bold()
+				.buttonStyle(.bordered)
+				.tint(.accentColor)
 			}
 		}
 	}
