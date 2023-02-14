@@ -18,7 +18,15 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 	}
 
 	func lockInPortraitMode() {
-		UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
+		if #available(iOS 16.0, *) {
+			let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+			windowScene?.requestGeometryUpdate(.iOS(interfaceOrientations: .portrait))
+
+			UIApplication.navigationTopViewController()?.setNeedsUpdateOfSupportedInterfaceOrientations()
+		} else {
+			UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
+		}
+
 		AppDelegate.orientationLock = .portrait
 	}
 
