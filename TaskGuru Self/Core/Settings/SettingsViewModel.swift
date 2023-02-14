@@ -16,7 +16,7 @@ extension SettingsView {
 		var isLockedInPortrait: Bool = false
 
 		@AppStorage(UserDefaultsKey.hapticsReduced)
-		var isHapticsReduced: Bool = true
+		var isHapticsReduced: Bool = false
 
 		@AppStorage(UserDefaultsKey.systemTheme)
 		var systemTheme: Int = SchemeType.allCases.first!.rawValue
