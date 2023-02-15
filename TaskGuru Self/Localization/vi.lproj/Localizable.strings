@@ -122,6 +122,10 @@
 "Reduce Haptics" = "Giảm rung phản hồi";
 "Color Theme" = "Chủ đề giao diện";
 
+/* Preview section */
+"Preview on Haptic Touch" = "Xem trước với Haptic Touch";
+"When this is on, long pressing a task from a list reveals a detail preview of the task" = "Chạm và giữ nhiệm vụ từ danh sách để hiển thị xem trước chi tiết của nhiệm vụ đó. Có hiệu lực khi cài đặt này được bật.";
+
 /* Advanced section */
 /* Footer */
 "Be careful, these remove all your data! Restart the app to see all changes" = "Hãy cẩn thận vì tất cả dữ liệu sẽ bị xoá! Khởi động lại app để tất cả thay đổi có hiệu lực";

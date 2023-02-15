@@ -26,6 +26,9 @@ final class Preferences {
 	@UserDefault(UserDefaultsKey.isShowingTabBadge)
 	var isShowingTabBadge: Bool = true
 
+	@UserDefault(UserDefaultsKey.isPreviewEnabled)
+	var isPreviewEnabled: Bool = true
+
 	@UserDefault(UserDefaultsKey.isLockedInPortrait)
 	var isLockedInPortrait: Bool = false
 

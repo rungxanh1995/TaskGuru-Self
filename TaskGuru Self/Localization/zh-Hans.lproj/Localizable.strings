@@ -122,6 +122,10 @@
 "Reduce Haptics" = "减少触感触控";
 "Color Theme" = "外观主题";
 
+/* Preview section */
+"Preview on Haptic Touch" = "触觉触摸预览";
+"When this is on, long pressing a task from a list reveals a detail preview of the task" = "启用此设置时，长按列表中的任务会显示任务的详细预览。";
+
 /* Advanced section */
 /* Footer */
 "Be careful, these remove all your data! Restart the app to see all changes" = "注意，这些会删除所有你的数据！重新启动应用程序以查看所有更改";

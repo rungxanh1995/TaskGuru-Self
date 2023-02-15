@@ -12,6 +12,7 @@ struct SettingsView: View {
 	@State private var isShowingOnboarding: Bool = false
 
 	@Preference(\.isShowingTabBadge) private var isShowingTabBadge
+	@Preference(\.isPreviewEnabled) private var isPreviewEnabled
 	@Preference(\.isLockedInPortrait) private var isLockedInPortrait
 	@Preference(\.isHapticsReduced) private var isHapticsReduced
 	@Preference(\.systemTheme) private var systemTheme
@@ -24,6 +25,7 @@ struct SettingsView: View {
 		NavigationView {
 			Form {
 				generalSection
+				previewSection
 				devTeamSection
 				advancedSection
 
@@ -103,6 +105,19 @@ private extension SettingsView {
 		} label: {
 			Text("Show Onboarding screen")
 		}
+	}
+
+	private var previewSection: some View {
+		Section {
+			preview
+		} footer: {
+			Text("When this is on, long pressing a task from a list reveals a detail preview of the task")
+		}
+	}
+
+	private var preview: some View {
+		Toggle("Preview on Haptic Touch", isOn: $isPreviewEnabled)
+			.tint(.accentColor)
 	}
 
 	private var advancedSection: some View {

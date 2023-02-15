@@ -12,6 +12,8 @@ struct PendingView: View {
 	@StateObject private var tabState: AppState = .init()
 	@State private var selectedTask: TaskItem?
 
+	@Preference(\.isPreviewEnabled) private var isPreviewEnabled
+
 	var body: some View {
 		NavigationStack(path: $tabState.navPath) {
 			ZStack {
@@ -64,7 +66,13 @@ extension PendingView {
 				}
 				.contextMenu {
 					makeContextMenu(for: task)
-				} preview: { DetailView(vm: .init(for: task)) }
+				} preview: {
+					if isPreviewEnabled {
+						DetailView(vm: .init(for: task))
+					} else {
+						HomeListCell(task: task).padding()
+					}
+				}
 			}
 		} footer: {
 			Text("Don't stress yourself too much. You got it 💪")
