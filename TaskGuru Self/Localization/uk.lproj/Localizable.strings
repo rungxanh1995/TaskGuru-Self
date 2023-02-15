@@ -123,8 +123,8 @@
 "Color Theme" = "Кольорова тема";
 
 /* Preview section */
-"Preview on Haptic Touch" = "Preview on Haptic Touch";
-"When this is on, long pressing a task from a list reveals a detail preview of the task" = "When this is on, long pressing a task from a list reveals a detail preview of the task";
+"Preview on Haptic Touch" = "Попередній перегляд за допомогою Haptic Touch";
+"When this is on, long pressing a task from a list reveals a detail preview of the task" = "Коли цей параметр увімкнено, тривале натискання завдання зі списку відкриває детальний попередній перегляд завдання.";
 
 /* Advanced section */
 /* Footer */

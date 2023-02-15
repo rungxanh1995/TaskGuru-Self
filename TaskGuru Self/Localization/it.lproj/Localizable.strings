@@ -123,8 +123,8 @@
 "Color Theme" = "Tema Colore";
 
 /* Preview section */
-"Preview on Haptic Touch" = "Preview on Haptic Touch";
-"When this is on, long pressing a task from a list reveals a detail preview of the task" = "When this is on, long pressing a task from a list reveals a detail preview of the task";
+"Preview on Haptic Touch" = "Anteprima con Haptic Touch";
+"When this is on, long pressing a task from a list reveals a detail preview of the task" = "Quando è attivo, premendo a lungo un'attività da un elenco viene visualizzata un'anteprima dettagliata dell'attività";
 
 /* Advanced section /
  / Footer */
