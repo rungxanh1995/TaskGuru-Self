@@ -89,7 +89,8 @@ private extension SettingsView {
 	private var appTheme: some View {
 		Picker("Color Theme", selection: $vm.systemTheme) {
 			ForEach(SchemeType.allCases) { (theme) in
-				Text(theme.title).tag(theme.rawValue)
+				Text(LocalizedStringKey(theme.title))
+					.tag(theme.rawValue)
 			}
 		}
 	}

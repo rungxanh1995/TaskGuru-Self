@@ -28,7 +28,7 @@ extension DetailView {
 					LazyVGrid(columns: columns) {
 						DetailGridCell(title: vm.task.name, caption: "Name")
 						DetailGridCell(title: vm.task.status.rawValue, caption: "Status", titleColor: vm.task.colorForStatus())
-						DetailGridCell(title: vm.task.numericDueDate, caption: "Due date", titleColor: vm.task.colorForDueDate())
+						DetailGridCell(title: vm.task.numericDueDate, caption: "Due Date", titleColor: vm.task.colorForDueDate())
 						DetailGridCell(title: vm.task.type.rawValue, caption: "Type")
 					}
 
@@ -38,7 +38,7 @@ extension DetailView {
 				}
 				.padding()
 
-				Text("Last updated on \(vm.task.formattedLastUpdated)")
+				Text("Last updated at \(vm.task.formattedLastUpdated)")
 					.font(.system(.caption, design: .rounded))
 					.foregroundColor(.secondary)
 					.padding([.bottom])
