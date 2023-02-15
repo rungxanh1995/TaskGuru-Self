@@ -32,7 +32,7 @@ struct HomeView: View {
 					.navigationDestination(for: TaskItem.self) { task in
 						DetailView(vm: .init(for: task))
 					}
-					.navigationTitle("TaskGuru")
+					.navigationTitle("All Tasks")
 					.toolbar {
 						ToolbarItem(placement: .primaryAction) {
 							addTaskButton
