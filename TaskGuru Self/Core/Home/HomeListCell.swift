@@ -40,6 +40,7 @@ extension HomeListCell {
 				case .personal: SFSymbols.personFilled
 				case .work: SFSymbols.buildingFilled
 				case .school: SFSymbols.graduationCapFilled
+				case .coding: SFSymbols.computer
 				default: SFSymbols.listFilled
 				}
 			}

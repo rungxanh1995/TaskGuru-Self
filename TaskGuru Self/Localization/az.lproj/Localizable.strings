@@ -26,6 +26,7 @@
 "Work" = "İş";
 /* "School" can also be understood as "educational" */
 "School" = "Təhsil";
+"Coding" = "Proqramlaşdırma";
 "Other" = "Digər";
 
 /* Task statuses */

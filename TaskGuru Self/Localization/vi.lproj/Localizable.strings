@@ -26,6 +26,7 @@
 "Work" = "Công việc";
 /* "School" can also be understood as "educational" */
 "School" = "Giáo dục";
+"Coding" = "Lập trình";
 "Other" = "Khác";
 
 /* Task statuses */

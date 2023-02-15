@@ -26,6 +26,7 @@
 "Work" = "Lavoro";
 /* "School" can also be understood as "educational" */
 "School" = "Scuola";
+"Coding" = "Programmazione";
 "Other" = "Altro";
 
 /* Task statuses */

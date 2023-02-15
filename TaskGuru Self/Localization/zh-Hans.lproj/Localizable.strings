@@ -26,6 +26,7 @@
 "Work" = "工作";
 /* "School" can also be understood as "educational" */
 "School" = "教育";
+"Coding" = "编程";
 "Other" = "其他";
 
 /* Task statuses */
