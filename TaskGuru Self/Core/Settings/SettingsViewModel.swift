@@ -9,18 +9,6 @@ import SwiftUI
 
 extension SettingsView {
 	final class ViewModel: ObservableObject {
-		@AppStorage(UserDefaultsKey.isShowingTabBadge)
-		var isShowingTabBadge: Bool = true
-
-		@AppStorage(UserDefaultsKey.isLockedInPortrait)
-		var isLockedInPortrait: Bool = false
-
-		@AppStorage(UserDefaultsKey.hapticsReduced)
-		var isHapticsReduced: Bool = false
-
-		@AppStorage(UserDefaultsKey.systemTheme)
-		var systemTheme: Int = SchemeType.allCases.first!.rawValue
-
 		@Published var isConfirmingResetSettings: Bool = false
 		@Published var isConfirmingResetUserData: Bool = false
 

@@ -14,8 +14,8 @@ struct TaskGuru_SelfApp: App {
 	@UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
 	@AppStorage(UserDefaultsKey.isOnboarding) private var isOnboarding: Bool = true
-	@AppStorage(UserDefaultsKey.isShowingTabBadge) private var isShowingTabBadge: Bool?
-	@AppStorage(UserDefaultsKey.isLockedInPortrait) private var isLockedInPortrait: Bool?
+	@Preference(\.isShowingTabBadge) private var isShowingTabBadge
+	@Preference(\.isLockedInPortrait) private var isLockedInPortrait
 
 	private var homeVM: HomeViewModel = .init()
 	@State private var pendingTasksCount: Int = 0
@@ -48,7 +48,7 @@ struct TaskGuru_SelfApp: App {
 							SFSymbols.clock
 							Text("Pending")
 						}
-						.badge((isShowingTabBadge ?? true) ? pendingTasksCount : 0)
+						.badge(isShowingTabBadge ? pendingTasksCount : 0)
 					SettingsView()
 						.tabItem {
 							SFSymbols.gear
@@ -59,10 +59,10 @@ struct TaskGuru_SelfApp: App {
 					pendingTasksCount = homeVM.pendingTasks.count
 				}
 				.onAppear {
-					(isLockedInPortrait ?? false) ? appDelegate.lockInPortraitMode() : appDelegate.unlockPortraitMode()
+					isLockedInPortrait ? appDelegate.lockInPortraitMode() : appDelegate.unlockPortraitMode()
 				}
 				.onChange(of: isLockedInPortrait) { _ in
-					(isLockedInPortrait ?? false) ? appDelegate.lockInPortraitMode() : appDelegate.unlockPortraitMode()
+					isLockedInPortrait ? appDelegate.lockInPortraitMode() : appDelegate.unlockPortraitMode()
 				}
 				.environmentObject(homeVM)
 				.transition(.asymmetric(insertion: .opacity.animation(.default), removal: .opacity))
