@@ -8,134 +8,134 @@
 
 /* ONBOARDING */
 /* Buttons */
-"I'm All Set!" = "I'm All Set!";
-"Dismiss" = "Dismiss";
+"I'm All Set!" = "Sono pronto!";
+"Dismiss" = "Ignora";
 
-"Home tab" = "Home tab";
-"Tasks categorized by section to easily track overdue, due today, and upcoming ones" = "Tasks categorized by section to easily track overdue, due today, and upcoming ones";
-"Pending Tasks tab" = "Pending Tasks tab";
-"Find your undone tasks here" = "Find your undone tasks here";
-"Quick Actions" = "Quick Actions";
-"Tap and hold each task from the list to use quick actions" = "Tap and hold each task from the list to use quick actions";
+"Home tab" = "Scheda Home";
+"Tasks categorized by section to easily track overdue, due today, and upcoming ones" = "Attività categorizzate per sezione per tenere facilmente traccia di quelle scadute, da fare oggi e future";
+"Pending Tasks tab" = "Scheda Attività in sospeso";
+"Find your undone tasks here" = "Trova qui le tue attività in sospeso";
+"Quick Actions" = "Azioni rapide";
+"Tap and hold each task from the list to use quick actions" = "Tocca e tieni premuto ogni attività dall'elenco per utilizzare le azioni rapide";
 
 
 /* SHARED */
 /* Task types */
-"Personal" = "Personal";
+"Personal" = "Personali";
 /* "Work" can also be understood as "business" */
-"Work" = "Work";
+"Work" = "Lavoro";
 /* "School" can also be understood as "educational" */
-"School" = "School";
-"Other" = "Other";
+"School" = "Scuola";
+"Other" = "Altro";
 
 /* Task statuses */
 /* "New" can also be understood as "newly created" */
-"New" = "New";
-"In progress" = "In progress";
-"Done" = "Done";
+"New" = "Nuova";
+"In progress" = "In corso";
+"Done" = "Completata";
 
 /* Navigation/Context menu - Quick actions in Home & Pending tabs */
-"Mark as Done" = "Mark as Done";
-"Edit" = "Edit";
-"Delete" = "Delete";
-"Cancel" = "Cancel";
+"Mark as Done" = "Segna come completata";
+"Edit" = "Modifica";
+"Delete" = "Elimina";
+"Cancel" = "Annulla";
 "OK" = "OK";
 
 /* Add Task button in Home & Pending tabs */
-"Add Task" = "Add Task";
+"Add Task" = "Aggiungi attività";
 
 /* Add/Edit Task */
 /* Section titles */
-"General" = "General";
-"Notes" = "Notes";
+"General" = "Generale";
+"Notes" = "Note";
 
 /* Add/Edit Inputs + Detail Grid Cell subtitles */
-"Name" = "Name";
-"Due Date" = "Due Date";
-"Type" = "Type";
-"Status" = "Status";
-"Any extra notes..." = "Any extra notes...";
+"Name" = "Nome";
+"Due Date" = "Data di scadenza";
+"Type" = "Tipo";
+"Status" = "Stato";
+"Any extra notes..." = "Eventuali note aggiuntive...";
 
 
 /* HOME */
 /* Home tab name */
 "Home" = "Home";
 /* Navigation title */
-"All Tasks" = "All Tasks";
+"All Tasks" = "Tutti i compiti";
 /* Section titles */
-"Overdue" = "Overdue";
-"Due Today" = "Due Today";
-"Upcoming" = "Upcoming";
+"Overdue" = "Scaduti";
+"Due Today" = "Da completare oggi";
+"Upcoming" = "In arrivo";
 /* Empty list sentence */
-"No tasks" = "No tasks";
+"No tasks" = "Nessun compito";
 
 
 /* PENDING */
 /* Pending tab name */
-"Pending" = "Pending";
+"Pending" = "In sospeso";
 /* Navigation title */
-"Pending Tasks" = "Pending Tasks";
+"Pending Tasks" = "Compiti in sospeso";
 
-"Fetching data" = "Fetching data";
-"You're free! Enjoy your much deserved time 🥳" = "You're free! Enjoy your much deserved time 🥳";
-"Don't stress yourself too much. You got it 💪" = "Don't stress yourself too much. You got it 💪";
+"Fetching data" = "Recupero dati in corso";
+"You're free! Enjoy your much deserved time 🥳" = "Sei libero! Goditi il tuo meritato riposo 🥳";
+"Don't stress yourself too much. You got it 💪" = "Non stressarti troppo. Ce la puoi fare 💪";
 
 
 /* ADD */
 /* Navigation title */
-"Add Task" = "Add Task";
+"Add Task" = "Aggiungi compito";
 /* Navigation action button */
-"Add" = "Add";
+"Add" = "Aggiungi";
 
 
 /* DETAIL */
 /* Navigation title */
-"Task Detail" = "Task Detail";
+"Task Detail" = "Dettaglio compito";
 
-"Last updated at %@" = "Last updated at %@";
+"Last updated at %@" = "Ultimo aggiornamento %@";
 
 
 /* EDIT */
 /* Navigation title */
-"Edit Task" = "Edit Task";
+"Edit Task" = "Modifica compito";
 /* Navigation action button */
-"Save" = "Save";
+"Save" = "Salva";
 
 /* Alerts */
-"Mark Task as Done?" = "Mark Task as Done?";
-"Delete Task?" = "Delete Task?";
+"Mark Task as Done?" = "Segnare l'attività come completata?";
+"Delete Task?" = "Eliminare l'attività?";
 
 
 /* SETTINGS */
 /* Navigation title */
-"Settings" = "Settings";
+"Settings" = "Impostazioni";
 
 /* Section titles */
-"General" = "General";
-"Advanced" = "Advanced";
-"Meet The Team" = "Meet The Team";
+"General" = "Generale";
+"Advanced" = "Avanzate";
+"Meet The Team" = "Incontra Il Team";
 
 /* General section */
-"Show Onboarding screen" = "Show Onboarding screen";
-"Show Tab Badge" = "Show Tab Badge";
-"Portrait Lock" = "Portrait Lock";
-"Reduce Haptics" = "Reduce Haptics";
-"Color Theme" = "Color Theme";
+"Show Onboarding screen" = "Mostra schermata di benvenuto";
+"Show Tab Badge" = "Mostra distintivo sulla scheda";
+"Portrait Lock" = "Blocco orientamento verticale";
+"Reduce Haptics" = "Riduci la vibrazione";
+"Color Theme" = "Tema Colore";
 
-/* Advanced section */
-/* Footer */
-"Be careful, these remove all your data! Restart the app to see all changes" = "Be careful, these remove all your data! Restart the app to see all changes";
+/* Advanced section /
+ / Footer */
+"Be careful, these remove all your data! Restart the app to see all changes" = "Attenzione, questo comporta l'eliminazione di tutti i dati! Riavvia l'app per vedere tutte le modifiche";
 
 /* Confirm dialogs */
-"App settings would reset.\nThis action cannot be undone" = "App settings would reset.\nThis action cannot be undone";
-"All your tasks would be deleted.\nThis action cannot be undone" = "All your tasks would be deleted.\nThis action cannot be undone";
+"App settings would reset.\nThis action cannot be undone" = "Le impostazioni dell'applicazione verranno ripristinate.\nQuesta azione non può essere annullata";
+"All your tasks would be deleted.\nThis action cannot be undone" = "Tutti i tuoi compiti verranno eliminati.\nQuesta azione non può essere annullata";
 
 /* Buttons */
-"Reset App Settings" = "Reset App Settings";
-"Reset Your Data" = "Reset Your Data";
+"Reset App Settings" = "Ripristina impostazioni dell'app";
+"Reset Your Data" = "Ripristina i tuoi dati";
 
 /* Color themes */
-"System" = "System";
-"Light" = "Light";
-"Dark" = "Dark";
+"System" = "Sistema";
+"Light" = "Chiaro";
+"Dark" = "Scuro";
 
