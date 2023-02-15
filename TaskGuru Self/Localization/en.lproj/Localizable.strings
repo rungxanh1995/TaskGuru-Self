@@ -1,0 +1,140 @@
+/* 
+  Localizable.strings
+  TaskGuru Self
+
+  Created by Joe Pham on 2023-02-15.
+  
+*/
+
+/* ONBOARDING */
+/* Buttons */
+"I'm All Set!" = "I'm All Set!";
+"Dismiss" = "Dismiss";
+
+"Home tab" = "Home tab";
+"Tasks categorized by section to easily track overdue, due today, and upcoming ones" = "Tasks categorized by section to easily track overdue, due today, and upcoming ones";
+"Pending Tasks tab" = "Pending Tasks tab";
+"Find your undone tasks here" = "Find your undone tasks here";
+"Quick Actions" = "Quick Actions";
+"Tap and hold each task from the list to use quick actions" = "Tap and hold each task from the list to use quick actions";
+
+
+/* SHARED */
+/* Task types */
+"Personal" = "Personal";
+/* "Work" can also be understood as "business" */
+"Work" = "Work";
+/* "School" can also be understood as "educational" */
+"School" = "School";
+"Other" = "Other";
+
+/* Task statuses */
+/* "New" can also be understood as "newly created" */
+"New" = "New";
+"In progress" = "In progress";
+"Done" = "Done";
+
+/* Navigation/Context menu - Quick actions in Home & Pending tabs */
+"Mark as Done" = "Mark as Done";
+"Edit" = "Edit";
+"Delete" = "Delete";
+"Cancel" = "Cancel";
+"OK" = "OK";
+
+/* Add Task button in Home & Pending tabs */
+"Add Task" = "Add Task";
+
+/* Add/Edit Task */
+/* Section titles */
+"General" = "General";
+"Notes" = "Notes";
+
+/* Add/Edit Inputs + Detail Grid Cell subtitles */
+"Name" = "Name";
+"Due Date" = "Due Date";
+"Type" = "Type";
+"Status" = "Status";
+"Any extra notes..." = "Any extra notes...";
+
+
+/* HOME */
+/* Home tab name */
+"Home" = "Home";
+/* Navigation title */
+"All Tasks" = "All Tasks";
+/* Section titles */
+"Overdue" = "Overdue";
+"Due Today" = "Due Today";
+"Upcoming" = "Upcoming";
+/* Empty list sentence */
+"No tasks" = "No tasks";
+
+
+/* PENDING */
+/* Pending tab name */
+"Pending" = "Pending";
+/* Navigation title */
+"Pending Tasks" = "Pending Tasks";
+
+"Fetching data" = "Fetching data";
+"You're free! Enjoy your much deserved time 🥳" = "You're free! Enjoy your much deserved time 🥳";
+"Don't stress yourself too much. You got it 💪" = "Don't stress yourself too much. You got it 💪";
+
+
+/* ADD */
+/* Navigation title */
+"Add Task" = "Add Task";
+/* Navigation action button */
+"Add" = "Add";
+
+
+/* DETAIL */
+/* Navigation title */
+"Task Detail" = "Task Detail";
+
+"Last updated at %@" = "Last updated at %@";
+
+
+/* EDIT */
+/* Navigation title */
+"Edit Task" = "Edit Task";
+/* Navigation action button */
+"Save" = "Save";
+
+/* Alerts */
+"Mark Task as Done?" = "Mark Task as Done?";
+"Delete Task?" = "Delete Task?";
+
+
+/* SETTINGS */
+/* Navigation title */
+"Settings" = "Settings";
+
+/* Section titles */
+"General" = "General";
+"Advanced" = "Advanced";
+"Meet The Team" = "Meet The Team";
+
+/* General section */
+"Show Onboarding screen" = "Show Onboarding screen";
+"Show Tab Badge" = "Show Tab Badge";
+"Portrait Lock" = "Portrait Lock";
+"Reduce Haptics" = "Reduce Haptics";
+"Color Theme" = "Color Theme";
+
+/* Advanced section */
+/* Footer */
+"Be careful, these remove all your data! Restart the app to see all changes" = "Be careful, these remove all your data! Restart the app to see all changes";
+
+/* Confirm dialogs */
+"App settings would reset.\nThis action cannot be undone" = "App settings would reset.\nThis action cannot be undone";
+"All your tasks would be deleted.\nThis action cannot be undone" = "All your tasks would be deleted.\nThis action cannot be undone";
+
+/* Buttons */
+"Reset App Settings" = "Reset App Settings";
+"Reset Your Data" = "Reset Your Data";
+
+/* Color themes */
+"System" = "System";
+"Light" = "Light";
+"Dark" = "Dark";

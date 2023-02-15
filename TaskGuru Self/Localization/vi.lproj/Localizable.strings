@@ -1,0 +1,140 @@
+/* 
+  Localizable.strings
+  TaskGuru Self
+
+  Created by Joe Pham on 2023-02-15.
+  
+*/
+
+/* ONBOARDING */
+/* Buttons */
+"I'm All Set!" = "Đã sẵn sàng!";
+"Dismiss" = "Thoát";
+
+"Home tab" = "Tab Chính";
+"Tasks categorized by section to easily track overdue, due today, and upcoming ones" = "Các nhiệm vụ được phân loại theo mục để tiện theo dõi nhiệm vụ quá hạn, đến hạn trong ngày, và sắp tới";
+"Pending Tasks tab" = "Tab Nhiệm vụ Chưa h.thành";
+"Find your undone tasks here" = "Hiển thị các nhiệm vụ còn tồn đọng của bạn";
+"Quick Actions" = "Menu H.động nhanh";
+"Tap and hold each task from the list to use quick actions" = "Bấm giữ mỗi nhiệm vụ trong danh sách để truy cập menu ngữ cảnh";
+
+
+/* SHARED */
+/* Task types */
+"Personal" = "Cá nhân";
+/* "Work" can also be understood as "business" */
+"Work" = "Công việc";
+/* "School" can also be understood as "educational" */
+"School" = "Giáo dục";
+"Other" = "Khác";
+
+/* Task statuses */
+/* "New" can also be understood as "newly created" */
+"New" = "Vừa tạo";
+"In progress" = "Đang t.hiện";
+"Done" = "Đã xong";
+
+/* Navigation/Context menu - Quick actions in Home & Pending tabs */
+"Mark as Done" = "Đánh dấu h.thành";
+"Edit" = "Sửa đổi";
+"Delete" = "Xoá";
+"Cancel" = "Huỷ";
+"OK" = "OK";
+
+/* Add Task button in Home & Pending tabs */
+"Add Task" = "Tạo Nhiệm vụ";
+
+/* Add/Edit Task */
+/* Section titles */
+"General" = "Chung";
+"Notes" = "Ghi chú";
+
+/* Add/Edit Inputs + Detail Grid Cell subtitles */
+"Name" = "Tên";
+"Due Date" = "Ngày đến hạn";
+"Type" = "Thể loại";
+"Status" = "Tình trạng";
+"Any extra notes..." = "Bất kì chú thích nào...";
+
+
+/* HOME */
+/* Home tab name */
+"Home" = "Chính";
+/* Navigation title */
+"All Tasks" = "Tất cả Nhiệm vụ";
+/* Section titles */
+"Overdue" = "Quá hạn";
+"Due Today" = "Đến hạn trong ngày";
+"Upcoming" = "Sắp tới";
+/* Empty list sentence */
+"No tasks" = "Không có nhiệm vụ nào";
+
+
+/* PENDING */
+/* Pending tab name */
+"Pending" = "Tồn đọng";
+/* Navigation title */
+"Pending Tasks" = "Nhiệm vụ Tồn đọng";
+
+"Fetching data" = "Đang tải dữ liệu";
+"You're free! Enjoy your much deserved time 🥳" = "Bạn được tự do rồi! Hãy tận hưởng thời gian này cho bản thân nhé 🥳";
+"Don't stress yourself too much. You got it 💪" = "Đừng quá căng thẳng. Bạn sẽ làm được thôi 💪";
+
+
+/* ADD */
+/* Navigation title */
+"Add Task" = "Tạo Nhiệm vụ";
+/* Navigation action button */
+"Add" = "Thêm";
+
+
+/* DETAIL */
+/* Navigation title */
+"Task Detail" = "Thông tin nhiệm vụ";
+
+"Last updated at %@" = "Cập nhật lần cuối lúc %@";
+
+
+/* EDIT */
+/* Navigation title */
+"Edit Task" = "Sửa Nhiệm vụ";
+/* Navigation action button */
+"Save" = "Lưu";
+
+/* Alerts */
+"Mark Task as Done?" = "Đánh dấu nhiệm vụ đã h.thành?";
+"Delete Task?" = "Xoá nhiệm vụ?";
+
+
+/* SETTINGS */
+/* Navigation title */
+"Settings" = "Cài đặt";
+
+/* Section titles */
+"General" = "Chung";
+"Advanced" = "Nâng cao";
+"Meet The Team" = "Gặp đội ngũ lập trình viên";
+
+/* General section */
+"Show Onboarding screen" = "Hiện màn hình giới thiệu";
+"Show Tab Badge" = "Hiện nhãn tab";
+"Portrait Lock" = "Khoá xoay màn hình";
+"Reduce Haptics" = "Giảm rung phản hồi";
+"Color Theme" = "Chủ đề giao diện";
+
+/* Advanced section */
+/* Footer */
+"Be careful, these remove all your data! Restart the app to see all changes" = "Hãy cẩn thận vì tất cả dữ liệu sẽ bị xoá! Khởi động lại app để tất cả thay đổi có hiệu lực";
+
+/* Confirm dialogs */
+"App settings would reset.\nThis action cannot be undone" = "Cài đặt của app sẽ khôi phục lại mặc định.\nHành động này không thể hoàn tác";
+"All your tasks would be deleted.\nThis action cannot be undone" = "Tất cả nhiệm vụ của bạn sẽ bị xoá.\nHành động này không thể hoàn tác";
+
+/* Buttons */
+"Reset App Settings" = "Khôi phục c.đặt mặc định";
+"Reset Your Data" = "Xoá dữ liệu của bạn";
+
+/* Color themes */
+"System" = "Hệ thống";
+"Light" = "Sáng";
+"Dark" = "Tối";

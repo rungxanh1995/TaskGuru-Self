@@ -34,13 +34,13 @@ extension DetailView {
 
 						Picker("Type", selection: $vm.taskType) {
 							ForEach(TaskConstants.allTypes, id: \.self) {
-								Text($0.rawValue)
+								Text(LocalizedStringKey($0.rawValue))
 							}
 						}
 
 						Picker("Status", selection: $vm.taskStatus) {
 							ForEach(TaskConstants.allStatuses, id: \.self) {
-								Text($0.rawValue)
+								Text(LocalizedStringKey($0.rawValue))
 							}
 						}
 					} header: {

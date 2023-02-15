@@ -45,7 +45,7 @@ extension HomeListCell {
 			}
 			.font(.system(.caption2))
 
-			Text(task.type.rawValue)
+			Text(LocalizedStringKey(task.type.rawValue))
 		}
 		.font(.system(.subheadline))
 		.foregroundColor(.secondary)
@@ -71,7 +71,7 @@ extension HomeListCell {
 			}
 			.font(.system(.caption2))
 
-			Text(task.status.rawValue)
+			Text(LocalizedStringKey(task.status.rawValue))
 		}
 		.font(.system(.subheadline))
 		.foregroundColor(task.colorForStatus())
