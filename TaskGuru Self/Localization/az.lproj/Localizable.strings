@@ -8,137 +8,137 @@
 
 /* ONBOARDING */
 /* Buttons */
-"I'm All Set!" = "I'm All Set!";
-"Dismiss" = "Dismiss";
+"I'm All Set!" = "Mən hazıram!";
+"Dismiss" = "İşdən çıxart";
 
-"Home tab" = "Home tab";
-"Tasks categorized by section to easily track overdue, due today, and upcoming ones" = "Tasks categorized by section to easily track overdue, due today, and upcoming ones";
-"Pending Tasks tab" = "Pending Tasks tab";
-"Find your undone tasks here" = "Find your undone tasks here";
-"Quick Actions" = "Quick Actions";
-"Tap and hold each task from the list to use quick actions" = "Tap and hold each task from the list to use quick actions";
+"Home tab" = "Ana səhifə nişanı";
+"Tasks categorized by section to easily track overdue, due today, and upcoming ones" = "Geçmiş, bu gün vaxtı və gələcək olanları asanlıqla izləmək üçün bölmə üzrə kateqoriyalara ayrılmış tapşırıqlar";
+"Pending Tasks tab" = "Gözləyən Tapşırıqlar nişanı";
+"Find your undone tasks here" = "Gözləyən tapşırıqlarınızı burada tapın";
+"Quick Actions" = "Kontekst menyusu";
+"Tap and hold each task from the list to use quick actions" = "Kontekst menyusundan istifadə etmək üçün siyahıdan hər tapşırığa toxunub saxlayın";
 
 
 /* SHARED */
 /* Task types */
-"Personal" = "Personal";
+"Personal" = "Şəxsi";
 /* "Work" can also be understood as "business" */
-"Work" = "Work";
+"Work" = "İş";
 /* "School" can also be understood as "educational" */
-"School" = "School";
-"Other" = "Other";
+"School" = "Təhsil";
+"Other" = "Digər";
 
 /* Task statuses */
 /* "New" can also be understood as "newly created" */
-"New" = "New";
-"In progress" = "In progress";
-"Done" = "Done";
+"New" = "Yeni";
+"In progress" = "Emal edilir";
+"Done" = "Tamamlandı";
 
 /* Navigation/Context menu - Quick actions in Home & Pending tabs */
-"Mark as Done" = "Mark as Done";
+"Mark as Done" = "Bitti kimi qeyd edin";
 "Edit" = "Edit";
-"Delete" = "Delete";
-"Cancel" = "Cancel";
+"Delete" = "Sil";
+"Cancel" = "Ləğv et";
 "OK" = "OK";
 
 /* Add Task button in Home & Pending tabs */
-"Add Task" = "Add Task";
+"Add Task" = "Tapşırıq əlavə et";
 
 /* Add/Edit Task */
 /* Section titles */
-"General" = "General";
-"Notes" = "Notes";
+"General" = "Ümumi";
+"Notes" = "Qeydlər";
 
 /* Add/Edit Inputs + Detail Grid Cell subtitles */
-"Name" = "Name";
-"Due Date" = "Due Date";
-"Type" = "Type";
+"Name" = "Ad";
+"Due Date" = "Tamamlanma tarixi";
+"Type" = "Növ";
 "Status" = "Status";
-"Any extra notes..." = "Any extra notes...";
+"Any extra notes..." = "Hər hansı əlavə qeydlər...";
 
 
 /* HOME */
 /* Home tab name */
-"Home" = "Home";
+"Home" = "Ana səhifə";
 /* Navigation title */
-"All Tasks" = "All Tasks";
+"All Tasks" = "Bütün Tapşırıqlar";
 /* Section titles */
-"Overdue" = "Overdue";
-"Due Today" = "Due Today";
-"Upcoming" = "Upcoming";
+"Overdue" = "Gecmiş";
+"Due Today" = "Bugünkü Vəzifələr";
+"Upcoming" = "Gələcək";
 /* Empty list sentence */
-"No tasks" = "No tasks";
+"No tasks" = "Tapşırıq yoxdur";
 
 
 /* PENDING */
 /* Pending tab name */
-"Pending" = "Pending";
+"Pending" = "Gözləyən";
 /* Navigation title */
-"Pending Tasks" = "Pending Tasks";
+"Pending Tasks" = "Gözləyən Tapşırıqlar";
 
-"Fetching data" = "Fetching data";
-"You're free! Enjoy your much deserved time 🥳" = "You're free! Enjoy your much deserved time 🥳";
-"Don't stress yourself too much. You got it 💪" = "Don't stress yourself too much. You got it 💪";
+"Fetching data" = "Data götürülür";
+"You're free! Enjoy your much deserved time 🥳" = "Sən azadsan! Çox layiqli vaxtından həzz alın 🥳";
+"Don't stress yourself too much. You got it 💪" = "Özünü çox stresə salma. Anladın 💪";
 
 
 /* ADD */
 /* Navigation title */
-"Add Task" = "Add Task";
+"Add Task" = "Tapşırıq əlavə et";
 /* Navigation action button */
-"Add" = "Add";
+"Add" = "Əlavə et";
 
 
 /* DETAIL */
 /* Navigation title */
-"Task Detail" = "Task Detail";
+"Task Detail" = "Tapşırıq Təfərrüatları";
 
-"Last updated at %@" = "Last updated at %@";
+"Last updated at %@" = "Son yenilənmə: %@";
 
 
 /* EDIT */
 /* Navigation title */
-"Edit Task" = "Edit Task";
+"Edit Task" = "Tapşırığı redaktə et";
 /* Navigation action button */
-"Save" = "Save";
+"Save" = "Saxla";
 
 /* Alerts */
-"Mark Task as Done?" = "Mark Task as Done?";
-"Delete Task?" = "Delete Task?";
+"Mark Task as Done?" = "Tapşırığı tamamlandı kimi qeyd edin?";
+"Delete Task?" = "Tapşırıq silinsin?";
 
 
 /* SETTINGS */
 /* Navigation title */
-"Settings" = "Settings";
+"Settings" = "Parametrlər";
 
 /* Section titles */
-"General" = "General";
-"Advanced" = "Advanced";
-"Meet The Team" = "Meet The Team";
+"General" = "Ümumi";
+"Advanced" = "Qabaqcıl";
+"Meet The Team" = "Komanda ilə tanış olun";
 
 /* General section */
-"Show Onboarding screen" = "Show Onboarding screen";
-"Show Tab Badge" = "Show Tab Badge";
-"Portrait Lock" = "Portrait Lock";
+"Show Onboarding screen" = "Onboarding ekranını göstər";
+"Show Tab Badge" = "Tab bildirişini göstər";
+"Portrait Lock" = "Portret Kilidi";
 "Reduce Haptics" = "Reduce Haptics";
-"Color Theme" = "Color Theme";
+"Color Theme" = "Rəng Mövzu";
 
 /* Preview section */
 "Preview on Haptic Touch" = "Preview on Haptic Touch";
-"When this is on, long pressing a task from a list reveals a detail preview of the task" = "When this is on, long pressing a task from a list reveals a detail preview of the task";
+"When this is on, long pressing a task from a list reveals a detail preview of the task" = "Bu aktiv olduqda, siyahıdan tapşırığa uzun basmaq tapşırığın təfərrüatlı önizləməsini açır";
 
 /* Advanced section */
 /* Footer */
-"Be careful, these remove all your data! Restart the app to see all changes" = "Be careful, these remove all your data! Restart the app to see all changes";
+"Be careful, these remove all your data! Restart the app to see all changes" = "Ehtiyatlı olun, bunlar bütün məlumatlarınızı silir! Bütün dəyişiklikləri görmək üçün proqramı yenidən başladın";
 
 /* Confirm dialogs */
-"App settings would reset.\nThis action cannot be undone" = "App settings would reset.\nThis action cannot be undone";
-"All your tasks would be deleted.\nThis action cannot be undone" = "All your tasks would be deleted.\nThis action cannot be undone";
+"App settings would reset.\nThis action cannot be undone" = "Tətbiq parametrləri sıfırlanacaq.\nBu əməliyyat geri qaytarıla bilməz";
+"All your tasks would be deleted.\nThis action cannot be undone" = "Bütün tapşırıqlarınız silinəcək.\nBu əməliyyat geri qaytarıla bilməz";
 
 /* Buttons */
-"Reset App Settings" = "Reset App Settings";
-"Reset Your Data" = "Reset Your Data";
+"Reset App Settings" = "Tətbiq Parametrlərini Sıfırla";
+"Reset Your Data" = "Məlumatlarınızı Sıfırlayın";
 
 /* Color themes */
-"System" = "System";
-"Light" = "Light";
-"Dark" = "Dark";
+"System" = "Sistem";
+"Light" = "İşıq";
+"Dark" = "Qaranlıq";
