@@ -88,8 +88,7 @@ private extension SettingsView {
 	private var appTheme: some View {
 		Picker("Color Theme", selection: $vm.systemTheme) {
 			ForEach(SchemeType.allCases) { (theme) in
-				Text(theme.title)
-					.tag(theme.rawValue)
+				Text(theme.title).tag(theme.rawValue)
 			}
 		}
 	}
@@ -139,25 +138,21 @@ private extension SettingsView {
 
 	private var devTeamSection: some View {
 		Section {
-			HStack {
-				SFSymbols.link
+			Label {
 				Link("Joe Pham", destination: vm.joeGitHubLink)
-			}
+			} icon: { SFSymbols.link }
 
-			HStack {
-				SFSymbols.link
+			Label {
 				Link("Marco Stevanella", destination: vm.marcoGitHubLink)
-			}
+			} icon: { SFSymbols.link }
 
-			HStack {
-				SFSymbols.link
+			Label {
 				Link("Ostap Sulyk", destination: vm.ostapGitHubLink)
-			}
+			} icon: { SFSymbols.link }
 
-			HStack {
-				SFSymbols.link
+			Label {
 				Link("Rauf Anata", destination: vm.raufGitHubLink)
-			}
+			} icon: { SFSymbols.link }
 		} header: {
 			Label { Text("Meet The Team") } icon: { SFSymbols.handsSparklesFilled }
 		}
