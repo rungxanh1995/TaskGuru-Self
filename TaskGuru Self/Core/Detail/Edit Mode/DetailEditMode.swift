@@ -16,7 +16,7 @@ extension DetailView {
 
 		/// Needs this here, so we can navigate back to `Home` view after editing.
 		/// Otherwise, we would see that the task info is not re-rendered in Detail View mode.
-		@EnvironmentObject private var appState: AppState
+		@EnvironmentObject var appState: AppState
 		@Environment(\.dismiss) var dismissThisView
 
 		@ObservedObject var vm: DetailView.ViewModel

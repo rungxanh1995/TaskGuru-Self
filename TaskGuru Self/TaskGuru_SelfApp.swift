@@ -18,7 +18,6 @@ struct TaskGuru_SelfApp: App {
 	@AppStorage(UserDefaultsKey.isLockedInPortrait) private var isLockedInPortrait: Bool?
 
 	private var homeVM: HomeViewModel = .init()
-	private var appState: AppState = .init()
 	@State private var pendingTasksCount: Int = 0
 
 	init() {
@@ -66,7 +65,6 @@ struct TaskGuru_SelfApp: App {
 					(isLockedInPortrait ?? false) ? appDelegate.lockInPortraitMode() : appDelegate.unlockPortraitMode()
 				}
 				.environmentObject(homeVM)
-				.environmentObject(appState)
 				.transition(.asymmetric(insertion: .opacity.animation(.default), removal: .opacity))
 				.setUpColorTheme()
 			}
