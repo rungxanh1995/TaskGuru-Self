@@ -9,11 +9,13 @@ import SwiftUI
 
 struct PendingView: View {
 	@EnvironmentObject private var vm: HomeViewModel
-	@EnvironmentObject private var appState: AppState
+	@StateObject private var tabState: AppState = .init()
 	@State private var selectedTask: TaskItem?
 
+	@Preference(\.isPreviewEnabled) private var isPreviewEnabled
+
 	var body: some View {
-		NavigationStack(path: $appState.navPath) {
+		NavigationStack(path: $tabState.navPath) {
 			ZStack {
 				if vm.isFetchingData {
 					ProgressView { Text("Fetching data") }
@@ -41,6 +43,7 @@ struct PendingView: View {
 				DetailView.EditMode(vm: .init(for: task))
 			}
 		}
+		.environmentObject(tabState)
 	}
 }
 
@@ -63,7 +66,13 @@ extension PendingView {
 				}
 				.contextMenu {
 					makeContextMenu(for: task)
-				} preview: { DetailView(vm: .init(for: task)) }
+				} preview: {
+					if isPreviewEnabled {
+						DetailView(vm: .init(for: task))
+					} else {
+						HomeListCell(task: task).padding()
+					}
+				}
 			}
 		} footer: {
 			Text("Don't stress yourself too much. You got it 💪")
@@ -112,6 +121,5 @@ struct PendingView_Previews: PreviewProvider {
 	static var previews: some View {
 		PendingView()
 			.environmentObject(HomeViewModel())
-			.environmentObject(AppState())
 	}
 }

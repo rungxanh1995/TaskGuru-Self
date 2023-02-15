@@ -9,11 +9,13 @@ import SwiftUI
 
 struct HomeView: View {
 	@EnvironmentObject var vm: HomeViewModel
+	@StateObject private var tabState: AppState = .init()
 	@State private var selectedTask: TaskItem?
-	@EnvironmentObject private var appState: AppState
+
+	@Preference(\.isPreviewEnabled) private var isPreviewEnabled
 
 	var body: some View {
-		NavigationStack(path: $appState.navPath) {
+		NavigationStack(path: $tabState.navPath) {
 			ZStack {
 				if vm.isFetchingData {
 					ProgressView()
@@ -48,6 +50,7 @@ struct HomeView: View {
 				}
 			}
 		}
+		.environmentObject(tabState)
 	}
 }
 
@@ -94,7 +97,13 @@ extension HomeView {
 					}
 					.contextMenu {
 						makeContextMenu(for: task)
-					} preview: { DetailView(vm: .init(for: task)) }
+					} preview: {
+						if isPreviewEnabled {
+							DetailView(vm: .init(for: task))
+						} else {
+							HomeListCell(task: task).padding()
+						}
+					}
 				}
 			}
 		} header: {
@@ -116,7 +125,13 @@ extension HomeView {
 					}
 					.contextMenu {
 						makeContextMenu(for: task)
-					} preview: { DetailView(vm: .init(for: task)) }
+					} preview: {
+						if isPreviewEnabled {
+							DetailView(vm: .init(for: task))
+						} else {
+							HomeListCell(task: task).padding()
+						}
+					}
 				}
 			}
 		} header: {
@@ -138,7 +153,13 @@ extension HomeView {
 					}
 					.contextMenu {
 						makeContextMenu(for: task)
-					} preview: { DetailView(vm: .init(for: task)) }
+					} preview: {
+						if isPreviewEnabled {
+							DetailView(vm: .init(for: task))
+						} else {
+							HomeListCell(task: task).padding()
+						}
+					}
 				}
 			}
 		} header: {
@@ -187,6 +208,5 @@ struct HomeView_Previews: PreviewProvider {
 	static var previews: some View {
 		HomeView()
 			.environmentObject(HomeViewModel())
-			.environmentObject(AppState())
 	}
 }

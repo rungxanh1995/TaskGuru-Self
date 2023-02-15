@@ -11,6 +11,12 @@ struct SettingsView: View {
 	@StateObject private var vm: ViewModel
 	@State private var isShowingOnboarding: Bool = false
 
+	@Preference(\.isShowingTabBadge) private var isShowingTabBadge
+	@Preference(\.isPreviewEnabled) private var isPreviewEnabled
+	@Preference(\.isLockedInPortrait) private var isLockedInPortrait
+	@Preference(\.isHapticsReduced) private var isHapticsReduced
+	@Preference(\.systemTheme) private var systemTheme
+
 	init(vm: SettingsView.ViewModel = .init()) {
 		_vm = StateObject(wrappedValue: vm)
 	}
@@ -19,6 +25,7 @@ struct SettingsView: View {
 		NavigationView {
 			Form {
 				generalSection
+				previewSection
 				devTeamSection
 				advancedSection
 
@@ -69,25 +76,22 @@ private extension SettingsView {
 	}
 
 	private var tabBadge: some View {
-		Toggle("Show Tab Badge", isOn: $vm.isShowingTabBadge)
+		Toggle("Show Tab Badge", isOn: $isShowingTabBadge)
 			.tint(.accentColor)
 	}
 
 	private var portraitLock: some View {
-		Toggle("Portrait Lock", isOn: $vm.isLockedInPortrait)
+		Toggle("Portrait Lock", isOn: $isLockedInPortrait)
 			.tint(.accentColor)
 	}
 
 	private var haptics: some View {
-		Toggle(
-			"Reduce Haptics",
-			isOn: $vm.isHapticsReduced
-		)
-		.tint(.accentColor)
+		Toggle("Reduce Haptics", isOn: $isHapticsReduced)
+			.tint(.accentColor)
 	}
 
 	private var appTheme: some View {
-		Picker("Color Theme", selection: $vm.systemTheme) {
+		Picker("Color Theme", selection: $systemTheme) {
 			ForEach(SchemeType.allCases) { (theme) in
 				Text(LocalizedStringKey(theme.title))
 					.tag(theme.rawValue)
@@ -101,6 +105,19 @@ private extension SettingsView {
 		} label: {
 			Text("Show Onboarding screen")
 		}
+	}
+
+	private var previewSection: some View {
+		Section {
+			preview
+		} footer: {
+			Text("When this is on, long pressing a task from a list reveals a detail preview of the task")
+		}
+	}
+
+	private var preview: some View {
+		Toggle("Preview on Haptic Touch", isOn: $isPreviewEnabled)
+			.tint(.accentColor)
 	}
 
 	private var advancedSection: some View {

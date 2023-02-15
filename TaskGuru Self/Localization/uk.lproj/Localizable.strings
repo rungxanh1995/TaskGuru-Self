@@ -122,6 +122,10 @@
 "Reduce Haptics" = "Зменшення вібрації";
 "Color Theme" = "Кольорова тема";
 
+/* Preview section */
+"Preview on Haptic Touch" = "Preview on Haptic Touch";
+"When this is on, long pressing a task from a list reveals a detail preview of the task" = "When this is on, long pressing a task from a list reveals a detail preview of the task";
+
 /* Advanced section */
 /* Footer */
 "Be careful, these remove all your data! Restart the app to see all changes" = "Обережно, це видалить всі ваші дані! Перезапустіть програму, щоб побачити всі зміни";
