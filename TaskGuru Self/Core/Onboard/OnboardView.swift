@@ -32,7 +32,7 @@ struct OnboardView: View {
 	}
 }
 
-struct OnboardVie_Previews: PreviewProvider {
+struct OnboardView_Previews: PreviewProvider {
 	static var previews: some View {
 		OnboardView(
 			icon: OnboardFeature.features[1].icon,
