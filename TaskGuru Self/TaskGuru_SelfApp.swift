@@ -29,8 +29,6 @@ struct TaskGuru_SelfApp: App {
 		UIView.appearance(for: UITraitCollection(userInterfaceStyle: .dark),
 											whenContainedInInstancesOf: [UIAlertController.self])
 		.tintColor = UIColor(Color("AccentColor"))
-
-		if isShowingAppBadge { setAppBadgeOfPendingTasks() }
 	}
 
 	var body: some Scene {
@@ -60,7 +58,7 @@ struct TaskGuru_SelfApp: App {
 				}
 				.onReceive(homeVM.$isFetchingData) { _ in
 					pendingTasksCount = homeVM.pendingTasks.count
-					setAppBadgeOfPendingTasks()
+					if isShowingAppBadge { setAppBadgeOfPendingTasks() }
 				}
 				.onAppear {
 					isLockedInPortrait ? appDelegate.lockInPortraitMode() : appDelegate.unlockPortraitMode()
@@ -89,7 +87,7 @@ extension TaskGuru_SelfApp {
 				Task {
 					await MainActor.run {
 						switch isShowingAppBadge {
-						case true: UIApplication.shared.applicationIconBadgeNumber = homeVM.pendingTasks.count
+						case true:	UIApplication.shared.applicationIconBadgeNumber = homeVM.pendingTasks.count
 						case false: UIApplication.shared.applicationIconBadgeNumber = 0
 						}
 					}
