@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2C00006A2999E7C40065CA3E /* PendingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0000692999E7C40065CA3E /* PendingView.swift */; };
+		2C1E6A36299E92BD00489534 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 2C1E6A35299E92BD00489534 /* ConfettiSwiftUI */; };
 		2C2541B029849CDC00367BED /* DetailGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2541AF29849CDC00367BED /* DetailGridCell.swift */; };
 		2C33F6B329858293004893EF /* DetailEditMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C33F6B229858293004893EF /* DetailEditMode.swift */; };
 		2C33F6B629858649004893EF /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C33F6B529858649004893EF /* Launch Screen.storyboard */; };
@@ -110,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C1E6A36299E92BD00489534 /* ConfettiSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,6 +369,9 @@
 			dependencies = (
 			);
 			name = "TaskGuru Self";
+			packageProductDependencies = (
+				2C1E6A35299E92BD00489534 /* ConfettiSwiftUI */,
+			);
 			productName = "TaskGuru Self";
 			productReference = 2CC25BB8298459BA006972DF /* TaskGuru Self.app */;
 			productType = "com.apple.product-type.application";
@@ -400,6 +405,9 @@
 				az,
 			);
 			mainGroup = 2CC25BAF298459BA006972DF;
+			packageReferences = (
+				2C1E6A34299E92BD00489534 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
+			);
 			productRefGroup = 2CC25BB9298459BA006972DF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -631,7 +639,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 123;
+				CURRENT_PROJECT_VERSION = 124;
 				DEVELOPMENT_ASSET_PATHS = "\"TaskGuru Self/Preview Content\"";
 				DEVELOPMENT_TEAM = 8R3P49X4ZM;
 				ENABLE_PREVIEWS = YES;
@@ -649,7 +657,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.4;
+				MARKETING_VERSION = 1.1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "joepham.TaskGuru-Self";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -667,7 +675,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 123;
+				CURRENT_PROJECT_VERSION = 124;
 				DEVELOPMENT_ASSET_PATHS = "\"TaskGuru Self/Preview Content\"";
 				DEVELOPMENT_TEAM = 8R3P49X4ZM;
 				ENABLE_PREVIEWS = YES;
@@ -685,7 +693,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.4;
+				MARKETING_VERSION = 1.1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "joepham.TaskGuru-Self";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -719,6 +727,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2C1E6A34299E92BD00489534 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/simibac/ConfettiSwiftUI.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2C1E6A35299E92BD00489534 /* ConfettiSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2C1E6A34299E92BD00489534 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
+			productName = ConfettiSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		2CF38FB3298982FB00CB49C5 /* TaskGuru.xcdatamodeld */ = {

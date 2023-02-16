@@ -6,11 +6,14 @@
 //
 
 import SwiftUI
+import ConfettiSwiftUI
 
 struct HomeView: View {
 	@EnvironmentObject var vm: HomeViewModel
 	@StateObject private var tabState: AppState = .init()
 	@State private var selectedTask: TaskItem?
+
+	@State private var confettiCounter: Int = 0
 
 	@Preference(\.isPreviewEnabled) private var isPreviewEnabled
 
@@ -29,6 +32,7 @@ struct HomeView: View {
 							upcomingSection
 						}
 					}
+					.confettiCannon(counter: $confettiCounter)
 					.onAppear(perform: vm.fetchTasks)
 					.onChange(of: selectedTask) { _ in vm.fetchTasks() }
 					.navigationDestination(for: TaskItem.self) { task in
@@ -175,6 +179,7 @@ extension HomeView {
 		if task.isNotDone {
 			Button {
 				withAnimation { vm.markAsDone(task) }
+				confettiCounter += 1
 			} label: {
 				Label { Text("Mark as Done") } icon: { SFSymbols.checkmark }
 			}
