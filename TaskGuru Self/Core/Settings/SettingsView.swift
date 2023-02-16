@@ -61,6 +61,7 @@ struct SettingsView: View {
 				Button("Cancel", role: .cancel) { }
 			}
 		}
+		.navigationViewStyle(.stack)
 	}
 }
 
