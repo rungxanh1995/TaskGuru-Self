@@ -60,12 +60,15 @@ extension HomeView {
 
 		let emptyTaskListSentence: LocalizedStringKey = "Nothing yet. Tap here or \(SFSymbols.plusCircled) to add more"
 
-		HStack {
-			Spacer()
-			Text(emptyTaskListSentence)
-				.font(.system(.callout))
-				.foregroundColor(.secondary)
-			Spacer()
+		VStack {
+			makeCheerfulDecorativeImage()
+			HStack {
+				Spacer()
+				Text(emptyTaskListSentence)
+					.font(.system(.callout))
+					.foregroundColor(.secondary)
+				Spacer()
+			}
 		}
 		.onTapGesture { vm.isShowingAddTaskView.toggle() }
 	}
