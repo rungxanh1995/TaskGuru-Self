@@ -23,6 +23,9 @@ final class Preferences {
 	}
 
 	// INITIALIZE APP PREFERENCES HERE
+	@UserDefault(UserDefaultsKey.iShowingAppBadge)
+	var isShowingAppBadge: Bool = false
+
 	@UserDefault(UserDefaultsKey.isShowingTabBadge)
 	var isShowingTabBadge: Bool = true
 

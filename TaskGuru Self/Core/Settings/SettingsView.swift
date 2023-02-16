@@ -11,6 +11,7 @@ struct SettingsView: View {
 	@StateObject private var vm: ViewModel
 	@State private var isShowingOnboarding: Bool = false
 
+	@Preference(\.isShowingAppBadge) private var isShowingAppBadge
 	@Preference(\.isShowingTabBadge) private var isShowingTabBadge
 	@Preference(\.isPreviewEnabled) private var isPreviewEnabled
 	@Preference(\.isLockedInPortrait) private var isLockedInPortrait
@@ -25,6 +26,7 @@ struct SettingsView: View {
 		NavigationView {
 			Form {
 				generalSection
+				badgeSection
 				previewSection
 				devTeamSection
 				advancedSection
@@ -66,18 +68,12 @@ private extension SettingsView {
 	private var generalSection: some View {
 		Section {
 			onboarding
-			tabBadge
 			portraitLock
 			haptics
 			appTheme
 		} header: {
 			Label { Text("General") } icon: { SFSymbols.gearFilled }
 		}
-	}
-
-	private var tabBadge: some View {
-		Toggle("Show Tab Badge", isOn: $isShowingTabBadge)
-			.tint(.accentColor)
 	}
 
 	private var portraitLock: some View {
@@ -105,6 +101,27 @@ private extension SettingsView {
 		} label: {
 			Text("Show Onboarding screen")
 		}
+	}
+
+	private var badgeSection: some View {
+		Section {
+			appBadge
+			tabBadge
+		} header: {
+			Label { Text("Badge") } icon: { SFSymbols.appBadge }
+		} footer: {
+			Text("Display a number of your pending tasks on Home screen. Review your Notification settings if no badge shown.")
+		}
+	}
+
+	private var appBadge: some View {
+		Toggle("Show App Icon Badge", isOn: $isShowingAppBadge)
+			.tint(.accentColor)
+	}
+
+	private var tabBadge: some View {
+		Toggle("Show Tab Badge", isOn: $isShowingTabBadge)
+			.tint(.accentColor)
 	}
 
 	private var previewSection: some View {
