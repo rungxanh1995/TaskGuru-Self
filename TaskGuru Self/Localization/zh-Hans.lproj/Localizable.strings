@@ -118,10 +118,14 @@
 
 /* General section */
 "Show Onboarding screen" = "显示入职屏幕";
-"Show Tab Badge" = "显示选项卡标记";
 "Portrait Lock" = "竖排方向锁定";
 "Reduce Haptics" = "减少触感触控";
 "Color Theme" = "外观主题";
+
+/* Badge secrion */
+"Show App Icon Badge" = "显示应用图标的标志";
+"Show Tab Badge" = "显示选项卡标记";
+"Display a number of your pending tasks on Home screen. Review your Notification settings if no badge shown." = "在主屏幕上显示待处理任务的数量。 如果没有显示徽章，请检查你的通知设置。";
 
 /* Preview section */
 "Preview on Haptic Touch" = "触觉触摸预览";

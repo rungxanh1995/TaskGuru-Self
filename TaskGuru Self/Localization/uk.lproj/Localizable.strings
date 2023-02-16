@@ -118,10 +118,14 @@
 
 /* General section */
 "Show Onboarding screen" = "Показувати екран навчання";
-"Show Tab Badge" = "Показувати значок вкладки";
 "Portrait Lock" = "Блокування портретного режиму";
 "Reduce Haptics" = "Зменшення вібрації";
 "Color Theme" = "Кольорова тема";
+
+/* Badge secrion */
+"Show App Icon Badge" = "Показати значок значка програми";
+"Show Tab Badge" = "Показувати значок вкладки";
+"Display a number of your pending tasks on Home screen. Review your Notification settings if no badge shown." = "Відобразіть ряд незавершених завдань на головному екрані. Перегляньте налаштування сповіщень, якщо значок не відображається.";
 
 /* Preview section */
 "Preview on Haptic Touch" = "Попередній перегляд за допомогою Haptic Touch";

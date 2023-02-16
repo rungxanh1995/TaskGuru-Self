@@ -12,11 +12,11 @@
 "Dismiss" = "Thoát";
 
 "Home tab" = "Tab Chính";
-"Tasks categorized by section to easily track overdue, due today, and upcoming ones" = "Các nhiệm vụ được phân loại theo mục để tiện theo dõi nhiệm vụ quá hạn, đến hạn trong ngày, và sắp tới";
-"Pending Tasks tab" = "Tab Nhiệm vụ Chưa h.thành";
-"Find your undone tasks here" = "Hiển thị các nhiệm vụ còn tồn đọng của bạn";
+"Tasks categorized by section to easily track overdue, due today, and upcoming ones" = "Các tác vụ được phân loại theo mục để tiện theo dõi tác vụ quá hạn, đến hạn trong ngày, và sắp tới";
+"Pending Tasks tab" = "Tab Tác vụ Chưa h.thành";
+"Find your undone tasks here" = "Hiển thị các tác vụ còn tồn đọng của bạn";
 "Quick Actions" = "Menu H.động nhanh";
-"Tap and hold each task from the list to use quick actions" = "Bấm giữ mỗi nhiệm vụ trong danh sách để truy cập menu ngữ cảnh";
+"Tap and hold each task from the list to use quick actions" = "Bấm giữ mỗi tác vụ trong danh sách để truy cập menu ngữ cảnh";
 
 
 /* SHARED */
@@ -43,7 +43,7 @@
 "OK" = "OK";
 
 /* Add Task button in Home & Pending tabs */
-"Add Task" = "Tạo Nhiệm vụ";
+"Add Task" = "Tạo tác vụ";
 
 /* Add/Edit Task */
 /* Section titles */
@@ -62,20 +62,20 @@
 /* Home tab name */
 "Home" = "Chính";
 /* Navigation title */
-"All Tasks" = "Tất cả Nhiệm vụ";
+"All Tasks" = "Tất cả Tác vụ";
 /* Section titles */
 "Overdue" = "Quá hạn";
 "Due Today" = "Đến hạn trong ngày";
 "Upcoming" = "Sắp tới";
 /* Empty list sentence */
-"No tasks" = "Không có nhiệm vụ nào";
+"No tasks" = "Không có tác vụ nào";
 
 
 /* PENDING */
 /* Pending tab name */
 "Pending" = "Tồn đọng";
 /* Navigation title */
-"Pending Tasks" = "Nhiệm vụ Tồn đọng";
+"Pending Tasks" = "Tác vụ Tồn đọng";
 
 "Fetching data" = "Đang tải dữ liệu";
 "You're free! Enjoy your much deserved time 🥳" = "Bạn được tự do rồi! Hãy tận hưởng thời gian này cho bản thân nhé 🥳";
@@ -84,27 +84,27 @@
 
 /* ADD */
 /* Navigation title */
-"Add Task" = "Tạo Nhiệm vụ";
+"Add Task" = "Tạo tác vụ";
 /* Navigation action button */
 "Add" = "Thêm";
 
 
 /* DETAIL */
 /* Navigation title */
-"Task Detail" = "Thông tin nhiệm vụ";
+"Task Detail" = "Thông tin tác vụ";
 
 "Last updated at %@" = "Cập nhật lần cuối lúc %@";
 
 
 /* EDIT */
 /* Navigation title */
-"Edit Task" = "Sửa Nhiệm vụ";
+"Edit Task" = "Sửa tác vụ";
 /* Navigation action button */
 "Save" = "Lưu";
 
 /* Alerts */
-"Mark Task as Done?" = "Đánh dấu nhiệm vụ đã h.thành?";
-"Delete Task?" = "Xoá nhiệm vụ?";
+"Mark Task as Done?" = "Đánh dấu tác vụ đã h.thành?";
+"Delete Task?" = "Xoá tác vụ?";
 
 
 /* SETTINGS */
@@ -118,14 +118,18 @@
 
 /* General section */
 "Show Onboarding screen" = "Hiện màn hình giới thiệu";
-"Show Tab Badge" = "Hiện nhãn tab";
 "Portrait Lock" = "Khoá xoay màn hình";
 "Reduce Haptics" = "Giảm rung phản hồi";
 "Color Theme" = "Chủ đề giao diện";
 
+/* Badge secrion */
+"Show App Icon Badge" = "Hiện nhãn biểu tượng app";
+"Show Tab Badge" = "Hiện nhãn tab";
+"Display a number of your pending tasks on Home screen. Review your Notification settings if no badge shown." = "Hiển thị số tác vụ chưa h.thành trên MH Chính. Hãy kiểm tra cài đặt Thông báo nếu không thấy nhãn.";
+
 /* Preview section */
 "Preview on Haptic Touch" = "Xem trước với Haptic Touch";
-"When this is on, long pressing a task from a list reveals a detail preview of the task" = "Chạm và giữ nhiệm vụ từ danh sách để hiển thị xem trước chi tiết của nhiệm vụ đó. Có hiệu lực khi cài đặt này được bật.";
+"When this is on, long pressing a task from a list reveals a detail preview of the task" = "Chạm và giữ tác vụ từ danh sách để hiển thị xem trước chi tiết. Có hiệu lực khi cài đặt này được bật.";
 
 /* Advanced section */
 /* Footer */
@@ -133,7 +137,7 @@
 
 /* Confirm dialogs */
 "App settings would reset.\nThis action cannot be undone" = "Cài đặt của app sẽ khôi phục lại mặc định.\nHành động này không thể hoàn tác";
-"All your tasks would be deleted.\nThis action cannot be undone" = "Tất cả nhiệm vụ của bạn sẽ bị xoá.\nHành động này không thể hoàn tác";
+"All your tasks would be deleted.\nThis action cannot be undone" = "Tất cả tác vụ của bạn sẽ bị xoá.\nHành động này không thể hoàn tác";
 
 /* Buttons */
 "Reset App Settings" = "Khôi phục c.đặt mặc định";

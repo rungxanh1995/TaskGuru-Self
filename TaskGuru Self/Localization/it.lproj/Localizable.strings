@@ -118,10 +118,14 @@
 
 /* General section */
 "Show Onboarding screen" = "Mostra schermata di benvenuto";
-"Show Tab Badge" = "Mostra distintivo sulla scheda";
 "Portrait Lock" = "Blocco orientamento verticale";
 "Reduce Haptics" = "Riduci la vibrazione";
 "Color Theme" = "Tema Colore";
+
+/* Badge secrion */
+"Show App Icon Badge" = "Mostra badge icona app";
+"Show Tab Badge" = "Mostra distintivo sulla scheda";
+"Display a number of your pending tasks on Home screen. Review your Notification settings if no badge shown." = "Visualizza un certo numero di attività in sospeso nella schermata Home. Rivedi le impostazioni di notifica se non viene mostrato alcun badge.";
 
 /* Preview section */
 "Preview on Haptic Touch" = "Anteprima con Haptic Touch";

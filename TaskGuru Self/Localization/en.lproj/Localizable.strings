@@ -118,10 +118,14 @@
 
 /* General section */
 "Show Onboarding screen" = "Show Onboarding screen";
-"Show Tab Badge" = "Show Tab Badge";
 "Portrait Lock" = "Portrait Lock";
 "Reduce Haptics" = "Reduce Haptics";
 "Color Theme" = "Color Theme";
+
+/* Badge secrion */
+"Show App Icon Badge" = "Show App Icon Badge";
+"Show Tab Badge" = "Show Tab Badge";
+"Display a number of your pending tasks on Home screen. Review your Notification settings if no badge shown." = "Display a number of your pending tasks on Home screen. Review your Notification settings if no badge shown.";
 
 /* Preview section */
 "Preview on Haptic Touch" = "Preview on Haptic Touch";
