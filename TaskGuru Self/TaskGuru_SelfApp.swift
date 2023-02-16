@@ -14,6 +14,7 @@ struct TaskGuru_SelfApp: App {
 	@UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
 	@AppStorage(UserDefaultsKey.isOnboarding) private var isOnboarding: Bool = true
+	@Preference(\.isShowingAppBadge) private var isShowingAppBadge
 	@Preference(\.isShowingTabBadge) private var isShowingTabBadge
 	@Preference(\.isLockedInPortrait) private var isLockedInPortrait
 
@@ -28,6 +29,8 @@ struct TaskGuru_SelfApp: App {
 		UIView.appearance(for: UITraitCollection(userInterfaceStyle: .dark),
 											whenContainedInInstancesOf: [UIAlertController.self])
 		.tintColor = UIColor(Color("AccentColor"))
+
+		if isShowingAppBadge { setAppBadgeOfPendingTasks() }
 	}
 
 	var body: some Scene {
@@ -57,6 +60,7 @@ struct TaskGuru_SelfApp: App {
 				}
 				.onReceive(homeVM.$isFetchingData) { _ in
 					pendingTasksCount = homeVM.pendingTasks.count
+					setAppBadgeOfPendingTasks()
 				}
 				.onAppear {
 					isLockedInPortrait ? appDelegate.lockInPortraitMode() : appDelegate.unlockPortraitMode()
@@ -64,9 +68,34 @@ struct TaskGuru_SelfApp: App {
 				.onChange(of: isLockedInPortrait) { _ in
 					isLockedInPortrait ? appDelegate.lockInPortraitMode() : appDelegate.unlockPortraitMode()
 				}
+				.onChange(of: isShowingAppBadge) { _ in
+					setAppBadgeOfPendingTasks()
+				}
 				.environmentObject(homeVM)
 				.transition(.asymmetric(insertion: .opacity.animation(.default), removal: .opacity))
 				.setUpColorTheme()
+			}
+		}
+	}
+}
+
+import UserNotifications
+
+extension TaskGuru_SelfApp {
+
+	private func setAppBadgeOfPendingTasks() {
+		UNUserNotificationCenter.current().requestAuthorization(options: [.badge]) { success, error in
+			if success {
+				Task {
+					await MainActor.run {
+						switch isShowingAppBadge {
+						case true: UIApplication.shared.applicationIconBadgeNumber = homeVM.pendingTasks.count
+						case false: UIApplication.shared.applicationIconBadgeNumber = 0
+						}
+					}
+				}
+			} else if let error = error {
+				print(error.localizedDescription)
 			}
 		}
 	}
