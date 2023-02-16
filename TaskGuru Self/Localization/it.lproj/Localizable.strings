@@ -113,6 +113,7 @@
 
 /* Section titles */
 "General" = "Generale";
+"Badge" = "Badge";
 "Advanced" = "Avanzate";
 "Meet The Team" = "Incontra Il Team";
 
@@ -125,15 +126,15 @@
 /* Badge secrion */
 "Show App Icon Badge" = "Mostra badge icona app";
 "Show Tab Badge" = "Mostra distintivo sulla scheda";
-"Display a number of your pending tasks on Home screen. Review your Notification settings if no badge shown." = "Visualizza un certo numero di attività in sospeso nella schermata Home. Rivedi le impostazioni di notifica se non viene mostrato alcun badge.";
+"Icon badge shows the number of pending tasks on Home screen. Review your Notification settings if no badge shown." = "Visualizza un certo numero di attività in sospeso nella schermata Home. Rivedi le impostazioni di notifica se non viene mostrato alcun badge.";
 
 /* Preview section */
 "Preview on Haptic Touch" = "Anteprima con Haptic Touch";
-"When this is on, long pressing a task from a list reveals a detail preview of the task" = "Quando è attivo, premendo a lungo un'attività da un elenco viene visualizzata un'anteprima dettagliata dell'attività";
+"When this is on, long pressing a task from a list reveals a detail preview of the task." = "Quando è attivo, premendo a lungo un'attività da un elenco viene visualizzata un'anteprima dettagliata dell'attività.";
 
 /* Advanced section /
  / Footer */
-"Be careful, these remove all your data! Restart the app to see all changes" = "Attenzione, questo comporta l'eliminazione di tutti i dati! Riavvia l'app per vedere tutte le modifiche";
+"Be careful, these remove all your data! Restart the app to see all changes." = "Attenzione, questo comporta l'eliminazione di tutti i dati! Riavvia l'app per vedere tutte le modifiche.";
 
 /* Confirm dialogs */
 "App settings would reset.\nThis action cannot be undone" = "Le impostazioni dell'applicazione verranno ripristinate.\nQuesta azione non può essere annullata";
