@@ -118,10 +118,14 @@
 
 /* General section */
 "Show Onboarding screen" = "Onboarding ekranını göstər";
-"Show Tab Badge" = "Tab bildirişini göstər";
 "Portrait Lock" = "Portret Kilidi";
 "Reduce Haptics" = "Reduce Haptics";
 "Color Theme" = "Rəng Mövzu";
+
+/* Badge secrion */
+"Show App Icon Badge" = "Tətbiq nişanı üzərində nişanı göstərin";
+"Show Tab Badge" = "Tab bildirişini göstər";
+"Display a number of your pending tasks on Home screen. Review your Notification settings if no badge shown." = "Gözləyən bir sıra tapşırıqlarınızı Əsas ekranda göstərin. Heç bir nişan göstərilməyibsə, Bildiriş ayarlarınızı nəzərdən keçirin.";
 
 /* Preview section */
 "Preview on Haptic Touch" = "Preview on Haptic Touch";

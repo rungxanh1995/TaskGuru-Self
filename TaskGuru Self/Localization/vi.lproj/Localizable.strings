@@ -118,10 +118,14 @@
 
 /* General section */
 "Show Onboarding screen" = "Hiện màn hình giới thiệu";
-"Show Tab Badge" = "Hiện nhãn tab";
 "Portrait Lock" = "Khoá xoay màn hình";
 "Reduce Haptics" = "Giảm rung phản hồi";
 "Color Theme" = "Chủ đề giao diện";
+
+/* Badge secrion */
+"Show App Icon Badge" = "Hiện nhãn biểu tượng app";
+"Show Tab Badge" = "Hiện nhãn tab";
+"Display a number of your pending tasks on Home screen. Review your Notification settings if no badge shown." = "Hiển thị số tác vụ chưa h.thành trên MH Chính. Hãy kiểm tra cài đặt Thông báo nếu không thấy nhãn.";
 
 /* Preview section */
 "Preview on Haptic Touch" = "Xem trước với Haptic Touch";
