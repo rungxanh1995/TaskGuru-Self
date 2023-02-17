@@ -13,6 +13,7 @@ struct SettingsView: View {
 
 	@Preference(\.isShowingAppBadge) private var isShowingAppBadge
 	@Preference(\.isShowingTabBadge) private var isShowingTabBadge
+	@Preference(\.isConfettiEnabled) private var isConfettiEnabled
 	@Preference(\.isPreviewEnabled) private var isPreviewEnabled
 	@Preference(\.isLockedInPortrait) private var isLockedInPortrait
 	@Preference(\.isHapticsReduced) private var isHapticsReduced
@@ -27,7 +28,7 @@ struct SettingsView: View {
 			Form {
 				generalSection
 				badgeSection
-				previewSection
+				miscSection
 				devTeamSection
 				advancedSection
 
@@ -125,12 +126,20 @@ private extension SettingsView {
 			.tint(.accentColor)
 	}
 
-	private var previewSection: some View {
+	private var miscSection: some View {
 		Section {
+			confetti
 			preview
+		} header: {
+			Label { Text("Miscellaneous") } icon: { SFSymbols.bubbleSparkles }
 		} footer: {
-			Text("When this is on, long pressing a task from a list reveals a detail preview of the task")
+			Text("Long pressing a task from a list reveals a detail preview of the task when enabled.")
 		}
+	}
+
+	private var confetti: some View {
+		Toggle("Toggle Confetti 🎉", isOn: $isConfettiEnabled)
+			.tint(.accentColor)
 	}
 
 	private var preview: some View {

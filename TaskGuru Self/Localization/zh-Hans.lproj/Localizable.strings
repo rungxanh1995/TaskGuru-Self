@@ -127,9 +127,10 @@
 "Show Tab Badge" = "显示选项卡标记";
 "Display a number of your pending tasks on Home screen. Review your Notification settings if no badge shown." = "在主屏幕上显示待处理任务的数量。 如果没有显示徽章，请检查你的通知设置。";
 
-/* Preview section */
+/* Misc section */
+"Toggle Confetti 🎉" = "切换五彩纸屑 🎉";
 "Preview on Haptic Touch" = "触觉触摸预览";
-"When this is on, long pressing a task from a list reveals a detail preview of the task" = "启用此设置时，长按列表中的任务会显示任务的详细预览。";
+"Long pressing a task from a list reveals a detail preview of the task when enabled." = "启用此设置时，长按列表中的任务会显示任务的详细预览。";
 
 /* Advanced section */
 /* Footer */

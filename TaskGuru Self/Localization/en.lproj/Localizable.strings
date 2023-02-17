@@ -127,9 +127,10 @@
 "Show Tab Badge" = "Show Tab Badge";
 "Display a number of your pending tasks on Home screen. Review your Notification settings if no badge shown." = "Display a number of your pending tasks on Home screen. Review your Notification settings if no badge shown.";
 
-/* Preview section */
+/* Misc section */
+"Toggle Confetti 🎉" = "Toggle Confetti 🎉";
 "Preview on Haptic Touch" = "Preview on Haptic Touch";
-"When this is on, long pressing a task from a list reveals a detail preview of the task" = "When this is on, long pressing a task from a list reveals a detail preview of the task.";
+"Long pressing a task from a list reveals a detail preview of the task when enabled." = "Long pressing a task from a list reveals a detail preview of the task when enabled.";
 
 /* Advanced section */
 /* Footer */

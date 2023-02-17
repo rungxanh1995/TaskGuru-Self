@@ -32,6 +32,9 @@ final class Preferences {
 	@UserDefault(UserDefaultsKey.isPreviewEnabled)
 	var isPreviewEnabled: Bool = true
 
+	@UserDefault(UserDefaultsKey.isConfettiEnabled)
+	var isConfettiEnabled: Bool = true
+
 	@UserDefault(UserDefaultsKey.isLockedInPortrait)
 	var isLockedInPortrait: Bool = false
 

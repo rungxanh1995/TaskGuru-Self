@@ -12,7 +12,8 @@ struct PendingView: View {
 	@EnvironmentObject private var vm: HomeViewModel
 	@StateObject private var tabState: AppState = .init()
 	@State private var selectedTask: TaskItem?
-	
+
+	@Preference(\.isConfettiEnabled) private var isConfettiEnabled
 	@State private var confettiCounter: Int = 0
 
 	@Preference(\.isPreviewEnabled) private var isPreviewEnabled
@@ -89,7 +90,7 @@ extension PendingView {
 		if task.isNotDone {
 			Button {
 				withAnimation { vm.markAsDone(task) }
-				confettiCounter += 1
+				if isConfettiEnabled { confettiCounter += 1 }
 			} label: {
 				Label { Text("Mark as Done") } icon: { SFSymbols.checkmark }
 			}

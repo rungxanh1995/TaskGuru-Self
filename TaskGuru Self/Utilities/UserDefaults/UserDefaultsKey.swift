@@ -15,4 +15,5 @@ enum UserDefaultsKey {
 	static let isShowingTabBadge: String = "isShowingTabBadge"
 	static let isLockedInPortrait: String = "isLockedInPortrait"
 	static let isPreviewEnabled: String = "isPreviewEnabled"
+	static let isConfettiEnabled: String = "isConfettiEnabled"
 }
