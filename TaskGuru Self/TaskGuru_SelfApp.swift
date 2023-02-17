@@ -12,6 +12,7 @@ import SwiftUI
 @main
 struct TaskGuru_SelfApp: App {
 	@UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+	@Environment(\.scenePhase) private var scenePhase
 
 	@AppStorage(UserDefaultsKey.isOnboarding) private var isOnboarding: Bool = true
 	@Preference(\.isShowingAppBadge) private var isShowingAppBadge
@@ -69,10 +70,35 @@ struct TaskGuru_SelfApp: App {
 				.onChange(of: isShowingAppBadge) { _ in
 					setAppBadgeOfPendingTasks()
 				}
+				.onChange(of: scenePhase) { newPhase in
+					switch newPhase {
+					case .background:
+						addHomeScreenQuickActions()
+						HomeQuickAction.selectedAction = nil
+					case .active:
+						handleQuickActionSelected()
+					default:
+						break
+					}
+				}
 				.environmentObject(homeVM)
 				.transition(.asymmetric(insertion: .opacity.animation(.default), removal: .opacity))
 				.setUpColorTheme()
 			}
+		}
+	}
+}
+
+extension TaskGuru_SelfApp {
+	private func addHomeScreenQuickActions() {
+		UIApplication.shared.shortcutItems = HomeQuickAction.allShortcutItems
+	}
+
+	private func handleQuickActionSelected() {
+		guard let actionName = HomeQuickAction.selectedAction?.userInfo?["name"] as? String else { return }
+		switch actionName {
+		case HomeQuickAction.UserInfoType.addTask.rawValue: homeVM.isShowingAddTaskView = true
+		default: homeVM.isShowingAddTaskView = false
 		}
 	}
 }
