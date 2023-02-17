@@ -132,9 +132,6 @@
 "Toggle Confetti 🎉" = "Toggle Confetti 🎉";
 "Preview on Haptic Touch" = "Preview on Haptic Touch";
 "Long pressing a task from a list reveals a detail preview of the task when enabled." = "Bu aktiv olduqda, siyahıdan tapşırığa uzun basmaq tapşırığın təfərrüatlı önizləməsini açır";
-/* Preview section */
-"Preview on Haptic Touch" = "Preview on Haptic Touch";
-"When this is on, long pressing a task from a list reveals a detail preview of the task." = "Bu aktiv olduqda, siyahıdan tapşırığa uzun basmaq tapşırığın təfərrüatlı önizləməsini açır";
 
 /* Advanced section */
 /* Footer */

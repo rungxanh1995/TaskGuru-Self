@@ -128,9 +128,11 @@
 "Show Tab Badge" = "Hiện nhãn tab";
 "Icon badge shows the number of pending tasks on Home screen. Review your Notification settings if no badge shown." = "Nhãn biểu tượng hiển thị số tác vụ chưa h.thành trên MH Chính. Hãy kiểm tra cài đặt Thông báo nếu không thấy nhãn.";
 
-/* Preview section */
+/* Misc section */
+"Toggle Confetti 🎉" = "Hiệu ứng hoa giấy 🎉";
 "Preview on Haptic Touch" = "Xem trước với Haptic Touch";
 "When this is on, long pressing a task from a list reveals a detail preview of the task." = "Chạm và giữ tác vụ từ danh sách để hiển thị xem trước chi tiết. Có hiệu lực khi cài đặt này được bật.";
+
 
 /* Advanced section */
 /* Footer */
