@@ -35,8 +35,11 @@ struct PendingView: View {
 			.navigationDestination(for: TaskItem.self) { task in
 				DetailView(vm: .init(for: task))
 			}
-			.navigationTitle("Pending Tasks")
+			.navigationBarTitleDisplayMode(.inline)
 			.toolbar {
+				ToolbarItem(placement: .navigationBarLeading) {
+					GradientNavigationTitle(text: "Pending Tasks")
+				}
 				ToolbarItem(placement: .primaryAction) {
 					addTaskButton
 				}

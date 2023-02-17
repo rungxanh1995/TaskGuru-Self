@@ -35,7 +35,12 @@ struct SettingsView: View {
 				appNameAndLogo
 					.listRowBackground(Color.clear)
 			}
-			.navigationTitle("Settings")
+			.navigationBarTitleDisplayMode(.inline)
+			.toolbar {
+				ToolbarItem(placement: .navigationBarLeading) {
+					GradientNavigationTitle(text: "Settings")
+				}
+			}
 			.sheet(isPresented: $isShowingOnboarding, content: {
 				OnboardContainerView()
 			})
