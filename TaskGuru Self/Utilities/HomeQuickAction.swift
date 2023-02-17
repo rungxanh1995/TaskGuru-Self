@@ -9,13 +9,17 @@ import UIKit
 
 enum HomeQuickAction {
 	enum UserInfoType: String {
-		case addTask
+		case addTask, allTasks
 	}
 
 	static var selectedAction: UIApplicationShortcutItem?
 
 	static var addTaskUserInfo: [String: NSSecureCoding] {
 		["name": UserInfoType.addTask.rawValue as NSSecureCoding]
+	}
+
+	static var allTasksUserInfo: [String: NSSecureCoding] {
+		["name": UserInfoType.allTasks.rawValue as NSSecureCoding]
 	}
 
 	static var allShortcutItems: [UIApplicationShortcutItem] = [

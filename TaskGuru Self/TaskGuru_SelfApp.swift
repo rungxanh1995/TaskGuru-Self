@@ -95,10 +95,26 @@ extension TaskGuru_SelfApp {
 	}
 
 	private func handleQuickActionSelected() {
-		guard let actionName = HomeQuickAction.selectedAction?.userInfo?["name"] as? String else { return }
+		guard let selectedAction = HomeQuickAction.selectedAction,
+					let userInfo = selectedAction.userInfo,
+					let actionName = userInfo["name"] as? String else { return }
+
+		defer {
+			// This is a bugfix to "add task" popping up when app is not in foreground,
+			// i.e. when user enters system multitasking screen, then comes back to app.
+			var newUserInfo = userInfo
+			newUserInfo["name"] = HomeQuickAction.UserInfoType.allTasks.rawValue as any NSSecureCoding
+			let updatedAction = UIApplicationShortcutItem(
+				type: selectedAction.type, localizedTitle: selectedAction.localizedTitle, localizedSubtitle: nil,
+				icon: selectedAction.icon, userInfo: newUserInfo)
+			HomeQuickAction.selectedAction = updatedAction
+		}
+
 		switch actionName {
-		case HomeQuickAction.UserInfoType.addTask.rawValue: homeVM.isShowingAddTaskView = true
-		default: homeVM.isShowingAddTaskView = false
+		case HomeQuickAction.UserInfoType.addTask.rawValue:
+			homeVM.isShowingAddTaskView = true
+		default:
+			homeVM.isShowingAddTaskView = false
 		}
 	}
 }
