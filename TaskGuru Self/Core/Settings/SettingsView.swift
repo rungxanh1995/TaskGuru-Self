@@ -154,7 +154,7 @@ private extension SettingsView {
 		} header: {
 			Label { Text("Advanced") } icon: { SFSymbols.magicWand }
 		} footer: {
-			Text("Be careful, these remove all your data! Restart the app to see all changes")
+			Text("Be careful, these remove all your data! Restart the app to see all changes.")
 		}
 	}
 

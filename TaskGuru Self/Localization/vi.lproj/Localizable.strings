@@ -114,6 +114,7 @@
 /* Section titles */
 "General" = "Chung";
 "Badge" = "Nhãn";
+"Miscellaneous" = "Khác";
 "Advanced" = "Nâng cao";
 "Meet The Team" = "Gặp đội ngũ lập trình viên";
 
@@ -131,7 +132,7 @@
 /* Misc section */
 "Toggle Confetti 🎉" = "Hiệu ứng hoa giấy 🎉";
 "Preview on Haptic Touch" = "Xem trước với Haptic Touch";
-"When this is on, long pressing a task from a list reveals a detail preview of the task." = "Chạm và giữ tác vụ từ danh sách để hiển thị xem trước chi tiết. Có hiệu lực khi cài đặt này được bật.";
+"Long pressing a task from a list reveals a detail preview of the task when enabled." = "Chạm và giữ tác vụ từ danh sách để hiển thị xem trước chi tiết. Có hiệu lực khi cài đặt này được bật.";
 
 
 /* Advanced section */
@@ -143,7 +144,7 @@
 "All your tasks would be deleted.\nThis action cannot be undone" = "Tất cả tác vụ của bạn sẽ bị xoá.\nHành động này không thể hoàn tác";
 
 /* Buttons */
-"Reset App Settings" = "Khôi phục c.đặt mặc định";
+"Reset App Settings" = "Khôi phục cài đặt mặc định";
 "Reset Your Data" = "Xoá dữ liệu của bạn";
 
 /* Color themes */
