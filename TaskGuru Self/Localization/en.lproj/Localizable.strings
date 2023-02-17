@@ -113,6 +113,7 @@
 
 /* Section titles */
 "General" = "General";
+"Badge" = "Badge";
 "Advanced" = "Advanced";
 "Meet The Team" = "Meet The Team";
 
@@ -125,7 +126,7 @@
 /* Badge secrion */
 "Show App Icon Badge" = "Show App Icon Badge";
 "Show Tab Badge" = "Show Tab Badge";
-"Display a number of your pending tasks on Home screen. Review your Notification settings if no badge shown." = "Display a number of your pending tasks on Home screen. Review your Notification settings if no badge shown.";
+"Icon badge shows the number of pending tasks on Home screen. Review your Notification settings if no badge shown." = "Icon badge shows the number of pending tasks on Home screen. Review your Notification settings if no badge shown.";
 
 /* Misc section */
 "Toggle Confetti 🎉" = "Toggle Confetti 🎉";
@@ -134,7 +135,7 @@
 
 /* Advanced section */
 /* Footer */
-"Be careful, these remove all your data! Restart the app to see all changes" = "Be careful, these remove all your data! Restart the app to see all changes";
+"Be careful, these remove all your data! Restart the app to see all changes." = "Be careful, these remove all your data! Restart the app to see all changes.";
 
 /* Confirm dialogs */
 "App settings would reset.\nThis action cannot be undone" = "App settings would reset.\nThis action cannot be undone";

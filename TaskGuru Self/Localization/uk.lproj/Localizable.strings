@@ -113,6 +113,7 @@
 
 /* Section titles */
 "General" = "Загальні";
+"Badge" = "Значки";
 "Advanced" = "Додаткові";
 "Meet The Team" = "Зустріч з командою";
 
@@ -125,15 +126,15 @@
 /* Badge secrion */
 "Show App Icon Badge" = "Показати значок значка програми";
 "Show Tab Badge" = "Показувати значок вкладки";
-"Display a number of your pending tasks on Home screen. Review your Notification settings if no badge shown." = "Відобразіть ряд незавершених завдань на головному екрані. Перегляньте налаштування сповіщень, якщо значок не відображається.";
+"Icon badge shows the number of pending tasks on Home screen. Review your Notification settings if no badge shown." = "Відобразіть ряд незавершених завдань на головному екрані. Перегляньте налаштування сповіщень, якщо значок не відображається.";
 
 /* Preview section */
 "Preview on Haptic Touch" = "Попередній перегляд за допомогою Haptic Touch";
-"When this is on, long pressing a task from a list reveals a detail preview of the task" = "Коли цей параметр увімкнено, тривале натискання завдання зі списку відкриває детальний попередній перегляд завдання.";
+"When this is on, long pressing a task from a list reveals a detail preview of the task." = "Коли цей параметр увімкнено, тривале натискання завдання зі списку відкриває детальний попередній перегляд завдання.";
 
 /* Advanced section */
 /* Footer */
-"Be careful, these remove all your data! Restart the app to see all changes" = "Обережно, це видалить всі ваші дані! Перезапустіть програму, щоб побачити всі зміни";
+"Be careful, these remove all your data! Restart the app to see all changes." = "Обережно, це видалить всі ваші дані! Перезапустіть програму, щоб побачити всі зміни.";
 
 /* Confirm dialogs */
 "App settings would reset.\nThis action cannot be undone" = "Налаштування програми будуть скинуті.\nЦю дію не можна скасувати";

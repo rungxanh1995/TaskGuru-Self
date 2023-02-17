@@ -113,6 +113,7 @@
 
 /* Section titles */
 "General" = "通用";
+"Badge" = "标志";
 "Advanced" = "高级";
 "Meet The Team" = "软件开发队";
 
@@ -125,7 +126,7 @@
 /* Badge secrion */
 "Show App Icon Badge" = "显示应用图标的标志";
 "Show Tab Badge" = "显示选项卡标记";
-"Display a number of your pending tasks on Home screen. Review your Notification settings if no badge shown." = "在主屏幕上显示待处理任务的数量。 如果没有显示徽章，请检查你的通知设置。";
+"Icon badge shows the number of pending tasks on Home screen. Review your Notification settings if no badge shown." = "在主屏幕上显示待处理任务的数量。 如果没有显示徽章，请检查你的通知设置。";
 
 /* Misc section */
 "Toggle Confetti 🎉" = "切换五彩纸屑 🎉";
@@ -134,7 +135,7 @@
 
 /* Advanced section */
 /* Footer */
-"Be careful, these remove all your data! Restart the app to see all changes" = "注意，这些会删除所有你的数据！重新启动应用程序以查看所有更改";
+"Be careful, these remove all your data! Restart the app to see all changes." = "注意，这些会删除所有你的数据！重新启动应用程序以查看所有更改。";
 
 /* Confirm dialogs */
 "App settings would reset.\nThis action cannot be undone" = "应用设置将被重置。\n此操作无法撤销";

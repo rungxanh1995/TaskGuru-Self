@@ -113,6 +113,7 @@
 
 /* Section titles */
 "General" = "Ümumi";
+"Badge" = "Nişan";
 "Advanced" = "Qabaqcıl";
 "Meet The Team" = "Komanda ilə tanış olun";
 
@@ -125,7 +126,7 @@
 /* Badge secrion */
 "Show App Icon Badge" = "Tətbiq nişanı üzərində nişanı göstərin";
 "Show Tab Badge" = "Tab bildirişini göstər";
-"Display a number of your pending tasks on Home screen. Review your Notification settings if no badge shown." = "Gözləyən bir sıra tapşırıqlarınızı Əsas ekranda göstərin. Heç bir nişan göstərilməyibsə, Bildiriş ayarlarınızı nəzərdən keçirin.";
+"Icon badge shows the number of pending tasks on Home screen. Review your Notification settings if no badge shown." = "Gözləyən bir sıra tapşırıqlarınızı Əsas ekranda göstərin. Heç bir nişan göstərilməyibsə, Bildiriş ayarlarınızı nəzərdən keçirin.";
 
 /* Misc section */
 "Toggle Confetti 🎉" = "Toggle Confetti 🎉";
@@ -133,11 +134,11 @@
 "Long pressing a task from a list reveals a detail preview of the task when enabled." = "Bu aktiv olduqda, siyahıdan tapşırığa uzun basmaq tapşırığın təfərrüatlı önizləməsini açır";
 /* Preview section */
 "Preview on Haptic Touch" = "Preview on Haptic Touch";
-"When this is on, long pressing a task from a list reveals a detail preview of the task" = "Bu aktiv olduqda, siyahıdan tapşırığa uzun basmaq tapşırığın təfərrüatlı önizləməsini açır";
+"When this is on, long pressing a task from a list reveals a detail preview of the task." = "Bu aktiv olduqda, siyahıdan tapşırığa uzun basmaq tapşırığın təfərrüatlı önizləməsini açır";
 
 /* Advanced section */
 /* Footer */
-"Be careful, these remove all your data! Restart the app to see all changes" = "Ehtiyatlı olun, bunlar bütün məlumatlarınızı silir! Bütün dəyişiklikləri görmək üçün proqramı yenidən başladın";
+"Be careful, these remove all your data! Restart the app to see all changes." = "Ehtiyatlı olun, bunlar bütün məlumatlarınızı silir! Bütün dəyişiklikləri görmək üçün proqramı yenidən başladın.";
 
 /* Confirm dialogs */
 "App settings would reset.\nThis action cannot be undone" = "Tətbiq parametrləri sıfırlanacaq.\nBu əməliyyat geri qaytarıla bilməz";

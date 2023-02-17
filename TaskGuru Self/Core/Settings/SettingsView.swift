@@ -112,7 +112,7 @@ private extension SettingsView {
 		} header: {
 			Label { Text("Badge") } icon: { SFSymbols.appBadge }
 		} footer: {
-			Text("Display a number of your pending tasks on Home screen. Review your Notification settings if no badge shown.")
+			Text("Icon badge shows the number of pending tasks on Home screen. Review your Notification settings if no badge shown.")
 		}
 	}
 
