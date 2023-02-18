@@ -130,6 +130,7 @@
 "Icon badge shows the number of pending tasks on Home screen. Review your Notification settings if no badge shown." = "Відобразіть ряд незавершених завдань на головному екрані. Перегляньте налаштування сповіщень, якщо значок не відображається.";
 
 /* Misc section */
+"Tab Names" = "Tab Names";
 "Toggle Confetti 🎉" = "Toggle Confetti 🎉";
 "Preview on Haptic Touch" = "Попередній перегляд за допомогою Haptic Touch";
 "Long pressing a task from a list reveals a detail preview of the task when enabled." = "Long pressing a task from a list reveals a detail preview of the task when enabled.";

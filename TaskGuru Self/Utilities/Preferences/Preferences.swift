@@ -43,4 +43,7 @@ final class Preferences {
 
 	@UserDefault(UserDefaultsKey.systemTheme)
 	var systemTheme: Int = SchemeType.allCases.first!.rawValue
+
+	@UserDefault(UserDefaultsKey.isTabNamesEnabled)
+	var isTabNamesEnabled: Bool = true
 }

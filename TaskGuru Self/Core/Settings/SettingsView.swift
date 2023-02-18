@@ -17,6 +17,7 @@ struct SettingsView: View {
 	@Preference(\.isPreviewEnabled) private var isPreviewEnabled
 	@Preference(\.isLockedInPortrait) private var isLockedInPortrait
 	@Preference(\.isHapticsReduced) private var isHapticsReduced
+	@Preference(\.isTabNamesEnabled) private var isTabNamesEnabled
 	@Preference(\.systemTheme) private var systemTheme
 
 	init(vm: SettingsView.ViewModel = .init()) {
@@ -133,6 +134,7 @@ private extension SettingsView {
 
 	private var miscSection: some View {
 		Section {
+			tabNames
 			confetti
 			preview
 		} header: {
@@ -140,6 +142,11 @@ private extension SettingsView {
 		} footer: {
 			Text("Long pressing a task from a list reveals a detail preview of the task when enabled.")
 		}
+	}
+
+	private var tabNames: some View {
+		Toggle("Tab Names", isOn: $isTabNamesEnabled)
+			.tint(.accentColor)
 	}
 
 	private var confetti: some View {

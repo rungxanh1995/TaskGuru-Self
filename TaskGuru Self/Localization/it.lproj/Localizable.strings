@@ -129,7 +129,7 @@
 "Show Tab Badge" = "Mostra distintivo sulla scheda";
 "Icon badge shows the number of pending tasks on Home screen. Review your Notification settings if no badge shown." = "Visualizza un certo numero di attività in sospeso nella schermata Home. Rivedi le impostazioni di notifica se non viene mostrato alcun badge.";
 
-/* Misc section */
+/* Misc section */"Tab Names" = "Tab Names";
 "Toggle Confetti 🎉" = "Toggle Confetti 🎉";
 "Preview on Haptic Touch" = "Preview on Haptic Touch";
 "Long pressing a task from a list reveals a detail preview of the task when enabled." = "Long pressing a task from a list reveals a detail preview of the task when enabled.";

@@ -18,6 +18,7 @@ struct TaskGuru_SelfApp: App {
 	@Preference(\.isShowingAppBadge) private var isShowingAppBadge
 	@Preference(\.isShowingTabBadge) private var isShowingTabBadge
 	@Preference(\.isLockedInPortrait) private var isLockedInPortrait
+	@Preference(\.isTabNamesEnabled) private var isTabNamesEnabled
 
 	private var homeVM: HomeViewModel = .init()
 	@State private var pendingTasksCount: Int = 0
@@ -43,18 +44,18 @@ struct TaskGuru_SelfApp: App {
 					HomeView()
 						.tabItem {
 							SFSymbols.house
-							Text("Home")
+							if isTabNamesEnabled { Text("Home") }
 						}
 					PendingView()
 						.tabItem {
 							SFSymbols.clock
-							Text("Pending")
+							if isTabNamesEnabled { Text("Pending") }
 						}
 						.badge(isShowingTabBadge ? pendingTasksCount : 0)
 					SettingsView()
 						.tabItem {
 							SFSymbols.gear
-							Text("Settings")
+							if isTabNamesEnabled { Text("Settings") }
 						}
 				}
 				.onReceive(homeVM.$isFetchingData) { _ in
