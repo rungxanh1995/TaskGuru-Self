@@ -122,6 +122,7 @@
 "Show Onboarding screen" = "Mostra schermata di benvenuto";
 "Portrait Lock" = "Blocco orientamento verticale";
 "Reduce Haptics" = "Riduci la vibrazione";
+"Font Style" = "Font Style";
 "Color Theme" = "Tema Colore";
 
 /* Badge secrion */
@@ -145,6 +146,12 @@
 /* Buttons */
 "Reset App Settings" = "Ripristina impostazioni dell'app";
 "Reset Your Data" = "Ripristina i tuoi dati";
+
+/* Font designs */
+"System" = "System";
+"Rounded" = "Rounded";
+"Monospaced" = "Monospaced";
+"Serif" = "Serif";
 
 /* Color themes */
 "System" = "Sistema";

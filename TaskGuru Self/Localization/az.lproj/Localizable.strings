@@ -122,6 +122,7 @@
 "Show Onboarding screen" = "Onboarding ekranını göstər";
 "Portrait Lock" = "Portret Kilidi";
 "Reduce Haptics" = "Reduce Haptics";
+"Font Style" = "Font Style";
 "Color Theme" = "Rəng Mövzu";
 
 /* Badge secrion */
@@ -146,6 +147,12 @@
 /* Buttons */
 "Reset App Settings" = "Tətbiq Parametrlərini Sıfırla";
 "Reset Your Data" = "Məlumatlarınızı Sıfırlayın";
+
+/* Font designs */
+"System" = "Sistem";
+"Rounded" = "Rounded";
+"Monospaced" = "Monospaced";
+"Serif" = "Serif";
 
 /* Color themes */
 "System" = "Sistem";

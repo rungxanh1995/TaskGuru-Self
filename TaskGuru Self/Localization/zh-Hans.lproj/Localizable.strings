@@ -122,6 +122,7 @@
 "Show Onboarding screen" = "显示入职屏幕";
 "Portrait Lock" = "竖排方向锁定";
 "Reduce Haptics" = "减少触感触控";
+"Font Style" = "字体";
 "Color Theme" = "外观主题";
 
 /* Badge secrion */
@@ -146,6 +147,12 @@
 /* Buttons */
 "Reset App Settings" = "重置应用设置";
 "Reset Your Data" = "重置你的数据";
+
+/* Font designs */
+"System" = "系统";
+"Rounded" = "圆形";
+"Monospaced" = "等宽";
+"Serif" = "衬线";
 
 /* Color themes */
 "System" = "系统";

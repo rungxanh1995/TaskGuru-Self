@@ -122,6 +122,7 @@
 "Show Onboarding screen" = "Show Onboarding screen";
 "Portrait Lock" = "Portrait Lock";
 "Reduce Haptics" = "Reduce Haptics";
+"Font Style" = "Font Style";
 "Color Theme" = "Color Theme";
 
 /* Badge secrion */
@@ -146,6 +147,12 @@
 /* Buttons */
 "Reset App Settings" = "Reset App Settings";
 "Reset Your Data" = "Reset Your Data";
+
+/* Font designs */
+"System" = "System";
+"Rounded" = "Rounded";
+"Monospaced" = "Monospaced";
+"Serif" = "Serif";
 
 /* Color themes */
 "System" = "System";

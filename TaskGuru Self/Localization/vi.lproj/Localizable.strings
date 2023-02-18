@@ -122,6 +122,7 @@
 "Show Onboarding screen" = "Hiện màn hình giới thiệu";
 "Portrait Lock" = "Khoá xoay màn hình";
 "Reduce Haptics" = "Giảm rung phản hồi";
+"Font Style" = "Kiểu phông chữ";
 "Color Theme" = "Chủ đề giao diện";
 
 /* Badge secrion */
@@ -147,6 +148,12 @@
 /* Buttons */
 "Reset App Settings" = "Khôi phục cài đặt mặc định";
 "Reset Your Data" = "Xoá dữ liệu của bạn";
+
+/* Font designs */
+"System" = "Hệ thống";
+"Rounded" = "Tròn";
+"Monospaced" = "Đơn cách";
+"Serif" = "Có chân";
 
 /* Color themes */
 "System" = "Hệ thống";

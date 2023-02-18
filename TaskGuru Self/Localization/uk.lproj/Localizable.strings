@@ -122,6 +122,7 @@
 "Show Onboarding screen" = "Показувати екран навчання";
 "Portrait Lock" = "Блокування портретного режиму";
 "Reduce Haptics" = "Зменшення вібрації";
+"Font Style" = "Font Style";
 "Color Theme" = "Кольорова тема";
 
 /* Badge secrion */
@@ -146,6 +147,12 @@
 /* Buttons */
 "Reset App Settings" = "Скинути налаштування програми";
 "Reset Your Data" = "Скинути ваші дані";
+
+/* Font designs */
+"System" = "System";
+"Rounded" = "Rounded";
+"Monospaced" = "Monospaced";
+"Serif" = "Serif";
 
 /* Color themes */
 "System" = "Системна";
