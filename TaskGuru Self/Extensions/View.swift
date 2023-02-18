@@ -19,6 +19,7 @@ extension View {
 			Image("happy-sun")
 				.resizable()
 				.scaledToFit()
+				.saturation(0)
 				.frame(width: 200, height: 200)
 			Spacer()
 		}
