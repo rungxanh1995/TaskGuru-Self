@@ -15,12 +15,12 @@ extension AddTask {
 		@Published var taskStatus: TaskStatus = .new
 		@Published var taskNotes: String = ""
 		
-		private let listViewModel: HomeView.ViewModel
+		private let listViewModel: HomeViewModel
 		
-		init(parentVM: HomeView.ViewModel) {
+		init(parentVM: HomeViewModel) {
 			listViewModel = parentVM
 		}
-				
+
 		func addTask(name: inout String, dueDate: Date, type: TaskType,
 					 status: TaskStatus, notes: String) {
 			assignDefaultTaskName(to: &name)

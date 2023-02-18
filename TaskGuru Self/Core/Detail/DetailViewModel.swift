@@ -11,9 +11,9 @@ extension DetailView {
 	final class ViewModel: ObservableObject {
 		@Published var task: TaskItem
 		
-		let parentVM: HomeView.ViewModel
+		let parentVM: HomeViewModel
 		
-		init(for task: TaskItem, parentVM: HomeView.ViewModel) {
+		init(for task: TaskItem, parentVM: HomeViewModel) {
 			self.task = task
 			self.parentVM = parentVM
 		}

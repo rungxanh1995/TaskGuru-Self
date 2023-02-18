@@ -10,26 +10,27 @@ import SwiftUI
 import ConfettiSwiftUI
 
 struct HomeView: View {
-	@StateObject var vm: ViewModel
+	@EnvironmentObject private var vm: HomeViewModel
+	@StateObject private var tabState: AppState = .init()
 	@State private var selectedTask: TaskItem?
 	
-	init(vm: HomeView.ViewModel = .init()) {
-		_vm = StateObject(wrappedValue: vm)
-	}
-	
+	@Preference(\.isConfettiEnabled) private var isConfettiEnabled
 	@State private var confettiCounter: Int = 0
 	
+	@Preference(\.isPreviewEnabled) private var isPreviewEnabled
+
 	var body: some View {
-		NavigationStack {
+		NavigationStack(path: $tabState.navPath) {
 			List {
 				if vm.allTasks.isEmpty {
 					emptyTaskText
 				} else {
-					pendingSection
-					timeBasedSections
+					overdueSection
+					dueTodaySection
+					upcomingSection
 				}
 			}
-			.listStyle(.sidebar)
+			.confettiCannon(counter: $confettiCounter)
 			.onChange(of: selectedTask) { _ in
 				guard let selectedTask else { return }
 				vm.updateTasks(with: selectedTask)
@@ -49,119 +50,122 @@ struct HomeView: View {
 				DetailView.EditMode(vm: .init(for: task, parentVM: vm))
 			}
 		}
+		.environmentObject(tabState)
 	}
 }
 
 extension HomeView {
 	@ViewBuilder
 	private var emptyTaskText: some View {
-		
 		let emptyTaskListSentence: LocalizedStringKey = "Nothing yet. Tap here or \(SFSymbols.plusCircled) to add more"
+
+		VStack {
+			makeCheerfulDecorativeImage()
+			HStack {
+				Spacer()
+				Text(emptyTaskListSentence)
+					.font(.system(.callout))
+					.foregroundColor(.secondary)
+				Spacer()
+			}
+		}
+		.onTapGesture { vm.isShowingAddTaskView.toggle() }
+	}
+
+	@ViewBuilder
+	private var emptyFilteredListText: some View {
+		let emptyListSentence: LocalizedStringKey = "No tasks"
 		
 		HStack {
 			Spacer()
-			Text(emptyTaskListSentence)
+			Text(emptyListSentence)
 				.font(.system(.callout))
 				.foregroundColor(.secondary)
 			Spacer()
 		}
-		.onTapGesture { vm.isShowingAddTaskView.toggle() }
 	}
-	
-	private var pendingSection: some View {
+
+	@ViewBuilder
+	private var overdueSection: some View {
+		let overdues = vm.searchResults.filter { $0.dueDate.isPastToday }
+
 		Section {
-			if vm.noPendingTasksLeft {
-				makeCheerfulDecorativeImage()
-					.grayscale(1.0)
+			if overdues.isEmpty {
+				emptyFilteredListText
 			} else {
-				ForEach(vm.searchResults.filter { $0.isNotDone }) { task in
+				ForEach(overdues) { task in
 					NavigationLink(value: task) {
 						HomeListCell(task: task)
 					}
 					.contextMenu {
 						makeContextMenu(for: task)
 					} preview: {
-						DetailView(vm: .init(for: task, parentVM: vm))
+						if isPreviewEnabled {
+							DetailView(vm: .init(for: task, parentVM: vm))
+						} else {
+							HomeListCell(task: task).padding()
+						}
 					}
 				}
 			}
 		} header: {
-			Text("Pending Tasks")
-		} footer: {
-			if vm.noPendingTasksLeft {
-				Text("You're free! Enjoy your much deserved time 🥳")
-			} else {
-				Text("Don't stress yourself too much. You got it 💪")
-			}
-		}
-		.headerProminence(.increased)
-	}
-	
-	private var timeBasedSections: some View {
-		Section {
-			overdueSection
-			dueTodaySection
-			upcomingSection
-		} header: {
-			Text("All Tasks")
-		}
-		.headerProminence(.increased)
-	}
-	
-	private var overdueSection: some View {
-		Section {
-			ForEach(vm.searchResults.filter { $0.dueDate.isPastToday }) { task in
-				NavigationLink(value: task) {
-					HomeListCell(task: task)
-				}
-				.contextMenu {
-					makeContextMenu(for: task)
-				} preview: {
-					DetailView(vm: .init(for: task, parentVM: vm))
-				}
-			}
-		} header: {
-			Text("Overdue")
-				.bold()
-				.foregroundColor(.red)
+			Text("Overdue").bold().foregroundColor(.red)
 		}
 	}
-	
+
+	@ViewBuilder
 	private var dueTodaySection: some View {
+		let dues = vm.searchResults.filter { $0.dueDate.isWithinToday }
+
 		Section {
-			ForEach(vm.searchResults.filter { $0.dueDate.isWithinToday }) { task in
-				NavigationLink(value: task) {
-					HomeListCell(task: task)
-				}
-				.contextMenu {
-					makeContextMenu(for: task)
-				} preview: {
-					DetailView(vm: .init(for: task, parentVM: vm))
+			if dues.isEmpty {
+				emptyFilteredListText
+			} else {
+				ForEach(dues) { task in
+					NavigationLink(value: task) {
+						HomeListCell(task: task)
+					}
+					.contextMenu {
+						makeContextMenu(for: task)
+					} preview: {
+						if isPreviewEnabled {
+							DetailView(vm: .init(for: task, parentVM: vm))
+						} else {
+							HomeListCell(task: task).padding()
+						}
+					}
 				}
 			}
 		} header: {
-			Text("Due Today")
-			.bold()
-			.foregroundColor(.orange)
+			Text("Due Today").bold().foregroundColor(.orange)
 		}
 	}
-	
+
+	@ViewBuilder
 	private var upcomingSection: some View {
+		let upcomings = vm.searchResults.filter { $0.dueDate.isInTheFuture }
+
 		Section {
-			ForEach(vm.searchResults.filter { $0.dueDate.isInTheFuture }) { task in
-				NavigationLink(value: task) {
-					HomeListCell(task: task)
-				}
-				.contextMenu {
-					makeContextMenu(for: task)
-				} preview: {
-					DetailView(vm: .init(for: task, parentVM: vm))
+			if upcomings.isEmpty {
+				emptyFilteredListText
+			} else {
+				ForEach(upcomings) { task in
+					NavigationLink(value: task) {
+						HomeListCell(task: task)
+					}
+					.contextMenu {
+						makeContextMenu(for: task)
+					} preview: {
+						if isPreviewEnabled {
+							DetailView(vm: .init(for: task, parentVM: vm))
+						} else {
+							HomeListCell(task: task).padding()
+						}
+					}
 				}
 			}
 		} header: {
-			Text("Upcoming")
-			.bold()
-			.foregroundColor(.mint)
+			Text("Upcoming").bold().foregroundColor(.mint)
 		}
 	}
 	
@@ -169,27 +173,28 @@ extension HomeView {
 	private func makeContextMenu(for task: TaskItem) -> some View {
 		if task.isNotDone {
 			Button {
-				vm.markAsDone(task)
+				withAnimation { vm.markAsDone(task) }
+				if isConfettiEnabled { confettiCounter += 1 }
 			} label: {
-				Label("Mark as Done", systemImage: "checkmark")
+				Label { Text("Mark as Done") } icon: { SFSymbols.checkmark }
 			}
 		}
 		Button { selectedTask = task } label: {
-			Label("Edit", systemImage: "square.and.pencil")
+			Label { Text("Edit") } icon: { SFSymbols.pencilSquare }
 		}
 		Divider()
-		
+
 		Menu {
 			Button(role: .cancel) {} label: {
-				Label("Cancel", systemImage: "xmark")
+				Label { Text("Cancel") } icon: { SFSymbols.xmark }
 			}
 			Button(role: .destructive) {
-				vm.delete(task)
+				withAnimation { vm.delete(task) }
 			} label: {
-				Label("Delete", systemImage: "trash")
+				Label { Text("Delete") } icon: { SFSymbols.trash }
 			}
 		} label: {
-			Label("Delete", systemImage: "trash")
+			Label { Text("Delete") } icon: { SFSymbols.trash }
 		}
 	}
 	
@@ -197,7 +202,7 @@ extension HomeView {
 		Button {
 			vm.isShowingAddTaskView.toggle()
 		} label: {
-			Label("Add Task", systemImage: "plus.circle")
+			Label { Text("Add Task") } icon: { SFSymbols.plus }
 		}
 	}
 }
@@ -205,5 +210,6 @@ extension HomeView {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
+				.environmentObject(HomeViewModel())
     }
 }

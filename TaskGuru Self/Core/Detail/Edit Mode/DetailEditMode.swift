@@ -13,6 +13,9 @@ extension DetailView {
 		
 		@FocusState private var focusField: FocusField?
 		
+		/// Needs this here, so we can navigate back to `Home` view after editing.
+		/// Otherwise, we would see that the task info is not re-rendered in Detail View mode.
+		@EnvironmentObject var appState: AppState
 		@Environment(\.dismiss) var dismissThisView
 		
 		@ObservedObject var vm: DetailView.ViewModel
@@ -81,6 +84,7 @@ extension DetailView {
 		private func didTapSaveButton() -> Void {
 			vm.updateItemInItsSource()
 			dismissThisView()
+			appState.popToRoot()
 		}
 	}
 }

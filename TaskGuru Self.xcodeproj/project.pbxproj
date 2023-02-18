@@ -29,6 +29,8 @@
 		2C5C270929A0531400EF282F /* OnboardFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5C270829A0531400EF282F /* OnboardFeature.swift */; };
 		2C5C270B29A0536600EF282F /* OnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5C270A29A0536600EF282F /* OnboardView.swift */; };
 		2C5C270D29A0537800EF282F /* OnboardContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5C270C29A0537800EF282F /* OnboardContainerView.swift */; };
+		2C5C271029A0546200EF282F /* PendingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5C270F29A0546200EF282F /* PendingView.swift */; };
+		2C5C271229A054FF00EF282F /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5C271129A054FF00EF282F /* AppState.swift */; };
 		2C8C35DF298489DA00DCEA67 /* DetailViewMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8C35DE298489DA00DCEA67 /* DetailViewMode.swift */; };
 		2CC25BBC298459BA006972DF /* TaskGuru_SelfApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC25BBB298459BA006972DF /* TaskGuru_SelfApp.swift */; };
 		2CC25BBE298459BA006972DF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC25BBD298459BA006972DF /* HomeView.swift */; };
@@ -71,6 +73,8 @@
 		2C5C270829A0531400EF282F /* OnboardFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardFeature.swift; sourceTree = "<group>"; };
 		2C5C270A29A0536600EF282F /* OnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardView.swift; sourceTree = "<group>"; };
 		2C5C270C29A0537800EF282F /* OnboardContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardContainerView.swift; sourceTree = "<group>"; };
+		2C5C270F29A0546200EF282F /* PendingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingView.swift; sourceTree = "<group>"; };
+		2C5C271129A054FF00EF282F /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		2C8C35DE298489DA00DCEA67 /* DetailViewMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewMode.swift; sourceTree = "<group>"; };
 		2CC25BB8298459BA006972DF /* TaskGuru Self.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TaskGuru Self.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CC25BBB298459BA006972DF /* TaskGuru_SelfApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskGuru_SelfApp.swift; sourceTree = "<group>"; };
@@ -143,6 +147,7 @@
 				2CCC44C4298617D2009C3FBD /* SFSymbols.swift */,
 				2C5C26FC29A051E500EF282F /* UserDefaults */,
 				2C5C26F929A051BF00EF282F /* Preferences */,
+				2C5C271129A054FF00EF282F /* AppState.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -203,6 +208,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		2C5C270E29A0545600EF282F /* Pending */ = {
+			isa = PBXGroup;
+			children = (
+				2C5C270F29A0546200EF282F /* PendingView.swift */,
+			);
+			path = Pending;
+			sourceTree = "<group>";
+		};
 		2C8C35DD298489C700DCEA67 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,6 +272,7 @@
 				2CC25BCA29845A24006972DF /* Home */,
 				2CC25BCB29845D82006972DF /* Add */,
 				2C8C35DD298489C700DCEA67 /* Detail */,
+				2C5C270E29A0545600EF282F /* Pending */,
 				2CC25BCE298462F0006972DF /* Settings */,
 				2C5C270329A052BB00EF282F /* Other */,
 			);
@@ -393,12 +407,14 @@
 				2C5C270529A052C900EF282F /* GradientNavigationTitle.swift in Sources */,
 				2C5C26F429A0513C00EF282F /* AppDelegate.swift in Sources */,
 				2C33F6C82985929C004893EF /* PreviewProvider.swift in Sources */,
+				2C5C271029A0546200EF282F /* PendingView.swift in Sources */,
 				2C5C270929A0531400EF282F /* OnboardFeature.swift in Sources */,
 				2CCB0B492985B5A400D489DD /* Date.swift in Sources */,
 				2CC25BD0298462FF006972DF /* SettingsView.swift in Sources */,
 				2C33F6BA298587E7004893EF /* TaskItem.swift in Sources */,
 				2CCC44C5298617D2009C3FBD /* SFSymbols.swift in Sources */,
 				2C33F6C529858FEA004893EF /* Constants.swift in Sources */,
+				2C5C271229A054FF00EF282F /* AppState.swift in Sources */,
 				2C5C270229A0522E00EF282F /* PreferenceWrapper.swift in Sources */,
 				2C5C270B29A0536600EF282F /* OnboardView.swift in Sources */,
 				2CC25BBC298459BA006972DF /* TaskGuru_SelfApp.swift in Sources */,
