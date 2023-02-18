@@ -150,15 +150,15 @@
 "Reset Your Data" = "Reset Your Data";
 
 /* Accent colors */
-"Blue" = "Mavi";
-"Teal" = "Tal";
-"Indigo" = "İndiqo";
-"Pink" = "Çəhrayı";
-"Red" = "Qırmızı";
-"Orange" = "Narıncı";
-"Yellow" = "Sarı";
-"Green" = "Yaşıl";
-"Mint" = "Nanə";
+"Blue" = "Blue";
+"Teal" = "Teal";
+"Indigo" = "Indido";
+"Pink" = "Pink";
+"Red" = "Red";
+"Orange" = "Orange";
+"Yellow" = "Yellow";
+"Green" = "Green";
+"Mint" = "Mint";
 
 /* Font designs */
 "System" = "System";

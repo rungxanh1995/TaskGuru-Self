@@ -149,6 +149,17 @@
 "Reset App Settings" = "Tətbiq Parametrlərini Sıfırla";
 "Reset Your Data" = "Məlumatlarınızı Sıfırlayın";
 
+/* Accent colors */
+"Blue" = "Mavi";
+"Teal" = "Tal";
+"Indigo" = "İndiqo";
+"Pink" = "Çəhrayı";
+"Red" = "Qırmızı";
+"Orange" = "Narıncı";
+"Yellow" = "Sarı";
+"Green" = "Yaşıl";
+"Mint" = "Nanə";
+
 /* Font designs */
 "System" = "Sistem";
 "Rounded" = "Rounded";
