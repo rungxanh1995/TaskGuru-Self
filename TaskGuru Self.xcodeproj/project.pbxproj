@@ -140,6 +140,33 @@
 			path = Pending;
 			sourceTree = "<group>";
 		};
+		2C12598629A195A300DD96E4 /* Accent Color */ = {
+			isa = PBXGroup;
+			children = (
+				2CD53DF229A1699E00B23429 /* AccentColor.swift */,
+				2CD53DF429A16A9000B23429 /* AccentColorModifier.swift */,
+			);
+			path = "Accent Color";
+			sourceTree = "<group>";
+		};
+		2C12598729A195B300DD96E4 /* Font Design */ = {
+			isa = PBXGroup;
+			children = (
+				2CD53DEE29A11D1800B23429 /* FontDesignModifier.swift */,
+				2CD53DF029A150CB00B23429 /* FontDesign.swift */,
+			);
+			path = "Font Design";
+			sourceTree = "<group>";
+		};
+		2C12598829A195C000DD96E4 /* Color Scheme */ = {
+			isa = PBXGroup;
+			children = (
+				2CCB0B4A2985BC2300D489DD /* SchemeModifier.swift */,
+				2CCB0B4E2985BC6800D489DD /* SchemeType.swift */,
+			);
+			path = "Color Scheme";
+			sourceTree = "<group>";
+		};
 		2C33F6B129858289004893EF /* Edit Mode */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,19 +198,16 @@
 		2C33F6C329858FD2004893EF /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				2CD53DF229A1699E00B23429 /* AccentColor.swift */,
-				2CD53DF429A16A9000B23429 /* AccentColorModifier.swift */,
-				2CD2636A29945A6C0054C065 /* AppState.swift */,
-				2C33F6C429858FEA004893EF /* Constants.swift */,
-				2CD53DEE29A11D1800B23429 /* FontDesignModifier.swift */,
-				2CD53DF029A150CB00B23429 /* FontDesign.swift */,
-				2CCB0B542985BD6D00D489DD /* HapticManager.swift */,
-				2C0CC62B299FBDAF004161CF /* HomeQuickAction.swift */,
-				2CCB0B4A2985BC2300D489DD /* SchemeModifier.swift */,
-				2CCB0B4E2985BC6800D489DD /* SchemeType.swift */,
-				2CCC44C4298617D2009C3FBD /* SFSymbols.swift */,
+				2C12598629A195A300DD96E4 /* Accent Color */,
+				2C12598829A195C000DD96E4 /* Color Scheme */,
+				2C12598729A195B300DD96E4 /* Font Design */,
 				2C9B44F4299D6ED700EE5232 /* Preferences */,
 				2C9B44FE299D72EF00EE5232 /* UserDefaults */,
+				2CD2636A29945A6C0054C065 /* AppState.swift */,
+				2C33F6C429858FEA004893EF /* Constants.swift */,
+				2CCB0B542985BD6D00D489DD /* HapticManager.swift */,
+				2C0CC62B299FBDAF004161CF /* HomeQuickAction.swift */,
+				2CCC44C4298617D2009C3FBD /* SFSymbols.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
