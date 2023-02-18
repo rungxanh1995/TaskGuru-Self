@@ -17,4 +17,5 @@ enum UserDefaultsKey {
 	static let isPreviewEnabled: String = "isPreviewEnabled"
 	static let isConfettiEnabled: String = "isConfettiEnabled"
 	static let isTabNamesEnabled: String = "isTabNamesEnabled"
+	static let isRoundedFontEnabled: String = "isRoundedFontEnabled"
 }

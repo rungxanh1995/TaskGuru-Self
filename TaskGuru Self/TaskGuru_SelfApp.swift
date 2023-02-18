@@ -39,6 +39,7 @@ struct TaskGuru_SelfApp: App {
 				OnboardContainerView()
 					.transition(.asymmetric(insertion: .opacity.animation(.default), removal: .opacity))
 					.setUpColorTheme()
+					.setUpFontDesign()
 			} else {
 				TabView {
 					HomeView()
@@ -85,6 +86,7 @@ struct TaskGuru_SelfApp: App {
 				.environmentObject(homeVM)
 				.transition(.asymmetric(insertion: .opacity.animation(.default), removal: .opacity))
 				.setUpColorTheme()
+				.setUpFontDesign()
 			}
 		}
 	}

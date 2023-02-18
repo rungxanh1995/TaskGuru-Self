@@ -23,4 +23,9 @@ extension View {
 			Spacer()
 		}
 	}
+	
+	/// Configure the font design of this application.
+	func setUpFontDesign() -> some View {
+		modifier(FontDesignModifier())
+	}
 }

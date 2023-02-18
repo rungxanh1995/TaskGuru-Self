@@ -46,4 +46,7 @@ final class Preferences {
 
 	@UserDefault(UserDefaultsKey.isTabNamesEnabled)
 	var isTabNamesEnabled: Bool = true
+	
+	@UserDefault(UserDefaultsKey.isRoundedFontEnabled)
+	var isRoundedFontEnabled: Bool = false
 }

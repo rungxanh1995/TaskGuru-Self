@@ -18,6 +18,7 @@ struct SettingsView: View {
 	@Preference(\.isLockedInPortrait) private var isLockedInPortrait
 	@Preference(\.isHapticsReduced) private var isHapticsReduced
 	@Preference(\.isTabNamesEnabled) private var isTabNamesEnabled
+	@Preference(\.isRoundedFontEnabled) private var isRoundedFontEnabled
 	@Preference(\.systemTheme) private var systemTheme
 
 	init(vm: SettingsView.ViewModel = .init()) {
@@ -76,12 +77,18 @@ private extension SettingsView {
 	private var generalSection: some View {
 		Section {
 			onboarding
+			roundedFont
 			portraitLock
 			haptics
 			appTheme
 		} header: {
 			Label { Text("General") } icon: { SFSymbols.gearFilled }
 		}
+	}
+
+	private var roundedFont: some View {
+		Toggle("Rounded Font", isOn: $isRoundedFontEnabled)
+			.tint(.accentColor)
 	}
 
 	private var portraitLock: some View {
