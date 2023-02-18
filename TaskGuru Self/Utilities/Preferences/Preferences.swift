@@ -49,4 +49,7 @@ final class Preferences {
 
 	@UserDefault(UserDefaultsKey.fontDesign)
 	var fontDesign: Int = FontDesignType.allCases.first!.rawValue
+
+	@UserDefault(UserDefaultsKey.accentColor)
+	var accentColor: Int = AccentColorType.allCases.first!.rawValue
 }

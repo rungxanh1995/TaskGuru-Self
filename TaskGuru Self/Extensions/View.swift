@@ -28,4 +28,9 @@ extension View {
 	func setUpFontDesign() -> some View {
 		modifier(FontDesignModifier())
 	}
+
+	/// Configure the tinted accent color of this application.
+	func setUpAccentColor() -> some View {
+		modifier(AccentColorModifier())
+	}
 }

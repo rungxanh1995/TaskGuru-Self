@@ -40,6 +40,7 @@ struct TaskGuru_SelfApp: App {
 					.transition(.asymmetric(insertion: .opacity.animation(.default), removal: .opacity))
 					.setUpColorTheme()
 					.setUpFontDesign()
+					.setUpAccentColor()
 			} else {
 				TabView {
 					HomeView()
@@ -87,6 +88,7 @@ struct TaskGuru_SelfApp: App {
 				.transition(.asymmetric(insertion: .opacity.animation(.default), removal: .opacity))
 				.setUpColorTheme()
 				.setUpFontDesign()
+				.setUpAccentColor()
 			}
 		}
 	}

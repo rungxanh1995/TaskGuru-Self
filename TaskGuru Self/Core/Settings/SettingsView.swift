@@ -18,6 +18,7 @@ struct SettingsView: View {
 	@Preference(\.isLockedInPortrait) private var isLockedInPortrait
 	@Preference(\.isHapticsReduced) private var isHapticsReduced
 	@Preference(\.isTabNamesEnabled) private var isTabNamesEnabled
+	@Preference(\.accentColor) private var accentColor
 	@Preference(\.fontDesign) private var fontDesign
 	@Preference(\.systemTheme) private var systemTheme
 
@@ -79,6 +80,7 @@ private extension SettingsView {
 			onboarding
 			portraitLock
 			haptics
+			appAccentColor
 			fontDesignStyle
 			appTheme
 		} header: {
@@ -94,6 +96,17 @@ private extension SettingsView {
 	private var haptics: some View {
 		Toggle("Reduce Haptics", isOn: $isHapticsReduced)
 			.tint(.accentColor)
+	}
+
+	private var appAccentColor: some View {
+		Picker("Accent Color", selection: $accentColor) {
+			ForEach(AccentColorType.allCases) { (accent) in
+				Text(LocalizedStringKey(accent.title))
+//					.foregroundColor(Color(accent.title.lowercased()))
+					.tag(accent.rawValue)
+			}
+		}
+		.pickerStyle(.navigationLink)
 	}
 
 	private var fontDesignStyle: some View {
