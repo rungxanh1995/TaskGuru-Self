@@ -15,6 +15,7 @@ struct TaskGuru_SelfApp: App {
 	@Environment(\.scenePhase) private var scenePhase
 
 	@AppStorage(UserDefaultsKey.isOnboarding) private var isOnboarding: Bool = true
+	@Preference(\.accentColor) private var accentColor
 	@Preference(\.isShowingAppBadge) private var isShowingAppBadge
 	@Preference(\.isShowingTabBadge) private var isShowingTabBadge
 	@Preference(\.isLockedInPortrait) private var isLockedInPortrait
@@ -24,13 +25,8 @@ struct TaskGuru_SelfApp: App {
 	@State private var pendingTasksCount: Int = 0
 
 	init() {
-		UIView.appearance(for: UITraitCollection(userInterfaceStyle: .light),
-											whenContainedInInstancesOf: [UIAlertController.self])
-		.tintColor = UIColor(Color("AccentColor"))
-
-		UIView.appearance(for: UITraitCollection(userInterfaceStyle: .dark),
-											whenContainedInInstancesOf: [UIAlertController.self])
-		.tintColor = UIColor(Color("AccentColor"))
+		setAlertColor()
+		if isLockedInPortrait { appDelegate.lockInPortraitMode() } else { appDelegate.unlockPortraitMode() }
 	}
 
 	var body: some Scene {
@@ -64,9 +60,6 @@ struct TaskGuru_SelfApp: App {
 					pendingTasksCount = homeVM.pendingTasks.count
 					if isShowingAppBadge { setAppBadgeOfPendingTasks() }
 				}
-				.onAppear {
-					isLockedInPortrait ? appDelegate.lockInPortraitMode() : appDelegate.unlockPortraitMode()
-				}
 				.onChange(of: isLockedInPortrait) { _ in
 					isLockedInPortrait ? appDelegate.lockInPortraitMode() : appDelegate.unlockPortraitMode()
 				}
@@ -95,6 +88,16 @@ struct TaskGuru_SelfApp: App {
 }
 
 extension TaskGuru_SelfApp {
+	private func setAlertColor() {
+		UIView.appearance(for: UITraitCollection(userInterfaceStyle: .light),
+											whenContainedInInstancesOf: [UIAlertController.self])
+		.tintColor = UIColor(Color.defaultAccentColor)
+
+		UIView.appearance(for: UITraitCollection(userInterfaceStyle: .dark),
+											whenContainedInInstancesOf: [UIAlertController.self])
+		.tintColor = UIColor(Color.defaultAccentColor)
+	}
+
 	private func addHomeScreenQuickActions() {
 		UIApplication.shared.shortcutItems = HomeQuickAction.allShortcutItems
 	}

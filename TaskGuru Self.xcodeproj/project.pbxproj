@@ -52,6 +52,7 @@
 		2CD53DF129A150CB00B23429 /* FontDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD53DF029A150CB00B23429 /* FontDesign.swift */; };
 		2CD53DF329A1699E00B23429 /* AccentColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD53DF229A1699E00B23429 /* AccentColor.swift */; };
 		2CD53DF529A16A9000B23429 /* AccentColorModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD53DF429A16A9000B23429 /* AccentColorModifier.swift */; };
+		2CD53DF929A1856600B23429 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD53DF829A1856600B23429 /* Color.swift */; };
 		2CEF151B2988A142002FF516 /* StorageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEF151A2988A142002FF516 /* StorageProvider.swift */; };
 		2CF38FB6298982FB00CB49C5 /* TaskGuru.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2CF38FB3298982FB00CB49C5 /* TaskGuru.xcdatamodeld */; };
 		2CF38FB92989837A00CB49C5 /* TaskItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF38FB72989837A00CB49C5 /* TaskItem+CoreDataClass.swift */; };
@@ -110,6 +111,7 @@
 		2CD53DF029A150CB00B23429 /* FontDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontDesign.swift; sourceTree = "<group>"; };
 		2CD53DF229A1699E00B23429 /* AccentColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccentColor.swift; sourceTree = "<group>"; };
 		2CD53DF429A16A9000B23429 /* AccentColorModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccentColorModifier.swift; sourceTree = "<group>"; };
+		2CD53DF829A1856600B23429 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		2CEF151A2988A142002FF516 /* StorageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageProvider.swift; sourceTree = "<group>"; };
 		2CF38FB4298982FB00CB49C5 /* TaskGuru.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TaskGuru.xcdatamodel; sourceTree = "<group>"; };
 		2CF38FB5298982FB00CB49C5 /* CachedTask.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CachedTask.xcdatamodel; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 		2C33F6C62985928F004893EF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				2CD53DF829A1856600B23429 /* Color.swift */,
 				2CCB0B482985B5A400D489DD /* Date.swift */,
 				2C33F6C72985929C004893EF /* PreviewProvider.swift */,
 				2CCB0B502985BC9200D489DD /* View.swift */,
@@ -509,6 +512,7 @@
 				2CF38FB92989837A00CB49C5 /* TaskItem+CoreDataClass.swift in Sources */,
 				2CF38FBA2989837A00CB49C5 /* TaskItem+CoreDataProperties.swift in Sources */,
 				2CC25BBC298459BA006972DF /* TaskGuru_SelfApp.swift in Sources */,
+				2CD53DF929A1856600B23429 /* Color.swift in Sources */,
 				2CD53DF129A150CB00B23429 /* FontDesign.swift in Sources */,
 				2C33F6B329858293004893EF /* DetailEditMode.swift in Sources */,
 				2C33F6BC298588B4004893EF /* TaskStatus.swift in Sources */,
