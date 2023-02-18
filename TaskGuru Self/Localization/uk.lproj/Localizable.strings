@@ -122,6 +122,7 @@
 "Show Onboarding screen" = "Показувати екран навчання";
 "Portrait Lock" = "Блокування портретного режиму";
 "Reduce Haptics" = "Зменшення вібрації";
+"Accent Color" = "Accent Color";
 "Font Style" = "Font Style";
 "Color Theme" = "Кольорова тема";
 
@@ -147,6 +148,17 @@
 /* Buttons */
 "Reset App Settings" = "Скинути налаштування програми";
 "Reset Your Data" = "Скинути ваші дані";
+
+/* Accent colors */
+"Blue" = "Синій";
+"Teal" = "Бірюзовий";
+"Indigo" = "Індиго";
+"Pink" = "Рожевий";
+"Red" = "Червоний";
+"Orange" = "Помаранчевий";
+"Yellow" = "Жовтий";
+"Green" = "Зелений";
+"Mint" = "М'ятний";
 
 /* Font designs */
 "System" = "System";

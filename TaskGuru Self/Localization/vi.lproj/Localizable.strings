@@ -122,6 +122,7 @@
 "Show Onboarding screen" = "Hiện màn hình giới thiệu";
 "Portrait Lock" = "Khoá xoay màn hình";
 "Reduce Haptics" = "Giảm rung phản hồi";
+"Accent Color" = "Tông màu chủ đạo";
 "Font Style" = "Kiểu phông chữ";
 "Color Theme" = "Chủ đề giao diện";
 
@@ -148,6 +149,17 @@
 /* Buttons */
 "Reset App Settings" = "Khôi phục cài đặt mặc định";
 "Reset Your Data" = "Xoá dữ liệu của bạn";
+
+/* Accent colors */
+"Blue" = "Xanh lam";
+"Teal" = "Mòng két";
+"Indigo" = "Chàm";
+"Pink" = "Hồng";
+"Red" = "Đỏ";
+"Orange" = "Cam";
+"Yellow" = "Vàng";
+"Green" = "Xanh lá";
+"Mint" = "Xanh bạc hà";
 
 /* Font designs */
 "System" = "Hệ thống";

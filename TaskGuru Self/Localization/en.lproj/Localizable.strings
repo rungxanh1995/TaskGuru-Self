@@ -122,6 +122,7 @@
 "Show Onboarding screen" = "Show Onboarding screen";
 "Portrait Lock" = "Portrait Lock";
 "Reduce Haptics" = "Reduce Haptics";
+"Accent Color" = "Accent Color";
 "Font Style" = "Font Style";
 "Color Theme" = "Color Theme";
 
@@ -147,6 +148,17 @@
 /* Buttons */
 "Reset App Settings" = "Reset App Settings";
 "Reset Your Data" = "Reset Your Data";
+
+/* Accent colors */
+"Blue" = "Mavi";
+"Teal" = "Tal";
+"Indigo" = "İndiqo";
+"Pink" = "Çəhrayı";
+"Red" = "Qırmızı";
+"Orange" = "Narıncı";
+"Yellow" = "Sarı";
+"Green" = "Yaşıl";
+"Mint" = "Nanə";
 
 /* Font designs */
 "System" = "System";

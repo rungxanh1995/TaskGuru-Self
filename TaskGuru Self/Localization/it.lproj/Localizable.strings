@@ -122,6 +122,7 @@
 "Show Onboarding screen" = "Mostra schermata di benvenuto";
 "Portrait Lock" = "Blocco orientamento verticale";
 "Reduce Haptics" = "Riduci la vibrazione";
+"Accent Color" = "Accent Color";
 "Font Style" = "Font Style";
 "Color Theme" = "Tema Colore";
 
@@ -146,6 +147,17 @@
 /* Buttons */
 "Reset App Settings" = "Ripristina impostazioni dell'app";
 "Reset Your Data" = "Ripristina i tuoi dati";
+
+/* Accent colors */
+"Blue" = "Blu";
+"Teal" = "Ottanio";
+"Indigo" = "Indaco";
+"Pink" = "Rosa";
+"Red" = "Rosso";
+"Orange" = "Arancione";
+"Yellow" = "Giallo";
+"Green" = "Verde";
+"Mint" = "Menta";
 
 /* Font designs */
 "System" = "System";

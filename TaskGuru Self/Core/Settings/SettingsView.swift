@@ -101,9 +101,14 @@ private extension SettingsView {
 	private var appAccentColor: some View {
 		Picker("Accent Color", selection: $accentColor) {
 			ForEach(AccentColorType.allCases) { (accent) in
-				Text(LocalizedStringKey(accent.title))
-//					.foregroundColor(Color(accent.title.lowercased()))
-					.tag(accent.rawValue)
+				Label {
+					Text(LocalizedStringKey(accent.title))
+				} icon: {
+					SFSymbols.circleFilled
+						.foregroundColor(accent.inbuiltColor)
+				}
+				.labelStyle(.titleAndIcon)
+				.tag(accent.rawValue)
 			}
 		}
 		.pickerStyle(.navigationLink)

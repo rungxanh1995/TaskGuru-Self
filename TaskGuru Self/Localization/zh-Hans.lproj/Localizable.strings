@@ -122,6 +122,7 @@
 "Show Onboarding screen" = "显示入职屏幕";
 "Portrait Lock" = "竖排方向锁定";
 "Reduce Haptics" = "减少触感触控";
+"Accent Color" = "主题颜色";
 "Font Style" = "字体";
 "Color Theme" = "外观主题";
 
@@ -147,6 +148,17 @@
 /* Buttons */
 "Reset App Settings" = "重置应用设置";
 "Reset Your Data" = "重置你的数据";
+
+/* Accent colors */
+"Blue" = "蓝色";
+"Teal" = "蓝绿色";
+"Indigo" = "靛蓝色";
+"Pink" = "粉色";
+"Red" = "红色";
+"Orange" = "橙色";
+"Yellow" = "黄色";
+"Green" = "绿色";
+"Mint" = "薄荷";
 
 /* Font designs */
 "System" = "系统";
