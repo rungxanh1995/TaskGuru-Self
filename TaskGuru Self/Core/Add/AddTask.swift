@@ -25,7 +25,8 @@ struct AddTask: View {
 					TextField("Name", text: $vm.taskName)
 						.focused($focusField, equals: .name)
 					
-					DatePicker("Due Date", selection: $vm.dueDate, in: TaskConstants.dateRangeFromToday, displayedComponents: .date)
+					DatePicker("Due Date", selection: $vm.dueDate,
+										 displayedComponents: .date)
 					
 					Picker("Type", selection: $vm.taskType) {
 						ForEach(TaskConstants.allTypes, id: \.self) {

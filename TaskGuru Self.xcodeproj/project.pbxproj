@@ -17,6 +17,18 @@
 		2C33F6C229858E5E004893EF /* AddTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C33F6C129858E5E004893EF /* AddTaskViewModel.swift */; };
 		2C33F6C529858FEA004893EF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C33F6C429858FEA004893EF /* Constants.swift */; };
 		2C33F6C82985929C004893EF /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C33F6C72985929C004893EF /* PreviewProvider.swift */; };
+		2C5C26F229A050C900EF282F /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 2C5C26F129A050C900EF282F /* ConfettiSwiftUI */; };
+		2C5C26F429A0513C00EF282F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5C26F329A0513C00EF282F /* AppDelegate.swift */; };
+		2C5C26F629A0516000EF282F /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5C26F529A0516000EF282F /* UIApplication.swift */; };
+		2C5C26F829A0519000EF282F /* HomeQuickAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5C26F729A0519000EF282F /* HomeQuickAction.swift */; };
+		2C5C26FB29A051C900EF282F /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5C26FA29A051C900EF282F /* Preferences.swift */; };
+		2C5C26FE29A051EC00EF282F /* UserDefaultWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5C26FD29A051EC00EF282F /* UserDefaultWrapper.swift */; };
+		2C5C270029A0521E00EF282F /* PublisherObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5C26FF29A0521E00EF282F /* PublisherObservableObject.swift */; };
+		2C5C270229A0522E00EF282F /* PreferenceWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5C270129A0522E00EF282F /* PreferenceWrapper.swift */; };
+		2C5C270529A052C900EF282F /* GradientNavigationTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5C270429A052C900EF282F /* GradientNavigationTitle.swift */; };
+		2C5C270929A0531400EF282F /* OnboardFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5C270829A0531400EF282F /* OnboardFeature.swift */; };
+		2C5C270B29A0536600EF282F /* OnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5C270A29A0536600EF282F /* OnboardView.swift */; };
+		2C5C270D29A0537800EF282F /* OnboardContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5C270C29A0537800EF282F /* OnboardContainerView.swift */; };
 		2C8C35DF298489DA00DCEA67 /* DetailViewMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8C35DE298489DA00DCEA67 /* DetailViewMode.swift */; };
 		2CC25BBC298459BA006972DF /* TaskGuru_SelfApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC25BBB298459BA006972DF /* TaskGuru_SelfApp.swift */; };
 		2CC25BBE298459BA006972DF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC25BBD298459BA006972DF /* HomeView.swift */; };
@@ -48,6 +60,17 @@
 		2C33F6C129858E5E004893EF /* AddTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewModel.swift; sourceTree = "<group>"; };
 		2C33F6C429858FEA004893EF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2C33F6C72985929C004893EF /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
+		2C5C26F329A0513C00EF282F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2C5C26F529A0516000EF282F /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		2C5C26F729A0519000EF282F /* HomeQuickAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeQuickAction.swift; sourceTree = "<group>"; };
+		2C5C26FA29A051C900EF282F /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		2C5C26FD29A051EC00EF282F /* UserDefaultWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultWrapper.swift; sourceTree = "<group>"; };
+		2C5C26FF29A0521E00EF282F /* PublisherObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublisherObservableObject.swift; sourceTree = "<group>"; };
+		2C5C270129A0522E00EF282F /* PreferenceWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceWrapper.swift; sourceTree = "<group>"; };
+		2C5C270429A052C900EF282F /* GradientNavigationTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientNavigationTitle.swift; sourceTree = "<group>"; };
+		2C5C270829A0531400EF282F /* OnboardFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardFeature.swift; sourceTree = "<group>"; };
+		2C5C270A29A0536600EF282F /* OnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardView.swift; sourceTree = "<group>"; };
+		2C5C270C29A0537800EF282F /* OnboardContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardContainerView.swift; sourceTree = "<group>"; };
 		2C8C35DE298489DA00DCEA67 /* DetailViewMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewMode.swift; sourceTree = "<group>"; };
 		2CC25BB8298459BA006972DF /* TaskGuru Self.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TaskGuru Self.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CC25BBB298459BA006972DF /* TaskGuru_SelfApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskGuru_SelfApp.swift; sourceTree = "<group>"; };
@@ -74,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C5C26F229A050C900EF282F /* ConfettiSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +117,7 @@
 			children = (
 				2CC25BBF298459BB006972DF /* Assets.xcassets */,
 				2C33F6B529858649004893EF /* Launch Screen.storyboard */,
+				2C5C26F329A0513C00EF282F /* AppDelegate.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -113,9 +138,11 @@
 				2C33F6C429858FEA004893EF /* Constants.swift */,
 				2CCB0B4A2985BC2300D489DD /* SchemeModifier.swift */,
 				2CCB0B4E2985BC6800D489DD /* SchemeType.swift */,
-				2CCB0B4C2985BC4500D489DD /* UserDefaultsKey.swift */,
 				2CCB0B542985BD6D00D489DD /* HapticManager.swift */,
+				2C5C26F729A0519000EF282F /* HomeQuickAction.swift */,
 				2CCC44C4298617D2009C3FBD /* SFSymbols.swift */,
+				2C5C26FC29A051E500EF282F /* UserDefaults */,
+				2C5C26F929A051BF00EF282F /* Preferences */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -126,8 +153,54 @@
 				2CCB0B482985B5A400D489DD /* Date.swift */,
 				2C33F6C72985929C004893EF /* PreviewProvider.swift */,
 				2CCB0B502985BC9200D489DD /* View.swift */,
+				2C5C26F529A0516000EF282F /* UIApplication.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2C5C26F929A051BF00EF282F /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				2C5C26FA29A051C900EF282F /* Preferences.swift */,
+				2C5C26FF29A0521E00EF282F /* PublisherObservableObject.swift */,
+				2C5C270129A0522E00EF282F /* PreferenceWrapper.swift */,
+			);
+			path = Preferences;
+			sourceTree = "<group>";
+		};
+		2C5C26FC29A051E500EF282F /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				2CCB0B4C2985BC4500D489DD /* UserDefaultsKey.swift */,
+				2C5C26FD29A051EC00EF282F /* UserDefaultWrapper.swift */,
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
+		2C5C270329A052BB00EF282F /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				2C5C270429A052C900EF282F /* GradientNavigationTitle.swift */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		2C5C270629A0530300EF282F /* Onboard */ = {
+			isa = PBXGroup;
+			children = (
+				2C5C270729A0530E00EF282F /* Model */,
+				2C5C270A29A0536600EF282F /* OnboardView.swift */,
+				2C5C270C29A0537800EF282F /* OnboardContainerView.swift */,
+			);
+			path = Onboard;
+			sourceTree = "<group>";
+		};
+		2C5C270729A0530E00EF282F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2C5C270829A0531400EF282F /* OnboardFeature.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		2C8C35DD298489C700DCEA67 /* Detail */ = {
@@ -182,10 +255,12 @@
 		2CC25BC929845A20006972DF /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				2C5C270629A0530300EF282F /* Onboard */,
 				2CC25BCA29845A24006972DF /* Home */,
 				2CC25BCB29845D82006972DF /* Add */,
 				2C8C35DD298489C700DCEA67 /* Detail */,
 				2CC25BCE298462F0006972DF /* Settings */,
+				2C5C270329A052BB00EF282F /* Other */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -243,6 +318,9 @@
 			dependencies = (
 			);
 			name = "TaskGuru Self";
+			packageProductDependencies = (
+				2C5C26F129A050C900EF282F /* ConfettiSwiftUI */,
+			);
 			productName = "TaskGuru Self";
 			productReference = 2CC25BB8298459BA006972DF /* TaskGuru Self.app */;
 			productType = "com.apple.product-type.application";
@@ -271,6 +349,9 @@
 				Base,
 			);
 			mainGroup = 2CC25BAF298459BA006972DF;
+			packageReferences = (
+				2C5C26F029A050C900EF282F /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
+			);
 			productRefGroup = 2CC25BB9298459BA006972DF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -298,28 +379,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C5C26F629A0516000EF282F /* UIApplication.swift in Sources */,
 				2C2541B029849CDC00367BED /* DetailGridCell.swift in Sources */,
+				2C5C270029A0521E00EF282F /* PublisherObservableObject.swift in Sources */,
 				2C33F6C229858E5E004893EF /* AddTaskViewModel.swift in Sources */,
 				2CCC44C32985CFF3009C3FBD /* HomeListCell.swift in Sources */,
 				2C33F6C029858BCF004893EF /* HomeViewModel.swift in Sources */,
 				2CC25BBE298459BA006972DF /* HomeView.swift in Sources */,
+				2C5C26FE29A051EC00EF282F /* UserDefaultWrapper.swift in Sources */,
 				2C33F6BE29858912004893EF /* TaskType.swift in Sources */,
 				2CCB0B512985BC9200D489DD /* View.swift in Sources */,
 				2CCB0B4B2985BC2300D489DD /* SchemeModifier.swift in Sources */,
+				2C5C270529A052C900EF282F /* GradientNavigationTitle.swift in Sources */,
+				2C5C26F429A0513C00EF282F /* AppDelegate.swift in Sources */,
 				2C33F6C82985929C004893EF /* PreviewProvider.swift in Sources */,
+				2C5C270929A0531400EF282F /* OnboardFeature.swift in Sources */,
 				2CCB0B492985B5A400D489DD /* Date.swift in Sources */,
 				2CC25BD0298462FF006972DF /* SettingsView.swift in Sources */,
 				2C33F6BA298587E7004893EF /* TaskItem.swift in Sources */,
 				2CCC44C5298617D2009C3FBD /* SFSymbols.swift in Sources */,
 				2C33F6C529858FEA004893EF /* Constants.swift in Sources */,
+				2C5C270229A0522E00EF282F /* PreferenceWrapper.swift in Sources */,
+				2C5C270B29A0536600EF282F /* OnboardView.swift in Sources */,
 				2CC25BBC298459BA006972DF /* TaskGuru_SelfApp.swift in Sources */,
 				2C33F6B329858293004893EF /* DetailEditMode.swift in Sources */,
 				2C33F6BC298588B4004893EF /* TaskStatus.swift in Sources */,
 				2C8C35DF298489DA00DCEA67 /* DetailViewMode.swift in Sources */,
+				2C5C26F829A0519000EF282F /* HomeQuickAction.swift in Sources */,
 				2CCB0B452985AAFA00D489DD /* DetailView.swift in Sources */,
+				2C5C26FB29A051C900EF282F /* Preferences.swift in Sources */,
 				2CCB0B552985BD6D00D489DD /* HapticManager.swift in Sources */,
 				2CC25BCD29845D9A006972DF /* AddTask.swift in Sources */,
 				2CCB0B472985B2E700D489DD /* DetailViewModel.swift in Sources */,
+				2C5C270D29A0537800EF282F /* OnboardContainerView.swift in Sources */,
 				2CCB0B532985BCB400D489DD /* SettingsViewModel.swift in Sources */,
 				2CCB0B4F2985BC6800D489DD /* SchemeType.swift in Sources */,
 				2CCB0B4D2985BC4500D489DD /* UserDefaultsKey.swift in Sources */,
@@ -527,6 +619,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2C5C26F029A050C900EF282F /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/simibac/ConfettiSwiftUI.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2C5C26F129A050C900EF282F /* ConfettiSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2C5C26F029A050C900EF282F /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
+			productName = ConfettiSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2CC25BB0298459BA006972DF /* Project object */;
 }

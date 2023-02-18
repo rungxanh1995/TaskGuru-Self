@@ -1,11 +1,13 @@
 //
 //  HomeView.swift
-//  TaskGuru Self
+//  TaskGuru
 //
-//  Created by Joe Pham on 2023-01-27.
+//  Created by Marco Stevanella on 2023-02-17.
+//  Student ID: 101307949
 //
 
 import SwiftUI
+import ConfettiSwiftUI
 
 struct HomeView: View {
 	@StateObject var vm: ViewModel
@@ -14,6 +16,8 @@ struct HomeView: View {
 	init(vm: HomeView.ViewModel = .init()) {
 		_vm = StateObject(wrappedValue: vm)
 	}
+	
+	@State private var confettiCounter: Int = 0
 	
 	var body: some View {
 		NavigationStack {

@@ -25,7 +25,6 @@ extension DetailView {
 							.focused($focusField, equals: .name)
 						
 						DatePicker("Due Date", selection: $vm.task.dueDate,
-								   in: TaskConstants.dateRangeFromToday,
 								   displayedComponents: .date
 						)
 						

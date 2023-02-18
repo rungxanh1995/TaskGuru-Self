@@ -9,22 +9,30 @@ import SwiftUI
 
 extension SettingsView {
 	final class ViewModel: ObservableObject {
-		@AppStorage(UserDefaultsKey.hapticsEnabled)
-		var isHapticsEnabled: Bool = true
+		@Published var isConfirmingResetSettings: Bool = false
+		@Published var isConfirmingResetUserData: Bool = false
 		
-		@AppStorage(UserDefaultsKey.systemTheme)
-		var systemTheme: Int = SchemeType.allCases.first!.rawValue
+		var appVersionNumber: String {
+			Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? ""
+		}
 		
-		@Published
-		var isConfirmingResetData: Bool = false
+		var appBuildNumber: String {
+			Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? ""
+		}
 		
 		let joeGitHubLink: URL = URL(string: "https://twitter.com/rungxanh1995")!
 		let marcoGitHubLink: URL = URL(string: "https://github.com/floydcoder")!
 		let ostapGitHubLink: URL = URL(string: "https://github.com/ostap-sulyk")!
 		let raufGitHubLink: URL = URL(string: "https://github.com/drrauf")!
 		
-		func resetData() {
-			// TODO: Implement if possible
+		func resetDefaults() {
+			let defaults = UserDefaults.standard
+			let dictionary = defaults.dictionaryRepresentation()
+			dictionary.keys.forEach { defaults.removeObject(forKey: $0) }
+		}
+		
+		func resetAllTasks() {
+			print("To implement in final implementation stage")
 		}
 	}
 }
