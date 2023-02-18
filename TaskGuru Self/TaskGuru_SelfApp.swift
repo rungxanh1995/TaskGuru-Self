@@ -60,6 +60,9 @@ struct TaskGuru_SelfApp: App {
 					pendingTasksCount = homeVM.pendingTasks.count
 					if isShowingAppBadge { setAppBadgeOfPendingTasks() }
 				}
+				.onChange(of: accentColor) { _ in
+					setAlertColor()
+				}
 				.onChange(of: isLockedInPortrait) { _ in
 					isLockedInPortrait ? appDelegate.lockInPortraitMode() : appDelegate.unlockPortraitMode()
 				}
@@ -91,11 +94,11 @@ extension TaskGuru_SelfApp {
 	private func setAlertColor() {
 		UIView.appearance(for: UITraitCollection(userInterfaceStyle: .light),
 											whenContainedInInstancesOf: [UIAlertController.self])
-		.tintColor = UIColor(Color.defaultAccentColor)
+			.tintColor = UIColor(Color.defaultAccentColor)
 
 		UIView.appearance(for: UITraitCollection(userInterfaceStyle: .dark),
 											whenContainedInInstancesOf: [UIAlertController.self])
-		.tintColor = UIColor(Color.defaultAccentColor)
+			.tintColor = UIColor(Color.defaultAccentColor)
 	}
 
 	private func addHomeScreenQuickActions() {
