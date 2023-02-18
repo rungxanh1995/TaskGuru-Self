@@ -46,7 +46,7 @@ final class Preferences {
 
 	@UserDefault(UserDefaultsKey.isTabNamesEnabled)
 	var isTabNamesEnabled: Bool = true
-	
-	@UserDefault(UserDefaultsKey.isRoundedFontEnabled)
-	var isRoundedFontEnabled: Bool = false
+
+	@UserDefault(UserDefaultsKey.fontDesign)
+	var fontDesign: Int = FontDesignType.allCases.first!.rawValue
 }

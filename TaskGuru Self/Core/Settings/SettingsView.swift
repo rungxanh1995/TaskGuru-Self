@@ -18,7 +18,7 @@ struct SettingsView: View {
 	@Preference(\.isLockedInPortrait) private var isLockedInPortrait
 	@Preference(\.isHapticsReduced) private var isHapticsReduced
 	@Preference(\.isTabNamesEnabled) private var isTabNamesEnabled
-	@Preference(\.isRoundedFontEnabled) private var isRoundedFontEnabled
+	@Preference(\.fontDesign) private var fontDesign
 	@Preference(\.systemTheme) private var systemTheme
 
 	init(vm: SettingsView.ViewModel = .init()) {
@@ -77,18 +77,13 @@ private extension SettingsView {
 	private var generalSection: some View {
 		Section {
 			onboarding
-			roundedFont
 			portraitLock
 			haptics
+			fontDesignStyle
 			appTheme
 		} header: {
 			Label { Text("General") } icon: { SFSymbols.gearFilled }
 		}
-	}
-
-	private var roundedFont: some View {
-		Toggle("Rounded Font", isOn: $isRoundedFontEnabled)
-			.tint(.accentColor)
 	}
 
 	private var portraitLock: some View {
@@ -99,6 +94,15 @@ private extension SettingsView {
 	private var haptics: some View {
 		Toggle("Reduce Haptics", isOn: $isHapticsReduced)
 			.tint(.accentColor)
+	}
+
+	private var fontDesignStyle: some View {
+		Picker("Font Style", selection: $fontDesign) {
+			ForEach(FontDesignType.allCases) { (design) in
+				Text(LocalizedStringKey(design.title))
+					.tag(design.rawValue)
+			}
+		}
 	}
 
 	private var appTheme: some View {

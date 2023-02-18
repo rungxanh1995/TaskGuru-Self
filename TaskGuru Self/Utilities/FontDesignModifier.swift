@@ -8,11 +8,21 @@
 import SwiftUI
 
 struct FontDesignModifier: ViewModifier {
-	@AppStorage(UserDefaultsKey.isRoundedFontEnabled)
-	private var roundedFont: Bool = false
+	@AppStorage(UserDefaultsKey.fontDesign)
+	private var fontDesign: Int = FontDesignType.allCases.first!.rawValue
+
+	private var selectedFontDesign: Font.Design? {
+		guard let design = FontDesignType(rawValue: self.fontDesign) else { return nil }
+		switch design {
+		case .system: return .default
+		case .rounded: return .rounded
+		case .monospaced: return .monospaced
+		case .serif: return .serif
+		}
+	}
 
 	func body(content: Content) -> some View {
 		content
-			.fontDesign(roundedFont ? .rounded : .default)
+			.fontDesign(selectedFontDesign)
 	}
 }
