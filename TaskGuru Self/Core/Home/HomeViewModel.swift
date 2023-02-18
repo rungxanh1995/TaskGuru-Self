@@ -17,11 +17,11 @@ final class HomeViewModel: ObservableObject {
 			return allTasks
 		} else {
 			return allTasks.filter { task in
-				task.name.lowercased().contains(searchText.lowercased()) ||
-				task.type.rawValue.lowercased().contains(searchText.lowercased()) ||
-				task.status.rawValue.lowercased().contains(searchText.lowercased()) ||
-				task.notes.lowercased().contains(searchText.lowercased()) ||
-				task.dueDate.formatted().lowercased().contains(searchText.lowercased())
+				task.name.localizedCaseInsensitiveContains(searchText) ||
+				task.type.rawValue.lowercased().localizedCaseInsensitiveContains(searchText) ||
+				task.status.rawValue.localizedCaseInsensitiveContains(searchText) ||
+				task.notes.lowercased().localizedCaseInsensitiveContains(searchText) ||
+				task.dueDate.formatted().localizedCaseInsensitiveContains(searchText)
 			}
 		}
 	}

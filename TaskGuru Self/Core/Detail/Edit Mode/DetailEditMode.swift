@@ -60,6 +60,11 @@ extension DetailView {
 						}
 					}
 				}
+				.onAppear {
+					DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+						focusField = .name
+					}
+				}
 				.onSubmit { focusField = nil }
 				.navigationTitle("Edit Task")
 				.navigationBarTitleDisplayMode(.inline)

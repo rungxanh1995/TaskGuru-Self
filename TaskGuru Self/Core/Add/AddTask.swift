@@ -58,6 +58,11 @@ struct AddTask: View {
 					}
 				}
 			}
+			.onAppear {
+				DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+					focusField = .name
+				}
+			}
 			.onSubmit { focusField = nil }
 			.navigationTitle("Add Task")
 			.navigationBarTitleDisplayMode(.inline)
