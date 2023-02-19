@@ -64,6 +64,7 @@
 /* Navigation title */
 "All Tasks" = "Tất cả Tác vụ";
 /* Section titles */
+"All Pending" = "Còn tồn đọng";
 "Overdue" = "Quá hạn";
 "Due Today" = "Đến hạn trong ngày";
 "Upcoming" = "Sắp tới";
@@ -128,8 +129,9 @@
 
 /* Badge secrion */
 "Show App Icon Badge" = "Hiện nhãn biểu tượng app";
+"App Icon Badge Type" = "Nhãn b.tượng app cho tác vụ";
 "Show Tab Badge" = "Hiện nhãn tab";
-"Icon badge shows the number of pending tasks on Home screen. Review your Notification settings if no badge shown." = "Nhãn biểu tượng hiển thị số tác vụ chưa h.thành trên MH Chính. Hãy kiểm tra cài đặt Thông báo nếu không thấy nhãn.";
+"Icon badge shows a number of tasks on Home screen. Review your Notification settings if no badge shown." = "Nhãn biểu tượng hiển thị số tác vụ với đ.kiện đã chọn trên MH Chính. Hãy kiểm tra cài đặt Thông báo nếu bạn không thấy nhãn.";
 
 /* Misc section */
 "Tab Names" = "Tên tab";

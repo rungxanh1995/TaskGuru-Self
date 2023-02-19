@@ -64,6 +64,7 @@
 /* Navigation title */
 "All Tasks" = "Всі завдання";
 /* Section titles */
+"All Pending" = "Усі незавершені завдання";
 "Overdue" = "Прострочені";
 "Due Today" = "На сьогодні";
 "Upcoming" = "Майбутні";
@@ -128,8 +129,9 @@
 
 /* Badge secrion */
 "Show App Icon Badge" = "Показати значок значка програми";
+"App Icon Badge Type" = "Тип значка програми";
 "Show Tab Badge" = "Показувати значок вкладки";
-"Icon badge shows the number of pending tasks on Home screen. Review your Notification settings if no badge shown." = "Відобразіть ряд незавершених завдань на головному екрані. Перегляньте налаштування сповіщень, якщо значок не відображається.";
+"Icon badge shows a number of tasks on Home screen. Review your Notification settings if no badge shown." = "Піктограма показує ряд завдань на головному екрані. Перегляньте налаштування сповіщень, якщо значок не відображається.";
 
 /* Misc section */
 "Tab Names" = "Tab Names";

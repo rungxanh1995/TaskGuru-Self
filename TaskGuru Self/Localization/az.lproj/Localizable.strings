@@ -64,9 +64,10 @@
 /* Navigation title */
 "All Tasks" = "Bütün Tapşırıqlar";
 /* Section titles */
-"Overdue" = "Gecmiş";
+"All Pending" = "Bütün gözlənilən Vəzifələr";
+"Overdue" = "Gecmiş Vəzifələr";
 "Due Today" = "Bugünkü Vəzifələr";
-"Upcoming" = "Gələcək";
+"Upcoming" = "Gələcək Vəzifələr";
 /* Empty list sentence */
 "No tasks" = "Tapşırıq yoxdur";
 
@@ -128,8 +129,9 @@
 
 /* Badge secrion */
 "Show App Icon Badge" = "Tətbiq nişanı üzərində nişanı göstərin";
+"App Icon Badge Type" = "Üçün proqram ikon nömrəsi";
 "Show Tab Badge" = "Tab bildirişini göstər";
-"Icon badge shows the number of pending tasks on Home screen. Review your Notification settings if no badge shown." = "Gözləyən bir sıra tapşırıqlarınızı Əsas ekranda göstərin. Heç bir nişan göstərilməyibsə, Bildiriş ayarlarınızı nəzərdən keçirin.";
+"Icon badge shows a number of tasks on Home screen. Review your Notification settings if no badge shown." = "Nişan nişanı Əsas ekranda bir sıra tapşırıqları göstərir. Heç bir nişan göstərilməyibsə, Bildiriş ayarlarınızı nəzərdən keçirin.";
 
 /* Misc section */
 "Tab Names" = "Tab Names";

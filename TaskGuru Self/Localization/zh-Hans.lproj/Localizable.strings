@@ -64,6 +64,7 @@
 /* Navigation title */
 "All Tasks" = "所有任务";
 /* Section titles */
+"All Pending" = "所有待处理";
 "Overdue" = "逾期";
 "Due Today" = "今天到期";
 "Upcoming" = "即将到期";
@@ -128,8 +129,9 @@
 
 /* Badge secrion */
 "Show App Icon Badge" = "显示应用图标的标志";
+"App Icon Badge Type" = "程序图标徽章类型";
 "Show Tab Badge" = "显示选项卡标记";
-"Icon badge shows the number of pending tasks on Home screen. Review your Notification settings if no badge shown." = "在主屏幕上显示待处理任务的数量。 如果没有显示徽章，请检查你的通知设置。";
+"Icon badge shows a number of tasks on Home screen. Review your Notification settings if no badge shown." = "在主屏幕上显示任务的数量。 如果没有显示徽章，请检查你的通知设置。";
 
 /* Misc section */
 "Tab Names" = "选项卡标题";

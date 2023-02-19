@@ -64,6 +64,7 @@
 /* Navigation title */
 "All Tasks" = "Tutti i compiti";
 /* Section titles */
+"All Pending" = "Tutto in sospeso";
 "Overdue" = "Scaduti";
 "Due Today" = "Da completare oggi";
 "Upcoming" = "In arrivo";
@@ -128,8 +129,9 @@
 
 /* Badge secrion */
 "Show App Icon Badge" = "Mostra badge icona app";
+"App Icon Badge Type" = "Tipo di distintivo dell'icona dell'app";
 "Show Tab Badge" = "Mostra distintivo sulla scheda";
-"Icon badge shows the number of pending tasks on Home screen. Review your Notification settings if no badge shown." = "Visualizza un certo numero di attività in sospeso nella schermata Home. Rivedi le impostazioni di notifica se non viene mostrato alcun badge.";
+"Icon badge shows a number of tasks on Home screen. Review your Notification settings if no badge shown." = "Il badge dell'icona mostra una serie di attività nella schermata Home. Rivedi le impostazioni di notifica se non viene mostrato alcun badge.";
 
 /* Misc section */"Tab Names" = "Tab Names";
 "Toggle Confetti 🎉" = "Toggle Confetti 🎉";

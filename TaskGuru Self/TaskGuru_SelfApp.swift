@@ -159,9 +159,9 @@ extension TaskGuru_SelfApp {
 		guard let badge = BadgeType(rawValue: badgeType) else { return 0 }
 		switch badge {
 		case .allPending: return homeVM.pendingTasks.count
-		case .overdue: return homeVM.allTasks.filter { $0.dueDate.isPastToday }.count
-		case .dueToday: return homeVM.allTasks.filter { $0.dueDate.isWithinToday }.count
-		case .upcoming: return homeVM.allTasks.filter { $0.dueDate.isInTheFuture }.count
+		case .overdue: return homeVM.allTasks.filter { $0.dueDate.isPastToday && $0.isNotDone }.count
+		case .dueToday: return homeVM.allTasks.filter { $0.dueDate.isWithinToday && $0.isNotDone }.count
+		case .upcoming: return homeVM.allTasks.filter { $0.dueDate.isInTheFuture && $0.isNotDone }.count
 		}
 	}
 }

@@ -64,6 +64,7 @@
 /* Navigation title */
 "All Tasks" = "All Tasks";
 /* Section titles */
+"All Pending" = "All Pending";
 "Overdue" = "Overdue";
 "Due Today" = "Due Today";
 "Upcoming" = "Upcoming";
@@ -128,8 +129,9 @@
 
 /* Badge secrion */
 "Show App Icon Badge" = "Show App Icon Badge";
+"App Icon Badge Type" = "App Icon Badge Type";
 "Show Tab Badge" = "Show Tab Badge";
-"Icon badge shows the number of pending tasks on Home screen. Review your Notification settings if no badge shown." = "Icon badge shows the number of pending tasks on Home screen. Review your Notification settings if no badge shown.";
+"Icon badge shows a number of tasks on Home screen. Review your Notification settings if no badge shown." = "Icon badge shows a number of tasks on Home screen. Review your Notification settings if no badge shown.";
 
 /* Misc section */
 "Tab Names" = "Tab Names";
