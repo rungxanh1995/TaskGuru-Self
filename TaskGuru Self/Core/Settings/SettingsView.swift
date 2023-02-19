@@ -165,6 +165,7 @@ private extension SettingsView {
 					.tag(type.rawValue)
 			}
 		}
+		.disabled(!isShowingAppBadge)
 	}
 
 	private var tabBadge: some View {
