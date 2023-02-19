@@ -72,6 +72,8 @@
 "Upcoming" = "Upcoming";
 /* Empty list sentence */
 "No tasks" = "No tasks";
+/* All tasks empty sentence */
+"Nothing yet. Tap here or %@ to add more" = "Nothing yet. Tap here or %@ to add more";
 
 
 /* PENDING */

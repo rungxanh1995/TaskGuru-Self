@@ -72,6 +72,8 @@
 "Upcoming" = "In arrivo";
 /* Empty list sentence */
 "No tasks" = "Nessun compito";
+/* All tasks empty sentence */
+"Nothing yet. Tap here or %@ to add more" = "Nothing yet. Tap here or %@ to add more";
 
 
 /* PENDING */

@@ -72,6 +72,8 @@
 "Upcoming" = "Sắp tới";
 /* Empty list sentence */
 "No tasks" = "Không có tác vụ nào";
+/* All tasks empty sentence */
+"Nothing yet. Tap here or %@ to add more" = "Chưa có gì cả. Hãy bấm vào đây hoặc %@ để thêm";
 
 
 /* PENDING */

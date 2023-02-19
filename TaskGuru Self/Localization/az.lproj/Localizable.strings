@@ -72,6 +72,8 @@
 "Upcoming" = "Gələcək Vəzifələr";
 /* Empty list sentence */
 "No tasks" = "Tapşırıq yoxdur";
+/* All tasks empty sentence */
+"Nothing yet. Tap here or %@ to add more" = "Nothing yet. Tap here or %@ to add more";
 
 
 /* PENDING */

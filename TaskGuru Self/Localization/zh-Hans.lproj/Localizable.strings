@@ -72,6 +72,8 @@
 "Upcoming" = "即将到期";
 /* Empty list sentence */
 "No tasks" = "暂无任务";
+/* All tasks empty sentence */
+"Nothing yet. Tap here or %@ to add more" = "还没有什么。 点击这里或 %@ 添加更多";
 
 
 /* PENDING */

@@ -72,6 +72,8 @@
 "Upcoming" = "Майбутні";
 /* Empty list sentence */
 "No tasks" = "Немає завдань";
+/* All tasks empty sentence */
+"Nothing yet. Tap here or %@ to add more" = "Nothing yet. Tap here or %@ to add more";
 
 
 /* PENDING */
