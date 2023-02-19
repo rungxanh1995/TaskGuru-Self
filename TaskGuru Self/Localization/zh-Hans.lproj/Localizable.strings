@@ -15,6 +15,8 @@
 "Tasks categorized by section to easily track overdue, due today, and upcoming ones" = "任务按完成时间分类，得方便跟踪逾期、今天到期、和即将到期的任务";
 "Pending Tasks tab" = "待处理任务选项卡";
 "Find your undone tasks here" = "在这里查找未完成的任务";
+"App icon badge" = "程序图标徽章";
+"Track all or time-based pending tasks at a glance. Find this in %@ Settings" = "一目了然地跟踪所有或基于时间的待处理任务。在 %@ 设置选项卡 里找到它";
 "Quick Actions" = "上下文菜单";
 "Tap and hold each task from the list to use quick actions" = "从列表中点击并长按每个任务以使用上下文菜单";
 

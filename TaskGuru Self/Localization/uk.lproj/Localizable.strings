@@ -15,6 +15,8 @@
 "Tasks categorized by section to easily track overdue, due today, and upcoming ones" = "Завдання розподілені за розділами для зручного відстеження прострочених, на сьогодні та майбутніх";
 "Pending Tasks tab" = "Вкладка Відкладені завдання";
 "Find your undone tasks here" = "Знайдіть незавершені завдання тут";
+"App icon badge" = "App icon badge";
+"Track all or time-based pending tasks at a glance. Find this in %@ Settings" = "Track all or time-based pending tasks at a glance. Find this in %@ Settings";
 "Quick Actions" = "Швидкі дії";
 "Tap and hold each task from the list to use quick actions" = "Клацніть та утримуйте кожне завдання зі списку, щоб використати швидкі дії";
 

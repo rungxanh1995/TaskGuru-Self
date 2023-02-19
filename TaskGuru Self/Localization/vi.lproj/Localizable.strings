@@ -15,6 +15,8 @@
 "Tasks categorized by section to easily track overdue, due today, and upcoming ones" = "Các tác vụ được phân loại theo mục để tiện theo dõi tác vụ quá hạn, đến hạn trong ngày, và sắp tới";
 "Pending Tasks tab" = "Tab Tác vụ Chưa h.thành";
 "Find your undone tasks here" = "Hiển thị các tác vụ còn tồn đọng của bạn";
+"App icon badge" = "Nhãn biểu tượng app";
+"Track all or time-based pending tasks at a glance. Find this in %@ Settings" = "Theo dõi tác vụ còn tồn, tất cả hay phân loại theo thời gian tuỳ ý. Xem thêm trong %@ Cài đặt";
 "Quick Actions" = "Menu H.động nhanh";
 "Tap and hold each task from the list to use quick actions" = "Bấm giữ mỗi tác vụ trong danh sách để truy cập menu ngữ cảnh";
 
