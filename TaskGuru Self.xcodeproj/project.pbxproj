@@ -30,6 +30,7 @@
 		2CBACA3C299A9F1700D30C35 /* OnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBACA3B299A9F1700D30C35 /* OnboardView.swift */; };
 		2CBACA3E299AA30700D30C35 /* OnboardContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBACA3D299AA30700D30C35 /* OnboardContainerView.swift */; };
 		2CBACA41299AA39800D30C35 /* OnboardFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBACA40299AA39800D30C35 /* OnboardFeature.swift */; };
+		2CBCA15629A1A56B0036B4A7 /* BadgeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBCA15529A1A56B0036B4A7 /* BadgeType.swift */; };
 		2CC25BBC298459BA006972DF /* TaskGuru_SelfApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC25BBB298459BA006972DF /* TaskGuru_SelfApp.swift */; };
 		2CC25BBE298459BA006972DF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC25BBD298459BA006972DF /* HomeView.swift */; };
 		2CC25BC0298459BB006972DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CC25BBF298459BB006972DF /* Assets.xcassets */; };
@@ -88,6 +89,7 @@
 		2CBACA3B299A9F1700D30C35 /* OnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardView.swift; sourceTree = "<group>"; };
 		2CBACA3D299AA30700D30C35 /* OnboardContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardContainerView.swift; sourceTree = "<group>"; };
 		2CBACA40299AA39800D30C35 /* OnboardFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardFeature.swift; sourceTree = "<group>"; };
+		2CBCA15529A1A56B0036B4A7 /* BadgeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeType.swift; sourceTree = "<group>"; };
 		2CC25BB8298459BA006972DF /* TaskGuru Self.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TaskGuru Self.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CC25BBB298459BA006972DF /* TaskGuru_SelfApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskGuru_SelfApp.swift; sourceTree = "<group>"; };
 		2CC25BBD298459BA006972DF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				2C12598629A195A300DD96E4 /* Accent Color */,
+				2CBCA15729A1A5780036B4A7 /* Badge */,
 				2C12598829A195C000DD96E4 /* Color Scheme */,
 				2C12598729A195B300DD96E4 /* Font Design */,
 				2C9B44F4299D6ED700EE5232 /* Preferences */,
@@ -296,6 +299,14 @@
 				2CBACA40299AA39800D30C35 /* OnboardFeature.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		2CBCA15729A1A5780036B4A7 /* Badge */ = {
+			isa = PBXGroup;
+			children = (
+				2CBCA15529A1A56B0036B4A7 /* BadgeType.swift */,
+			);
+			path = Badge;
 			sourceTree = "<group>";
 		};
 		2CC25BAF298459BA006972DF = {
@@ -536,6 +547,7 @@
 				2CF38FB92989837A00CB49C5 /* TaskItem+CoreDataClass.swift in Sources */,
 				2CF38FBA2989837A00CB49C5 /* TaskItem+CoreDataProperties.swift in Sources */,
 				2CC25BBC298459BA006972DF /* TaskGuru_SelfApp.swift in Sources */,
+				2CBCA15629A1A56B0036B4A7 /* BadgeType.swift in Sources */,
 				2CD53DF929A1856600B23429 /* Color.swift in Sources */,
 				2CD53DF129A150CB00B23429 /* FontDesign.swift in Sources */,
 				2C33F6B329858293004893EF /* DetailEditMode.swift in Sources */,
@@ -699,7 +711,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 134;
+				CURRENT_PROJECT_VERSION = 135;
 				DEVELOPMENT_ASSET_PATHS = "\"TaskGuru Self/Preview Content\"";
 				DEVELOPMENT_TEAM = 8R3P49X4ZM;
 				ENABLE_PREVIEWS = YES;
@@ -717,7 +729,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.7;
+				MARKETING_VERSION = 1.2.8;
 				PRODUCT_BUNDLE_IDENTIFIER = "joepham.TaskGuru-Self";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -735,7 +747,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 134;
+				CURRENT_PROJECT_VERSION = 135;
 				DEVELOPMENT_ASSET_PATHS = "\"TaskGuru Self/Preview Content\"";
 				DEVELOPMENT_TEAM = 8R3P49X4ZM;
 				ENABLE_PREVIEWS = YES;
@@ -753,7 +765,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.7;
+				MARKETING_VERSION = 1.2.8;
 				PRODUCT_BUNDLE_IDENTIFIER = "joepham.TaskGuru-Self";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

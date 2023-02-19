@@ -21,6 +21,7 @@ struct SettingsView: View {
 	@Preference(\.accentColor) private var accentColor
 	@Preference(\.fontDesign) private var fontDesign
 	@Preference(\.systemTheme) private var systemTheme
+	@Preference(\.badgeType) private var badgeType
 
 	init(vm: SettingsView.ViewModel = .init()) {
 		_vm = StateObject(wrappedValue: vm)
@@ -143,17 +144,27 @@ private extension SettingsView {
 	private var badgeSection: some View {
 		Section {
 			appBadge
+			appBadgeType
 			tabBadge
 		} header: {
 			Label { Text("Badge") } icon: { SFSymbols.appBadge }
 		} footer: {
-			Text("Icon badge shows the number of pending tasks on Home screen. Review your Notification settings if no badge shown.")
+			Text("Icon badge shows a number of tasks on Home screen. Review your Notification settings if no badge shown.")
 		}
 	}
 
 	private var appBadge: some View {
 		Toggle("Show App Icon Badge", isOn: $isShowingAppBadge)
 			.tint(.accentColor)
+	}
+
+	private var appBadgeType: some View {
+		Picker("App Icon Badge Type", selection: $badgeType) {
+			ForEach(BadgeType.allCases) { (type) in
+				Text(LocalizedStringKey(type.title))
+					.tag(type.rawValue)
+			}
+		}
 	}
 
 	private var tabBadge: some View {

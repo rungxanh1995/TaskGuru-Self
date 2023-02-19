@@ -52,4 +52,7 @@ final class Preferences {
 
 	@UserDefault(UserDefaultsKey.accentColor)
 	var accentColor: Int = AccentColorType.allCases.first!.rawValue
+
+	@UserDefault(UserDefaultsKey.badgeType)
+	var badgeType: Int = BadgeType.allCases.first!.rawValue
 }

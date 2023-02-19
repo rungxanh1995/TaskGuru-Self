@@ -16,6 +16,7 @@ struct TaskGuru_SelfApp: App {
 
 	@AppStorage(UserDefaultsKey.isOnboarding) private var isOnboarding: Bool = true
 	@Preference(\.accentColor) private var accentColor
+	@Preference(\.badgeType) private var badgeType
 	@Preference(\.isShowingAppBadge) private var isShowingAppBadge
 	@Preference(\.isShowingTabBadge) private var isShowingTabBadge
 	@Preference(\.isLockedInPortrait) private var isLockedInPortrait
@@ -58,16 +59,19 @@ struct TaskGuru_SelfApp: App {
 				}
 				.onReceive(homeVM.$isFetchingData) { _ in
 					pendingTasksCount = homeVM.pendingTasks.count
-					if isShowingAppBadge { setAppBadgeOfPendingTasks() }
+					if isShowingAppBadge { setUpAppIconBadge() }
 				}
 				.onChange(of: accentColor) { _ in
 					setAlertColor()
+				}
+				.onChange(of: badgeType) { _ in
+					setUpAppIconBadge()
 				}
 				.onChange(of: isLockedInPortrait) { _ in
 					isLockedInPortrait ? appDelegate.lockInPortraitMode() : appDelegate.unlockPortraitMode()
 				}
 				.onChange(of: isShowingAppBadge) { _ in
-					setAppBadgeOfPendingTasks()
+					setUpAppIconBadge()
 				}
 				.onChange(of: scenePhase) { newPhase in
 					switch newPhase {
@@ -134,13 +138,13 @@ import UserNotifications
 
 extension TaskGuru_SelfApp {
 
-	private func setAppBadgeOfPendingTasks() {
+	private func setUpAppIconBadge() {
 		UNUserNotificationCenter.current().requestAuthorization(options: [.badge]) { success, error in
 			if success {
 				Task {
 					await MainActor.run {
 						switch isShowingAppBadge {
-						case true:	UIApplication.shared.applicationIconBadgeNumber = homeVM.pendingTasks.count
+						case true:	UIApplication.shared.applicationIconBadgeNumber = badgeNumberForAppIcon()
 						case false: UIApplication.shared.applicationIconBadgeNumber = 0
 						}
 					}
@@ -148,6 +152,16 @@ extension TaskGuru_SelfApp {
 			} else if let error = error {
 				print(error.localizedDescription)
 			}
+		}
+	}
+
+	private func badgeNumberForAppIcon() -> Int {
+		guard let badge = BadgeType(rawValue: badgeType) else { return 0 }
+		switch badge {
+		case .allPending: return homeVM.pendingTasks.count
+		case .overdue: return homeVM.allTasks.filter { $0.dueDate.isPastToday }.count
+		case .dueToday: return homeVM.allTasks.filter { $0.dueDate.isWithinToday }.count
+		case .upcoming: return homeVM.allTasks.filter { $0.dueDate.isInTheFuture }.count
 		}
 	}
 }
