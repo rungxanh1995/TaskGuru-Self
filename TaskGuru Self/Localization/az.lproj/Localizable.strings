@@ -174,3 +174,20 @@
 "System" = "Sistem";
 "Light" = "İşıq";
 "Dark" = "Qaranlıq";
+
+
+/* ACKNOWLEDGEMENTS */
+/* Navigation title */
+"Acknowledgements" = "Acknowledgements";
+
+"Development Team" = "Development Team";
+"Localization" = "Localization";
+"Third Party Dependencies" = "Third Party Dependencies";
+"License" = "License";
+
+/* Localization */
+"Azerbaijani" = "Azerbaijani";
+"Chinese (Simplified)" = "Chinese (Simplified)";
+"Italian" = "Italian";
+"Ukrainian" = "Ukrainian";
+"Vietnamese" = "Vietnamese";

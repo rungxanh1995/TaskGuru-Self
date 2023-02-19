@@ -28,14 +28,14 @@ struct SettingsView: View {
 	}
 
 	var body: some View {
-		NavigationView {
+		NavigationStack {
 			Form {
 				generalSection
 				badgeSection
 				miscSection
-				devTeamSection
 				advancedSection
-
+				devTeamSection
+				acknowledgements
 				appNameAndLogo
 					.listRowBackground(Color.clear)
 			}
@@ -253,6 +253,14 @@ private extension SettingsView {
 			} icon: { SFSymbols.link }
 		} header: {
 			Label { Text("Meet The Team") } icon: { SFSymbols.handsSparklesFilled }
+		}
+	}
+
+	private var acknowledgements: some View {
+		Section {
+			NavigationLink("Acknowledgements") {
+				AcknowledgementsView()
+			}
 		}
 	}
 

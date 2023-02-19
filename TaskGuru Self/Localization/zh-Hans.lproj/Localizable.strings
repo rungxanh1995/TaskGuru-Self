@@ -175,3 +175,20 @@
 "Light" = "浅色";
 "Dark" = "深色";
 
+
+/* ACKNOWLEDGEMENTS */
+/* Navigation title */
+"Acknowledgements" = "致谢";
+
+"Development Team" = "开发团队";
+"Localization" = "本地化";
+"Third Party Dependencies" = "第三方依赖项";
+"License" = "许可证";
+
+/* Localization */
+"Many thanks to the amazing folks contributing to the translations for TaskGuru" = "非常感谢为 TaskGuru 翻译做出贡献的众多优秀人士";
+"Azerbaijani" = "阿塞拜疆语";
+"Chinese (Simplified)" = "中文（简体）";
+"Italian" = "意大利语";
+"Ukrainian" = "乌克兰语";
+"Vietnamese" = "越南语";

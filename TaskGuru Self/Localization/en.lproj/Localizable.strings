@@ -174,3 +174,21 @@
 "System" = "System";
 "Light" = "Light";
 "Dark" = "Dark";
+
+
+/* ACKNOWLEDGEMENTS */
+/* Navigation title */
+"Acknowledgements" = "Acknowledgements";
+
+"Development Team" = "Development Team";
+"Localization" = "Localization";
+"Third Party Dependencies" = "Third Party Dependencies";
+"License" = "License";
+
+/* Localization */
+"Many thanks to the amazing folks contributing to the translations for TaskGuru" = "Many thanks to the amazing folks contributing to the translations for TaskGuru";
+"Azerbaijani" = "Azerbaijani";
+"Chinese (Simplified)" = "Chinese (Simplified)";
+"Italian" = "Italian";
+"Ukrainian" = "Ukrainian";
+"Vietnamese" = "Vietnamese";

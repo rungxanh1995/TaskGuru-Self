@@ -175,3 +175,21 @@
 "System" = "Hệ thống";
 "Light" = "Sáng";
 "Dark" = "Tối";
+
+
+/* ACKNOWLEDGEMENTS */
+/* Navigation title */
+"Acknowledgements" = "Bản công nhận";
+
+"Development Team" = "Đội ngũ phát triển";
+"Localization" = "Thông dịch";
+"Third Party Dependencies" = "Phụ thuộc bên thứ ba";
+"License" = "Giấy phép";
+
+/* Localization */
+"Many thanks to the amazing folks contributing to the translations for TaskGuru" = "Rất cảm ơn các cá nhân/tập thể sau đã góp phần thông dịch TaskGuru";
+"Azerbaijani" = "Tiếng Azerbaijan";
+"Chinese (Simplified)" = "Tiếng Trung (Giản thể)";
+"Italian" = "Tiếng Ý";
+"Ukrainian" = "Tiếng Ucraina";
+"Vietnamese" = "Tiếng Việt";
