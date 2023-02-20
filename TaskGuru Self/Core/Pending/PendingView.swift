@@ -17,6 +17,7 @@ struct PendingView: View {
 	@State private var confettiCounter: Int = 0
 
 	@Preference(\.isPreviewEnabled) private var isPreviewEnabled
+	@Preference(\.contextPreviewType) private var previewType
 
 	var body: some View {
 		NavigationStack(path: $tabState.navPath) {
@@ -72,13 +73,13 @@ extension PendingView {
 				NavigationLink(value: task) {
 					HomeListCell(task: task)
 				}
-				.if(isPreviewEnabled, ifCase: { view in
-					view.contextMenu {
-						makeContextMenu(for: task)
-					} preview: { DetailView(vm: .init(for: task)) }
-				}, elseCase: { view in
-					view.contextMenu { makeContextMenu(for: task) }
-				})
+				.if(isPreviewEnabled) { view in
+					view.if(ContextPreviewType(rawValue: previewType) == .cell) { view in
+						view.contextMenu { makeContextMenu(for: task) }
+					} elseCase: { view in
+						view.contextMenu { makeContextMenu(for: task) } preview: { DetailView(vm: .init(for: task)) }
+					}
+				}
 			}
 		} footer: {
 			Text("Don't stress yourself too much. You got it 💪")
