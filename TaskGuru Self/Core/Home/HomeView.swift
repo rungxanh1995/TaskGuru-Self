@@ -106,14 +106,15 @@ extension HomeView {
 					NavigationLink(value: task) {
 						HomeListCell(task: task)
 					}
-					.contextMenu {
-						makeContextMenu(for: task)
-					} preview: {
-						if isPreviewEnabled {
+					.if(isPreviewEnabled) { view in
+						view.contextMenu {
+							makeContextMenu(for: task)
+						} preview: {
 							DetailView(vm: .init(for: task))
-						} else {
-							HomeListCell(task: task).padding()
 						}
+					}
+					.if(isPreviewEnabled == false) { view in
+						view.contextMenu { makeContextMenu(for: task) }
 					}
 				}
 			}
@@ -134,14 +135,15 @@ extension HomeView {
 					NavigationLink(value: task) {
 						HomeListCell(task: task)
 					}
-					.contextMenu {
-						makeContextMenu(for: task)
-					} preview: {
-						if isPreviewEnabled {
+					.if(isPreviewEnabled) { view in
+						view.contextMenu {
+							makeContextMenu(for: task)
+						} preview: {
 							DetailView(vm: .init(for: task))
-						} else {
-							HomeListCell(task: task).padding()
 						}
+					}
+					.if(isPreviewEnabled == false) { view in
+						view.contextMenu { makeContextMenu(for: task) }
 					}
 				}
 			}
@@ -162,14 +164,15 @@ extension HomeView {
 					NavigationLink(value: task) {
 						HomeListCell(task: task)
 					}
-					.contextMenu {
-						makeContextMenu(for: task)
-					} preview: {
-						if isPreviewEnabled {
+					.if(isPreviewEnabled) { view in
+						view.contextMenu {
+							makeContextMenu(for: task)
+						} preview: {
 							DetailView(vm: .init(for: task))
-						} else {
-							HomeListCell(task: task).padding()
 						}
+					}
+					.if(isPreviewEnabled == false) { view in
+						view.contextMenu { makeContextMenu(for: task) }
 					}
 				}
 			}
