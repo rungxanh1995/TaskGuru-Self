@@ -72,16 +72,13 @@ extension PendingView {
 				NavigationLink(value: task) {
 					HomeListCell(task: task)
 				}
-				.if(isPreviewEnabled) { view in
+				.if(isPreviewEnabled, ifCase: { view in
 					view.contextMenu {
 						makeContextMenu(for: task)
-					} preview: {
-						DetailView(vm: .init(for: task))
-					}
-				}
-				.if(isPreviewEnabled == false) { view in
+					} preview: { DetailView(vm: .init(for: task)) }
+				}, elseCase: { view in
 					view.contextMenu { makeContextMenu(for: task) }
-				}
+				})
 			}
 		} footer: {
 			Text("Don't stress yourself too much. You got it 💪")
