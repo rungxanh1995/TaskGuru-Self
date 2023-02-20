@@ -43,7 +43,7 @@ struct HomeView: View {
 					.navigationBarTitleDisplayMode(.inline)
 					.toolbar {
 						ToolbarItem(placement: .navigationBarLeading) {
-							GradientNavigationTitle(text: "All Tasks")
+							GradientNavigationTitle(text: "home.nav.title")
 						}
 						ToolbarItem(placement: .primaryAction) {
 							addTaskButton
@@ -84,7 +84,7 @@ extension HomeView {
 
 	@ViewBuilder
 	private var emptyFilteredListText: some View {
-		let emptyListSentence: LocalizedStringKey = "No tasks"
+		let emptyListSentence: LocalizedStringKey = "home.info.sectionEmpty"
 
 		HStack {
 			Spacer()
@@ -117,7 +117,7 @@ extension HomeView {
 				}
 			}
 		} header: {
-			Text("Overdue").bold().foregroundColor(.red)
+			Text("home.sections.overdue").bold().foregroundColor(.red)
 		}
 	}
 
@@ -143,7 +143,7 @@ extension HomeView {
 				}
 			}
 		} header: {
-			Text("Due Today").bold().foregroundColor(.orange)
+			Text("home.sections.dueToday").bold().foregroundColor(.orange)
 		}
 	}
 
@@ -169,7 +169,7 @@ extension HomeView {
 				}
 			}
 		} header: {
-			Text("Upcoming").bold().foregroundColor(.mint)
+			Text("home.sections.upcoming").bold().foregroundColor(.mint)
 		}
 	}
 
@@ -180,25 +180,25 @@ extension HomeView {
 				withAnimation { vm.markAsDone(task) }
 				if isConfettiEnabled { confettiCounter += 1 }
 			} label: {
-				Label { Text("Mark as Done") } icon: { SFSymbols.checkmark }
+				Label { Text("contextMenu.task.markAsDone") } icon: { SFSymbols.checkmark }
 			}
 		}
 		Button { selectedTask = task } label: {
-			Label { Text("Edit") } icon: { SFSymbols.pencilSquare }
+			Label { Text("contextMenu.task.edit") } icon: { SFSymbols.pencilSquare }
 		}
 		Divider()
 
 		Menu {
 			Button(role: .cancel) {} label: {
-				Label { Text("Cancel") } icon: { SFSymbols.xmark }
+				Label { Text("contextMenu.cancel") } icon: { SFSymbols.xmark }
 			}
 			Button(role: .destructive) {
 				withAnimation { vm.delete(task) }
 			} label: {
-				Label { Text("Delete") } icon: { SFSymbols.trash }
+				Label { Text("contextMenu.task.delete") } icon: { SFSymbols.trash }
 			}
 		} label: {
-			Label { Text("Delete") } icon: { SFSymbols.trash }
+			Label { Text("contextMenu.task.delete") } icon: { SFSymbols.trash }
 		}
 	}
 
@@ -206,7 +206,7 @@ extension HomeView {
 		Button {
 			vm.isShowingAddTaskView.toggle()
 		} label: {
-			Label { Text("Add Task") } icon: { SFSymbols.plus }
+			Label { Text("label.task.add") } icon: { SFSymbols.plus }
 		}
 	}
 }

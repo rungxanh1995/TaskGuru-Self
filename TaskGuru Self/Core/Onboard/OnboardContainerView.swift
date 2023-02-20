@@ -37,7 +37,7 @@ struct OnboardContainerView: View {
 extension OnboardContainerView {
 	/// Button to display when user is new to the app
 	private var allSet: some View {
-		Button("I'm All Set!") {
+		Button("onboarding.buttons.onboarding.dismiss") {
 			withAnimation {	isOnboarding = false }
 			haptic(.success)
 		}
@@ -54,7 +54,7 @@ extension OnboardContainerView {
 			haptic(.success)
 		} label: {
 			Label {
-				Text("Dismiss")
+				Text("onboarding.buttons.onboarded.dismiss")
 			} icon: {
 				SFSymbols.xmark
 			}

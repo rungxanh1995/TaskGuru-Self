@@ -43,18 +43,18 @@ struct TaskGuru_SelfApp: App {
 					HomeView()
 						.tabItem {
 							SFSymbols.house
-							if isTabNamesEnabled { Text("Home") }
+							if isTabNamesEnabled { Text("home.tab.title") }
 						}
 					PendingView()
 						.tabItem {
 							SFSymbols.clock
-							if isTabNamesEnabled { Text("Pending") }
+							if isTabNamesEnabled { Text("pending.tab.title") }
 						}
 						.badge(isShowingTabBadge ? pendingTasksCount : 0)
 					SettingsView()
 						.tabItem {
 							SFSymbols.gear
-							if isTabNamesEnabled { Text("Settings") }
+							if isTabNamesEnabled { Text("settings.tab.title") }
 						}
 				}
 				.onReceive(homeVM.$isFetchingData) { _ in

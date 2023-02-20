@@ -26,14 +26,16 @@ extension DetailView {
 			ScrollView {
 				VStack(spacing: 8) {
 					LazyVGrid(columns: columns) {
-						DetailGridCell(title: vm.task.name, caption: "Name")
-						DetailGridCell(title: vm.task.status.rawValue, caption: "Status", titleColor: vm.task.colorForStatus())
-						DetailGridCell(title: vm.task.numericDueDate, caption: "Due Date", titleColor: vm.task.colorForDueDate())
-						DetailGridCell(title: vm.task.type.rawValue, caption: "Type")
+						DetailGridCell(title: vm.task.name, caption: "taskDetail.cell.name.caption")
+						DetailGridCell(title: vm.task.status.rawValue, caption: "taskDetail.cell.status.caption",
+													 titleColor: vm.task.colorForStatus())
+						DetailGridCell(title: vm.task.numericDueDate, caption: "taskDetail.cell.dueDate.caption",
+													 titleColor: vm.task.colorForDueDate())
+						DetailGridCell(title: vm.task.type.rawValue, caption: "taskDetail.cell.type.caption")
 					}
 
 					if vm.task.notes.isEmpty == false {
-						DetailGridCell(title: vm.task.notes, caption: "Notes")
+						DetailGridCell(title: vm.task.notes, caption: "taskDetail.cell.notes.caption")
 					}
 				}
 				.padding()
@@ -43,14 +45,14 @@ extension DetailView {
 					.foregroundColor(.secondary)
 					.padding([.bottom])
 			}
-			.navigationTitle("Task Detail")
+			.navigationTitle("taskDetail.nav.title")
 			.navigationBarTitleDisplayMode(.inline)
 			.toolbar {
 				// swiftlint:disable multiple_closures_with_trailing_closure
 				if vm.taskIsNewOrInProgress {
 					ToolbarItemGroup(placement: .primaryAction) {
 						Button(action: {isMarkingAsDone.toggle()}) {
-							Label { Text("Mark as Done") } icon: { SFSymbols.checkmark }
+							Label { Text("contextMenu.task.markAsDone") } icon: { SFSymbols.checkmark }
 						}
 					}
 				}
@@ -60,28 +62,28 @@ extension DetailView {
 						isShowingEdit.toggle()
 						haptic(.success)
 					}) {
-						Label { Text("Edit") } icon: { SFSymbols.pencilSquare }
+						Label { Text("contextMenu.task.edit") } icon: { SFSymbols.pencilSquare }
 					}
 
 					Button(role: .destructive) {
 						isDeletingTask.toggle()
 						haptic(.warning)
 					} label: {
-						Label { Text("Delete") } icon: { SFSymbols.trash }
+						Label { Text("contextMenu.task.delete") } icon: { SFSymbols.trash }
 					}
 				}
 			}
-			.alert("Mark Task as Done?", isPresented: $isMarkingAsDone, actions: {
-				Button("Cancel", role: .cancel, action: {})
-				Button("OK", action: {
+			.alert("taskDetail.alert.markAsDone", isPresented: $isMarkingAsDone, actions: {
+				Button("contextMenu.cancel", role: .cancel, action: {})
+				Button("contextMenu.ok", action: {
 					vm.markTaskAsDone()
 					dismissThisView()
 					haptic(.success)
 				})
 			})
-			.alert("Delete Task?", isPresented: $isDeletingTask, actions: {
-				Button("Cancel", role: .cancel, action: {})
-				Button("OK", action: {
+			.alert("taskDetail.alert.deleteTask", isPresented: $isDeletingTask, actions: {
+				Button("contextMenu.cancel", role: .cancel, action: {})
+				Button("contextMenu.ok", action: {
 					vm.deleteTask()
 					dismissThisView()
 					haptic(.success)

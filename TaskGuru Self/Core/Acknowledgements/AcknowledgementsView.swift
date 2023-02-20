@@ -21,7 +21,7 @@ struct AcknowledgementsView: View {
 			}
 			.multilineTextAlignment(.center)
 			.padding()
-			.navigationBarTitle("Acknowledgements")
+			.navigationBarTitle("settings.ack.nav.title")
 			.navigationBarTitleDisplayMode(.inline)
 		}
 	}
@@ -39,7 +39,7 @@ extension AcknowledgementsView {
 
 	private var developmentTeam: some View {
 		Group {
-			Text("Development Team")
+			Text("settings.ack.devTeam")
 				.font(.title3).bold()
 				.foregroundColor(.defaultAccentColor)
 			Text("Joe Pham")
@@ -51,24 +51,23 @@ extension AcknowledgementsView {
 
 	private var localization: some View {
 		Group {
-			Text("Localization")
+			Text("settings.ack.localization")
 				.font(.title3).bold()
 				.foregroundColor(.defaultAccentColor)
-			Text("Many thanks to the amazing folks contributing to the translations for TaskGuru")
+			Text("settings.ack.localization.subtitle")
+				.padding(.bottom)
 
-			Spacer()
-
-			translationFor("Azerbaijani", translators: "Rauf Anata")
-			translationFor("Chinese (Simplified)", translators: "Joe Pham")
-			translationFor("Italian", translators: "Marco Stevanella")
-			translationFor("Ukrainian", translators: "Ostap Sulyk")
-			translationFor("Vietnamese", translators: "Joe Pham")
+			translationFor("ack.localization.azerbaijani", translators: "Rauf Anata")
+			translationFor("ack.localization.chineseSim", translators: "Joe Pham")
+			translationFor("ack.localization.italian", translators: "Marco Stevanella")
+			translationFor("ack.localization.ukrainian", translators: "Ostap Sulyk")
+			translationFor("ack.localization.vietnamese", translators: "Joe Pham")
 		}
 	}
 
 	private var dependencies: some View {
 		Group {
-			Text("Third Party Dependencies")
+			Text("settings.ack.dependencies")
 				.font(.title3).bold()
 				.foregroundColor(.defaultAccentColor)
 			Link(destination: URL(string: "https://github.com/simibac/ConfettiSwiftUI")!) {
@@ -80,10 +79,10 @@ extension AcknowledgementsView {
 
 	private var license: some View {
 		Group {
-			Text("License")
+			Text("settings.ack.license")
 				.font(.title3).bold()
 				.foregroundColor(.defaultAccentColor)
-			Text("settings.acknowledgements.license.content")
+			Text("settings.ack.license.content")
 		}
 	}
 }

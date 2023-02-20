@@ -15,15 +15,15 @@ enum AccentColorType: Int, Identifiable, CaseIterable {
 extension AccentColorType {
 	var title: String {
 		switch self {
-		case .blue: return "Blue"
-		case .teal: return "Teal"
-		case .indigo: return "Indigo"
-		case .pink: return "Pink"
-		case .red: return "Red"
-		case .orange: return "Orange"
-		case .yellow: return "Yellow"
-		case .green: return "Green"
-		case .mint: return "Mint"
+		case .blue: return "accentColor.blue"
+		case .teal: return "accentColor.teal"
+		case .indigo: return "accentColor.indigo"
+		case .pink: return "accentColor.pink"
+		case .red: return "accentColor.red"
+		case .orange: return "accentColor.orange"
+		case .yellow: return "accentColor.yellow"
+		case .green: return "accentColor.green"
+		case .mint: return "accentColor.mint"
 		}
 	}
 

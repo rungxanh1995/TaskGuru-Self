@@ -43,33 +43,33 @@ struct SettingsView: View {
 			.navigationBarTitleDisplayMode(.inline)
 			.toolbar {
 				ToolbarItem(placement: .navigationBarLeading) {
-					GradientNavigationTitle(text: "Settings")
+					GradientNavigationTitle(text: "settings.nav.title")
 				}
 			}
 			.sheet(isPresented: $isShowingOnboarding, content: {
 				OnboardContainerView()
 			})
 			.confirmationDialog(
-				"App settings would reset.\nThis action cannot be undone",
+				"settings.advanced.resetSettings.alert",
 				isPresented: $vm.isConfirmingResetSettings,
 				titleVisibility: .visible
 			) {
-				Button("Delete", role: .destructive) {
+				Button("settings.advanced.resetSettings.delete", role: .destructive) {
 					vm.resetDefaults()
 					haptic(.success)
 				}
-				Button("Cancel", role: .cancel) { }
+				Button("settings.advanced.resetSettings.cancel", role: .cancel) { }
 			}
 			.confirmationDialog(
-				"All your tasks would be deleted.\nThis action cannot be undone",
+				"settings.advanced.resetUserData.alert",
 				isPresented: $vm.isConfirmingResetUserData,
 				titleVisibility: .visible
 			) {
-				Button("Delete", role: .destructive) {
+				Button("settings.advanced.resetUserData.delete", role: .destructive) {
 					vm.resetAllTasks()
 					haptic(.success)
 				}
-				Button("Cancel", role: .cancel) { }
+				Button("settings.advanced.resetUserData.cancel", role: .cancel) { }
 			}
 		}
 		.navigationViewStyle(.stack)
@@ -86,22 +86,22 @@ private extension SettingsView {
 			fontDesignStyle
 			appTheme
 		} header: {
-			Label { Text("General") } icon: { SFSymbols.gearFilled }
+			Label { Text("settings.sections.general") } icon: { SFSymbols.gearFilled }
 		}
 	}
 
 	private var portraitLock: some View {
-		Toggle("Portrait Lock", isOn: $isLockedInPortrait)
+		Toggle("settings.general.portraitLock", isOn: $isLockedInPortrait)
 			.tint(.accentColor)
 	}
 
 	private var haptics: some View {
-		Toggle("Reduce Haptics", isOn: $isHapticsReduced)
+		Toggle("settings.general.reduceHaptics", isOn: $isHapticsReduced)
 			.tint(.accentColor)
 	}
 
 	private var appAccentColor: some View {
-		Picker("Accent Color", selection: $accentColor) {
+		Picker("settings.general.accentColor", selection: $accentColor) {
 			ForEach(AccentColorType.allCases) { (accent) in
 				Label {
 					Text(LocalizedStringKey(accent.title))
@@ -117,7 +117,7 @@ private extension SettingsView {
 	}
 
 	private var fontDesignStyle: some View {
-		Picker("Font Style", selection: $fontDesign) {
+		Picker("settings.general.fontStyle", selection: $fontDesign) {
 			ForEach(FontDesignType.allCases) { (design) in
 				Text(LocalizedStringKey(design.title))
 					.tag(design.rawValue)
@@ -126,7 +126,7 @@ private extension SettingsView {
 	}
 
 	private var appTheme: some View {
-		Picker("Color Theme", selection: $systemTheme) {
+		Picker("settings.general.colorTheme", selection: $systemTheme) {
 			ForEach(SchemeType.allCases) { (theme) in
 				Text(LocalizedStringKey(theme.title))
 					.tag(theme.rawValue)
@@ -138,7 +138,7 @@ private extension SettingsView {
 		Button {
 			isShowingOnboarding.toggle()
 		} label: {
-			Text("Show Onboarding screen")
+			Text("settings.general.onboarding")
 		}
 	}
 
@@ -148,19 +148,19 @@ private extension SettingsView {
 			appBadgeType
 			tabBadge
 		} header: {
-			Label { Text("Badge") } icon: { SFSymbols.appBadge }
+			Label { Text("settings.sections.badge") } icon: { SFSymbols.appBadge }
 		} footer: {
-			Text("Icon badge shows a number of tasks on Home screen. Review your Notification settings if no badge shown.")
+			Text("settings.badge.footer")
 		}
 	}
 
 	private var appBadge: some View {
-		Toggle("Show App Icon Badge", isOn: $isShowingAppBadge)
+		Toggle("settings.badge.appIcon", isOn: $isShowingAppBadge)
 			.tint(.accentColor)
 	}
 
 	private var appBadgeType: some View {
-		Picker("App Icon Badge Type", selection: $badgeType) {
+		Picker("settings.badge.appIconType", selection: $badgeType) {
 			ForEach(BadgeType.allCases) { (type) in
 				Text(LocalizedStringKey(type.title))
 					.tag(type.rawValue)
@@ -170,7 +170,7 @@ private extension SettingsView {
 	}
 
 	private var tabBadge: some View {
-		Toggle("Show Tab Badge", isOn: $isShowingTabBadge)
+		Toggle("settings.badge.tab", isOn: $isShowingTabBadge)
 			.tint(.accentColor)
 	}
 
@@ -181,24 +181,24 @@ private extension SettingsView {
 			preview
 			previewType.listRowSeparator(.hidden)
 		} header: {
-			Label { Text("Miscellaneous") } icon: { SFSymbols.bubbleSparkles }
+			Label { Text("settings.sections.misc") } icon: { SFSymbols.bubbleSparkles }
 		} footer: {
-			Text("Long pressing a task from a list reveals a context menu for the task when enabled.")
+			Text("settings.misc.footer")
 		}
 	}
 
 	private var tabNames: some View {
-		Toggle("Tab Names", isOn: $isTabNamesEnabled)
+		Toggle("settings.misc.tabNames", isOn: $isTabNamesEnabled)
 			.tint(.accentColor)
 	}
 
 	private var confetti: some View {
-		Toggle("Toggle Confetti 🎉", isOn: $isConfettiEnabled)
+		Toggle("settings.misc.confetti", isOn: $isConfettiEnabled)
 			.tint(.accentColor)
 	}
 
 	private var preview: some View {
-		Toggle("Preview on Haptic Touch", isOn: $isPreviewEnabled)
+		Toggle("settings.misc.preview", isOn: $isPreviewEnabled)
 			.tint(.accentColor)
 	}
 
@@ -218,9 +218,9 @@ private extension SettingsView {
 			resetAppSettingsButton
 			resetAppDataButton
 		} header: {
-			Label { Text("Advanced") } icon: { SFSymbols.magicWand }
+			Label { Text("settings.sections.advanced") } icon: { SFSymbols.magicWand }
 		} footer: {
-			Text("Be careful, these remove all your data! Restart the app to see all changes.")
+			Text("settings.advanced.footer")
 		}
 	}
 
@@ -229,7 +229,7 @@ private extension SettingsView {
 			vm.isConfirmingResetSettings.toggle()
 		} label: {
 			Label {
-				Text("Reset App Settings")
+				Text("settings.advanced.resetSettings")
 			} icon: {
 				SFSymbols.gear.foregroundColor(.red)
 			}
@@ -241,7 +241,7 @@ private extension SettingsView {
 			vm.isConfirmingResetUserData.toggle()
 		} label: {
 			Label {
-				Text("Reset Your Data")
+				Text("settings.advanced.resetUserData")
 			} icon: {
 				SFSymbols.personFolder.foregroundColor(.red)
 			}
@@ -266,13 +266,13 @@ private extension SettingsView {
 				Link("Rauf Anata", destination: vm.raufGitHubLink)
 			} icon: { SFSymbols.link }
 		} header: {
-			Label { Text("Meet The Team") } icon: { SFSymbols.handsSparklesFilled }
+			Label { Text("settings.sections.devTeam") } icon: { SFSymbols.handsSparklesFilled }
 		}
 	}
 
 	private var acknowledgements: some View {
 		Section {
-			NavigationLink("Acknowledgements") {
+			NavigationLink("settings.sections.ack") {
 				AcknowledgementsView()
 			}
 		}

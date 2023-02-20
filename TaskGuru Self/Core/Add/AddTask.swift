@@ -22,38 +22,40 @@ struct AddTask: View {
 		NavigationView {
 			Form {
 				Section {
-					TextField("Name", text: $vm.taskName)
+					TextField("addTask.input.name", text: $vm.taskName)
 						.focused($focusField, equals: .name)
 
-					DatePicker("Due Date", selection: $vm.dueDate, displayedComponents: .date)
+					DatePicker("addTask.input.dueDate", selection: $vm.dueDate, displayedComponents: .date)
 
-					Picker("Type", selection: $vm.taskType) {
+					Picker("addTask.input.type", selection: $vm.taskType) {
 						ForEach(TaskConstants.allTypes, id: \.self) {
 							Text(LocalizedStringKey($0.rawValue))
 						}
 					}
 
-					Picker("Status", selection: $vm.taskStatus) {
+					Picker("addTask.input.status", selection: $vm.taskStatus) {
 						ForEach(TaskConstants.allStatuses, id: \.self) {
 							Text(LocalizedStringKey($0.rawValue))
 						}
 					}
 				} header: {
-					HStack {
+					Label {
+						Text("addTask.sections.general")
+					} icon: {
 						SFSymbols.gridFilled
-						Text("General")
 					}
 				}
 
 				Section {
-					TextField("Notes", text: $vm.taskNotes,
-							  prompt: Text("Any extra notes..."),
+					TextField("addTask.input.notes", text: $vm.taskNotes,
+							  prompt: Text("addTask.input.placeholder.notes"),
 							  axis: .vertical)
 					.focused($focusField, equals: .notes)
 				} header: {
-					HStack {
-						SFSymbols.pencilDrawing
-						Text("Notes")
+					Label {
+						Text("addTask.sections.notes")
+					} icon: {
+						SFSymbols.gridFilled
 					}
 				}
 			}
@@ -63,15 +65,15 @@ struct AddTask: View {
 				}
 			}
 			.onSubmit { focusField = nil }
-			.navigationTitle("Add Task")
+			.navigationTitle("addTask.nav.title")
 			.navigationBarTitleDisplayMode(.inline)
 			.toolbar {
 				ToolbarItem(placement: .cancellationAction) {
-					Button("Cancel") { dismissThisView() }
+					Button("addTask.nav.button.cancel") { dismissThisView() }
 				}
 
 				ToolbarItem(placement: .confirmationAction) {
-					Button("Add", action: {
+					Button("addTask.nav.button.add", action: {
 						addNewTask()
 						dismissThisView()
 					})

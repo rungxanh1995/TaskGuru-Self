@@ -25,39 +25,43 @@ extension DetailView {
 			NavigationView {
 				Form {
 					Section {
-						TextField("Name", text: $vm.taskName)
+						TextField("editTask.input.name", text: $vm.taskName)
 							.focused($focusField, equals: .name)
 
-						DatePicker("Due Date", selection: $vm.taskDueDate,
+						DatePicker("editTask.input.dueDate", selection: $vm.taskDueDate,
 								   displayedComponents: .date
 						)
 
-						Picker("Type", selection: $vm.taskType) {
+						Picker("editTask.input.type", selection: $vm.taskType) {
 							ForEach(TaskConstants.allTypes, id: \.self) {
 								Text(LocalizedStringKey($0.rawValue))
 							}
 						}
 
-						Picker("Status", selection: $vm.taskStatus) {
+						Picker("editTask.input.status", selection: $vm.taskStatus) {
 							ForEach(TaskConstants.allStatuses, id: \.self) {
 								Text(LocalizedStringKey($0.rawValue))
 							}
 						}
 					} header: {
-						HStack {
+						Label {
+							Text("editTask.sections.general")
+						} icon: {
 							SFSymbols.gridFilled
-							Text("General")
 						}
 					}
 
 					Section {
-						TextField("Notes", text: $vm.taskNotes, prompt: Text("Any extra notes..."), axis: .vertical)
+						TextField("editTask.input.notes", text: $vm.taskNotes,
+											prompt: Text("editTask.input.placeholder.notes"),
+											axis: .vertical)
 							.focused($focusField, equals: .notes)
 
 					} header: {
-						HStack {
-							SFSymbols.pencilDrawing
-							Text("Notes")
+						Label {
+							Text("editTask.sections.notes")
+						} icon: {
+							SFSymbols.gridFilled
 						}
 					}
 				}
@@ -67,17 +71,17 @@ extension DetailView {
 					}
 				}
 				.onSubmit { focusField = nil }
-				.navigationTitle("Edit Task")
+				.navigationTitle("editTask.nav.title")
 				.navigationBarTitleDisplayMode(.inline)
 				.toolbar {
 					ToolbarItem(placement: .cancellationAction) {
-						Button("Cancel") {
+						Button("editTask.nav.button.cancel") {
 							dismissThisView()
 						}
 					}
 
 					ToolbarItem(placement: .confirmationAction) {
-						Button("Save") {
+						Button("editTask.nav.button.save") {
 							didTapSaveButton()
 						}
 						.font(.headline)

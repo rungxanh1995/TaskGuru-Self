@@ -8,174 +8,205 @@
 
 /* ONBOARDING */
 /* Buttons */
-"I'm All Set!" = "I'm All Set!";
-"Dismiss" = "Dismiss";
+"onboarding.buttons.onboarding.dismiss" = "I'm All Set!";
+"onboarding.buttons.onboarded.dismiss" = "Dismiss";
 
-"Home tab" = "Home tab";
-"Tasks categorized by section to easily track overdue, due today, and upcoming ones" = "Tasks categorized by section to easily track overdue, due today, and upcoming ones";
-"Pending Tasks tab" = "Pending Tasks tab";
-"Find your undone tasks here" = "Find your undone tasks here";
-"App icon badge" = "App icon badge";
+"onboarding.features.home.title" = "Home tab";
+"onboarding.features.home.description" = "Tasks categorized by section to easily track overdue, due today, and upcoming ones";
+"onboarding.features.pendingTab.title" = "Pending Tasks tab";
+"onboarding.features.pendingTab.description" = "Find your undone tasks here";
+"onboarding.features.appBadge.title" = "App icon badge";
 "Track all or time-based pending tasks at a glance. Find this in %@ Settings" = "Track all or time-based pending tasks at a glance. Find this in %@ Settings";
-"Quick Actions" = "Quick Actions";
-"Tap and hold each task from the list to use quick actions" = "Tap and hold each task from the list to use quick actions";
+"onboarding.features.quickActions.title" = "Quick Actions";
+"onboarding.features.quickActions.description" = "Tap and hold each task from the list to use quick actions";
 
 
 /* SHARED */
 /* Task types */
-"Personal" = "Personal";
+"taskItem.type.personal" = "Personal";
 /* "Work" can also be understood as "business" */
-"Work" = "Work";
+"taskItem.type.work" = "Work";
 /* "School" can also be understood as "educational" */
-"School" = "School";
-"Coding" = "Coding";
-"Other" = "Other";
+"taskItem.type.school" = "School";
+"taskItem.type.coding" = "Coding";
+"taskItem.type.other" = "Other";
 
 /* Task statuses */
 /* "New" can also be understood as "newly created" */
-"New" = "New";
-"In progress" = "In progress";
-"Done" = "Done";
+"taskItem.status.new" = "New";
+"taskItem.status.inProgress" = "In progress";
+"taskItem.status.done" = "Done";
 
 /* Navigation/Context menu - Quick actions in Home & Pending tabs */
-"Mark as Done" = "Mark as Done";
-"Edit" = "Edit";
-"Delete" = "Delete";
-"Cancel" = "Cancel";
-"OK" = "OK";
+"contextMenu.task.markAsDone" = "Mark as Done";
+"contextMenu.task.edit" = "Edit";
+"contextMenu.task.delete" = "Delete";
+"contextMenu.cancel" = "Cancel";
+"contextMenu.ok" = "OK";
 
 /* Add Task button in Home & Pending tabs */
-"Add Task" = "Add Task";
-
-/* Add/Edit Task */
-/* Section titles */
-"General" = "General";
-"Notes" = "Notes";
-
-/* Add/Edit Inputs + Detail Grid Cell subtitles */
-"Name" = "Name";
-"Due Date" = "Due Date";
-"Type" = "Type";
-"Status" = "Status";
-"Any extra notes..." = "Any extra notes...";
+"label.task.add" = "Add Task";
 
 
 /* HOME */
-/* Home tab name */
-"Home" = "Home";
+/* Tab name */
+"home.tab.title" = "Home";
 /* Navigation title */
-"All Tasks" = "All Tasks";
+"home.nav.title" = "All Tasks";
 /* Section titles */
 "All Pending" = "All Pending";
-"Overdue" = "Overdue";
-"Due Today" = "Due Today";
-"Upcoming" = "Upcoming";
+"home.sections.overdue" = "Overdue";
+"home.sections.dueToday" = "Due Today";
+"home.sections.upcoming" = "Upcoming";
 /* Empty list sentence */
-"No tasks" = "No tasks";
+"home.info.sectionEmpty" = "No tasks";
 /* All tasks empty sentence */
 "Nothing yet. Tap here or %@ to add more" = "Nothing yet. Tap here or %@ to add more";
 
 
 /* PENDING */
-/* Pending tab name */
-"Pending" = "Pending";
+/* Tab name */
+"pending.tab.title" = "Pending";
 /* Navigation title */
-"Pending Tasks" = "Pending Tasks";
+"pending.nav.title" = "Pending Tasks";
 
-"Fetching data" = "Fetching data";
-"You're free! Enjoy your much deserved time 🥳" = "You're free! Enjoy your much deserved time 🥳";
-"Don't stress yourself too much. You got it 💪" = "Don't stress yourself too much. You got it 💪";
+"pending.info.fetchingData" = "Fetching data";
+"pending.info.listEmty" = "You're free! Enjoy your much deserved time 🥳";
+"pending.info.listNotEmpty" = "Don't stress yourself too much. You got it 💪";
 
 
 /* ADD */
 /* Navigation title */
-"Add Task" = "Add Task";
+"addTask.nav.title" = "Add Task";
 /* Navigation action button */
-"Add" = "Add";
+"addTask.nav.button.cancel" = "Cancel";
+"addTask.nav.button.add" = "Add";
+/* Section titles */
+"addTask.sections.general" = "General";
+"addTask.sections.notes" = "Notes";
+/* Inputs */
+"addTask.input.name" = "Name";
+"addTask.input.dueDate" = "Due Date";
+"addTask.input.type" = "Type";
+"addTask.input.status" = "Status";
+"addTask.input.notes" = "Notes";
+"addTask.input.placeholder.notes" = "Any extra notes...";
 
 
 /* DETAIL */
 /* Navigation title */
-"Task Detail" = "Task Detail";
+"taskDetail.nav.title" = "Task Detail";
+
+/* Grid cells */
+"taskDetail.cell.name.caption" = "Name";
+"taskDetail.cell.status.caption" = "Status";
+"taskDetail.cell.dueDate.caption" = "Due Date";
+"taskDetail.cell.type.caption" = "Type";
+"taskDetail.cell.notes.caption" = "Notes";
+
+/* Alerts */
+"taskDetail.alert.markAsDone" = "Mark Task as Done?";
+"taskDetail.alert.deleteTask" = "Delete Task?";
 
 "Last updated at %@" = "Last updated at %@";
 
 
 /* EDIT */
 /* Navigation title */
-"Edit Task" = "Edit Task";
+"editTask.nav.title" = "Edit Task";
 /* Navigation action button */
-"Save" = "Save";
+"editTask.nav.button.cancel" = "Cancel";
+"editTask.nav.button.save" = "Save";
+/* Section titles */
+"editTask.sections.general" = "General";
+"editTask.sections.notes" = "Notes";
 
-/* Alerts */
-"Mark Task as Done?" = "Mark Task as Done?";
-"Delete Task?" = "Delete Task?";
+/* Inputs */
+"editTask.input.name" = "Name";
+"editTask.input.dueDate" = "Due Date";
+"editTask.input.type" = "Type";
+"editTask.input.status" = "Status";
+"editTask.input.notes" = "Notes";
+"editTask.input.placeholder.notes" = "Any extra notes...";
 
 
 /* SETTINGS */
+/* Tab name */
+"settings.tab.title" = "Settings";
 /* Navigation title */
-"Settings" = "Settings";
+"settings.nav.title" = "Settings";
 
 /* Section titles */
-"General" = "General";
-"Badge" = "Badge";
-"Miscellaneous" = "Miscellaneous";
-"Advanced" = "Advanced";
-"Meet The Team" = "Meet The Team";
+"settings.sections.general" = "General";
+"settings.sections.badge" = "Badge";
+"settings.sections.misc" = "Miscellaneous";
+"settings.sections.advanced" = "Advanced";
+"settings.sections.devTeam" = "Meet The Team";
+"settings.sections.ack" = "Acknowledgments";
 
 /* General section */
-"Show Onboarding screen" = "Show Onboarding screen";
-"Portrait Lock" = "Portrait Lock";
-"Reduce Haptics" = "Reduce Haptics";
-"Accent Color" = "Accent Color";
-"Font Style" = "Font Style";
-"Color Theme" = "Color Theme";
+"settings.general.onboarding" = "Show Onboarding screen";
+"settings.general.portraitLock" = "Portrait Lock";
+"settings.general.reduceHaptics" = "Reduce Haptics";
+"settings.general.accentColor" = "Accent Color";
+"settings.general.fontStyle" = "Font Style";
+"settings.general.colorTheme" = "Color Theme";
 
-/* Badge secrion */
-"Show App Icon Badge" = "Show App Icon Badge";
-"App Icon Badge Type" = "App Icon Badge Type";
-"Show Tab Badge" = "Show Tab Badge";
-"Icon badge shows a number of tasks on Home screen. Review your Notification settings if no badge shown." = "Icon badge shows a number of tasks on Home screen. Review your Notification settings if no badge shown.";
+/* Badge section */
+"settings.badge.appIcon" = "Show App Icon Badge";
+"settings.badge.appIconType" = "App Icon Badge Type";
+"settings.badge.tab" = "Show Tab Badge";
+"settings.badge.footer" = "Icon badge shows a number of tasks on Home screen. Review your Notification settings if no badge shown.";
 
 /* Misc section */
-"Tab Names" = "Tab Names";
-"Toggle Confetti 🎉" = "Toggle Confetti 🎉";
-"Preview on Haptic Touch" = "Preview on Haptic Touch";
-"Long pressing a task from a list reveals a context menu for the task when enabled." = "Long pressing a task from a list reveals a context menu for the task when enabled.";
+"settings.misc.tabNames" = "Tab Names";
+"settings.misc.confetti" = "Toggle Confetti 🎉";
+"settings.misc.preview" = "Preview on Haptic Touch";
+"settings.misc.footer" = "Long pressing a task from a list reveals a context menu for the task when enabled.";
 
 /* Advanced section */
 /* Footer */
-"Be careful, these remove all your data! Restart the app to see all changes." = "Be careful, these remove all your data! Restart the app to see all changes.";
+"settings.advanced.footer" = "Be careful, these remove all your data! Restart the app to see all changes.";
 
 /* Confirm dialogs */
-"App settings would reset.\nThis action cannot be undone" = "App settings would reset.\nThis action cannot be undone";
-"All your tasks would be deleted.\nThis action cannot be undone" = "All your tasks would be deleted.\nThis action cannot be undone";
+"settings.advanced.resetSettings.alert" = "App settings would reset.\nThis action cannot be undone";
+"settings.advanced.resetUserData.alert" = "All your tasks would be deleted.\nThis action cannot be undone";
 
 /* Buttons */
-"Reset App Settings" = "Reset App Settings";
-"Reset Your Data" = "Reset Your Data";
+"settings.advanced.resetSettings" = "Reset App Settings";
+"settings.advanced.resetSettings.delete" = "Delete";
+"settings.advanced.resetSettings.cancel" = "Cancel";
+"settings.advanced.resetUserData" = "Reset Your Data";
+"settings.advanced.resetUserData.delete" = "Delete";
+"settings.advanced.resetUserData.cancel" = "Cancel";
 
 /* Accent colors */
-"Blue" = "Blue";
-"Teal" = "Teal";
-"Indigo" = "Indigo";
-"Pink" = "Pink";
-"Red" = "Red";
-"Orange" = "Orange";
-"Yellow" = "Yellow";
-"Green" = "Green";
-"Mint" = "Mint";
+"accentColor.blue" = "Blue";
+"accentColor.teal" = "Teal";
+"accentColor.indigo" = "Indigo";
+"accentColor.pink" = "Pink";
+"accentColor.red" = "Red";
+"accentColor.orange" = "Orange";
+"accentColor.yellow" = "Yellow";
+"accentColor.green" = "Green";
+"accentColor.mint" = "Mint";
 
 /* Font designs */
-"System" = "System";
-"Rounded" = "Rounded";
-"Monospaced" = "Monospaced";
-"Serif" = "Serif";
+"fontDesign.system" = "System";
+"fontDesign.rounded" = "Rounded";
+"fontDesign.monospaced" = "Monospaced";
+"fontDesign.serif" = "Serif";
 
 /* Color themes */
-"System" = "System";
-"Light" = "Light";
-"Dark" = "Dark";
+"colorTheme.system" = "System";
+"colorTheme.light" = "Light";
+"colorTheme.dark" = "Dark";
+
+/* Badge types */
+"badgeType.allPending" = "All Pending";
+"badgeType.overdue" = "Overdue";
+"badgeType.dueToday" = "Due Today";
+"badgeType.upcoming" = "Upcoming";
 
 /* Context preview types */
 "settings.misc.previewtype.title" = "Preview Type on Haptic Touch";
@@ -185,25 +216,24 @@
 
 /* ACKNOWLEDGEMENTS */
 /* Navigation title */
-"Acknowledgements" = "Acknowledgements";
+"settings.ack.nav.title" = "Acknowledgements";
 
-"Development Team" = "Development Team";
-"Localization" = "Localization";
-"Third Party Dependencies" = "Third Party Dependencies";
-"License" = "License";
+"settings.ack.devTeam" = "Development Team";
+"settings.ack.localization" = "Localization";
+"settings.ack.dependencies" = "Third Party Dependencies";
+"settings.ack.license" = "License";
 
 /* Localization */
-"Many thanks to the amazing folks contributing to the translations for TaskGuru" = "Many thanks to the amazing folks contributing to the translations for TaskGuru";
-"Azerbaijani" = "Azerbaijani";
-"Chinese (Simplified)" = "Chinese (Simplified)";
-"Italian" = "Italian";
-"Portuguese (Brazillian)" = "Portuguese (Brazillian)";
-"Ukrainian" = "Ukrainian";
-"Vietnamese" = "Vietnamese";
+"settings.ack.localization.subtitle" = "Many thanks to the amazing folks contributing to the translations for TaskGuru";
+"ack.localization.azerbaijani" = "Azerbaijani";
+"ack.localization.chineseSim" = "Chinese (Simplified)";
+"ack.localization.italian" = "Italian";
+"ack.localization.portugueseBrazil" = "Portuguese (Brazillian)";
+"ack.localization.ukrainian" = "Ukrainian";
+"ack.localization.vietnamese" = "Vietnamese";
 
 /* License */
-"settings.acknowledgements.license.content" = "
-© TaskGuru Non-Commercial License
+"settings.ack.license.content" = "© TaskGuru Non-Commercial License
 
 This software and its associated documentation files (the 'TaskGuru App') are licensed to you under the TaskGuru Non-Commercial License. You are not permitted to sell, license, or distribute the TaskGuru App or any modifications of it for commercial purposes. You may use, modify and distribute the TaskGuru App for non-commercial purposes only, such as for educational or personal use.
 
