@@ -38,7 +38,9 @@
 "taskItem.status.done" = "Done";
 
 /* Navigation/Context menu - Quick actions in Home & Pending tabs */
-"contextMenu.task.markAsDone" = "Mark as Done";
+"contextMenu.task.markNew" = "Mark as New";
+"contextMenu.task.markInProgress" = "Mark as In progress";
+"contextMenu.task.markDone" = "Mark as Done";
 "contextMenu.task.edit" = "Edit";
 "contextMenu.task.delete" = "Delete";
 "contextMenu.cancel" = "Cancel";

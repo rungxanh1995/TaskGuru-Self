@@ -8,174 +8,206 @@
 
 /* ONBOARDING */
 /* Buttons */
-"I'm All Set!" = "我准备好了！";
-"Dismiss" = "忽略";
+"onboarding.buttons.onboarding.dismiss" = "我准备好了！";
+"onboarding.buttons.onboarded.dismiss" = "忽略";
 
-"Home tab" = "主页选项卡";
-"Tasks categorized by section to easily track overdue, due today, and upcoming ones" = "任务按完成时间分类，得方便跟踪逾期、今天到期、和即将到期的任务";
-"Pending Tasks tab" = "待处理任务选项卡";
-"Find your undone tasks here" = "在这里查找未完成的任务";
-"App icon badge" = "程序图标徽章";
-"Track all or time-based pending tasks at a glance. Find this in %@ Settings" = "一目了然地跟踪所有或基于时间的待处理任务。在 %@ 设置选项卡 里找到它";
-"Quick Actions" = "上下文菜单";
-"Tap and hold each task from the list to use quick actions" = "从列表中点击并长按每个任务以使用上下文菜单";
+"onboarding.features.home.title" = "主页选项卡";
+"onboarding.features.home.description" = "任务按完成时间分类，得方便跟踪逾期、今天到期、和即将到期的任务";
+"onboarding.features.pendingTab.title" = "待处中任务选项卡";
+"onboarding.features.pendingTab.description" = "在这里查找未完成的任务";
+"onboarding.features.appBadge.title" = "程序图标徽章";
+"Track all or time-based pending tasks at a glance. Find this in %@ Settings" = "一目了然地跟踪所有或基于时间的待处中任务。在 %@ 设置选项卡 里找到它";
+"onboarding.features.quickActions.title" = "上下文菜单";
+"onboarding.features.quickActions.description" = "从列表中点击并长按每个任务以使用上下文菜单";
 
 
 /* SHARED */
 /* Task types */
-"Personal" = "个人";
+"taskItem.type.personal" = "个人";
 /* "Work" can also be understood as "business" */
-"Work" = "工作";
+"taskItem.type.work" = "工作";
 /* "School" can also be understood as "educational" */
-"School" = "教育";
-"Coding" = "编程";
-"Other" = "其他";
+"taskItem.type.school" = "教育";
+"taskItem.type.coding" = "编程";
+"taskItem.type.other" = "其他";
 
 /* Task statuses */
 /* "New" can also be understood as "newly created" */
-"New" = "新的";
-"In progress" = "进行中";
-"Done" = "已完成";
+"taskItem.status.new" = "新的";
+"taskItem.status.inProgress" = "进行中";
+"taskItem.status.done" = "已完成";
 
 /* Navigation/Context menu - Quick actions in Home & Pending tabs */
-"Mark as Done" = "编辑为已完成";
-"Edit" = "编辑";
-"Delete" = "删除";
-"Cancel" = "取消";
-"OK" = "OK";
+"contextMenu.task.markNew" = "编辑为新的";
+"contextMenu.task.markInProgress" = "编辑为进行中";
+"contextMenu.task.markDone" = "编辑为已完成";
+"contextMenu.task.edit" = "编辑";
+"contextMenu.task.delete" = "删除";
+"contextMenu.cancel" = "取消";
+"contextMenu.ok" = "OK";
 
 /* Add Task button in Home & Pending tabs */
-"Add Task" = "添加任务";
-
-/* Add/Edit Task */
-/* Section titles */
-"General" = "通用";
-"Notes" = "备注";
-
-/* Add/Edit Inputs + Detail Grid Cell subtitles */
-"Name" = "名称";
-"Due Date" = "到期日";
-"Type" = "类型";
-"Status" = "状态";
-"Any extra notes..." = "任何额外的备注...";
+"label.task.add" = "添加任务";
 
 
 /* HOME */
-/* Home tab name */
-"Home" = "主页";
+/* Tab name */
+"home.tab.title" = "主页";
 /* Navigation title */
-"All Tasks" = "所有任务";
+"home.nav.title" = "所有任务";
 /* Section titles */
-"All Pending" = "所有待处理";
-"Overdue" = "逾期";
-"Due Today" = "今天到期";
-"Upcoming" = "即将到期";
+"home.sections.overdue" = "逾期";
+"home.sections.dueToday" = "今天到期";
+"home.sections.upcoming" = "即将到期";
 /* Empty list sentence */
-"No tasks" = "暂无任务";
+"home.info.sectionEmpty" = "暂无任务";
 /* All tasks empty sentence */
 "Nothing yet. Tap here or %@ to add more" = "还没有什么。 点击这里或 %@ 添加更多";
 
 
 /* PENDING */
 /* Pending tab name */
-"Pending" = "待处理";
+"pending.tab.title" = "待处中";
 /* Navigation title */
-"Pending Tasks" = "待处理任务";
+"pending.nav.title" = "待处中的任务";
 
-"Fetching data" = "正在获取数据";
-"You're free! Enjoy your much deserved time 🥳" = "你自由了！享受你应得的休息时间 🥳";
-"Don't stress yourself too much. You got it 💪" = "不要给自己太多压力。你能弄它们所有 💪";
+"pending.info.fetchingData" = "正在获取数据";
+"pending.info.listEmty" = "你自由了！享受你应得的休息时间 🥳";
+"pending.info.listNotEmpty" = "不要给自己太多压力。你能弄它们所有 💪";
 
 
 /* ADD */
 /* Navigation title */
-"Add Task" = "添加任务";
+"addTask.nav.title" = "添加任务";
 /* Navigation action button */
-"Add" = "Add";
+"addTask.nav.button.cancel" = "取消";
+"addTask.nav.button.add" = "添加";
+/* Section titles */
+"addTask.sections.general" = "通用";
+"addTask.sections.notes" = "备注";
+/* Inputs */
+"addTask.input.name" = "名称";
+"addTask.input.dueDate" = "到期日";
+"addTask.input.type" = "类型";
+"addTask.input.status" = "状态";
+"addTask.input.notes" = "备注";
+"addTask.input.placeholder.notes" = "额外的备注...";
 
 
 /* DETAIL */
 /* Navigation title */
-"Task Detail" = "任务细节";
+"taskDetail.nav.title" = "任务细节";
+
+/* Grid cells */
+"taskDetail.cell.name.caption" = "名称";
+"taskDetail.cell.status.caption" = "状态";
+"taskDetail.cell.dueDate.caption" = "到期日";
+"taskDetail.cell.type.caption" = "类型";
+"taskDetail.cell.notes.caption" = "备注";
+
+/* Alerts */
+"taskDetail.alert.markAsDone" = "编辑为已完成?";
+"taskDetail.alert.deleteTask" = "删除任务?";
 
 "Last updated at %@" = "最后更新于 %@";
 
 
 /* EDIT */
 /* Navigation title */
-"Edit Task" = "编辑任务";
+"editTask.nav.title" = "编辑任务";
 /* Navigation action button */
-"Save" = "编辑";
+"editTask.nav.button.cancel" = "取消";
+"editTask.nav.button.save" = "编辑";
+/* Section titles */
+"editTask.sections.general" = "通用";
+"editTask.sections.notes" = "备注";
 
-/* Alerts */
-"Mark Task as Done?" = "编辑为已完成?";
-"Delete Task?" = "删除任务?";
+/* Inputs */
+"editTask.input.name" = "名称";
+"editTask.input.dueDate" = "到期日";
+"editTask.input.type" = "类型";
+"editTask.input.status" = "状态";
+"editTask.input.notes" = "备注";
+"editTask.input.placeholder.notes" = "额外的备注...";
 
 
 /* SETTINGS */
+/* Tab name */
+"settings.tab.title" = "设置";
 /* Navigation title */
-"Settings" = "设置";
+"settings.nav.title" = "设置";
 
 /* Section titles */
-"General" = "通用";
-"Badge" = "标志";
-"Miscellaneous" = "杂项";
-"Advanced" = "高级";
-"Meet The Team" = "软件开发队";
+"settings.sections.general" = "通用";
+"settings.sections.badge" = "标志";
+"settings.sections.misc" = "杂项";
+"settings.sections.advanced" = "高级";
+"settings.sections.devTeam" = "软件开发队";
+"settings.sections.ack" = "致谢";
 
 /* General section */
-"Show Onboarding screen" = "显示入职屏幕";
-"Portrait Lock" = "竖排方向锁定";
-"Reduce Haptics" = "减少触感触控";
-"Accent Color" = "主题颜色";
-"Font Style" = "字体";
-"Color Theme" = "外观主题";
+"settings.general.onboarding" = "显示入职屏幕";
+"settings.general.portraitLock" = "竖排方向锁定";
+"settings.general.reduceHaptics" = "减少触感触控";
+"settings.general.accentColor" = "主题颜色";
+"settings.general.fontStyle" = "字体";
+"settings.general.colorTheme" = "外观主题";
 
-/* Badge secrion */
-"Show App Icon Badge" = "显示应用图标的标志";
-"App Icon Badge Type" = "程序图标徽章类型";
-"Show Tab Badge" = "显示选项卡标记";
-"Icon badge shows a number of tasks on Home screen. Review your Notification settings if no badge shown." = "在主屏幕上显示任务的数量。 如果没有显示徽章，请检查你的通知设置。";
+/* Badge section */
+"settings.badge.appIcon" = "显示应用图标的标志";
+"settings.badge.appIconType" = "程序图标徽章类型";
+"settings.badge.tab" = "显示选项卡标记";
+"settings.badge.footer" = "在主屏幕上显示任务的数量。 如果没有显示徽章，请检查你的通知设置。";
 
 /* Misc section */
-"Tab Names" = "选项卡标题";
-"Toggle Confetti 🎉" = "切换五彩纸屑 🎉";
-"Preview on Haptic Touch" = "触觉触摸预览";
-"Long pressing a task from a list reveals a context menu for the task when enabled." = "长按列表中的任务会在启用时显示任务的上下文菜单。";
+"settings.misc.tabNames" = "选项卡标题";
+"settings.misc.confetti" = "切换五彩纸屑 🎉";
+"settings.misc.preview" = "触觉触摸预览";
+"settings.misc.footer" = "长按列表中的任务会在启用时显示任务的上下文菜单。";
 
 /* Advanced section */
 /* Footer */
-"Be careful, these remove all your data! Restart the app to see all changes." = "注意，这些会删除所有你的数据！重新启动应用程序以查看所有更改。";
+"settings.advanced.footer" = "注意，这些会删除所有你的数据！重新启动应用程序以查看所有更改。";
 
 /* Confirm dialogs */
-"App settings would reset.\nThis action cannot be undone" = "应用设置将被重置。\n此操作无法撤销";
-"All your tasks would be deleted.\nThis action cannot be undone" = "所有任务都将被删除。\n此操作无法撤销";
+"settings.advanced.resetSettings.alert" = "应用设置将被重置。\n此操作无法撤销";
+"settings.advanced.resetUserData.alert" = "所有任务都将被删除。\n此操作无法撤销";
 
 /* Buttons */
-"Reset App Settings" = "重置应用设置";
-"Reset Your Data" = "重置你的数据";
+"settings.advanced.resetSettings" = "重置应用设置";
+"settings.advanced.resetSettings.delete" = "删除";
+"settings.advanced.resetSettings.cancel" = "取消";
+"settings.advanced.resetUserData" = "重置你的数据";
+"settings.advanced.resetUserData.delete" = "删除";
+"settings.advanced.resetUserData.cancel" = "取消";
 
 /* Accent colors */
-"Blue" = "蓝色";
-"Teal" = "蓝绿色";
-"Indigo" = "靛蓝色";
-"Pink" = "粉色";
-"Red" = "红色";
-"Orange" = "橙色";
-"Yellow" = "黄色";
-"Green" = "绿色";
-"Mint" = "薄荷";
+"accentColor.blue" = "蓝色";
+"accentColor.teal" = "蓝绿色";
+"accentColor.indigo" = "靛蓝色";
+"accentColor.pink" = "粉色";
+"accentColor.red" = "红色";
+"accentColor.orange" = "橙色";
+"accentColor.yellow" = "黄色";
+"accentColor.green" = "绿色";
+"accentColor.mint" = "薄荷";
 
 /* Font designs */
-"System" = "系统";
-"Rounded" = "圆形";
-"Monospaced" = "等宽";
-"Serif" = "衬线";
+"fontDesign.system" = "系统";
+"fontDesign.rounded" = "圆形";
+"fontDesign.monospaced" = "等宽";
+"fontDesign.serif" = "衬线";
 
 /* Color themes */
-"System" = "系统";
-"Light" = "浅色";
-"Dark" = "深色";
+"colorTheme.system" = "系统";
+"colorTheme.light" = "浅色";
+"colorTheme.dark" = "深色";
+
+/* Badge types */
+"badgeType.allPending" = "所有待处中";
+"badgeType.overdue" = "逾期";
+"badgeType.dueToday" = "今天到期";
+"badgeType.upcoming" = "即将到期";
 
 /* Context preview types */
 "settings.misc.previewtype.title" = "触觉触摸预览类型";
@@ -185,25 +217,24 @@
 
 /* ACKNOWLEDGEMENTS */
 /* Navigation title */
-"Acknowledgements" = "致谢";
+"settings.ack.nav.title" = "致谢";
 
-"Development Team" = "开发团队";
-"Localization" = "本地化";
-"Third Party Dependencies" = "第三方依赖项";
-"License" = "许可证";
+"settings.ack.devTeam" = "开发团队";
+"settings.ack.localization" = "本地化";
+"settings.ack.dependencies" = "第三方依赖项";
+"settings.ack.license" = "许可证";
 
 /* Localization */
-"Many thanks to the amazing folks contributing to the translations for TaskGuru" = "非常感谢为 TaskGuru 翻译做出贡献的众多优秀人士";
-"Azerbaijani" = "阿塞拜疆语";
-"Chinese (Simplified)" = "中文（简体）";
-"Italian" = "意大利语";
-"Portuguese (Brazillian)" = "（巴西）葡萄牙语";
-"Ukrainian" = "乌克兰语";
-"Vietnamese" = "越南语";
+"settings.ack.localization.subtitle" = "非常感谢为 TaskGuru 翻译做出贡献的众多优秀人士";
+"ack.localization.azerbaijani" = "阿塞拜疆语";
+"ack.localization.chineseSim" = "中文（简体）";
+"ack.localization.italian" = "意大利语";
+"ack.localization.portugueseBrazil" = "（巴西）葡萄牙语";
+"ack.localization.ukrainian" = "乌克兰语";
+"ack.localization.vietnamese" = "越南语";
 
 /* License */
-"settings.acknowledgements.license.content" = "
-© TaskGuru Non-Commercial License
+"settings.ack.license.content" = "© TaskGuru Non-Commercial License
 
 This software and its associated documentation files (the 'TaskGuru App') are licensed to you under the TaskGuru Non-Commercial License. You are not permitted to sell, license, or distribute the TaskGuru App or any modifications of it for commercial purposes. You may use, modify and distribute the TaskGuru App for non-commercial purposes only, such as for educational or personal use.
 
