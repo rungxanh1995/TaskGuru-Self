@@ -141,7 +141,7 @@
 "Tab Names" = "Tên tab";
 "Toggle Confetti 🎉" = "Hiệu ứng hoa giấy 🎉";
 "Preview on Haptic Touch" = "Xem trước với Haptic Touch";
-"Long pressing a task from a list reveals a detail preview of the task when enabled." = "Chạm và giữ tác vụ từ danh sách để hiển thị xem trước chi tiết. Có hiệu lực khi cài đặt này được bật.";
+"Long pressing a task from a list reveals a context menu for the task when enabled." = "Chạm và giữ tác vụ từ danh sách để hiển thị menu ngữ cảnh. Có hiệu lực khi cài đặt này được bật.";
 
 
 /* Advanced section */
@@ -178,6 +178,11 @@
 "Light" = "Sáng";
 "Dark" = "Tối";
 
+/* Context preview types */
+"settings.misc.previewtype.title" = "Kiểu xem trước Haptic Touch";
+"settings.misc.previewtype.content.cell" = "Kiểu ô";
+"settings.misc.previewtype.content.detail" = "Chi tiết";
+
 
 /* ACKNOWLEDGEMENTS */
 /* Navigation title */
@@ -193,5 +198,6 @@
 "Azerbaijani" = "Tiếng Azerbaijan";
 "Chinese (Simplified)" = "Tiếng Trung (Giản thể)";
 "Italian" = "Tiếng Ý";
+"Portuguese (Brazillian)" = "Tiếng Bồ Đào Nha (Brazil)";
 "Ukrainian" = "Tiếng Ucraina";
 "Vietnamese" = "Tiếng Việt";

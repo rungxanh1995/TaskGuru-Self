@@ -141,7 +141,7 @@
 "Tab Names" = "Tab Names";
 "Toggle Confetti 🎉" = "Toggle Confetti 🎉";
 "Preview on Haptic Touch" = "Preview on Haptic Touch";
-"Long pressing a task from a list reveals a detail preview of the task when enabled." = "Long pressing a task from a list reveals a detail preview of the task when enabled.";
+"Long pressing a task from a list reveals a context menu for the task when enabled." = "Long pressing a task from a list reveals a context menu for the task when enabled.";
 
 /* Advanced section */
 /* Footer */
@@ -177,6 +177,11 @@
 "Light" = "Light";
 "Dark" = "Dark";
 
+/* Context preview types */
+"settings.misc.previewtype.title" = "Preview Type on Haptic Touch";
+"settings.misc.previewtype.content.cell" = "Cell";
+"settings.misc.previewtype.content.detail" = "Detail";
+
 
 /* ACKNOWLEDGEMENTS */
 /* Navigation title */
@@ -192,5 +197,6 @@
 "Azerbaijani" = "Azerbaijani";
 "Chinese (Simplified)" = "Chinese (Simplified)";
 "Italian" = "Italian";
+"Portuguese (Brazillian)" = "Portuguese (Brazillian)";
 "Ukrainian" = "Ukrainian";
 "Vietnamese" = "Vietnamese";

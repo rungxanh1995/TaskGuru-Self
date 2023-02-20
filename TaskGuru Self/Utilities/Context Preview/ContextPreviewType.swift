@@ -16,8 +16,8 @@ enum ContextPreviewType: Int, Identifiable, CaseIterable {
 extension ContextPreviewType {
 	var title: String {
 		switch self {
-		case .cell: return "Cell"
-		case .detail: return "Detail"
+		case .cell: return "settings.misc.previewtype.content.cell"
+		case .detail: return "settings.misc.previewtype.content.detail"
 		}
 	}
 }

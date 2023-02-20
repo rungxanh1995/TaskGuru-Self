@@ -141,7 +141,7 @@
 "Tab Names" = "选项卡标题";
 "Toggle Confetti 🎉" = "切换五彩纸屑 🎉";
 "Preview on Haptic Touch" = "触觉触摸预览";
-"Long pressing a task from a list reveals a detail preview of the task when enabled." = "启用此设置时，长按列表中的任务会显示任务的详细预览。";
+"Long pressing a task from a list reveals a context menu for the task when enabled." = "长按列表中的任务会在启用时显示任务的上下文菜单。";
 
 /* Advanced section */
 /* Footer */
@@ -177,6 +177,11 @@
 "Light" = "浅色";
 "Dark" = "深色";
 
+/* Context preview types */
+"settings.misc.previewtype.title" = "触觉触摸预览类型";
+"settings.misc.previewtype.content.cell" = "表单元格";
+"settings.misc.previewtype.content.detail" = "详细视图";
+
 
 /* ACKNOWLEDGEMENTS */
 /* Navigation title */
@@ -192,5 +197,6 @@
 "Azerbaijani" = "阿塞拜疆语";
 "Chinese (Simplified)" = "中文（简体）";
 "Italian" = "意大利语";
+"Portuguese (Brazillian)" = "（巴西）葡萄牙语";
 "Ukrainian" = "乌克兰语";
 "Vietnamese" = "越南语";

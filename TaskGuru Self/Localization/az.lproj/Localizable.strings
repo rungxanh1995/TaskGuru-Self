@@ -3,7 +3,8 @@
   TaskGuru Self
 
   Created by Joe Pham on 2023-02-15.
-  
+	Translated by Rauf Anata
+
 */
 
 /* ONBOARDING */
@@ -141,7 +142,7 @@
 "Tab Names" = "Tab Names";
 "Toggle Confetti 🎉" = "Toggle Confetti 🎉";
 "Preview on Haptic Touch" = "Preview on Haptic Touch";
-"Long pressing a task from a list reveals a detail preview of the task when enabled." = "Bu aktiv olduqda, siyahıdan tapşırığa uzun basmaq tapşırığın təfərrüatlı önizləməsini açır";
+"Long pressing a task from a list reveals a context menu for the task when enabled." = "Bu aktiv olduqda, siyahıdan tapşırığa uzun basmaq tapşırığın təfərrüatlı önizləməsini açır";
 
 /* Advanced section */
 /* Footer */
@@ -177,6 +178,11 @@
 "Light" = "İşıq";
 "Dark" = "Qaranlıq";
 
+/* Context preview types */
+"settings.misc.previewtype.title" = "Preview Type on Haptic Touch";
+"settings.misc.previewtype.content.cell" = "Cell";
+"settings.misc.previewtype.content.detail" = "Detail";
+
 
 /* ACKNOWLEDGEMENTS */
 /* Navigation title */
@@ -191,5 +197,6 @@
 "Azerbaijani" = "Azerbaijani";
 "Chinese (Simplified)" = "Chinese (Simplified)";
 "Italian" = "Italian";
+"Portuguese (Brazillian)" = "Portuguese (Brazillian)";
 "Ukrainian" = "Ukrainian";
 "Vietnamese" = "Vietnamese";

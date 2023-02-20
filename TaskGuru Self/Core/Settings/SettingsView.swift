@@ -203,7 +203,7 @@ private extension SettingsView {
 	}
 
 	private var previewType: some View {
-		Picker("Preview Type on Haptic Touch", selection: $contextPreviewType) {
+		Picker("settings.misc.previewtype.title", selection: $contextPreviewType) {
 			ForEach(ContextPreviewType.allCases) { (type) in
 				Text(LocalizedStringKey(type.title))
 					.tag(type.rawValue)
