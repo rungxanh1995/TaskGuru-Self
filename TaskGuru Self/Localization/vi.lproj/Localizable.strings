@@ -232,7 +232,7 @@
 "ack.localization.vietnamese" = "Tiếng Việt";
 
 /* License */
-"settings.acknowledgements.license.content" = "© Giấy phép TaskGuru Phi thương mại
+"settings.ack.license.content" = "© Giấy phép TaskGuru Phi thương mại
 
 Phần mềm này và các tệp tài liệu liên quan (TaskGuru App) được cấp phép cho bạn dưới giấy phép TaskGuru phiên bản phi thương mại. Bạn không được phép bán, cấp phép hoặc phân phối TaskGuru App hoặc bất kỳ phiên bản nào của nó cho mục đích thương mại. Bạn có thể sử dụng, sửa đổi và phân phối TaskGuru App cho mục đích phi thương mại, chẳng hạn như cho mục đích giáo dục hoặc sử dụng cá nhân.
 
