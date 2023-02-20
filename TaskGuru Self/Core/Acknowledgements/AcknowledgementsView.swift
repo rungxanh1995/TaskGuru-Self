@@ -83,8 +83,7 @@ extension AcknowledgementsView {
 			Text("License")
 				.font(.title3).bold()
 				.foregroundColor(.defaultAccentColor)
-			Text("To be included after consulting with course instructor...")
-				.italic()
+			Text("settings.acknowledgements.license.content")
 		}
 	}
 }

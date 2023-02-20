@@ -200,3 +200,12 @@
 "Portuguese (Brazillian)" = "Portuguese (Brazillian)";
 "Ukrainian" = "Ukrainian";
 "Vietnamese" = "Vietnamese";
+
+/* License */
+"settings.acknowledgements.license.content" = "
+© TaskGuru Non-Commercial License
+
+This software and its associated documentation files (the 'TaskGuru App') are licensed to you under the TaskGuru Non-Commercial License. You are not permitted to sell, license, or distribute the TaskGuru App or any modifications of it for commercial purposes. You may use, modify and distribute the TaskGuru App for non-commercial purposes only, such as for educational or personal use.
+
+THE TASKGURU APP IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE TASKGURU APP OR THE USE OR OTHER DEALINGS IN THE TASKGURU APP.
+";

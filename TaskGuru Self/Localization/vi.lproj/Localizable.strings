@@ -201,3 +201,13 @@
 "Portuguese (Brazillian)" = "Tiếng Bồ Đào Nha (Brazil)";
 "Ukrainian" = "Tiếng Ucraina";
 "Vietnamese" = "Tiếng Việt";
+
+/* License */
+"settings.acknowledgements.license.content" = "
+© Giấy phép TaskGuru Phi thương mại
+
+Phần mềm này và các tệp tài liệu liên quan (TaskGuru App) được cấp phép cho bạn dưới giấy phép TaskGuru phiên bản phi thương mại. Bạn không được phép bán, cấp phép hoặc phân phối TaskGuru App hoặc bất kỳ phiên bản nào của nó cho mục đích thương mại. Bạn có thể sử dụng, sửa đổi và phân phối TaskGuru App cho mục đích phi thương mại, chẳng hạn như cho mục đích giáo dục hoặc sử dụng cá nhân.
+
+TASKGURU APP ĐƯỢC CUNG CẤP 'NHƯ NGUYÊN BẢN', KHÔNG CÓ BẤT KỲ BẢO ĐẢM NÀO, BAO GỒM NHƯNG KHÔNG GIỚI HẠN Ở TÍNH KHẢ DOANH, PHÙ HỢP VỚI MỤC ĐÍCH CỤ THỂ VÀ KHÔNG VI PHẠM QUYỀN SỞ HỮU TRÍ TUỆ. TRONG BẤT KỲ TRƯỜNG HỢP NÀO, TÁC GIẢ HOẶC CHỦ SỞ HỮU BẢN QUYỀN ĐỀU KHÔNG CHỊU TRÁCH NHIỆM ĐỐI VỚI BẤT KỲ YÊU CẦU, TỔN THẤT HOẶC TRÁCH NHIỆM PHÁP LÝ NÀO, CHO DÙ LÀ HÀNH ĐỘNG QUY ĐỊNH TRONG HỢP ĐỒNG, LỖI HOẶC THÀNH TỰU, VẤN ĐỀ PHÁT SINH, LIÊN QUAN ĐẾN TASKGURU APP HOẶC SỬ DỤNG CHO CÁC GIAO DỊCH KHÁC LIÊN QUAN ĐẾN TASKGURU APP.
+
+";
