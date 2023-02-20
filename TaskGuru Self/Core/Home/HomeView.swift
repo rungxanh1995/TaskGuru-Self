@@ -175,14 +175,7 @@ extension HomeView {
 
 	@ViewBuilder
 	private func makeContextMenu(for task: TaskItem) -> some View {
-		if task.isNotDone {
-			Button {
-				withAnimation { vm.markAsDone(task) }
-				if isConfettiEnabled { confettiCounter += 1 }
-			} label: {
-				Label { Text("contextMenu.task.markAsDone") } icon: { SFSymbols.checkmark }
-			}
-		}
+		markAsButtons(for: task)
 		Button { selectedTask = task } label: {
 			Label { Text("contextMenu.task.edit") } icon: { SFSymbols.pencilSquare }
 		}
@@ -199,6 +192,52 @@ extension HomeView {
 			}
 		} label: {
 			Label { Text("contextMenu.task.delete") } icon: { SFSymbols.trash }
+		}
+	}
+
+	private func markAsButtons(for task: TaskItem) -> some View {
+		switch task.status {
+		case .new:
+			return Group {
+				Button {
+					withAnimation { vm.markAsInProgress(task) }
+				} label: {
+					Label { Text("contextMenu.task.markInProgress") } icon: { SFSymbols.circleArrows }
+				}
+				Button {
+					withAnimation { vm.markAsDone(task) }
+					if isConfettiEnabled { confettiCounter += 1}
+				} label: {
+					Label { Text("contextMenu.task.markDone") } icon: { SFSymbols.checkmark }
+				}
+			}
+		case .inProgress:
+			return Group {
+				Button {
+					withAnimation { vm.markAsNew(task) }
+				} label: {
+					Label { Text("contextMenu.task.markNew") } icon: { SFSymbols.sparkles }
+				}
+				Button {
+					withAnimation { vm.markAsDone(task) }
+					if isConfettiEnabled { confettiCounter += 1}
+				} label: {
+					Label { Text("contextMenu.task.markDone") } icon: { SFSymbols.checkmark }
+				}
+			}
+		case .done:
+			return Group {
+				Button {
+					withAnimation { vm.markAsNew(task) }
+				} label: {
+					Label { Text("contextMenu.task.markNew") } icon: { SFSymbols.sparkles }
+				}
+				Button {
+					withAnimation { vm.markAsInProgress(task) }
+				} label: {
+					Label { Text("contextMenu.task.markInProgress") } icon: { SFSymbols.circleArrows }
+				}
+			}
 		}
 	}
 

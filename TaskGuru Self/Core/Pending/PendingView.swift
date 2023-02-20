@@ -89,14 +89,8 @@ extension PendingView {
 
 	@ViewBuilder
 	private func makeContextMenu(for task: TaskItem) -> some View {
-		if task.isNotDone {
-			Button {
-				withAnimation { vm.markAsDone(task) }
-				if isConfettiEnabled { confettiCounter += 1 }
-			} label: {
-				Label { Text("contextMenu.task.markAsDone") } icon: { SFSymbols.checkmark }
-			}
-		}
+		markAsButtons(for: task)
+
 		Button { selectedTask = task } label: {
 			Label { Text("contextMenu.task.edit") } icon: { SFSymbols.pencilSquare }
 		}
@@ -113,6 +107,41 @@ extension PendingView {
 			}
 		} label: {
 			Label { Text("contextMenu.task.delete") } icon: { SFSymbols.trash }
+		}
+	}
+
+	@ViewBuilder
+	private func markAsButtons(for task: TaskItem) -> some View {
+		switch task.status {
+		case .new:
+			Group {
+				Button {
+					withAnimation { vm.markAsInProgress(task) }
+				} label: {
+					Label { Text("contextMenu.task.markInProgress") } icon: { SFSymbols.circleArrows }
+				}
+				Button {
+					withAnimation { vm.markAsDone(task) }
+					if isConfettiEnabled { confettiCounter += 1}
+				} label: {
+					Label { Text("contextMenu.task.markDone") } icon: { SFSymbols.checkmark }
+				}
+			}
+		case .inProgress:
+			Group {
+				Button {
+					withAnimation { vm.markAsNew(task) }
+				} label: {
+					Label { Text("contextMenu.task.markNew") } icon: { SFSymbols.sparkles }
+				}
+				Button {
+					withAnimation { vm.markAsDone(task) }
+					if isConfettiEnabled { confettiCounter += 1}
+				} label: {
+					Label { Text("contextMenu.task.markDone") } icon: { SFSymbols.checkmark }
+				}
+			}
+		case .done: EmptyView()	// shouldn't happen in Pending view
 		}
 	}
 
