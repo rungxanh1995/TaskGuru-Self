@@ -54,7 +54,6 @@
 /* Navigation title */
 "home.nav.title" = "All Tasks";
 /* Section titles */
-"All Pending" = "All Pending";
 "home.sections.overdue" = "Overdue";
 "home.sections.dueToday" = "Due Today";
 "home.sections.upcoming" = "Upcoming";
