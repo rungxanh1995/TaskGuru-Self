@@ -161,7 +161,7 @@ extension TaskGuru_SelfApp {
 		case .allPending: return homeVM.pendingTasks.count
 		case .overdue: return homeVM.allTasks.filter { $0.dueDate.isPastToday && $0.isNotDone }.count
 		case .dueToday: return homeVM.allTasks.filter { $0.dueDate.isWithinToday && $0.isNotDone }.count
-		case .upcoming: return homeVM.allTasks.filter { $0.dueDate.isInTheFuture && $0.isNotDone }.count
+		case .upcoming: return homeVM.allTasks.filter { $0.dueDate.isFromTomorrow && $0.isNotDone }.count
 		}
 	}
 }

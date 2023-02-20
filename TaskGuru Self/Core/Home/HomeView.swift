@@ -149,7 +149,7 @@ extension HomeView {
 
 	@ViewBuilder
 	private var upcomingSection: some View {
-		let upcomings = vm.searchResults.filter { $0.dueDate.isInTheFuture }
+		let upcomings = vm.searchResults.filter { $0.dueDate.isFromTomorrow }
 
 		Section {
 			if upcomings.isEmpty {
