@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2C00006A2999E7C40065CA3E /* PendingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0000692999E7C40065CA3E /* PendingView.swift */; };
-		2C0CC62C299FBDAF004161CF /* HomeQuickAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0CC62B299FBDAF004161CF /* HomeQuickAction.swift */; };
 		2C1E6A36299E92BD00489534 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 2C1E6A35299E92BD00489534 /* ConfettiSwiftUI */; };
 		2C1FDA8629A25FB20046542C /* AcknowledgementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1FDA8529A25FB20046542C /* AcknowledgementsView.swift */; };
 		2C2541B029849CDC00367BED /* DetailGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2541AF29849CDC00367BED /* DetailGridCell.swift */; };
@@ -66,7 +65,6 @@
 
 /* Begin PBXFileReference section */
 		2C0000692999E7C40065CA3E /* PendingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingView.swift; sourceTree = "<group>"; };
-		2C0CC62B299FBDAF004161CF /* HomeQuickAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeQuickAction.swift; sourceTree = "<group>"; };
 		2C1FDA8529A25FB20046542C /* AcknowledgementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcknowledgementsView.swift; sourceTree = "<group>"; };
 		2C2541AF29849CDC00367BED /* DetailGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGridCell.swift; sourceTree = "<group>"; };
 		2C33F6B229858293004893EF /* DetailEditMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEditMode.swift; sourceTree = "<group>"; };
@@ -224,7 +222,6 @@
 				2CD2636A29945A6C0054C065 /* AppState.swift */,
 				2C33F6C429858FEA004893EF /* Constants.swift */,
 				2CCB0B542985BD6D00D489DD /* HapticManager.swift */,
-				2C0CC62B299FBDAF004161CF /* HomeQuickAction.swift */,
 				2CCC44C4298617D2009C3FBD /* SFSymbols.swift */,
 			);
 			path = Utilities;
@@ -585,7 +582,6 @@
 				2CD53DEF29A11D1800B23429 /* FontDesignModifier.swift in Sources */,
 				2CCB0B452985AAFA00D489DD /* DetailView.swift in Sources */,
 				2CCB0B552985BD6D00D489DD /* HapticManager.swift in Sources */,
-				2C0CC62C299FBDAF004161CF /* HomeQuickAction.swift in Sources */,
 				2CC25BCD29845D9A006972DF /* AddTask.swift in Sources */,
 				2CCB0B472985B2E700D489DD /* DetailViewModel.swift in Sources */,
 				2C9B44FC299D6FBE00EE5232 /* UserDefaultWrapper.swift in Sources */,
@@ -739,7 +735,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 144;
+				CURRENT_PROJECT_VERSION = 145;
 				DEVELOPMENT_ASSET_PATHS = "\"TaskGuru Self/Preview Content\"";
 				DEVELOPMENT_TEAM = 8R3P49X4ZM;
 				ENABLE_PREVIEWS = YES;
@@ -757,7 +753,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "joepham.TaskGuru-Self";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -775,7 +771,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 144;
+				CURRENT_PROJECT_VERSION = 145;
 				DEVELOPMENT_ASSET_PATHS = "\"TaskGuru Self/Preview Content\"";
 				DEVELOPMENT_TEAM = 8R3P49X4ZM;
 				ENABLE_PREVIEWS = YES;
@@ -793,7 +789,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "joepham.TaskGuru-Self";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

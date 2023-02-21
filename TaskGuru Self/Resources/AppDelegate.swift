@@ -33,24 +33,4 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 	func unlockPortraitMode() {
 		AppDelegate.orientationLock = .all
 	}
-
-	func application(
-		_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession,
-		options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-			if let selectedAction = options.shortcutItem {
-				HomeQuickAction.selectedAction = selectedAction
-			}
-
-			let sceneConfig = UISceneConfiguration(name: "Quick Action Scene", sessionRole: connectingSceneSession.role)
-			sceneConfig.delegateClass = QuickActionSceneDelegate.self
-			return sceneConfig
-	}
-}
-
-private class QuickActionSceneDelegate: UIResponder, UIWindowSceneDelegate {
-	func windowScene(
-		_ windowScene: UIWindowScene, performActionFor shortcutItem: UIApplicationShortcutItem,
-		completionHandler: @escaping (Bool) -> Void) {
-			HomeQuickAction.selectedAction = shortcutItem
-	}
 }
