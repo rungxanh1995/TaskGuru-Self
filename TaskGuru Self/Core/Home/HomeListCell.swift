@@ -31,6 +31,8 @@ extension HomeListCell {
 	private var taskName: some View {
 		Text(task.name)
 			.font(.system(.body))
+			.strikethrough(task.isNotDone ? false : true)
+			.foregroundColor(task.isNotDone ? nil : .secondary)
 	}
 
 	private var taskType: some View {
