@@ -10,14 +10,15 @@ import SwiftUI
 enum Tab: Int, Hashable { case home, pending, settings }
 
 struct RootView: View {
-	@UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-
 	@Preference(\.accentColor) private var accentColor
 	@Preference(\.badgeType) private var badgeType
 	@Preference(\.isShowingAppBadge) private var isShowingAppBadge
 	@Preference(\.isShowingTabBadge) private var isShowingTabBadge
 	@Preference(\.isLockedInPortrait) private var isLockedInPortrait
 	@Preference(\.isTabNamesEnabled) private var isTabNamesEnabled
+
+	@UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+	@Environment(\.scenePhase) private var scenePhase
 
 	private var homeVM: HomeViewModel = .init()
 	@SceneStorage("selectedTab") private var selectedTab: Tab = .home
@@ -70,6 +71,17 @@ struct RootView: View {
 		.onChange(of: isShowingAppBadge) { _ in
 			setUpAppIconBadge()
 		}
+		.onChange(of: scenePhase) { newPhase in
+			switch newPhase {
+			case .background:
+				addHomeScreenQuickActions()
+				HomeQuickAction.selectedAction = nil
+			case .active:
+				handleQuickActionSelected()
+			default:
+				break
+			}
+		}
 		.environmentObject(homeVM)
 	}
 }
@@ -83,6 +95,34 @@ extension RootView {
 		UIView.appearance(for: UITraitCollection(userInterfaceStyle: .dark),
 											whenContainedInInstancesOf: [UIAlertController.self])
 		.tintColor = UIColor(Color.defaultAccentColor)
+	}
+
+	private func addHomeScreenQuickActions() {
+		UIApplication.shared.shortcutItems = HomeQuickAction.allShortcutItems
+	}
+
+	private func handleQuickActionSelected() {
+		guard let selectedAction = HomeQuickAction.selectedAction,
+					let userInfo = selectedAction.userInfo,
+					let actionName = userInfo["name"] as? String else { return }
+
+		defer {
+			// This is a bugfix to "add task" popping up when app is not in foreground,
+			// i.e. when user enters system multitasking screen, then comes back to app.
+			var newUserInfo = userInfo
+			newUserInfo["name"] = HomeQuickAction.UserInfoType.allTasks.rawValue as any NSSecureCoding
+			let updatedAction = UIApplicationShortcutItem(
+				type: selectedAction.type, localizedTitle: selectedAction.localizedTitle, localizedSubtitle: nil,
+				icon: selectedAction.icon, userInfo: newUserInfo)
+			HomeQuickAction.selectedAction = updatedAction
+		}
+
+		switch actionName {
+		case HomeQuickAction.UserInfoType.addTask.rawValue:
+			homeVM.isShowingAddTaskView = true
+		default:
+			homeVM.isShowingAddTaskView = false
+		}
 	}
 }
 
