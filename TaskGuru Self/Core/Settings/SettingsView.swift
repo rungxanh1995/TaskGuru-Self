@@ -18,6 +18,7 @@ struct SettingsView: View {
 	@Preference(\.isLockedInPortrait) private var isLockedInPortrait
 	@Preference(\.isHapticsReduced) private var isHapticsReduced
 	@Preference(\.isTabNamesEnabled) private var isTabNamesEnabled
+	@Preference(\.activeAppIcon) private var activeAppIcon
 	@Preference(\.accentColor) private var accentColor
 	@Preference(\.fontDesign) private var fontDesign
 	@Preference(\.systemTheme) private var systemTheme
@@ -71,6 +72,9 @@ struct SettingsView: View {
 				}
 				Button("settings.advanced.resetUserData.cancel", role: .cancel) { }
 			}
+			.onChange(of: activeAppIcon) { iconName in
+				UIApplication.shared.setAlternateIconName(iconName)
+			}
 		}
 		.navigationViewStyle(.stack)
 	}
@@ -80,6 +84,7 @@ private extension SettingsView {
 	private var generalSection: some View {
 		Section {
 			onboarding
+			appIcon
 			portraitLock
 			haptics
 			appAccentColor
@@ -87,6 +92,14 @@ private extension SettingsView {
 			appTheme
 		} header: {
 			Label { Text("settings.sections.general") } icon: { SFSymbols.gearFilled }
+		}
+	}
+
+	private var appIcon: some View {
+		Picker("settings.general.appIcon", selection: $activeAppIcon) {
+			ForEach(vm.appIconNames, id: \.self) { iconName in
+				Text(iconName).tag(iconName)
+			}
 		}
 	}
 

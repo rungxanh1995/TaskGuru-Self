@@ -58,4 +58,7 @@ final class Preferences {
 
 	@UserDefault(UserDefaultsKey.contextPreviewType)
 	var contextPreviewType: Int = ContextPreviewType.allCases.first!.rawValue
+
+	@UserDefault(UserDefaultsKey.appIcon)
+	var activeAppIcon: String = "AppIcon"
 }

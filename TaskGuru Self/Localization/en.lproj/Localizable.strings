@@ -147,6 +147,7 @@
 
 /* General section */
 "settings.general.onboarding" = "Show Onboarding screen";
+"settings.general.appIcon" = "App Icon";
 "settings.general.portraitLock" = "Portrait Lock";
 "settings.general.reduceHaptics" = "Reduce Haptics";
 "settings.general.accentColor" = "Accent Color";

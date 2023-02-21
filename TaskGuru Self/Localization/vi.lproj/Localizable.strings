@@ -147,6 +147,7 @@
 
 /* General section */
 "settings.general.onboarding" = "Hiện màn hình giới thiệu";
+"settings.general.appIcon" = "Biểu tượng app";
 "settings.general.portraitLock" = "Khoá xoay màn hình";
 "settings.general.reduceHaptics" = "Giảm rung phản hồi";
 "settings.general.accentColor" = "Tông màu chủ đạo";
