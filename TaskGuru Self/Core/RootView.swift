@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+enum Tab: Int, Hashable { case home, pending, settings }
+
 struct RootView: View {
 	@Preference(\.accentColor) private var accentColor
 	@Preference(\.badgeType) private var badgeType
@@ -19,7 +21,7 @@ struct RootView: View {
 	@Environment(\.scenePhase) private var scenePhase
 
 	private var homeVM: HomeViewModel = .init()
-	@SceneStorage("selectedTab") private var selectedTab = 0
+	@SceneStorage("selectedTab") private var selectedTab: Tab = .home
 	@State private var pendingTasksCount: Int = 0
 
 	init() {
@@ -32,22 +34,22 @@ struct RootView: View {
 	}
 
 	var body: some View {
-		TabView {
+		TabView(selection: $selectedTab) {
 			HomeView()
-				.tag(0)
+				.tag(Tab.home)
 				.tabItem {
 					SFSymbols.house
 					if isTabNamesEnabled { Text("home.tab.title") }
 				}
 			PendingView()
-				.tag(1)
+				.tag(Tab.pending)
 				.tabItem {
 					SFSymbols.clock
 					if isTabNamesEnabled { Text("pending.tab.title") }
 				}
 				.badge(isShowingTabBadge ? pendingTasksCount : 0)
 			SettingsView()
-				.tag(2)
+				.tag(Tab.settings)
 				.tabItem {
 					SFSymbols.gear
 					if isTabNamesEnabled { Text("settings.tab.title") }
