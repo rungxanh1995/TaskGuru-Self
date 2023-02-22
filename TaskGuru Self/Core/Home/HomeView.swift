@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import ConfettiSwiftUI
 
 struct HomeView: View {
 	@EnvironmentObject var vm: HomeViewModel
@@ -34,7 +33,7 @@ struct HomeView: View {
 							upcomingSection
 						}
 					}
-					.confettiCannon(counter: $confettiCounter)
+					.playConfetti($confettiCounter)
 					.onAppear(perform: vm.fetchTasks)
 					.onChange(of: selectedTask) { _ in vm.fetchTasks() }
 					.navigationDestination(for: TaskItem.self) { task in

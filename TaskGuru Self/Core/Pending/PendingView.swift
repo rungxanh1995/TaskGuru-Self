@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import ConfettiSwiftUI
 
 struct PendingView: View {
 	@EnvironmentObject private var vm: HomeViewModel
@@ -35,7 +34,7 @@ struct PendingView: View {
 					}
 				}
 			}
-			.confettiCannon(counter: $confettiCounter)
+			.playConfetti($confettiCounter)
 			.onAppear(perform: vm.fetchTasks)
 			.onChange(of: selectedTask) { _ in vm.fetchTasks() }
 			.navigationDestination(for: TaskItem.self) { task in

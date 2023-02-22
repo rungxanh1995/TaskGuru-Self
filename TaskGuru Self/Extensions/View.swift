@@ -68,4 +68,8 @@ extension View {
 	func setUpAccentColor() -> some View {
 		modifier(AccentColorModifier())
 	}
+
+	func playConfetti(_ confettiCounter: Binding<Int>) -> some View {
+		modifier(ConfettiViewModifier(counter: confettiCounter))
+	}
 }
