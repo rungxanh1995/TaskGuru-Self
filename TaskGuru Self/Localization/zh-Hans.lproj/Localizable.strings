@@ -70,6 +70,10 @@
 "pending.tab.title" = "待处中";
 /* Navigation title */
 "pending.nav.title" = "待处中的任务";
+/* Section titles */
+"pending.sections.overdue" = "逾期";
+"pending.sections.dueToday" = "今天到期";
+"pending.sections.upcoming" = "即将到期";
 
 "pending.info.fetchingData" = "正在获取数据";
 "pending.info.listEmty" = "你自由了！享受你应得的休息时间 🥳";

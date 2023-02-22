@@ -70,6 +70,10 @@
 "pending.tab.title" = "Chưa xong";
 /* Navigation title */
 "pending.nav.title" = "Tác vụ Chưa xong";
+/* Section titles */
+"pending.sections.overdue" = "Quá hạn";
+"pending.sections.dueToday" = "Đến hạn trong ngày";
+"pending.sections.upcoming" = "Sắp tới";
 
 "pending.info.fetchingData" = "Đang tải dữ liệu";
 "pending.info.listEmty" = "Bạn được tự do rồi! Hãy tận hưởng thời gian này cho bản thân nhé 🥳";

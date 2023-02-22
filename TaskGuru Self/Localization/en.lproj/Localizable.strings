@@ -70,6 +70,10 @@
 "pending.tab.title" = "Pending";
 /* Navigation title */
 "pending.nav.title" = "Pending Tasks";
+/* Section titles */
+"pending.sections.overdue" = "Overdue";
+"pending.sections.dueToday" = "Due Today";
+"pending.sections.upcoming" = "Upcoming";
 
 "pending.info.fetchingData" = "Fetching data";
 "pending.info.listEmty" = "You're free! Enjoy your much deserved time 🥳";

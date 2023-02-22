@@ -27,7 +27,12 @@ struct PendingView: View {
 				} else if vm.noPendingTasksLeft {
 					emptyStateImage.padding()
 				} else {
-					List { pendingSection }
+					List {
+						pendingInThePastSection
+						pendingTodaySection
+						pendingFromTomorrowSection
+						encouragingMessage.listRowBackground(Color.clear)
+					}
 				}
 			}
 			.confettiCannon(counter: $confettiCounter)
@@ -67,24 +72,79 @@ extension PendingView {
 		}
 	}
 
-	private var pendingSection: some View {
-		Section {
-			ForEach(vm.pendingTasks) { task in
-				NavigationLink(value: task) {
-					HomeListCell(task: task)
-				}
-				.if(isPreviewEnabled) { view in
-					view.if(ContextPreviewType(rawValue: previewType) == .cell) { view in
-						view.contextMenu { makeContextMenu(for: task) }
-					} elseCase: { view in
-						view.contextMenu { makeContextMenu(for: task) } preview: { DetailView(vm: .init(for: task)) }
+	private var encouragingMessage: some View {
+		Text("pending.info.listNotEmpty")
+			.font(.footnote)
+			.foregroundColor(.secondary)
+	}
+
+	@ViewBuilder private var pendingInThePastSection: some View {
+		let pendings = vm.pendingTasks.filter { $0.dueDate.isPastToday }
+
+		if pendings.isEmpty == false {
+			Section {
+				ForEach(pendings) { task in
+					NavigationLink(value: task) {
+						HomeListCell(task: task)
+					}
+					.if(isPreviewEnabled) { view in
+						view.if(ContextPreviewType(rawValue: previewType) == .cell) { view in
+							view.contextMenu { makeContextMenu(for: task) }
+						} elseCase: { view in
+							view.contextMenu { makeContextMenu(for: task) } preview: { DetailView(vm: .init(for: task)) }
+						}
 					}
 				}
+			} header: {
+				Text("pending.sections.overdue").bold().foregroundColor(.red)
 			}
-		} footer: {
-			Text("pending.info.listNotEmpty")
 		}
-		.headerProminence(.increased)
+	}
+
+	@ViewBuilder private var pendingTodaySection: some View {
+		let pendings = vm.pendingTasks.filter { $0.dueDate.isWithinToday }
+
+		if pendings.isEmpty == false {
+			Section {
+				ForEach(pendings) { task in
+					NavigationLink(value: task) {
+						HomeListCell(task: task)
+					}
+					.if(isPreviewEnabled) { view in
+						view.if(ContextPreviewType(rawValue: previewType) == .cell) { view in
+							view.contextMenu { makeContextMenu(for: task) }
+						} elseCase: { view in
+							view.contextMenu { makeContextMenu(for: task) } preview: { DetailView(vm: .init(for: task)) }
+						}
+					}
+				}
+			} header: {
+				Text("pending.sections.dueToday").bold().foregroundColor(.orange)
+			}
+		}
+	}
+
+	@ViewBuilder private var pendingFromTomorrowSection: some View {
+		let pendings = vm.pendingTasks.filter { $0.dueDate.isFromTomorrow }
+
+		if pendings.isEmpty == false {
+			Section {
+				ForEach(pendings) { task in
+					NavigationLink(value: task) {
+						HomeListCell(task: task)
+					}
+					.if(isPreviewEnabled) { view in
+						view.if(ContextPreviewType(rawValue: previewType) == .cell) { view in
+							view.contextMenu { makeContextMenu(for: task) }
+						} elseCase: { view in
+							view.contextMenu { makeContextMenu(for: task) } preview: { DetailView(vm: .init(for: task)) }
+						}
+					}
+				}
+			} header: {
+				Text("pending.sections.upcoming").bold().foregroundColor(.mint)
+			}
+		}
 	}
 
 	@ViewBuilder
