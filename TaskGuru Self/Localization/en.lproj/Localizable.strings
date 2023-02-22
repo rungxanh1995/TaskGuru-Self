@@ -187,6 +187,7 @@
 "settings.advanced.resetUserData.cancel" = "Cancel";
 
 /* App icons */
+"appIcon.dew" = "Dew";
 "appIcon.spring" = "Spring";
 "appIcon.summer" = "Summer";
 "appIcon.fall" = "Fall";

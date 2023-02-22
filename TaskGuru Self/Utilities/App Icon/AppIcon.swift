@@ -9,13 +9,14 @@ import SwiftUI
 
 enum AppIconType: Int, Identifiable, CaseIterable {
 	var id: Self { self }
-	case spring, summer, fall, winter, sky, midnight, berry
+	case dew, spring, summer, fall, winter, sky, midnight, berry
 }
 
 extension AppIconType {
 	/// Used as reference to localizable string key
 	var title: String {
 		switch self {
+		case .dew: return "appIcon.dew"
 		case .spring: return "appIcon.spring"
 		case .summer: return "appIcon.summer"
 		case .fall: return "appIcon.fall"
@@ -29,6 +30,7 @@ extension AppIconType {
 	/// Used as direct reference to icon image name in Assets catalog
 	var assetName: String {
 		switch self {
+		case .dew: return "Dew"
 		case .spring: return "Spring"
 		case .summer: return "Summer"
 		case .fall: return "Fall"
@@ -42,6 +44,8 @@ extension AppIconType {
 	/// Used to display as accompanying icon image
 	var iconImage: Image {
 		switch self {
+		case .dew:
+			return Image(uiImage: .init(named: AppIconType.dew.assetName)!)
 		case .spring:
 			return Image(uiImage: .init(named: AppIconType.spring.assetName)!)
 		case .summer:

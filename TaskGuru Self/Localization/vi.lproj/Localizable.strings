@@ -187,6 +187,7 @@
 "settings.advanced.resetUserData.cancel" = "Huỷ";
 
 /* App icons */
+"appIcon.dew" = "Sương sớm";
 "appIcon.spring" = "Mùa xuân";
 "appIcon.summer" = "Mùa hè";
 "appIcon.fall" = "Mùa thu";

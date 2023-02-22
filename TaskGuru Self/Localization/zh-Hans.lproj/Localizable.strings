@@ -187,6 +187,7 @@
 "settings.advanced.resetUserData.cancel" = "取消";
 
 /* App icons */
+"appIcon.dew" = "露珠";
 "appIcon.spring" = "春天";
 "appIcon.summer" = "夏天";
 "appIcon.fall" = "秋天";
