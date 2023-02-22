@@ -29,7 +29,7 @@ extension AccentColorType {
 		}
 	}
 
-	var inbuiltColor: Color {
+	var associatedColor: Color {
 		switch self {
 		case .blue: return .blue
 		case .teal: return .teal

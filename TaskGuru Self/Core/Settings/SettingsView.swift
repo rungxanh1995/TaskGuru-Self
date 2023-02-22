@@ -135,7 +135,7 @@ private extension SettingsView {
 					Text(LocalizedStringKey(accent.title))
 				} icon: {
 					SFSymbols.circleFilled
-						.foregroundColor(accent.inbuiltColor)
+						.foregroundColor(accent.associatedColor)
 				}
 				.labelStyle(.titleAndIcon)
 				.tag(accent.rawValue)
