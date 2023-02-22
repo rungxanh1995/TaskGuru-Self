@@ -60,7 +60,8 @@ extension HomeListCell {
 			Text(task.shortDueDate)
 		}
 		.font(.system(.body))
-		.foregroundColor(task.colorForDueDate())
+		.strikethrough(task.isNotDone ? false : true)
+		.foregroundColor(task.isNotDone ? task.colorForDueDate() : .secondary)
 	}
 
 	private var taskStatus: some View {

@@ -96,10 +96,14 @@ private extension SettingsView {
 	}
 
 	private var appIcon: some View {
-		Picker("settings.general.appIcon", selection: $activeAppIcon) {
-			ForEach(vm.appIconNames, id: \.self) { iconName in
-				Text(iconName).tag(iconName)
+		VStack(alignment: .leading) {
+			Text("settings.general.appIcon")
+			Picker("settings.general.appIcon", selection: $activeAppIcon) {
+				ForEach(vm.appIconNames, id: \.self) { iconName in
+					Text(iconName).tag(iconName)
+				}
 			}
+			.pickerStyle(.segmented)
 		}
 	}
 
@@ -301,11 +305,11 @@ private extension SettingsView {
 				Spacer()
 			}
 
-			Image("app-logo")
-				.resizable()
-				.scaledToFit()
-				.frame(width: 44, height: 44)
-				.clipShape(RoundedRectangle(cornerRadius: 10))
+			if let appIcon = UIImage(named: activeAppIcon) {
+				Image(uiImage: appIcon).asFootnoteIcon()
+			} else {
+				Image("app-logo").asFootnoteIcon()
+			}
 		}
 	}
 }
