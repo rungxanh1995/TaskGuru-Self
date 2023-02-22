@@ -201,11 +201,13 @@
 "accentColor.teal" = "Teal";
 "accentColor.indigo" = "Indigo";
 "accentColor.pink" = "Pink";
+"accentColor.berry" = "Berry";
 "accentColor.red" = "Red";
 "accentColor.orange" = "Orange";
 "accentColor.yellow" = "Yellow";
 "accentColor.green" = "Green";
 "accentColor.mint" = "Mint";
+"accentColor.clover" = "Clover";
 
 /* Font designs */
 "fontDesign.system" = "System";

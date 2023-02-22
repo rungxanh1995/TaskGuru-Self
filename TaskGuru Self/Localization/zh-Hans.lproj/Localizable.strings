@@ -201,11 +201,13 @@
 "accentColor.teal" = "蓝绿色";
 "accentColor.indigo" = "靛蓝色";
 "accentColor.pink" = "粉色";
+"accentColor.cherry" = "浆果色";
 "accentColor.red" = "红色";
 "accentColor.orange" = "橙色";
 "accentColor.yellow" = "黄色";
 "accentColor.green" = "绿色";
 "accentColor.mint" = "薄荷";
+"accentColor.clover" = "三叶草";
 
 /* Font designs */
 "fontDesign.system" = "系统";

@@ -194,18 +194,20 @@
 "appIcon.winter" = "Mùa đông";
 "appIcon.sky" = "Bầu trời";
 "appIcon.midnight" = "Nửa đêm";
-"appIcon.berry" = "Quả mọng";
+"appIcon.berry" = "Anh đào";
 
 /* Accent colors */
 "accentColor.blue" = "Xanh lam";
 "accentColor.teal" = "Mòng két";
 "accentColor.indigo" = "Chàm";
 "accentColor.pink" = "Hồng";
+"accentColor.berry" = "Anh đào";
 "accentColor.red" = "Đỏ";
 "accentColor.orange" = "Cam";
 "accentColor.yellow" = "Vàng";
 "accentColor.green" = "Xanh lá";
 "accentColor.mint" = "Bạc hà";
+"accentColor.clover" = "Cỏ ba lá";
 
 /* Font designs */
 "fontDesign.system" = "Hệ thống";
