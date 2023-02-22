@@ -12,8 +12,6 @@ extension SettingsView {
 		@Published var isConfirmingResetSettings: Bool = false
 		@Published var isConfirmingResetUserData: Bool = false
 
-		let appIconNames: [String] = ["Spring", "Summer", "Fall", "Winter"]
-
 		var appVersionNumber: String {
 			Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? ""
 		}
