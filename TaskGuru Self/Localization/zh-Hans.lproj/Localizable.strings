@@ -182,6 +182,15 @@
 "settings.advanced.resetUserData.delete" = "删除";
 "settings.advanced.resetUserData.cancel" = "取消";
 
+/* App icons */
+"appIcon.spring" = "春天";
+"appIcon.summer" = "夏天";
+"appIcon.fall" = "秋天";
+"appIcon.winter" = "冬天";
+"appIcon.sky" = "天空";
+"appIcon.midnight" = "半夜";
+"appIcon.berry" = "浆果";
+
 /* Accent colors */
 "accentColor.blue" = "蓝色";
 "accentColor.teal" = "蓝绿色";

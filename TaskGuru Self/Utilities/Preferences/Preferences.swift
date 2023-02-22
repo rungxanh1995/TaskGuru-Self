@@ -60,5 +60,5 @@ final class Preferences {
 	var contextPreviewType: Int = ContextPreviewType.allCases.first!.rawValue
 
 	@UserDefault(UserDefaultsKey.appIcon)
-	var activeAppIcon: String = "AppIcon"
+	var activeAppIcon: Int = AppIconType.allCases.first!.rawValue
 }

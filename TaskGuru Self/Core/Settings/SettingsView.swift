@@ -72,11 +72,19 @@ struct SettingsView: View {
 				}
 				Button("settings.advanced.resetUserData.cancel", role: .cancel) { }
 			}
-			.onChange(of: activeAppIcon) { iconName in
-				UIApplication.shared.setAlternateIconName(iconName)
+			.onChange(of: activeAppIcon) { iconValue in
+				updateAppIcon(from: iconValue)
 			}
 		}
 		.navigationViewStyle(.stack)
+	}
+}
+
+private extension SettingsView {
+	private func updateAppIcon(from iconValue: Int) {
+		let iconName = AppIconType(rawValue: iconValue)?.assetName
+		UIApplication.shared.setAlternateIconName(iconName)
+		haptic(.success)
 	}
 }
 
@@ -85,9 +93,9 @@ private extension SettingsView {
 		Section {
 			onboarding
 			appIcon
+			appAccentColor
 			portraitLock
 			haptics
-			appAccentColor
 			fontDesignStyle
 			appTheme
 		} header: {
@@ -96,15 +104,18 @@ private extension SettingsView {
 	}
 
 	private var appIcon: some View {
-		VStack(alignment: .leading) {
-			Text("settings.general.appIcon")
-			Picker("settings.general.appIcon", selection: $activeAppIcon) {
-				ForEach(vm.appIconNames, id: \.self) { iconName in
-					Text(iconName).tag(iconName)
+		Picker("settings.general.appIcon", selection: $activeAppIcon) {
+			ForEach(AppIconType.allCases) { (appIcon) in
+				Label {
+					Text(LocalizedStringKey(appIcon.title))
+				} icon: {
+					appIcon.iconImage.asFootnoteIcon()
 				}
+				.labelStyle(.titleAndIcon)
+				.tag(appIcon.rawValue)
 			}
-			.pickerStyle(.segmented)
 		}
+		.pickerStyle(.navigationLink)
 	}
 
 	private var portraitLock: some View {
@@ -305,8 +316,8 @@ private extension SettingsView {
 				Spacer()
 			}
 
-			if let appIcon = UIImage(named: activeAppIcon) {
-				Image(uiImage: appIcon).asFootnoteIcon()
+			if let icon = AppIconType(rawValue: activeAppIcon)?.iconImage {
+				icon.asFootnoteIcon()
 			} else {
 				Image("app-logo").asFootnoteIcon()
 			}
