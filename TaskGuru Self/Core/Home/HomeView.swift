@@ -178,7 +178,6 @@ extension HomeView {
 		Button { selectedTask = task } label: {
 			Label { Text("contextMenu.task.edit") } icon: { SFSymbols.pencilSquare }
 		}
-		Divider()
 
 		Menu {
 			Button(role: .cancel) {} label: {
@@ -197,7 +196,7 @@ extension HomeView {
 	private func markAsButtons(for task: TaskItem) -> some View {
 		switch task.status {
 		case .new:
-			return Group {
+			return Section {
 				Button {
 					withAnimation { vm.markAsInProgress(task) }
 				} label: {
@@ -209,9 +208,11 @@ extension HomeView {
 				} label: {
 					Label { Text("contextMenu.task.markDone") } icon: { SFSymbols.checkmark }
 				}
+			} header: {
+				Text("contextMenu.task.markAs")
 			}
 		case .inProgress:
-			return Group {
+			return Section {
 				Button {
 					withAnimation { vm.markAsNew(task) }
 				} label: {
@@ -223,9 +224,11 @@ extension HomeView {
 				} label: {
 					Label { Text("contextMenu.task.markDone") } icon: { SFSymbols.checkmark }
 				}
+			} header: {
+				Text("contextMenu.task.markAs")
 			}
 		case .done:
-			return Group {
+			return Section {
 				Button {
 					withAnimation { vm.markAsNew(task) }
 				} label: {
@@ -236,6 +239,8 @@ extension HomeView {
 				} label: {
 					Label { Text("contextMenu.task.markInProgress") } icon: { SFSymbols.circleArrows }
 				}
+			} header: {
+				Text("contextMenu.task.markAs")
 			}
 		}
 	}

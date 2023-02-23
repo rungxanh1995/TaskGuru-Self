@@ -153,7 +153,6 @@ extension PendingView {
 		Button { selectedTask = task } label: {
 			Label { Text("contextMenu.task.edit") } icon: { SFSymbols.pencilSquare }
 		}
-		Divider()
 
 		Menu {
 			Button(role: .cancel) {} label: {
@@ -173,7 +172,7 @@ extension PendingView {
 	private func markAsButtons(for task: TaskItem) -> some View {
 		switch task.status {
 		case .new:
-			Group {
+			Section {
 				Button {
 					withAnimation { vm.markAsInProgress(task) }
 				} label: {
@@ -185,9 +184,11 @@ extension PendingView {
 				} label: {
 					Label { Text("contextMenu.task.markDone") } icon: { SFSymbols.checkmark }
 				}
+			} header: {
+				Text("contextMenu.task.markAs")
 			}
 		case .inProgress:
-			Group {
+			Section {
 				Button {
 					withAnimation { vm.markAsNew(task) }
 				} label: {
@@ -199,6 +200,8 @@ extension PendingView {
 				} label: {
 					Label { Text("contextMenu.task.markDone") } icon: { SFSymbols.checkmark }
 				}
+			} header: {
+				Text("contextMenu.task.markAs")
 			}
 		case .done: EmptyView()	// shouldn't happen in Pending view
 		}
