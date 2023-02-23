@@ -20,7 +20,7 @@ struct SettingsIcon: View {
 		}
 		.background(in: RoundedRectangle(cornerRadius: 3).inset(by: -4))
 		.backgroundStyle(bgColor)
-		.foregroundStyle(.white.shadow(.drop(radius: 1, y: 1.5)))
+		.foregroundStyle(.white.shadow(.drop(radius: 1, y: 0.5)))
 		.padding(4)
 	}
 }

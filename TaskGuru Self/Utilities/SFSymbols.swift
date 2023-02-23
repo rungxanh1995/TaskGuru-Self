@@ -38,7 +38,7 @@ enum SFSymbols {
 	static let bubbleSparkles: Image = .init(systemName: "bubbles.and.sparkles.fill")
 	static let handsSparklesFilled: Image = .init(systemName: "hands.sparkles.fill")
 	static let personFolder: Image = .init(systemName: "folder.badge.person.crop")
-	static let personWave: Image = .init(systemName: "figure.wave")
+	static let handWave: Image = .init(systemName: "hand.wave.fill")
 	static let palette: Image = .init(systemName: "paintpalette.fill")
 	static let waveform: Image = .init(systemName: "waveform.path.ecg")
 	static let lockRotation: Image = .init(systemName: "lock.rotation")

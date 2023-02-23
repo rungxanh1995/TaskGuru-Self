@@ -156,7 +156,7 @@ private extension SettingsView {
 
 	private var onboarding: some View {
 		HStack {
-			SettingsIcon(icon: SFSymbols.personWave, bgColor: .orange)
+			SettingsIcon(icon: SFSymbols.handWave, bgColor: .blue)
 			Button {
 				isShowingOnboarding.toggle()
 			} label: {
