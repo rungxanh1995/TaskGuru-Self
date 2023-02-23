@@ -109,6 +109,7 @@
 		2CC25BC2298459BB006972DF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2CC25BCC29845D9A006972DF /* AddTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTask.swift; sourceTree = "<group>"; };
 		2CC25BCF298462FF006972DF /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		2CC55CEF29A70E9D001D64F3 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		2CCB0B442985AAFA00D489DD /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		2CCB0B462985B2E700D489DD /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		2CCB0B482985B5A400D489DD /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
@@ -509,6 +510,7 @@
 				it,
 				"zh-Hans",
 				az,
+				"pt-BR",
 			);
 			mainGroup = 2CC25BAF298459BA006972DF;
 			packageReferences = (
@@ -632,6 +634,7 @@
 				2C9B44F1299D177F00EE5232 /* uk */,
 				2C9B44F2299D178000EE5232 /* vi */,
 				2C9B44F3299D183000EE5232 /* az */,
+				2CC55CEF29A70E9D001D64F3 /* pt-BR */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
