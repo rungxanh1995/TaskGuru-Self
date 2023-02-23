@@ -72,19 +72,8 @@ struct SettingsView: View {
 				}
 				Button("settings.advanced.resetUserData.cancel", role: .cancel) { }
 			}
-			.onChange(of: activeAppIcon) { iconValue in
-				updateAppIcon(from: iconValue)
-			}
 		}
 		.navigationViewStyle(.stack)
-	}
-}
-
-private extension SettingsView {
-	private func updateAppIcon(from iconValue: Int) {
-		let iconName = AppIconType(rawValue: iconValue)?.assetName
-		UIApplication.shared.setAlternateIconName(iconName)
-		haptic(.success)
 	}
 }
 
@@ -104,77 +93,82 @@ private extension SettingsView {
 	}
 
 	private var appIcon: some View {
-		Picker("settings.general.appIcon", selection: $activeAppIcon) {
-			ForEach(AppIconType.allCases) { (appIcon) in
-				Label {
-					Text(LocalizedStringKey(appIcon.title))
-				} icon: {
-					appIcon.iconImage.asFootnoteIcon()
-				}
-				.labelStyle(.titleAndIcon)
-				.tag(appIcon.rawValue)
+		HStack {
+			SettingsIcon(icon: SFSymbols.checkmarkFilled, bgColor: .teal)
+			NavigationLink {
+				AppIconSettings()
+			} label: {
+				Text("settings.general.appIcon")
 			}
 		}
-		.pickerStyle(.navigationLink)
 	}
 
 	private var portraitLock: some View {
-		Toggle("settings.general.portraitLock", isOn: $isLockedInPortrait)
-			.tint(.accentColor)
+		HStack {
+			SettingsIcon(icon: SFSymbols.lockRotation, bgColor: .indigo)
+			Toggle("settings.general.portraitLock", isOn: $isLockedInPortrait)
+				.tint(.accentColor)
+		}
 	}
 
 	private var haptics: some View {
-		Toggle("settings.general.reduceHaptics", isOn: $isHapticsReduced)
-			.tint(.accentColor)
+		HStack {
+			SettingsIcon(icon: SFSymbols.waveform, bgColor: .pink)
+			Toggle("settings.general.reduceHaptics", isOn: $isHapticsReduced)
+				.tint(.accentColor)
+		}
 	}
 
 	private var appAccentColor: some View {
-		Picker("settings.general.accentColor", selection: $accentColor) {
-			ForEach(AccentColorType.allCases) { (accent) in
-				Label {
-					Text(LocalizedStringKey(accent.title))
-				} icon: {
-					SFSymbols.circleFilled
-						.foregroundColor(accent.associatedColor)
-				}
-				.labelStyle(.titleAndIcon)
-				.tag(accent.rawValue)
+		HStack {
+			SettingsIcon(icon: SFSymbols.palette, bgColor: .defaultAccentColor)
+			NavigationLink {
+				AccentColorSettings()
+			} label: {
+				Text("settings.general.accentColor")
 			}
 		}
-		.pickerStyle(.navigationLink)
 	}
 
 	private var fontDesignStyle: some View {
-		Picker("settings.general.fontStyle", selection: $fontDesign) {
-			ForEach(FontDesignType.allCases) { (design) in
-				Text(LocalizedStringKey(design.title))
-					.tag(design.rawValue)
+		HStack {
+			SettingsIcon(icon: SFSymbols.textFormat, bgColor: .orange)
+			Picker("settings.general.fontStyle", selection: $fontDesign) {
+				ForEach(FontDesignType.allCases) { (design) in
+					Text(LocalizedStringKey(design.title))
+						.tag(design.rawValue)
+				}
 			}
 		}
 	}
 
 	private var appTheme: some View {
-		Picker("settings.general.colorTheme", selection: $systemTheme) {
-			ForEach(SchemeType.allCases) { (theme) in
-				Text(LocalizedStringKey(theme.title))
-					.tag(theme.rawValue)
+		HStack {
+			SettingsIcon(icon: SFSymbols.appearance, bgColor: .blue)
+			Picker("settings.general.colorTheme", selection: $systemTheme) {
+				ForEach(SchemeType.allCases) { (theme) in
+					Text(LocalizedStringKey(theme.title))
+						.tag(theme.rawValue)
+				}
 			}
 		}
 	}
 
 	private var onboarding: some View {
-		Button {
-			isShowingOnboarding.toggle()
-		} label: {
-			Text("settings.general.onboarding")
+		HStack {
+			SettingsIcon(icon: SFSymbols.personWave, bgColor: .orange)
+			Button {
+				isShowingOnboarding.toggle()
+			} label: {
+				Text("settings.general.onboarding")
+			}
 		}
 	}
 
 	private var badgeSection: some View {
 		Section {
-			appBadge
-			appBadgeType
 			tabBadge
+			appBadge
 		} header: {
 			Label { Text("settings.sections.badge") } icon: { SFSymbols.appBadge }
 		} footer: {
@@ -182,24 +176,29 @@ private extension SettingsView {
 		}
 	}
 
-	private var appBadge: some View {
-		Toggle("settings.badge.appIcon", isOn: $isShowingAppBadge)
-			.tint(.accentColor)
-	}
-
-	private var appBadgeType: some View {
-		Picker("settings.badge.appIconType", selection: $badgeType) {
-			ForEach(BadgeType.allCases) { (type) in
-				Text(LocalizedStringKey(type.title))
-					.tag(type.rawValue)
-			}
-		}
-		.disabled(!isShowingAppBadge)
-	}
-
 	private var tabBadge: some View {
-		Toggle("settings.badge.tab", isOn: $isShowingTabBadge)
-			.tint(.accentColor)
+		HStack {
+			SettingsIcon(icon: SFSymbols.clockBadge, bgColor: .pink)
+			Toggle("settings.badge.tab", isOn: $isShowingTabBadge)
+				.tint(.accentColor)
+		}
+	}
+
+	private var appBadge: some View {
+		VStack {
+			HStack {
+				SettingsIcon(icon: SFSymbols.appBadge, bgColor: .yellow)
+				Toggle("settings.badge.appIcon", isOn: $isShowingAppBadge)
+					.tint(.accentColor)
+			}
+			Picker("settings.badge.appIconType", selection: $badgeType) {
+				ForEach(BadgeType.allCases) { (type) in
+					Text(LocalizedStringKey(type.title))
+						.tag(type.rawValue)
+				}
+			}
+			.disabled(!isShowingAppBadge)
+		}
 	}
 
 	private var miscSection: some View {
@@ -207,7 +206,6 @@ private extension SettingsView {
 			tabNames
 			confetti
 			preview
-			previewType.listRowSeparator(.hidden)
 		} header: {
 			Label { Text("settings.sections.misc") } icon: { SFSymbols.bubbleSparkles }
 		} footer: {
@@ -216,29 +214,37 @@ private extension SettingsView {
 	}
 
 	private var tabNames: some View {
-		Toggle("settings.misc.tabNames", isOn: $isTabNamesEnabled)
-			.tint(.accentColor)
+		HStack {
+			SettingsIcon(icon: SFSymbols.dock, bgColor: .blue)
+			Toggle("settings.misc.tabNames", isOn: $isTabNamesEnabled)
+				.tint(.accentColor)
+		}
 	}
 
 	private var confetti: some View {
-		Toggle("settings.misc.confetti", isOn: $isConfettiEnabled)
-			.tint(.accentColor)
+		HStack {
+			SettingsIcon(icon: SFSymbols.sparkles, bgColor: .pink)
+			Toggle("settings.misc.confetti", isOn: $isConfettiEnabled)
+				.tint(.accentColor)
+		}
 	}
 
 	private var preview: some View {
-		Toggle("settings.misc.preview", isOn: $isPreviewEnabled)
-			.tint(.accentColor)
-	}
-
-	private var previewType: some View {
-		Picker("settings.misc.previewtype.title", selection: $contextPreviewType) {
-			ForEach(ContextPreviewType.allCases) { (type) in
-				Text(LocalizedStringKey(type.title))
-					.tag(type.rawValue)
+		VStack {
+			HStack {
+				SettingsIcon(icon: SFSymbols.handTap, bgColor: .indigo)
+				Toggle("settings.misc.preview", isOn: $isPreviewEnabled)
+					.tint(.accentColor)
 			}
+			Picker("settings.misc.previewtype.title", selection: $contextPreviewType) {
+				ForEach(ContextPreviewType.allCases) { (type) in
+					Text(LocalizedStringKey(type.title))
+						.tag(type.rawValue)
+				}
+			}
+			.pickerStyle(.segmented)
+			.disabled(!isPreviewEnabled)
 		}
-		.pickerStyle(.segmented)
-		.disabled(!isPreviewEnabled)
 	}
 
 	private var advancedSection: some View {
@@ -253,25 +259,23 @@ private extension SettingsView {
 	}
 
 	private var resetAppSettingsButton: some View {
-		Button(role: .destructive) {
-			vm.isConfirmingResetSettings.toggle()
-		} label: {
-			Label {
+		HStack {
+			SettingsIcon(icon: SFSymbols.gearFilled, bgColor: .red)
+			Button(role: .destructive) {
+				vm.isConfirmingResetSettings.toggle()
+			} label: {
 				Text("settings.advanced.resetSettings")
-			} icon: {
-				SFSymbols.gear.foregroundColor(.red)
 			}
 		}
 	}
 
 	private var resetAppDataButton: some View {
-		Button(role: .destructive) {
-			vm.isConfirmingResetUserData.toggle()
-		} label: {
-			Label {
+		HStack {
+			SettingsIcon(icon: SFSymbols.personFolder, bgColor: .red)
+			Button(role: .destructive) {
+				vm.isConfirmingResetUserData.toggle()
+			} label: {
 				Text("settings.advanced.resetUserData")
-			} icon: {
-				SFSymbols.personFolder.foregroundColor(.red)
 			}
 		}
 	}

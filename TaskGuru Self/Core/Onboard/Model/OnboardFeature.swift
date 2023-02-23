@@ -21,7 +21,7 @@ extension OnboardFeature {
 			title: "onboarding.features.home.title",
 			description: "onboarding.features.home.description"),
 		OnboardFeature(
-			icon: SFSymbols.clockBadge,
+			icon: SFSymbols.clockBadge.symbolRenderingMode(.multicolor),
 			title: "onboarding.features.pendingTab.title",
 			description: "onboarding.features.pendingTab.description"),
 		OnboardFeature(
