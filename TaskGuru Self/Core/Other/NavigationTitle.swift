@@ -31,8 +31,7 @@ struct NavigationTitle: View {
 		Text(text)
 			.font(.system(.title3))
 			.fontWeight(.bold)
-			.foregroundStyle(Color.defaultAccentColor
-				.shadow(.drop(color: .defaultAccentColor.opacity(0.25), radius: 3, y: 1.5)))
+			.foregroundStyle(Color.defaultAccentColor)
 	}
 }
 
