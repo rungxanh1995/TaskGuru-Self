@@ -11,22 +11,24 @@ struct AccentColorSettings: View {
 	@Preference(\.accentColor) private var accentColor
 
 	var body: some View {
-		Form {
-			Picker("settings.general.accentColor", selection: $accentColor) {
-				ForEach(AccentColorType.allCases) { (accent) in
-					Label {
-						Text(LocalizedStringKey(accent.title))
-					} icon: {
-						SFSymbols.circleFilled
-							.foregroundColor(accent.associatedColor)
+		VStack {
+			Form {
+				Picker("settings.general.accentColor", selection: $accentColor) {
+					ForEach(AccentColorType.allCases) { (accent) in
+						Label {
+							Text(LocalizedStringKey(accent.title))
+						} icon: {
+							SFSymbols.circleFilled
+								.foregroundColor(accent.associatedColor)
+						}
+						.labelStyle(.titleAndIcon)
+						.tag(accent.rawValue)
 					}
-					.labelStyle(.titleAndIcon)
-					.tag(accent.rawValue)
 				}
+				.labelsHidden()
+				.pickerStyle(.inline)
 			}
-			.labelsHidden()
-			.pickerStyle(.inline)
-			.navigationTitle("settings.general.appIcon")
+			.navigationTitle("settings.general.accentColor")
 			.navigationBarTitleDisplayMode(.inline)
 		}
 	}

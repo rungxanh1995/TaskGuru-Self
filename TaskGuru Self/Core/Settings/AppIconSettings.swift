@@ -11,19 +11,21 @@ struct AppIconSettings: View {
 	@Preference(\.activeAppIcon) private var activeAppIcon
 
 	var body: some View {
-		Form {
-			Picker("settings.general.appIcon", selection: $activeAppIcon) {
-				ForEach(AppIconType.allCases) { (appIcon) in
-					Label {
-						Text(LocalizedStringKey(appIcon.title))
-					} icon: {
-						appIcon.iconImage.asFootnoteIcon()
+		VStack {
+			Form {
+				Picker("settings.general.appIcon", selection: $activeAppIcon) {
+					ForEach(AppIconType.allCases) { (appIcon) in
+						Label {
+							Text(LocalizedStringKey(appIcon.title))
+						} icon: {
+							appIcon.iconImage.asFootnoteIcon()
+						}
+						.tag(appIcon.rawValue)
 					}
-					.tag(appIcon.rawValue)
 				}
+				.labelsHidden()
+				.pickerStyle(.inline)
 			}
-			.labelsHidden()
-			.pickerStyle(.inline)
 			.navigationTitle("settings.general.appIcon")
 			.navigationBarTitleDisplayMode(.inline)
 			.onChange(of: activeAppIcon) { iconValue in
