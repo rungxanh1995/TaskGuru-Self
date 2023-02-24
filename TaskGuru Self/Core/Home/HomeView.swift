@@ -41,8 +41,8 @@ struct HomeView: View {
 					}
 					.navigationBarTitleDisplayMode(.inline)
 					.toolbar {
-						ToolbarItem(placement: .navigationBarLeading) {
-							GradientNavigationTitle(text: "home.nav.title")
+						ToolbarItem(placement: .principal) {
+							NavigationTitle(text: "home.nav.title")
 						}
 						ToolbarItem(placement: .primaryAction) {
 							addTaskButton

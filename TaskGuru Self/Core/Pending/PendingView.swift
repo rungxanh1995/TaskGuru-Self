@@ -42,8 +42,8 @@ struct PendingView: View {
 			}
 			.navigationBarTitleDisplayMode(.inline)
 			.toolbar {
-				ToolbarItem(placement: .navigationBarLeading) {
-					GradientNavigationTitle(text: "pending.nav.title")
+				ToolbarItem(placement: .principal) {
+					NavigationTitle(text: "pending.nav.title")
 				}
 				ToolbarItem(placement: .primaryAction) {
 					addTaskButton
@@ -66,7 +66,7 @@ extension PendingView {
 			makeCheerfulDecorativeImage()
 
 			Text("pending.info.listEmty")
-				.font(.footnote)
+				.font(.callout)
 				.foregroundColor(.secondary)
 		}
 	}
