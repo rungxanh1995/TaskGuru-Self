@@ -92,13 +92,18 @@ private extension SettingsView {
 		}
 	}
 
-	private var appIcon: some View {
+	@ViewBuilder private var appIcon: some View {
+		let currentIcon = AppIconType(rawValue: activeAppIcon)
+
 		HStack {
 			SettingsIcon(icon: SFSymbols.checkmarkFilled, bgColor: .teal)
 			NavigationLink {
 				AppIconSettings()
 			} label: {
 				Text("settings.general.appIcon")
+					.ifLet(currentIcon?.title, content: { text, iconName in
+						text.badge(LocalizedStringKey(iconName))
+					})
 			}
 		}
 	}
@@ -119,13 +124,17 @@ private extension SettingsView {
 		}
 	}
 
-	private var appAccentColor: some View {
+	@ViewBuilder private var appAccentColor: some View {
+		let currentAccentColor = AccentColorType(rawValue: accentColor)
 		HStack {
 			SettingsIcon(icon: SFSymbols.palette, bgColor: .defaultAccentColor)
 			NavigationLink {
 				AccentColorSettings()
 			} label: {
 				Text("settings.general.accentColor")
+					.ifLet(currentAccentColor?.title) { text, colorName in
+						text.badge(LocalizedStringKey(colorName))
+					}
 			}
 		}
 	}
