@@ -19,6 +19,7 @@ struct DetailGridCell: View {
 				.multilineTextAlignment(.center)
 				.padding()
 				.foregroundColor(titleColor)
+				.textSelection(.enabled)
 
 			Spacer()
 
