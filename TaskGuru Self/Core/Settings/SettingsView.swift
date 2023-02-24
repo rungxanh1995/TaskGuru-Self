@@ -127,7 +127,7 @@ private extension SettingsView {
 	@ViewBuilder private var appAccentColor: some View {
 		let currentAccentColor = AccentColorType(rawValue: accentColor)
 		HStack {
-			SettingsIcon(icon: SFSymbols.palette, bgColor: .defaultAccentColor)
+			SettingsIcon(icon: SFSymbols.paintbrush, bgColor: .defaultAccentColor)
 			NavigationLink {
 				AccentColorSettings()
 			} label: {
@@ -196,7 +196,7 @@ private extension SettingsView {
 	private var appBadge: some View {
 		VStack {
 			HStack {
-				SettingsIcon(icon: SFSymbols.appBadge, bgColor: .yellow)
+				SettingsIcon(icon: SFSymbols.appBadge, bgColor: .teal)
 				Toggle("settings.badge.appIcon", isOn: $isShowingAppBadge)
 					.tint(.accentColor)
 			}

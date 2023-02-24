@@ -20,14 +20,14 @@ struct SettingsIcon: View {
 		}
 		.background(in: RoundedRectangle(cornerRadius: 3).inset(by: -4))
 		.backgroundStyle(bgColor)
-		.foregroundStyle(.white.shadow(.drop(radius: 1, y: 0.5)))
+		.foregroundStyle(.white)
 		.padding(4)
 	}
 }
 
 struct SettingsIcon_Previews: PreviewProvider {
 	static var previews: some View {
-		SettingsIcon(icon: SFSymbols.palette, bgColor: .pink)
+		SettingsIcon(icon: SFSymbols.paintbrush, bgColor: .pink)
 			.previewLayout(.sizeThatFits)
 	}
 }
