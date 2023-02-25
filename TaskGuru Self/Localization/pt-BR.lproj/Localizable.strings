@@ -45,6 +45,7 @@
 "contextMenu.task.delete" = "Excluir";
 "contextMenu.cancel" = "Cancelar";
 "contextMenu.ok" = "OK";
+"contextMenu.clearDoneTasks" = "Excluir Tarefas Concluídas";
 
 /* Add Task button in Home & Pending tabs */
 "label.task.add" = "Adicionar Tarefa";
@@ -63,6 +64,8 @@
 "home.info.sectionEmpty" = "Nenhuma tarefa";
 /* All tasks empty sentence */
 "Nothing yet. Tap here or %@ to add more" = "Nada ainda. Toque aqui ou em %@ para adicionar mais";
+/* Confirm dialogs */
+"home.clearDoneTasks.alert" = "Are you sure to clear all tasks that are completed?\nThis action cannot be undone";
 
 
 // MARK: Pending

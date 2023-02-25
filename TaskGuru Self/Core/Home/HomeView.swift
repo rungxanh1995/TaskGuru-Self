@@ -47,6 +47,9 @@ struct HomeView: View {
 						ToolbarItem(placement: .primaryAction) {
 							addTaskButton
 						}
+						ToolbarItem(placement: .secondaryAction) {
+							clearDoneTasksButton
+						}
 					}
 					.searchable(text: $vm.searchText)
 					.sheet(isPresented: $vm.isShowingAddTaskView) {
@@ -54,6 +57,17 @@ struct HomeView: View {
 					}
 					.fullScreenCover(item: $selectedTask) { task in
 						DetailView.EditMode(vm: .init(for: task))
+					}
+					.confirmationDialog(
+						"home.clearDoneTasks.alert",
+						isPresented: $vm.isConfirmingClearDoneTasks,
+						titleVisibility: .visible
+					) {
+						Button("contextMenu.clearDoneTasks", role: .destructive) {
+							vm.clearDoneTasks()
+							haptic(.success)
+						}
+						Button("contextMenu.cancel", role: .cancel) { }
 					}
 				}
 			}
@@ -185,6 +199,7 @@ extension HomeView {
 			}
 			Button(role: .destructive) {
 				withAnimation { vm.delete(task) }
+				haptic(.success)
 			} label: {
 				Label { Text("contextMenu.task.delete") } icon: { SFSymbols.trash }
 			}
@@ -250,6 +265,14 @@ extension HomeView {
 			vm.isShowingAddTaskView.toggle()
 		} label: {
 			Label { Text("label.task.add") } icon: { SFSymbols.plus }
+		}
+	}
+
+	private var clearDoneTasksButton: some View {
+		Button(role: .destructive) {
+			withAnimation { vm.isConfirmingClearDoneTasks.toggle() }
+		} label: {
+			Label { Text("Clear Done Tasks") } icon: { SFSymbols.trash }
 		}
 	}
 }

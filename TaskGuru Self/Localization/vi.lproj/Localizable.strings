@@ -46,6 +46,7 @@
 "contextMenu.task.delete" = "Xoá";
 "contextMenu.cancel" = "Huỷ";
 "contextMenu.ok" = "OK";
+"contextMenu.clearDoneTasks" = "Xoá các tác vụ đã h.thành";
 
 /* Add Task button in Home & Pending tabs */
 "label.task.add" = "Tạo tác vụ";
@@ -64,6 +65,8 @@
 "home.info.sectionEmpty" = "Không có tác vụ nào";
 /* All tasks empty sentence */
 "Nothing yet. Tap here or %@ to add more" = "Chưa có gì cả. Hãy bấm vào đây hoặc %@ để thêm";
+/* Confirm dialogs */
+"home.clearDoneTasks.alert" = "Bạn chắc chắn muốn xoá các tác vụ đã hoàn thành?\nHành động này không thể hoàn tác";
 
 
 /* PENDING */

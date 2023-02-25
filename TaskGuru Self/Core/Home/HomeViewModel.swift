@@ -31,6 +31,7 @@ final class HomeViewModel: ObservableObject {
 
 	@Published var isShowingAddTaskView: Bool = false
 	@Published var isFetchingData: Bool = false
+	@Published var isConfirmingClearDoneTasks: Bool = false
 
 	var noPendingTasksLeft: Bool { searchResults.filter { $0.isNotDone }.isEmpty }
 
@@ -56,7 +57,6 @@ final class HomeViewModel: ObservableObject {
 		storageProvider.context.delete(task)
 		saveAndHandleError()
 		fetchTasks()
-		haptic(.success)
 	}
 
 	private func saveAndHandleError() {
@@ -82,5 +82,11 @@ final class HomeViewModel: ObservableObject {
 		saveAndHandleError()
 		fetchTasks()
 		haptic(.success)
+	}
+
+	func clearDoneTasks() {
+		allTasks.filter { $0.status == .done }.forEach { doneTask in
+			delete(doneTask)
+		}
 	}
 }

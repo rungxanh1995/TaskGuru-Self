@@ -160,6 +160,7 @@ extension PendingView {
 			}
 			Button(role: .destructive) {
 				withAnimation { vm.delete(task) }
+				haptic(.success)
 			} label: {
 				Label { Text("contextMenu.task.delete") } icon: { SFSymbols.trash }
 			}

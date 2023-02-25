@@ -46,6 +46,7 @@
 "contextMenu.task.delete" = "删除";
 "contextMenu.cancel" = "取消";
 "contextMenu.ok" = "OK";
+"contextMenu.clearDoneTasks" = "删除所有已完成任务";
 
 /* Add Task button in Home & Pending tabs */
 "label.task.add" = "添加任务";
@@ -64,6 +65,8 @@
 "home.info.sectionEmpty" = "暂无任务";
 /* All tasks empty sentence */
 "Nothing yet. Tap here or %@ to add more" = "还没有什么。 点击这里或 %@ 添加更多";
+/* Confirm dialogs */
+"home.clearDoneTasks.alert" = "删除所有已完成的任务？\n此操作无法撤销";
 
 
 /* PENDING */

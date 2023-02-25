@@ -46,6 +46,7 @@
 "contextMenu.task.delete" = "Delete";
 "contextMenu.cancel" = "Cancel";
 "contextMenu.ok" = "OK";
+"contextMenu.clearDoneTasks" = "Clear Done Tasks";
 
 /* Add Task button in Home & Pending tabs */
 "label.task.add" = "Add Task";
@@ -64,6 +65,8 @@
 "home.info.sectionEmpty" = "No tasks";
 /* All tasks empty sentence */
 "Nothing yet. Tap here or %@ to add more" = "Nothing yet. Tap here or %@ to add more";
+/* Confirm dialogs */
+"home.clearDoneTasks.alert" = "Are you sure to clear all tasks that are completed?\nThis action cannot be undone";
 
 
 /* PENDING */
