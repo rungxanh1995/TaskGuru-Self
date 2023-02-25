@@ -42,7 +42,11 @@ struct HomeView: View {
 					.navigationBarTitleDisplayMode(.inline)
 					.toolbar {
 						ToolbarItem(placement: .principal) {
-							NavigationTitle(text: "home.nav.title")
+							VStack {
+								NavigationTitle(text: "home.nav.title")
+								Text(Date().formatted(.dateTime.day().month(.abbreviated).year()))
+								.font(.caption2)
+							}
 						}
 						ToolbarItem(placement: .primaryAction) {
 							addTaskButton
