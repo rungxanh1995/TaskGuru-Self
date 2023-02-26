@@ -43,7 +43,7 @@ extension AccentColorType {
 		case .yellow: return .yellow
 		case .green: return .green
 		case .mint: return .mint
-		case .clover: return Color(hex: 0x4597A1)
+		case .clover: return Color(hex: 0x2AA18A)
 		}
 	}
 }
