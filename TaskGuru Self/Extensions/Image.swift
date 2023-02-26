@@ -13,8 +13,8 @@ extension Image {
 		self
 			.resizable()
 			.scaledToFit()
-			.frame(width: 44, height: 44)
-			.clipShape(RoundedRectangle(cornerRadius: 10))
+			.frame(width: 40, height: 40)
+			.clipShape(RoundedRectangle(cornerRadius: 9))
 	}
 
 	/// Frames image as a small icon size for a row in Settings view.
@@ -23,6 +23,6 @@ extension Image {
 			.resizable()
 			.scaledToFit()
 			.frame(width: 28, height: 28)
-			.clipShape(RoundedRectangle(cornerRadius: 10*(28/44)))
+			.clipShape(RoundedRectangle(cornerRadius: 9*(28/40)))
 	}
 }
