@@ -165,6 +165,7 @@
 /* Badge section */
 "settings.badge.appIcon" = "Show App Icon Badge";
 "settings.badge.appIconType" = "App Icon Badge Type";
+"settings.badge.notifSetting" = "Go to Notifications setting";
 "settings.badge.tab" = "Show Tab Badge";
 "settings.badge.footer" = "Icon badge shows a number of tasks on Home screen. Review your Notification settings if no badge shown.";
 

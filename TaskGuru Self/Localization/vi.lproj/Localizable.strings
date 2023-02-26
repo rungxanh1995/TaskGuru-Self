@@ -164,7 +164,8 @@
 
 /* Badge secrion */
 "settings.badge.appIcon" = "Hiện nhãn biểu tượng app";
-"settings.badge.appIconType" = "Nhãn b.tượng app cho tác vụ";
+"settings.badge.appIconType" = "B.tượng app cho các tác vụ";
+"settings.badge.notifSetting" = "Đi đến Cài đặt thông báo";
 "settings.badge.tab" = "Hiện nhãn tab";
 "settings.badge.footer" = "Nhãn biểu tượng hiển thị số tác vụ với đ.kiện đã chọn trên MH Chính. Hãy kiểm tra cài đặt Thông báo nếu bạn không thấy nhãn.";
 

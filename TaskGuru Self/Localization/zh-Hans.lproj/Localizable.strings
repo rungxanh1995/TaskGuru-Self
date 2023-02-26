@@ -165,6 +165,7 @@
 /* Badge section */
 "settings.badge.appIcon" = "显示应用图标的标志";
 "settings.badge.appIconType" = "程序图标徽章类型";
+"settings.badge.notifSetting" = "Go to Notifications setting";
 "settings.badge.tab" = "显示选项卡标记";
 "settings.badge.footer" = "在主屏幕上显示任务的数量。 如果没有显示徽章，请检查你的通知设置。";
 

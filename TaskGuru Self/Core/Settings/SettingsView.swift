@@ -205,6 +205,16 @@ private extension SettingsView {
 				}
 			}
 			.disabled(!isShowingAppBadge)
+
+			/// Guide user to System notification settings to manually allow permission for badge
+			Button {
+				if let url = URL(string: UIApplication.openNotificationSettingsURLString) {
+					Task { await UIApplication.shared.open(url) }
+				}
+			} label: {
+				Text("settings.badge.notifSetting").frame(maxWidth: .infinity)
+			}
+			.buttonStyle(.bordered)
 		}
 	}
 

@@ -164,6 +164,7 @@
 /* Badge section */
 "settings.badge.appIcon" = "Mostrar distintivo do ícone do aplicativo";
 "settings.badge.appIconType" = "Tipo de distintivo do ícone do aplicativo";
+"settings.badge.notifSetting" = "Ir para a configuração de Notificações";
 "settings.badge.tab" = "Mostrar crachá na guia";
 "settings.badge.footer" = "O ícone exibe um número de tarefas na tela inicial. Verifique suas configurações de notificação se o ícone não for exibido.";
 
