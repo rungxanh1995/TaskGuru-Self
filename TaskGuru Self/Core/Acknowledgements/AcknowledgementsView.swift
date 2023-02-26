@@ -41,7 +41,6 @@ extension AcknowledgementsView {
 		Group {
 			Text("settings.ack.devTeam")
 				.font(.title3).bold()
-				.foregroundColor(.defaultAccentColor)
 			Text("Joe Pham")
 			Text("Marco Stevanella")
 			Text("Ostap Sulyk")
@@ -53,7 +52,6 @@ extension AcknowledgementsView {
 		Group {
 			Text("settings.ack.localization")
 				.font(.title3).bold()
-				.foregroundColor(.defaultAccentColor)
 			Text("settings.ack.localization.subtitle")
 				.padding(.bottom)
 
@@ -70,7 +68,6 @@ extension AcknowledgementsView {
 		Group {
 			Text("settings.ack.dependencies")
 				.font(.title3).bold()
-				.foregroundColor(.defaultAccentColor)
 			Link(destination: URL(string: "https://github.com/simibac/ConfettiSwiftUI")!) {
 				Text("ConfettiSwiftUI")
 			}
@@ -82,7 +79,6 @@ extension AcknowledgementsView {
 		Group {
 			Text("settings.ack.license")
 				.font(.title3).bold()
-				.foregroundColor(.defaultAccentColor)
 			Text("settings.ack.license.content")
 		}
 	}
