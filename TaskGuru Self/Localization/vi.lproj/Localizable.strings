@@ -198,12 +198,14 @@
 "appIcon.winter" = "Mùa đông";
 "appIcon.sky" = "Bầu trời";
 "appIcon.midnight" = "Nửa đêm";
+"appIcon.iris" = "Hoa diên vĩ";
 "appIcon.berry" = "Anh đào";
 
 /* Accent colors */
 "accentColor.blue" = "Xanh lam";
 "accentColor.teal" = "Mòng két";
 "accentColor.indigo" = "Chàm";
+"accentColor.purple" = "Tím";
 "accentColor.pink" = "Hồng";
 "accentColor.berry" = "Anh đào";
 "accentColor.red" = "Đỏ";

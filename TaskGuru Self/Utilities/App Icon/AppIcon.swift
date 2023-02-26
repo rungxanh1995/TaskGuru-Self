@@ -9,7 +9,7 @@ import SwiftUI
 
 enum AppIconType: Int, Identifiable, CaseIterable {
 	var id: Self { self }
-	case dew, spring, summer, fall, winter, sky, midnight, berry
+	case dew, spring, summer, fall, winter, sky, midnight, iris, berry
 }
 
 extension AppIconType {
@@ -23,6 +23,7 @@ extension AppIconType {
 		case .winter: return "appIcon.winter"
 		case .sky: return "appIcon.sky"
 		case .midnight: return "appIcon.midnight"
+		case .iris: return "appIcon.iris"
 		case .berry: return "appIcon.berry"
 		}
 	}
@@ -37,6 +38,7 @@ extension AppIconType {
 		case .winter: return "Winter"
 		case .sky: return "Sky"
 		case .midnight: return "Midnight"
+		case .iris: return "Iris"
 		case .berry: return "Berry"
 		}
 	}
@@ -58,6 +60,8 @@ extension AppIconType {
 			return Image(uiImage: .init(named: AppIconType.sky.assetName)!)
 		case .midnight:
 			return Image(uiImage: .init(named: AppIconType.midnight.assetName)!)
+		case .iris:
+			return Image(uiImage: .init(named: AppIconType.iris.assetName)!)
 		case .berry:
 			return Image(uiImage: .init(named: AppIconType.berry.assetName)!)
 		}

@@ -20,6 +20,7 @@ extension Color {
 		case .blue: return .blue
 		case .teal: return .teal
 		case .indigo: return .indigo
+		case .purple: return Color(hex: 0xD32DF6)
 		case .pink: return .pink
 		case .berry: return Color(hex: 0xEF0808)
 		case .red: return .red

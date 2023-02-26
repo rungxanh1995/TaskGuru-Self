@@ -19,6 +19,7 @@ struct AccentColorModifier: ViewModifier {
 		case .blue: return .blue
 		case .teal: return .teal
 		case .indigo: return .indigo
+		case .purple: return Color(hex: systemScheme == .light ? 0xD32DF6 : 0xF454FF)
 		case .pink: return .pink
 		case .berry: return Color(hex: systemScheme == .light ? 0xEF0808 : 0xFF6060)
 		case .red: return .red

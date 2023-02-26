@@ -9,7 +9,7 @@ import SwiftUI
 
 enum AccentColorType: Int, Identifiable, CaseIterable {
 	var id: Self { self }
-	case blue, teal, indigo, pink, berry, red, orange, yellow, green, mint, clover
+	case blue, teal, indigo, purple, pink, berry, red, orange, yellow, green, mint, clover
 }
 
 extension AccentColorType {
@@ -18,6 +18,7 @@ extension AccentColorType {
 		case .blue: return "accentColor.blue"
 		case .teal: return "accentColor.teal"
 		case .indigo: return "accentColor.indigo"
+		case .purple: return "accentColor.purple"
 		case .pink: return "accentColor.pink"
 		case .berry: return "accentColor.berry"
 		case .red: return "accentColor.red"
@@ -34,6 +35,7 @@ extension AccentColorType {
 		case .blue: return .blue
 		case .teal: return .teal
 		case .indigo: return .indigo
+		case .purple: return Color(hex: 0xD32DF6)
 		case .pink: return .pink
 		case .berry: return Color(hex: 0xEF0808)
 		case .red: return .red

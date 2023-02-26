@@ -198,12 +198,14 @@
 "appIcon.winter" = "Winter";
 "appIcon.sky" = "Sky";
 "appIcon.midnight" = "Midnight";
+"appIcon.iris" = "Iris";
 "appIcon.berry" = "Berry";
 
 /* Accent colors */
 "accentColor.blue" = "Blue";
 "accentColor.teal" = "Teal";
 "accentColor.indigo" = "Indigo";
+"accentColor.purple" = "Purple";
 "accentColor.pink" = "Pink";
 "accentColor.berry" = "Berry";
 "accentColor.red" = "Red";

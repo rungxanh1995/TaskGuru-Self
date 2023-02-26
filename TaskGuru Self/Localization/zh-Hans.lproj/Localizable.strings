@@ -198,12 +198,14 @@
 "appIcon.winter" = "冬天";
 "appIcon.sky" = "天空";
 "appIcon.midnight" = "半夜";
+"appIcon.iris" = "鸢尾花";
 "appIcon.berry" = "浆果";
 
 /* Accent colors */
 "accentColor.blue" = "蓝色";
 "accentColor.teal" = "蓝绿色";
 "accentColor.indigo" = "靛蓝色";
+"accentColor.purple" = "Purple";
 "accentColor.pink" = "粉色";
 "accentColor.berry" = "浆果色";
 "accentColor.red" = "红色";
