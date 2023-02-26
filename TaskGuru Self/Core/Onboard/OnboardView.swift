@@ -13,23 +13,23 @@ struct OnboardView: View {
 	let description: LocalizedStringKey
 
 	var body: some View {
-		VStack(alignment: .center, spacing: 12) {
+		HStack(spacing: 16) {
 			icon
-				.resizable()
-				.scaledToFit()
-				.frame(width: 100, height: 100)
+				.asIconSize()
 				.foregroundColor(.defaultAccentColor)
 
-			Text(title)
-				.font(.title)
-				.bold()
-				.multilineTextAlignment(.center)
+			VStack(alignment: .leading) {
+				Text(title)
+					.font(.headline)
+					.bold()
+					.multilineTextAlignment(.leading)
 
-			Text(description)
-				.multilineTextAlignment(.center)
-				.foregroundColor(.secondary)
+				Text(description)
+					.multilineTextAlignment(.leading)
+					.foregroundColor(.secondary)
+			}
 		}
-		.padding(.horizontal, 40)
+		.padding(.horizontal, 12)
 	}
 }
 
