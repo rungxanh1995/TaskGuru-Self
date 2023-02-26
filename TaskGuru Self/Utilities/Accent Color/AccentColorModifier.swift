@@ -27,7 +27,7 @@ struct AccentColorModifier: ViewModifier {
 		case .yellow: return .yellow
 		case .green: return .green
 		case .mint: return .mint
-		case .clover: return Color(hex: systemScheme == .light ? 0x4597A1 : 0x8FFCC6)
+		case .clover: return Color(hex: systemScheme == .light ? 0x4597A1 : 0x60FDC3)
 		}
 	}
 
