@@ -42,7 +42,7 @@ struct HomeView: View {
 					.navigationBarTitleDisplayMode(.inline)
 					.toolbar {
 						ToolbarItem(placement: .principal) {
-							VStack {
+							VStack(spacing: -10) {
 								NavigationTitle(text: "home.nav.title")
 								Text(Date().formatted(.dateTime.day().month(.abbreviated).year()))
 								.font(.caption2)
