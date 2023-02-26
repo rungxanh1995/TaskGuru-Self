@@ -28,9 +28,10 @@ struct OnboardContainerView: View {
 
 			switch isOnboarding {
 			case .none: allSet
-			case .some: dismiss
+			case .some: EmptyView()
 			}
 		}
+		.padding(.bottom)
 	}
 }
 
@@ -45,25 +46,6 @@ extension OnboardContainerView {
 		.buttonStyle(.bordered)
 		.buttonBorderShape(.capsule)
 		.tint(.defaultAccentColor)
-	}
-
-	/// Button to display when user might be seeing this view in Settings
-	private var dismiss: some View {
-		Button {
-			dismissThisView()
-			haptic(.success)
-		} label: {
-			Label {
-				Text("onboarding.buttons.onboarded.dismiss")
-			} icon: {
-				SFSymbols.xmark
-			}
-			.labelStyle(.titleOnly)
-		}
-		.bold()
-		.buttonStyle(.bordered)
-		.buttonBorderShape(.capsule)
-		.tint(.gray)
 	}
 }
 
