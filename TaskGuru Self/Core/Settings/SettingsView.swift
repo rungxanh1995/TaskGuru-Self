@@ -110,7 +110,7 @@ private extension SettingsView {
 
 	private var portraitLock: some View {
 		HStack {
-			SettingsIcon(icon: SFSymbols.lockRotation, bgColor: .indigo)
+			SettingsIcon(icon: SFSymbols.lockRotation, accent: .indigo)
 			Toggle("settings.general.portraitLock", isOn: $isLockedInPortrait)
 				.tint(.accentColor)
 		}
@@ -118,7 +118,7 @@ private extension SettingsView {
 
 	private var haptics: some View {
 		HStack {
-			SettingsIcon(icon: SFSymbols.waveform, bgColor: .pink)
+			SettingsIcon(icon: SFSymbols.waveform, accent: .pink)
 			Toggle("settings.general.reduceHaptics", isOn: $isHapticsReduced)
 				.tint(.accentColor)
 		}
@@ -127,7 +127,7 @@ private extension SettingsView {
 	@ViewBuilder private var appAccentColor: some View {
 		let currentAccentColor = AccentColorType(rawValue: accentColor)
 		HStack {
-			SettingsIcon(icon: SFSymbols.paintbrush, bgColor: .defaultAccentColor)
+			SettingsIcon(icon: SFSymbols.paintbrush, accent: .defaultAccentColor)
 			NavigationLink {
 				AccentColorSettings()
 			} label: {
@@ -141,7 +141,7 @@ private extension SettingsView {
 
 	private var fontDesignStyle: some View {
 		HStack {
-			SettingsIcon(icon: SFSymbols.textFormat, bgColor: .orange)
+			SettingsIcon(icon: SFSymbols.textFormat, accent: .orange)
 			Picker("settings.general.fontStyle", selection: $fontDesign) {
 				ForEach(FontDesignType.allCases) { (design) in
 					Text(LocalizedStringKey(design.title))
@@ -153,7 +153,7 @@ private extension SettingsView {
 
 	private var appTheme: some View {
 		HStack {
-			SettingsIcon(icon: SFSymbols.appearance, bgColor: .blue)
+			SettingsIcon(icon: SFSymbols.appearance, accent: .blue)
 			Picker("settings.general.colorTheme", selection: $systemTheme) {
 				ForEach(SchemeType.allCases) { (theme) in
 					Text(LocalizedStringKey(theme.title))
@@ -165,7 +165,7 @@ private extension SettingsView {
 
 	private var onboarding: some View {
 		HStack {
-			SettingsIcon(icon: SFSymbols.handWave, bgColor: .indigo)
+			SettingsIcon(icon: SFSymbols.handWave, accent: .indigo)
 			NavigationLink("settings.general.onboarding") {
 				OnboardContainerView()
 			}
@@ -185,7 +185,7 @@ private extension SettingsView {
 
 	private var tabBadge: some View {
 		HStack {
-			SettingsIcon(icon: SFSymbols.clockBadge, bgColor: .pink)
+			SettingsIcon(icon: SFSymbols.clockBadge, accent: .pink)
 			Toggle("settings.badge.tab", isOn: $isShowingTabBadge)
 				.tint(.accentColor)
 		}
@@ -194,7 +194,7 @@ private extension SettingsView {
 	private var appBadge: some View {
 		VStack {
 			HStack {
-				SettingsIcon(icon: SFSymbols.appBadge, bgColor: .teal)
+				SettingsIcon(icon: SFSymbols.appBadge, accent: .teal)
 				Toggle("settings.badge.appIcon", isOn: $isShowingAppBadge)
 					.tint(.accentColor)
 			}
@@ -213,6 +213,7 @@ private extension SettingsView {
 				}
 			} label: {
 				Text("settings.badge.notifSetting").frame(maxWidth: .infinity)
+				Image(systemName: "arrow.up.forward")
 			}
 			.buttonStyle(.bordered)
 		}
@@ -232,7 +233,7 @@ private extension SettingsView {
 
 	private var tabNames: some View {
 		HStack {
-			SettingsIcon(icon: SFSymbols.dock, bgColor: .blue)
+			SettingsIcon(icon: SFSymbols.dock, accent: .blue)
 			Toggle("settings.misc.tabNames", isOn: $isTabNamesEnabled)
 				.tint(.accentColor)
 		}
@@ -240,7 +241,7 @@ private extension SettingsView {
 
 	private var confetti: some View {
 		HStack {
-			SettingsIcon(icon: SFSymbols.sparkles, bgColor: .pink)
+			SettingsIcon(icon: SFSymbols.sparkles, accent: .pink)
 			Toggle("settings.misc.confetti", isOn: $isConfettiEnabled)
 				.tint(.accentColor)
 		}
@@ -249,7 +250,7 @@ private extension SettingsView {
 	private var preview: some View {
 		VStack {
 			HStack {
-				SettingsIcon(icon: SFSymbols.handTap, bgColor: .indigo)
+				SettingsIcon(icon: SFSymbols.handTap, accent: .indigo)
 				Toggle("settings.misc.preview", isOn: $isPreviewEnabled)
 					.tint(.accentColor)
 			}
@@ -277,7 +278,7 @@ private extension SettingsView {
 
 	private var resetAppSettingsButton: some View {
 		HStack {
-			SettingsIcon(icon: SFSymbols.gearFilled, bgColor: .red)
+			SettingsIcon(icon: SFSymbols.gearFilled, accent: .red)
 			Button(role: .destructive) {
 				vm.isConfirmingResetSettings.toggle()
 			} label: {
@@ -288,7 +289,7 @@ private extension SettingsView {
 
 	private var resetAppDataButton: some View {
 		HStack {
-			SettingsIcon(icon: SFSymbols.personFolder, bgColor: .red)
+			SettingsIcon(icon: SFSymbols.personFolder, accent: .red)
 			Button(role: .destructive) {
 				vm.isConfirmingResetUserData.toggle()
 			} label: {

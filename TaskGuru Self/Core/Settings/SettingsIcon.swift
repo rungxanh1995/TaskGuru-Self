@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SettingsIcon: View {
 	let icon: Image
-	let bgColor: Color
+	let accent: Color
 
 	var body: some View {
 		VStack {
@@ -19,15 +19,15 @@ struct SettingsIcon: View {
 				.frame(width: 20, height: 20)
 		}
 		.background(in: RoundedRectangle(cornerRadius: 3).inset(by: -4))
-		.backgroundStyle(bgColor)
-		.foregroundStyle(.white)
+		.backgroundStyle(accent.opacity(0.15))
+		.foregroundStyle(accent)
 		.padding(4)
 	}
 }
 
 struct SettingsIcon_Previews: PreviewProvider {
 	static var previews: some View {
-		SettingsIcon(icon: SFSymbols.paintbrush, bgColor: .pink)
+		SettingsIcon(icon: SFSymbols.paintbrush, accent: .pink)
 			.previewLayout(.sizeThatFits)
 	}
 }

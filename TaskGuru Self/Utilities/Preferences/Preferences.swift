@@ -51,7 +51,7 @@ final class Preferences {
 	var fontDesign: Int = FontDesignType.allCases.first!.rawValue
 
 	@UserDefault(UserDefaultsKey.accentColor)
-	var accentColor: Int = AccentColorType.allCases.first!.rawValue
+	var accentColor: Int = AccentColorType.allCases.last!.rawValue
 
 	@UserDefault(UserDefaultsKey.badgeType)
 	var badgeType: Int = BadgeType.allCases.first!.rawValue

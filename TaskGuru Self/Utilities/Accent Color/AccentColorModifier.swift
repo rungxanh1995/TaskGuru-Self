@@ -11,7 +11,7 @@ struct AccentColorModifier: ViewModifier {
 	@Environment(\.colorScheme) private var systemScheme
 
 	@AppStorage(UserDefaultsKey.accentColor)
-	private var accentColor: Int = AccentColorType.allCases.first!.rawValue
+	private var accentColor: Int = AccentColorType.allCases.last!.rawValue
 
 	private var selectedAccentColor: Color? {
 		guard let accentColor = AccentColorType(rawValue: self.accentColor) else { return nil }
