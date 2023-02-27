@@ -95,7 +95,7 @@ extension TaskItem {
 	func colorForStatus() -> Color {
 		switch status {
 		case .new: return Color.gray
-		case .inProgress: return Color.appOrange
+		case .inProgress: return Color.appYellow
 		case .done: return Color.appTeal
 		}
 	}
@@ -105,7 +105,7 @@ extension TaskItem {
 		if dueDate.isFromTomorrow {
 			return Color.appTeal
 		} else if dueDate.isWithinToday {
-			return Color.appOrange
+			return Color.appYellow
 		} else {
 			return Color.appPink
 		}

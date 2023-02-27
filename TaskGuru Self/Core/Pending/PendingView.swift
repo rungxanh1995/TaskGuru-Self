@@ -118,7 +118,7 @@ extension PendingView {
 					}
 				}
 			} header: {
-				Text("pending.sections.dueToday").bold().foregroundColor(.appOrange)
+				Text("pending.sections.dueToday").bold().foregroundColor(.appYellow)
 			}
 		}
 	}

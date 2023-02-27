@@ -83,13 +83,11 @@ struct HomeView: View {
 extension HomeView {
 	@ViewBuilder
 	private var emptyTaskText: some View {
-
-		let emptyTaskListSentence: LocalizedStringKey = "Nothing yet. Tap here or \(SFSymbols.plusCircled) to add more"
-
 		VStack {
 			makeCheerfulDecorativeImage()
 			HStack {
 				Spacer()
+				let emptyTaskListSentence = LocalizedStringKey("Nothing yet. Tap here or \(SFSymbols.plusCircled) to add more")
 				Text(emptyTaskListSentence)
 					.font(.system(.callout))
 					.foregroundColor(.secondary)
@@ -101,10 +99,9 @@ extension HomeView {
 
 	@ViewBuilder
 	private var emptyFilteredListText: some View {
-		let emptyListSentence: LocalizedStringKey = "home.info.sectionEmpty"
-
 		HStack {
 			Spacer()
+			let emptyListSentence = LocalizedStringKey("home.info.sectionEmpty")
 			Text(emptyListSentence)
 				.font(.system(.callout))
 				.foregroundColor(.secondary)
@@ -114,9 +111,9 @@ extension HomeView {
 
 	@ViewBuilder
 	private var overdueSection: some View {
-		let overdues = vm.searchResults.filter { $0.dueDate.isPastToday }
-
 		Section {
+			let overdues = vm.searchResults.filter { $0.dueDate.isPastToday }
+
 			if overdues.isEmpty {
 				emptyFilteredListText
 			} else {
@@ -140,9 +137,9 @@ extension HomeView {
 
 	@ViewBuilder
 	private var dueTodaySection: some View {
-		let dues = vm.searchResults.filter { $0.dueDate.isWithinToday }
-
 		Section {
+			let dues = vm.searchResults.filter { $0.dueDate.isWithinToday }
+
 			if dues.isEmpty {
 				emptyFilteredListText
 			} else {
@@ -160,15 +157,15 @@ extension HomeView {
 				}
 			}
 		} header: {
-			Text("home.sections.dueToday").bold().foregroundColor(.appOrange)
+			Text("home.sections.dueToday").bold().foregroundColor(.appYellow)
 		}
 	}
 
 	@ViewBuilder
 	private var upcomingSection: some View {
-		let upcomings = vm.searchResults.filter { $0.dueDate.isFromTomorrow }
-
 		Section {
+			let upcomings = vm.searchResults.filter { $0.dueDate.isFromTomorrow }
+
 			if upcomings.isEmpty {
 				emptyFilteredListText
 			} else {
