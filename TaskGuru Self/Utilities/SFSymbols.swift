@@ -12,7 +12,7 @@ enum SFSymbols {
 	static let house: Image = .init(systemName: "house")
 	static let clock: Image = .init(systemName: "clock")
 	static let clockBadge: Image = .init(systemName: "clock.badge")
-	static let gear: Image = .init(systemName: "gearshape")
+	static let gear: Image = .init(systemName: "gear")
 	static let gearFilled: Image = .init(systemName: "gearshape.fill")
 	static let personFilled: Image = .init(systemName: "person.fill")
 	static let buildingFilled: Image = .init(systemName: "building.2.fill")
