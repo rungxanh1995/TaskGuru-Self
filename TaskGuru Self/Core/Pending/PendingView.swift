@@ -95,7 +95,7 @@ extension PendingView {
 					}
 				}
 			} header: {
-				Text("pending.sections.overdue").bold().foregroundColor(.red)
+				Text("pending.sections.overdue").bold().foregroundColor(.appPink)
 			}
 		}
 	}
@@ -118,7 +118,7 @@ extension PendingView {
 					}
 				}
 			} header: {
-				Text("pending.sections.dueToday").bold().foregroundColor(.orange)
+				Text("pending.sections.dueToday").bold().foregroundColor(.appOrange)
 			}
 		}
 	}
@@ -141,7 +141,7 @@ extension PendingView {
 					}
 				}
 			} header: {
-				Text("pending.sections.upcoming").bold().foregroundColor(.mint)
+				Text("pending.sections.upcoming").bold().foregroundColor(.appTeal)
 			}
 		}
 	}

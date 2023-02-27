@@ -32,7 +32,7 @@ extension HomeListCell {
 		Text(task.name)
 			.font(.system(.body))
 			.strikethrough(task.isNotDone ? false : true)
-			.foregroundColor(task.isNotDone ? nil : .secondary)
+			.foregroundColor(task.isNotDone ? nil : .gray)
 	}
 
 	private var taskType: some View {
@@ -61,7 +61,7 @@ extension HomeListCell {
 		}
 		.font(.system(.body))
 		.strikethrough(task.isNotDone ? false : true)
-		.foregroundColor(task.isNotDone ? task.colorForDueDate() : .secondary)
+		.foregroundColor(task.isNotDone ? task.colorForDueDate() : .gray)
 	}
 
 	private var taskStatus: some View {

@@ -134,7 +134,7 @@ extension HomeView {
 				}
 			}
 		} header: {
-			Text("home.sections.overdue").bold().foregroundColor(.red)
+			Text("home.sections.overdue").bold().foregroundColor(.appPink)
 		}
 	}
 
@@ -160,7 +160,7 @@ extension HomeView {
 				}
 			}
 		} header: {
-			Text("home.sections.dueToday").bold().foregroundColor(.orange)
+			Text("home.sections.dueToday").bold().foregroundColor(.appOrange)
 		}
 	}
 
@@ -186,7 +186,7 @@ extension HomeView {
 				}
 			}
 		} header: {
-			Text("home.sections.upcoming").bold().foregroundColor(.mint)
+			Text("home.sections.upcoming").bold().foregroundColor(.appTeal)
 		}
 	}
 

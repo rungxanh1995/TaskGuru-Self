@@ -28,14 +28,14 @@ extension AccentColorType {
 
 	var associatedColor: Color {
 		switch self {
-		case .berry: return Color(hex: 0xE04459)
-		case .orange: return Color(hex: 0xE55B39)
-		case .yellow: return Color(hex: 0xE8A53A)
-		case .green: return Color(hex: 0x5DC556)
-		case .clover: return Color(hex: 0x57BD9F)
-		case .blue: return Color(hex: 0x4CA7DA)
-		case .indigo: return Color(hex: 0x445FB8)
-		case .purple: return Color(hex: 0x6647D7)
+		case .berry: return Color(hex: 0xE25A70)
+		case .orange: return Color(hex: 0xE86F51)
+		case .yellow: return Color(hex: 0xE9B34A)
+		case .green: return Color(hex: 0x69CD6D)
+		case .clover: return Color(hex: 0x58BEA0)
+		case .blue: return Color(hex: 0x5AB4DF)
+		case .indigo: return Color(hex: 0x5D78C0)
+		case .purple: return Color(hex: 0x7C62DE)
 		}
 	}
 }

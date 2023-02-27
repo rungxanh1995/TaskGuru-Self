@@ -110,7 +110,7 @@ private extension SettingsView {
 
 	private var portraitLock: some View {
 		HStack {
-			SettingsIcon(icon: SFSymbols.lockRotation, accent: .indigo)
+			SettingsIcon(icon: SFSymbols.lockRotation, accent: .appIndigo)
 			Toggle("settings.general.portraitLock", isOn: $isLockedInPortrait)
 				.tint(.accentColor)
 		}
@@ -118,7 +118,7 @@ private extension SettingsView {
 
 	private var haptics: some View {
 		HStack {
-			SettingsIcon(icon: SFSymbols.waveform, accent: .pink)
+			SettingsIcon(icon: SFSymbols.waveform, accent: .appPink)
 			Toggle("settings.general.reduceHaptics", isOn: $isHapticsReduced)
 				.tint(.accentColor)
 		}
@@ -141,7 +141,7 @@ private extension SettingsView {
 
 	private var fontDesignStyle: some View {
 		HStack {
-			SettingsIcon(icon: SFSymbols.textFormat, accent: .orange)
+			SettingsIcon(icon: SFSymbols.textFormat, accent: .appOrange)
 			Picker("settings.general.fontStyle", selection: $fontDesign) {
 				ForEach(FontDesignType.allCases) { (design) in
 					Text(LocalizedStringKey(design.title))
@@ -153,7 +153,7 @@ private extension SettingsView {
 
 	private var appTheme: some View {
 		HStack {
-			SettingsIcon(icon: SFSymbols.appearance, accent: .blue)
+			SettingsIcon(icon: SFSymbols.appearance, accent: .appBlue)
 			Picker("settings.general.colorTheme", selection: $systemTheme) {
 				ForEach(SchemeType.allCases) { (theme) in
 					Text(LocalizedStringKey(theme.title))
@@ -165,7 +165,7 @@ private extension SettingsView {
 
 	private var onboarding: some View {
 		HStack {
-			SettingsIcon(icon: SFSymbols.handWave, accent: .indigo)
+			SettingsIcon(icon: SFSymbols.handWave, accent: .appPurple)
 			NavigationLink("settings.general.onboarding") {
 				OnboardContainerView()
 			}
@@ -185,7 +185,7 @@ private extension SettingsView {
 
 	private var tabBadge: some View {
 		HStack {
-			SettingsIcon(icon: SFSymbols.clockBadge, accent: .pink)
+			SettingsIcon(icon: SFSymbols.clockBadge, accent: .appPink)
 			Toggle("settings.badge.tab", isOn: $isShowingTabBadge)
 				.tint(.accentColor)
 		}
@@ -194,7 +194,7 @@ private extension SettingsView {
 	private var appBadge: some View {
 		VStack {
 			HStack {
-				SettingsIcon(icon: SFSymbols.appBadge, accent: .teal)
+				SettingsIcon(icon: SFSymbols.appBadge, accent: .appTeal)
 				Toggle("settings.badge.appIcon", isOn: $isShowingAppBadge)
 					.tint(.accentColor)
 			}
@@ -233,7 +233,7 @@ private extension SettingsView {
 
 	private var tabNames: some View {
 		HStack {
-			SettingsIcon(icon: SFSymbols.dock, accent: .blue)
+			SettingsIcon(icon: SFSymbols.dock, accent: .appBlue)
 			Toggle("settings.misc.tabNames", isOn: $isTabNamesEnabled)
 				.tint(.accentColor)
 		}
@@ -241,7 +241,7 @@ private extension SettingsView {
 
 	private var confetti: some View {
 		HStack {
-			SettingsIcon(icon: SFSymbols.sparkles, accent: .pink)
+			SettingsIcon(icon: SFSymbols.sparkles, accent: .appPink)
 			Toggle("settings.misc.confetti", isOn: $isConfettiEnabled)
 				.tint(.accentColor)
 		}
@@ -250,7 +250,7 @@ private extension SettingsView {
 	private var preview: some View {
 		VStack {
 			HStack {
-				SettingsIcon(icon: SFSymbols.handTap, accent: .indigo)
+				SettingsIcon(icon: SFSymbols.handTap, accent: .appIndigo)
 				Toggle("settings.misc.preview", isOn: $isPreviewEnabled)
 					.tint(.accentColor)
 			}
