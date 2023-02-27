@@ -11,23 +11,19 @@ struct AccentColorModifier: ViewModifier {
 	@Environment(\.colorScheme) private var systemScheme
 
 	@AppStorage(UserDefaultsKey.accentColor)
-	private var accentColor: Int = AccentColorType.allCases.last!.rawValue
+	private var accentColor: Int = AccentColorType.clover.rawValue
 
 	private var selectedAccentColor: Color? {
 		guard let accentColor = AccentColorType(rawValue: self.accentColor) else { return nil }
 		switch accentColor {
-		case .blue: return .blue
-		case .teal: return .teal
-		case .indigo: return .indigo
-		case .purple: return Color(hex: systemScheme == .light ? 0xD32DF6 : 0xF454FF)
-		case .pink: return .pink
-		case .berry: return Color(hex: systemScheme == .light ? 0xEF0808 : 0xFF6060)
-		case .red: return .red
-		case .orange: return .orange
-		case .yellow: return .yellow
-		case .green: return .green
-		case .mint: return .mint
-		case .clover: return Color(hex: systemScheme == .light ? 0x2AA18A : 0x2CA18A)
+		case .berry: return Color(hex: 0xE04459)
+		case .orange: return Color(hex: 0xE55B39)
+		case .yellow: return Color(hex: 0xE8A53A)
+		case .green: return Color(hex: 0x5DC556)
+		case .clover: return Color(hex: 0x57BD9F)
+		case .blue: return Color(hex: 0x4CA7DA)
+		case .indigo: return Color(hex: 0x445FB8)
+		case .purple: return Color(hex: 0x6647D7)
 		}
 	}
 

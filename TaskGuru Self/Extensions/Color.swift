@@ -17,25 +17,21 @@ extension Color {
 		}
 
 		switch accentColor {
-		case .blue: return .blue
-		case .teal: return .teal
-		case .indigo: return .indigo
-		case .purple: return Color(hex: 0xD32DF6)
-		case .pink: return .pink
-		case .berry: return Color(hex: 0xEF0808)
-		case .red: return .red
-		case .orange: return .orange
-		case .yellow: return .yellow
-		case .green: return .green
-		case .mint: return .mint
-		case .clover: return Color(hex: 0x2AA18A)
+		case .berry: return Color(hex: 0xE04459)
+		case .orange: return Color(hex: 0xE55B39)
+		case .yellow: return Color(hex: 0xE8A53A)
+		case .green: return Color(hex: 0x5DC556)
+		case .clover: return Color(hex: 0x57BD9F)
+		case .blue: return Color(hex: 0x4CA7DA)
+		case .indigo: return Color(hex: 0x445FB8)
+		case .purple: return Color(hex: 0x6647D7)
 		}
 	}
 
 	/// Allows initializing color from hex code with format "0xABCDEF"
 	init(hex: UInt, alpha: Double = 1) {
 		self.init(
-			.sRGB,
+			.displayP3,
 			red: Double((hex >> 16) & 0xff) / 255,
 			green: Double((hex >> 08) & 0xff) / 255,
 			blue: Double((hex >> 00) & 0xff) / 255,
