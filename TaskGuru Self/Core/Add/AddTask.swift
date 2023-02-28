@@ -69,7 +69,10 @@ struct AddTask: View {
 			.navigationBarTitleDisplayMode(.inline)
 			.toolbar {
 				ToolbarItem(placement: .cancellationAction) {
-					Button("addTask.nav.button.cancel") { dismissThisView() }
+					Button("addTask.nav.button.cancel") {
+						haptic(.buttonPress)
+						dismissThisView()
+					}
 				}
 
 				ToolbarItem(placement: .confirmationAction) {
@@ -87,7 +90,7 @@ struct AddTask: View {
 extension AddTask {
 	private func addNewTask() {
 		vm.addNewTask()
-		haptic(.success)
+		haptic(.notification(.success))
 	}
 }
 

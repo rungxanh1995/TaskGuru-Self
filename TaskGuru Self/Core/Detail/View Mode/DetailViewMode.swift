@@ -51,7 +51,10 @@ extension DetailView {
 				// swiftlint:disable multiple_closures_with_trailing_closure
 				if vm.taskIsNewOrInProgress {
 					ToolbarItemGroup(placement: .primaryAction) {
-						Button(action: {isMarkingAsDone.toggle()}) {
+						Button(action: {
+							haptic(.buttonPress)
+							isMarkingAsDone.toggle()
+						}) {
 							Label { Text("contextMenu.task.markAsDone") } icon: { SFSymbols.checkmark }
 						}
 					}
@@ -59,34 +62,34 @@ extension DetailView {
 
 				ToolbarItemGroup(placement: .secondaryAction) {
 					Button(action: {
+						haptic(.buttonPress)
 						isShowingEdit.toggle()
-						haptic(.success)
 					}) {
 						Label { Text("contextMenu.task.edit") } icon: { SFSymbols.pencilSquare }
 					}
 
 					Button(role: .destructive) {
+						haptic(.notification(.warning))
 						isDeletingTask.toggle()
-						haptic(.warning)
 					} label: {
 						Label { Text("contextMenu.task.delete") } icon: { SFSymbols.trash }
 					}
 				}
 			}
 			.alert("taskDetail.alert.markAsDone", isPresented: $isMarkingAsDone, actions: {
-				Button("contextMenu.cancel", role: .cancel, action: {})
+				Button("contextMenu.cancel", role: .cancel, action: { haptic(.buttonPress) })
 				Button("contextMenu.ok", action: {
 					vm.markTaskAsDone()
 					dismissThisView()
-					haptic(.success)
+					haptic(.notification(.success))
 				})
 			})
 			.alert("taskDetail.alert.deleteTask", isPresented: $isDeletingTask, actions: {
-				Button("contextMenu.cancel", role: .cancel, action: {})
+				Button("contextMenu.cancel", role: .cancel, action: { haptic(.buttonPress) })
 				Button("contextMenu.ok", action: {
 					vm.deleteTask()
 					dismissThisView()
-					haptic(.success)
+					haptic(.notification(.success))
 				})
 			})
 			.sheet(isPresented: $isShowingEdit) {

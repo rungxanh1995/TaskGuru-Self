@@ -53,7 +53,7 @@ struct SettingsView: View {
 			) {
 				Button("settings.advanced.resetSettings.delete", role: .destructive) {
 					vm.resetDefaults()
-					haptic(.success)
+					haptic(.notification(.success))
 				}
 				Button("settings.advanced.resetSettings.cancel", role: .cancel) { }
 			}
@@ -64,7 +64,7 @@ struct SettingsView: View {
 			) {
 				Button("settings.advanced.resetUserData.delete", role: .destructive) {
 					vm.resetAllTasks()
-					haptic(.success)
+					haptic(.notification(.success))
 				}
 				Button("settings.advanced.resetUserData.cancel", role: .cancel) { }
 			}

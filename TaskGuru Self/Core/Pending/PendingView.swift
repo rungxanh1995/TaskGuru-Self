@@ -63,11 +63,11 @@ struct PendingView: View {
 
 extension PendingView {
 	private var emptyStateImage: some View {
-		VStack {
+		VStack(alignment: .leading) {
 			makeCheerfulDecorativeImage()
 
 			Text("pending.info.listEmty")
-				.font(.callout)
+				.font(.footnote)
 				.foregroundColor(.secondary)
 		}
 	}
@@ -152,7 +152,10 @@ extension PendingView {
 	private func makeContextMenu(for task: TaskItem) -> some View {
 		markAsButtons(for: task)
 
-		Button { selectedTask = task } label: {
+		Button {
+			selectedTask = task
+			haptic(.buttonPress)
+		} label: {
 			Label { Text("contextMenu.task.edit") } icon: { SFSymbols.pencilSquare }
 		}
 
@@ -162,7 +165,7 @@ extension PendingView {
 			}
 			Button(role: .destructive) {
 				withAnimation { vm.delete(task) }
-				haptic(.success)
+				haptic(.notification(.success))
 			} label: {
 				Label { Text("contextMenu.task.delete") } icon: { SFSymbols.trash }
 			}
@@ -212,6 +215,7 @@ extension PendingView {
 
 	private var addTaskButton: some View {
 		Button {
+			haptic(.buttonPress)
 			vm.isShowingAddTaskView.toggle()
 		} label: {
 			Label { Text("label.task.add") } icon: { SFSymbols.plus }

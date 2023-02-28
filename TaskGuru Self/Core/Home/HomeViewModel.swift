@@ -67,21 +67,21 @@ final class HomeViewModel: ObservableObject {
 		task.status = .done
 		saveAndHandleError()
 		fetchTasks()
-		haptic(.success)
+		haptic(.notification(.success))
 	}
 
 	func markAsInProgress(_ task: TaskItem) {
 		task.status = .inProgress
 		saveAndHandleError()
 		fetchTasks()
-		haptic(.success)
+		haptic(.notification(.success))
 	}
 
 	func markAsNew(_ task: TaskItem) {
 		task.status = .new
 		saveAndHandleError()
 		fetchTasks()
-		haptic(.success)
+		haptic(.notification(.success))
 	}
 
 	func clearDoneTasks() {

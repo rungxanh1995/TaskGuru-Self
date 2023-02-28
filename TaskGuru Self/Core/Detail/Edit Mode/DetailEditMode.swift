@@ -76,6 +76,7 @@ extension DetailView {
 				.toolbar {
 					ToolbarItem(placement: .cancellationAction) {
 						Button("editTask.nav.button.cancel") {
+							haptic(.buttonPress)
 							dismissThisView()
 						}
 					}
@@ -93,9 +94,9 @@ extension DetailView {
 
 		private func didTapSaveButton() {
 			vm.updateTask()
-			haptic(.success)
 			dismissThisView()
 			appState.popToRoot()
+			haptic(.notification(.success))
 		}
 	}
 }

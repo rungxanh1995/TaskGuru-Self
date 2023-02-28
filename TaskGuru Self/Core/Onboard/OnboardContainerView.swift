@@ -59,7 +59,7 @@ extension OnboardContainerView {
 	private var allSet: some View {
 		Button {
 			withAnimation {	isOnboarding = false }
-			haptic(.success)
+			haptic(.buttonPress)
 		} label: {
 			Text("onboarding.buttons.onboarding.dismiss")
 				.padding(.vertical, 8)

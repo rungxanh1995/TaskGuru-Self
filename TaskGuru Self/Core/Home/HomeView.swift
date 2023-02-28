@@ -70,9 +70,11 @@ struct HomeView: View {
 					) {
 						Button("contextMenu.clearDoneTasks", role: .destructive) {
 							vm.clearDoneTasks()
-							haptic(.success)
+							haptic(.notification(.success))
 						}
-						Button("contextMenu.cancel", role: .cancel) { }
+						Button("contextMenu.cancel", role: .cancel) {
+							haptic(.buttonPress)
+						}
 					}
 				}
 			}
@@ -187,17 +189,22 @@ extension HomeView {
 	@ViewBuilder
 	private func makeContextMenu(for task: TaskItem) -> some View {
 		markAsButtons(for: task)
-		Button { selectedTask = task } label: {
+		Button {
+			selectedTask = task
+			haptic(.buttonPress)
+		} label: {
 			Label { Text("contextMenu.task.edit") } icon: { SFSymbols.pencilSquare }
 		}
 
 		Menu {
-			Button(role: .cancel) {} label: {
+			Button(role: .cancel) {
+				haptic(.buttonPress)
+			} label: {
 				Label { Text("contextMenu.cancel") } icon: { SFSymbols.xmark }
 			}
 			Button(role: .destructive) {
 				withAnimation { vm.delete(task) }
-				haptic(.success)
+				haptic(.notification(.success))
 			} label: {
 				Label { Text("contextMenu.task.delete") } icon: { SFSymbols.trash }
 			}
@@ -260,6 +267,7 @@ extension HomeView {
 
 	private var addTaskButton: some View {
 		Button {
+			haptic(.buttonPress)
 			vm.isShowingAddTaskView.toggle()
 		} label: {
 			Label { Text("label.task.add") } icon: { SFSymbols.plus }
@@ -268,6 +276,7 @@ extension HomeView {
 
 	private var clearDoneTasksButton: some View {
 		Button(role: .destructive) {
+			haptic(.notification(.warning))
 			withAnimation { vm.isConfirmingClearDoneTasks.toggle() }
 		} label: {
 			Label { Text("Clear Done Tasks") } icon: { SFSymbols.trash }
