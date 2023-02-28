@@ -50,7 +50,7 @@ extension View {
 	func makeCheerfulDecorativeImage() -> some View {
 		HStack {
 			Spacer()
-			Image("cheerful1")
+			Image("cheerful12")
 				.resizable()
 				.scaledToFit()
 				.saturation(0)

@@ -33,46 +33,41 @@ struct TaskGuru_SelfApp: App {
 
 	var body: some Scene {
 		WindowGroup {
-			ZStack {
-				if isOnboarding {
+			RootView()
+				.sheet(isPresented: .constant(isOnboarding)) {
 					OnboardContainerView()
-						.transition(.asymmetric(insertion: .opacity.animation(.default), removal: .opacity))
-				} else {
-					RootView()
-						.transition(.asymmetric(insertion: .opacity.animation(.default), removal: .opacity))
-						.environmentObject(homeVM)
 				}
-			}
-			.setUpColorTheme()
-			.setUpFontDesign()
-			.setUpAccentColor()
-			.onReceive(homeVM.$isFetchingData) { _ in
-				if isShowingAppBadge { setUpAppIconBadge() }
-			}
-			.onChange(of: accentColor) { _ in
-				setAlertColor()
-			}
-			.onChange(of: badgeType) { _ in
-				setUpAppIconBadge()
-			}
-			.onChange(of: isShowingAppBadge) { _ in
-				setUpAppIconBadge()
-			}
-			.environmentObject(homeVM)
-			.onChange(of: isLockedInPortrait) { _ in
-				isLockedInPortrait ? appDelegate.lockInPortraitMode() : appDelegate.unlockPortraitMode()
-			}
-			.onChange(of: scenePhase) { newPhase in
-				switch newPhase {
-				case .background:
-					addHomeScreenQuickActions()
-					HomeQuickAction.selectedAction = nil
-				case .active:
-					handleQuickActionSelected()
-				default:
-					break
+				.environmentObject(homeVM)
+				.setUpColorTheme()
+				.setUpFontDesign()
+				.setUpAccentColor()
+				.onReceive(homeVM.$isFetchingData) { _ in
+					if isShowingAppBadge { setUpAppIconBadge() }
 				}
-			}
+				.onChange(of: accentColor) { _ in
+					setAlertColor()
+				}
+				.onChange(of: badgeType) { _ in
+					setUpAppIconBadge()
+				}
+				.onChange(of: isShowingAppBadge) { _ in
+					setUpAppIconBadge()
+				}
+				.environmentObject(homeVM)
+				.onChange(of: isLockedInPortrait) { _ in
+					isLockedInPortrait ? appDelegate.lockInPortraitMode() : appDelegate.unlockPortraitMode()
+				}
+				.onChange(of: scenePhase) { newPhase in
+					switch newPhase {
+					case .background:
+						addHomeScreenQuickActions()
+						HomeQuickAction.selectedAction = nil
+					case .active:
+						handleQuickActionSelected()
+					default:
+						break
+					}
+				}
 		}
 	}
 }

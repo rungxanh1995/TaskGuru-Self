@@ -33,6 +33,7 @@ struct HomeView: View {
 							upcomingSection
 						}
 					}
+					.listStyle(.plain)
 					.playConfetti($confettiCounter)
 					.onAppear(perform: vm.fetchTasks)
 					.onChange(of: selectedTask) { _ in vm.fetchTasks() }
@@ -99,14 +100,10 @@ extension HomeView {
 
 	@ViewBuilder
 	private var emptyFilteredListText: some View {
-		HStack {
-			Spacer()
-			let emptyListSentence = LocalizedStringKey("home.info.sectionEmpty")
-			Text(emptyListSentence)
-				.font(.system(.callout))
-				.foregroundColor(.secondary)
-			Spacer()
-		}
+		let emptyListSentence = LocalizedStringKey("home.info.sectionEmpty")
+		Text(emptyListSentence)
+			.font(.system(.callout))
+			.foregroundColor(.secondary)
 	}
 
 	@ViewBuilder

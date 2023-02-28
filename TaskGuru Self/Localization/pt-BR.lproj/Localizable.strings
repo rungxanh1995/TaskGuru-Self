@@ -57,9 +57,9 @@
 /* Navigation title */
 "home.nav.title" = "Todas as Tarefas";
 /* Section titles */
-"home.sections.overdue" = "Atrasadas";
-"home.sections.dueToday" = "Para hoje";
-"home.sections.upcoming" = "Próximas";
+"home.sections.overdue" = "ATRASADAS";
+"home.sections.dueToday" = "PARA HOJE";
+"home.sections.upcoming" = "PRÓXIMAS";
 /* Empty list sentence */
 "home.info.sectionEmpty" = "Nenhuma tarefa";
 /* All tasks empty sentence */
@@ -74,9 +74,9 @@
 /* Navigation title */
 "pending.nav.title" = "Tarefas Pendentes";
 /* Section titles */
-"pending.sections.overdue" = "Atrasadas";
-"pending.sections.dueToday" = "Para hoje";
-"pending.sections.upcoming" = "Próximas";
+"pending.sections.overdue" = "ATRASADAS";
+"pending.sections.dueToday" = "PARA HOJE";
+"pending.sections.upcoming" = "PRÓXIMAS";
 
 "pending.info.fetchingData" = "Obtendo dados";
 "pending.info.listEmty" = "Você está livre! Aproveite seu tempo merecido 🥳";

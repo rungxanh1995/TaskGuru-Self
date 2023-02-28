@@ -58,9 +58,9 @@
 /* Navigation title */
 "home.nav.title" = "All Tasks";
 /* Section titles */
-"home.sections.overdue" = "Overdue";
-"home.sections.dueToday" = "Due Today";
-"home.sections.upcoming" = "Upcoming";
+"home.sections.overdue" = "OVERDUE";
+"home.sections.dueToday" = "DUE TODAY";
+"home.sections.upcoming" = "UPCOMING";
 /* Empty list sentence */
 "home.info.sectionEmpty" = "No tasks";
 /* All tasks empty sentence */
@@ -75,9 +75,9 @@
 /* Navigation title */
 "pending.nav.title" = "Pending Tasks";
 /* Section titles */
-"pending.sections.overdue" = "Overdue";
-"pending.sections.dueToday" = "Due Today";
-"pending.sections.upcoming" = "Upcoming";
+"pending.sections.overdue" = "OVERDUE";
+"pending.sections.dueToday" = "DUE TODAY";
+"pending.sections.upcoming" = "UPCOMING";
 
 "pending.info.fetchingData" = "Fetching data";
 "pending.info.listEmty" = "You're free! Enjoy your much deserved time 🥳";

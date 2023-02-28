@@ -24,7 +24,7 @@ struct PendingView: View {
 				if vm.isFetchingData {
 					ProgressView { Text("pending.info.fetchingData") }
 				} else if vm.noPendingTasksLeft {
-					emptyStateImage.padding()
+					emptyStateImage
 				} else {
 					List {
 						pendingInThePastSection
@@ -32,6 +32,7 @@ struct PendingView: View {
 						pendingFromTomorrowSection
 						encouragingMessage.listRowBackground(Color.clear)
 					}
+					.listStyle(.plain)
 				}
 			}
 			.playConfetti($confettiCounter)
@@ -103,8 +104,8 @@ extension PendingView {
 	@ViewBuilder private var pendingTodaySection: some View {
 		let pendings = vm.pendingTasks.filter { $0.dueDate.isWithinToday }
 
-		if pendings.isEmpty == false {
-			Section {
+		Section {
+			if pendings.isEmpty == false {
 				ForEach(pendings) { task in
 					NavigationLink(value: task) {
 						HomeListCell(task: task)
@@ -117,10 +118,11 @@ extension PendingView {
 						}
 					}
 				}
-			} header: {
-				Text("pending.sections.dueToday").bold().foregroundColor(.appYellow)
-			}
+			} else { emptyStateImage }
 		}
+	header: {
+		Text("pending.sections.dueToday").bold().foregroundColor(.appYellow)
+	}
 	}
 
 	@ViewBuilder private var pendingFromTomorrowSection: some View {

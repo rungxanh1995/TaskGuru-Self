@@ -58,9 +58,9 @@
 /* Navigation title */
 "home.nav.title" = "Tất cả Tác vụ";
 /* Section titles */
-"home.sections.overdue" = "Quá hạn";
-"home.sections.dueToday" = "Đến hạn trong ngày";
-"home.sections.upcoming" = "Sắp tới";
+"home.sections.overdue" = "QUÁ HẠN";
+"home.sections.dueToday" = "ĐẾN HẠN TRONG NGÀY";
+"home.sections.upcoming" = "SẮP TỚI";
 /* Empty list sentence */
 "home.info.sectionEmpty" = "Không có tác vụ nào";
 /* All tasks empty sentence */
@@ -75,9 +75,9 @@
 /* Navigation title */
 "pending.nav.title" = "Tác vụ Chưa xong";
 /* Section titles */
-"pending.sections.overdue" = "Quá hạn";
-"pending.sections.dueToday" = "Đến hạn trong ngày";
-"pending.sections.upcoming" = "Sắp tới";
+"pending.sections.overdue" = "QUÁ HẠN";
+"pending.sections.dueToday" = "ĐẾN HẠN TRONG NGÀY";
+"pending.sections.upcoming" = "SẮP TỚI";
 
 "pending.info.fetchingData" = "Đang tải dữ liệu";
 "pending.info.listEmty" = "Bạn được tự do rồi! Hãy tận hưởng thời gian này cho bản thân nhé 🥳";
