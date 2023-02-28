@@ -14,7 +14,7 @@ struct RootView: View {
 	@Preference(\.isTabNamesEnabled) private var isTabNamesEnabled
 
 	@EnvironmentObject private var homeVM: HomeViewModel
-	@State private var selectedTab: Tab = .home
+	@SceneStorage("selected-tab") private var selectedTab: Tab = .home
 	@State var pendingTasksCount: Int = 0
 
 	var body: some View {
