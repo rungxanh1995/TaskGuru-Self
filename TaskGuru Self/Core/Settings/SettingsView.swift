@@ -212,7 +212,7 @@ private extension SettingsView {
 				}
 			} label: {
 				Text("settings.badge.notifSetting").frame(maxWidth: .infinity)
-				Image(systemName: "arrow.up.forward")
+				SFSymbols.arrowUpForward
 			}
 			.buttonStyle(.bordered)
 		}

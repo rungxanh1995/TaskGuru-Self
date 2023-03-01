@@ -45,6 +45,7 @@ enum SFSymbols {
 	static let lockRotation: Image = .init(systemName: "lock.rotation")
 	static let textFormat: Image = .init(systemName: "textformat")
 	static let appearance: Image = .init(systemName: "circle.lefthalf.filled")
+	static let arrowUpForward: Image = .init(systemName: "arrow.up.forward.app")
 	static let dock: Image = .init(systemName: "dock.rectangle")
 	static let handTap: Image = .init(systemName: "hand.tap")
 }
