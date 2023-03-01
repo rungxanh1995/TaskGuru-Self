@@ -17,33 +17,33 @@ extension Color {
 		}
 
 		switch accentColor {
-		case .berry: return Color(hex: 0xE04459)
-		case .orange: return Color(hex: 0xE55B39)
-		case .yellow: return Color(hex: 0xE8A53A)
-		case .green: return Color(hex: 0x5DC556)
-		case .clover: return Color(hex: 0x57BD9F)
+		case .berry: return Color(hex: 0xE14359)
+		case .orange: return Color(hex: 0xE55A38)
+		case .yellow: return Color(hex: 0xE7A63A)
+		case .green: return Color(hex: 0x5CC557)
+		case .clover: return Color(hex: 0x56BDA0)
 		case .blue: return Color(hex: 0x4CA7DA)
-		case .indigo: return Color(hex: 0x445FB8)
-		case .purple: return Color(hex: 0x6647D7)
+		case .indigo: return Color(hex: 0x435FB7)
+		case .purple: return Color(hex: 0x6747D9)
 		}
 	}
 
 	/// The custom pink color specific to TaskGuru
-	static var appPink: Color {	Color(hex: 0xE04459) }
+	static var appPink: Color {	Color(hex: 0xE14359) }
 	/// The custom orange color specific to TaskGuru
-	static var appOrange: Color { Color(hex: 0xE55B39) }
+	static var appOrange: Color { Color(hex: 0xE55A38) }
 	/// The custom yellow color specific to TaskGuru
-	static var appYellow: Color { Color(hex: 0xE8A53A) }
+	static var appYellow: Color { Color(hex: 0xE7A63A) }
 	/// The custom green color specific to TaskGuru
-	static var appGreen: Color { Color(hex: 0x5DC556) }
+	static var appGreen: Color { Color(hex: 0x5CC557) }
 	/// The custom teal color specific to TaskGuru
-	static var appTeal: Color { Color(hex: 0x57BD9F) }
+	static var appTeal: Color { Color(hex: 0x56BDA0) }
 	/// The custom blue color specific to TaskGuru
 	static var appBlue: Color { Color(hex: 0x4CA7DA) }
 	/// The custom indigo color specific to TaskGuru
-	static var appIndigo: Color { Color(hex: 0x445FB8) }
+	static var appIndigo: Color { Color(hex: 0x435FB7) }
 	/// The custom indigo color specific to TaskGuru
-	static var appPurple: Color { Color(hex: 0x6647D7) }
+	static var appPurple: Color { Color(hex: 0x6747D9) }
 
 	/// Allows initializing color from hex code with format "0xABCDEF"
 	init(hex: UInt, alpha: Double = 1) {

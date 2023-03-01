@@ -16,14 +16,14 @@ struct AccentColorModifier: ViewModifier {
 	private var selectedAccentColor: Color? {
 		guard let accentColor = AccentColorType(rawValue: self.accentColor) else { return nil }
 		switch accentColor {
-		case .berry: return Color(hex: 0xE04459)
-		case .orange: return Color(hex: 0xE55B39)
-		case .yellow: return Color(hex: 0xE8A53A)
-		case .green: return Color(hex: 0x5DC556)
-		case .clover: return Color(hex: 0x57BD9F)
+		case .berry: return Color(hex: 0xE14359)
+		case .orange: return Color(hex: 0xE55A38)
+		case .yellow: return Color(hex: 0xE7A63A)
+		case .green: return Color(hex: 0x5CC557)
+		case .clover: return Color(hex: 0x56BDA0)
 		case .blue: return Color(hex: 0x4CA7DA)
-		case .indigo: return Color(hex: 0x445FB8)
-		case .purple: return Color(hex: 0x6647D7)
+		case .indigo: return Color(hex: 0x435FB7)
+		case .purple: return Color(hex: 0x6747D9)
 		}
 	}
 
