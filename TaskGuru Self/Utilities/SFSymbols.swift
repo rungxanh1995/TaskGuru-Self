@@ -20,7 +20,7 @@ enum SFSymbols {
 	static let computer: Image = .init(systemName: "desktopcomputer")
 	static let menu: Image = .init(systemName: "filemenu.and.selection")
 	static let listFilled: Image = .init(systemName: "list.bullet.rectangle.portrait.fill")
-	static let plus: Image = .init(systemName: "plus")
+	static let plus: Image = .init(systemName: "note.text.badge.plus")
 	static let plusCircled: Image = .init(systemName: "plus.circle")
 	static let xmark: Image = .init(systemName: "xmark")
 	static let trash: Image = .init(systemName: "trash")

@@ -33,7 +33,6 @@ struct HomeView: View {
 							upcomingSection
 						}
 					}
-					.listStyle(.plain)
 					.playConfetti($confettiCounter)
 					.onAppear(perform: vm.fetchTasks)
 					.onChange(of: selectedTask) { _ in vm.fetchTasks() }

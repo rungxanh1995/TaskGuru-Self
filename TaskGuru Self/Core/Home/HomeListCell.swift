@@ -12,27 +12,50 @@ struct HomeListCell: View {
 
 	var body: some View {
 		HStack(alignment: .top) {
-			VStack(alignment: .leading, spacing: 4) {
+			HStack {
+				taskStatus
 				taskName
-				taskType
 			}
 
-			Spacer()
+			Spacer(minLength: 8.0)
 
 			VStack(alignment: .trailing, spacing: 4) {
 				taskDueDate
-				taskStatus
+				taskType
 			}
 		}
 	}
 }
 
 extension HomeListCell {
+	private var taskStatus: some View {
+		Label {
+			Text(LocalizedStringKey(task.status.rawValue))
+		} icon: {
+			ZStack {
+				switch task.status {
+				case .new: SFSymbols.sparkles
+				case .inProgress: SFSymbols.circleArrows
+				case .done: SFSymbols.checkmark
+				}
+			}
+		}
+		.labelStyle(.iconOnly)
+		.font(.body)
+		.frame(width: 18, height: 18)
+		.clipShape(RoundedRectangle(cornerRadius: 9*(18/40)))
+		.background(in: RoundedRectangle(cornerRadius: 3).inset(by: -4))
+		.backgroundStyle(task.colorForStatus().opacity(0.25))
+		.foregroundStyle(task.colorForStatus())
+		.padding(4)
+	}
+
 	private var taskName: some View {
 		Text(task.name)
 			.font(.system(.body))
 			.strikethrough(task.isNotDone ? false : true)
 			.foregroundColor(task.isNotDone ? nil : .gray)
+			.lineLimit(2).truncationMode(.tail)
 	}
 
 	private var taskType: some View {
@@ -51,6 +74,7 @@ extension HomeListCell {
 			Text(LocalizedStringKey(task.type.rawValue))
 		}
 		.font(.system(.subheadline))
+		.strikethrough(task.isNotDone ? false : true)
 		.foregroundColor(.secondary)
 	}
 
@@ -59,26 +83,9 @@ extension HomeListCell {
 			SFSymbols.calendarWithClock.font(.callout)
 			Text(task.shortDueDate)
 		}
-		.font(.system(.body))
+		.font(.subheadline)
 		.strikethrough(task.isNotDone ? false : true)
 		.foregroundColor(task.isNotDone ? task.colorForDueDate() : .gray)
-	}
-
-	private var taskStatus: some View {
-		HStack(spacing: 4) {
-			Group {
-				switch task.status {
-				case .new: SFSymbols.sparkles
-				case .inProgress: SFSymbols.circleArrows
-				case .done: SFSymbols.checkmark
-				}
-			}
-			.font(.system(.caption2))
-
-			Text(LocalizedStringKey(task.status.rawValue))
-		}
-		.font(.system(.subheadline))
-		.foregroundColor(task.colorForStatus())
 	}
 }
 

@@ -32,7 +32,6 @@ struct PendingView: View {
 						pendingFromTomorrowSection
 						encouragingMessage.listRowBackground(Color.clear)
 					}
-					.listStyle(.plain)
 				}
 			}
 			.playConfetti($confettiCounter)
