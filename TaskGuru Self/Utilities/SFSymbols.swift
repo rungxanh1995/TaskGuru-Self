@@ -8,6 +8,7 @@
 import SwiftUI
 
 enum SFSymbols {
+	static let app: Image = .init(systemName: "app.dashed")
 	static let appBadge: Image = .init(systemName: "app.badge")
 	static let house: Image = .init(systemName: "house")
 	static let clock: Image = .init(systemName: "clock")

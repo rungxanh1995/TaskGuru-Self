@@ -89,21 +89,20 @@ private extension SettingsView {
 	}
 
 	@ViewBuilder private var appIcon: some View {
-		let currentIcon = AppIconType(rawValue: activeAppIcon)
-
 		HStack {
-			if let icon = AppIconType(rawValue: activeAppIcon)?.iconImage {
-				icon.asSettingsIconSize()
-			} else {
-				Image("app-logo").asSettingsIconSize()
-			}
+			SettingsIcon(icon: SFSymbols.app, accent: .appGreen)
 			NavigationLink {
 				AppIconSettings()
 			} label: {
-				Text("settings.general.appIcon")
-					.ifLet(currentIcon?.title, content: { text, iconName in
-						text.badge(LocalizedStringKey(iconName))
-					})
+				HStack {
+					Text("settings.general.appIcon")
+					Spacer()
+					if let icon = AppIconType(rawValue: activeAppIcon)?.iconImage {
+						icon.asSettingsIconSize()
+					} else {
+						Image("app-logo").asSettingsIconSize()
+					}
+				}
 			}
 		}
 	}
@@ -194,7 +193,7 @@ private extension SettingsView {
 	private var appBadge: some View {
 		VStack {
 			HStack {
-				SettingsIcon(icon: SFSymbols.appBadge, accent: .appTeal)
+				SettingsIcon(icon: SFSymbols.appBadge, accent: .appYellow)
 				Toggle("settings.badge.appIcon", isOn: $isShowingAppBadge)
 					.tint(.accentColor)
 			}

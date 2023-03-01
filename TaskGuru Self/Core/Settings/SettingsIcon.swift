@@ -19,7 +19,7 @@ struct SettingsIcon: View {
 				.frame(width: 20, height: 20)
 		}
 		.background(in: RoundedRectangle(cornerRadius: 3).inset(by: -4))
-		.backgroundStyle(accent.opacity(0.15))
+		.backgroundStyle(accent.opacity(0.25))
 		.foregroundStyle(accent)
 		.padding(4)
 	}
