@@ -21,6 +21,7 @@ struct AccentColorModifier: ViewModifier {
 		case .yellow: return Color(hex: 0xE7A63A)
 		case .green: return Color(hex: 0x5CC557)
 		case .clover: return Color(hex: 0x56BDA0)
+		case .teal: return Color(hex: systemScheme == .light ? 0x00BBCC : 0x46D7E6)
 		case .blue: return Color(hex: 0x4CA7DA)
 		case .indigo: return Color(hex: 0x435FB7)
 		case .purple: return Color(hex: 0x6747D9)

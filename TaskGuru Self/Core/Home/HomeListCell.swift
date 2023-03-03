@@ -80,7 +80,7 @@ extension HomeListCell {
 
 	private var taskDueDate: some View {
 		HStack(spacing: 6) {
-			SFSymbols.calendarWithClock.font(.callout)
+			SFSymbols.alarm.font(.callout)
 			Text(task.shortDueDate)
 		}
 		.font(.subheadline)

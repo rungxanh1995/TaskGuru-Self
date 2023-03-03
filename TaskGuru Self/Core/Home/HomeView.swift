@@ -41,12 +41,11 @@ struct HomeView: View {
 					}
 					.navigationBarTitleDisplayMode(.inline)
 					.toolbar {
+						ToolbarItem(placement: .navigationBarLeading) {
+							todaysDate
+						}
 						ToolbarItem(placement: .principal) {
-							VStack(spacing: -10) {
-								NavigationTitle(text: "home.nav.title")
-								Text(Date().formatted(.dateTime.day().month(.abbreviated).year()))
-								.font(.caption2)
-							}
+							NavigationTitle(text: "home.nav.title")
 						}
 						ToolbarItem(placement: .primaryAction) {
 							addTaskButton
@@ -262,6 +261,17 @@ extension HomeView {
 				Text("contextMenu.task.markAs")
 			}
 		}
+	}
+
+	private var todaysDate: some View {
+		Label {
+			Text(Date().formatted(.dateTime.weekday().day()))
+				.bold()
+		} icon: {
+			SFSymbols.calendarWithClock
+		}
+		.labelStyle(.titleAndIcon)
+		.foregroundColor(.appYellow)
 	}
 
 	private var addTaskButton: some View {

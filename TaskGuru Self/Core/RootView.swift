@@ -27,7 +27,7 @@ struct RootView: View {
 			HomeView()
 				.tag(Tab.home)
 				.tabItem {
-					SFSymbols.house
+					SFSymbols.bulletList
 					if isTabNamesEnabled { Text("home.tab.title") }
 				}
 			PendingView()
