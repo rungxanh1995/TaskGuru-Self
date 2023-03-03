@@ -37,6 +37,12 @@
 "taskItem.status.inProgress" = "Em andamento";
 "taskItem.status.done" = "Concluído";
 
+/* Task priorities */
+"taskItem.priority.none" = "Nenhuma";
+"taskItem.priority.low" = "Baixa";
+"taskItem.priority.medium" = "Média";
+"taskItem.priority.high" = "Alta";
+
 /* Navigation/Context menu - Quick actions in Home & Pending tabs */
 "contextMenu.task.markNew" = "Marcar como Novo";
 "contextMenu.task.markInProgress" = "Marcar como Em andamento";
@@ -97,6 +103,7 @@
 "addTask.input.dueDate" = "Data de Vencimento";
 "addTask.input.type" = "Tipo";
 "addTask.input.status" = "Status";
+"addTask.input.priority" = "Prioridade";
 "addTask.input.notes" = "Notas";
 "addTask.input.placeholder.notes" = "Algumas notas adicionais...";
 
@@ -110,6 +117,7 @@
 "taskDetail.cell.status.caption" = "Status";
 "taskDetail.cell.dueDate.caption" = "Data de Vencimento";
 "taskDetail.cell.type.caption" = "Tipo";
+"taskDetail.cell.priority.caption" = "Prioridade";
 "taskDetail.cell.notes.caption" = "Notas";
 
 /* Alerts */
@@ -134,6 +142,7 @@
 "editTask.input.dueDate" = "Data de Vencimento";
 "editTask.input.type" = "Tipo";
 "editTask.input.status" = "Status";
+"editTask.input.priority" = "Prioridade";
 "editTask.input.notes" = "Notas";
 "editTask.input.placeholder.notes" = "Algumas notas adicionais...";
 

@@ -37,6 +37,12 @@
 "taskItem.status.inProgress" = "Đang tiến hành";
 "taskItem.status.done" = "Đã xong";
 
+/* Task priorities */
+"taskItem.priority.none" = "Không có";
+"taskItem.priority.low" = "Thấp";
+"taskItem.priority.medium" = "Trung bình";
+"taskItem.priority.high" = "Cao";
+
 /* Navigation/Context menu - Quick actions in Home & Pending tabs */
 "contextMenu.task.markAs" = "Đánh dấu tác vụ là...?";
 "contextMenu.task.markNew" = "Đánh dấu vừa tạo";
@@ -98,6 +104,7 @@
 "addTask.input.dueDate" = "Ngày đến hạn";
 "addTask.input.type" = "Thể loại";
 "addTask.input.status" = "Tình trạng";
+"addTask.input.priority" = "Mức ưu tiên";
 "addTask.input.notes" = "Ghi chú";
 "addTask.input.placeholder.notes" = "Ghi chú bổ sung...";
 
@@ -111,6 +118,7 @@
 "taskDetail.cell.status.caption" = "Tình trạng";
 "taskDetail.cell.dueDate.caption" = "Ngày đến hạn";
 "taskDetail.cell.type.caption" = "Thể loại";
+"taskDetail.cell.priority.caption" = "Mức ưu tiên";
 "taskDetail.cell.notes.caption" = "Ghi chú";
 
 /* Alerts */
@@ -135,6 +143,7 @@
 "editTask.input.dueDate" = "Ngày đến hạn";
 "editTask.input.type" = "Thể loại";
 "editTask.input.status" = "Tình trạng";
+"editTask.input.priority" = "Mức ưu tiên";
 "editTask.input.notes" = "Ghi chú";
 "editTask.input.placeholder.notes" = "Ghi chú bổ sung...";
 

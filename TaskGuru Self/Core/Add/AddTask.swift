@@ -38,6 +38,12 @@ struct AddTask: View {
 							Text(LocalizedStringKey($0.rawValue))
 						}
 					}
+
+					Picker("addTask.input.priority", selection: $vm.taskPriority) {
+						ForEach(TaskPriority.allCases, id: \.self) {
+							Text(LocalizedStringKey($0.rawValue))
+						}
+					}
 				} header: {
 					Label {
 						Text("addTask.sections.general")
@@ -95,7 +101,7 @@ extension AddTask {
 }
 
 struct AddTask_Previews: PreviewProvider {
-    static var previews: some View {
+	static var previews: some View {
 		AddTask(vm: .init(parentVM: dev.homeVM))
 	}
 }

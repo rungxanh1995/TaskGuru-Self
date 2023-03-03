@@ -26,6 +26,7 @@ final class DeveloperPreview {
 		task.type = .school
 		task.status = .inProgress
 		task.dueDate = .now
+		task.priority = .medium
 		task.notes = "An advanced ToDo application with several types of tasks and ability to create new tasks and new kinds of tasks."
 
 		return task

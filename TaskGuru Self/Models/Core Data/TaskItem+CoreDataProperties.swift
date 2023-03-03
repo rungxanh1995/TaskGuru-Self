@@ -2,7 +2,7 @@
 //  TaskItem+CoreDataProperties.swift
 //  TaskGuru Self
 //
-//  Created by Joe Pham on 2023-01-31.
+//  Created by Joe Pham on 3/3/23.
 //
 //
 
@@ -24,6 +24,7 @@ extension TaskItem: Identifiable {
 	@NSManaged private var cd_lastUpdated: Date?
 	@NSManaged private var cd_type: String?
 	@NSManaged private var cd_status: String?
+	@NSManaged public var cd_priority: String?
 	@NSManaged private var cd_notes: String?
 
 	// MARK: - Unwrapped properties
@@ -80,6 +81,14 @@ extension TaskItem: Identifiable {
 		}
 	}
 
+	var priority: TaskPriority {
+		get { TaskPriority(rawValue: cd_priority ?? "None") ?? .none }
+		set {
+			cd_priority = newValue.rawValue
+			cd_lastUpdated = .now
+		}
+	}
+
 	var isNotDone: Bool { status != .done }
 
 	var notes: String {
@@ -108,6 +117,15 @@ extension TaskItem {
 			return Color.appYellow
 		} else {
 			return Color.appPink
+		}
+	}
+
+	func colorForPriority() -> Color {
+		switch priority {
+		case .none: return Color.gray
+		case .low: return Color.appTeal
+		case .medium: return Color.appYellow
+		case .high: return Color.appPink
 		}
 	}
 }

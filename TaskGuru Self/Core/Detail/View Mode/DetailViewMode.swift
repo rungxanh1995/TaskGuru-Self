@@ -25,13 +25,16 @@ extension DetailView {
 		var body: some View {
 			ScrollView {
 				VStack(spacing: 8) {
+					DetailGridCell(title: vm.task.name, caption: "taskDetail.cell.name.caption")
+
 					LazyVGrid(columns: columns) {
-						DetailGridCell(title: vm.task.name, caption: "taskDetail.cell.name.caption")
 						DetailGridCell(title: vm.task.status.rawValue, caption: "taskDetail.cell.status.caption",
 													 titleColor: vm.task.colorForStatus())
 						DetailGridCell(title: vm.task.numericDueDate, caption: "taskDetail.cell.dueDate.caption",
 													 titleColor: vm.task.colorForDueDate())
 						DetailGridCell(title: vm.task.type.rawValue, caption: "taskDetail.cell.type.caption")
+						DetailGridCell(title: vm.task.priority.rawValue, caption: "taskDetail.cell.priority.caption",
+													 titleColor: vm.task.colorForPriority())
 					}
 
 					if vm.task.notes.isEmpty == false {

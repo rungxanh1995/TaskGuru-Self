@@ -24,7 +24,7 @@ struct PendingView: View {
 				if vm.isFetchingData {
 					ProgressView { Text("pending.info.fetchingData") }
 				} else if vm.noPendingTasksLeft {
-					emptyStateImage
+					emptyStateImage.padding()
 				} else {
 					List {
 						pendingInThePastSection
@@ -34,6 +34,7 @@ struct PendingView: View {
 					}
 				}
 			}
+			.listStyle(.grouped)
 			.playConfetti($confettiCounter)
 			.onAppear(perform: vm.fetchTasks)
 			.onChange(of: selectedTask) { _ in vm.fetchTasks() }

@@ -33,13 +33,19 @@ extension DetailView {
 						)
 
 						Picker("editTask.input.type", selection: $vm.taskType) {
-							ForEach(TaskConstants.allTypes, id: \.self) {
+							ForEach(TaskType.allCases, id: \.self) {
 								Text(LocalizedStringKey($0.rawValue))
 							}
 						}
 
 						Picker("editTask.input.status", selection: $vm.taskStatus) {
-							ForEach(TaskConstants.allStatuses, id: \.self) {
+							ForEach(TaskStatus.allCases, id: \.self) {
+								Text(LocalizedStringKey($0.rawValue))
+							}
+						}
+
+						Picker("editTask.input.priority", selection: $vm.taskPriority) {
+							ForEach(TaskPriority.allCases, id: \.self) {
 								Text(LocalizedStringKey($0.rawValue))
 							}
 						}

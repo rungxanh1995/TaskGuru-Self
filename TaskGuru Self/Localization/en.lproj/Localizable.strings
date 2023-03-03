@@ -37,6 +37,12 @@
 "taskItem.status.inProgress" = "In progress";
 "taskItem.status.done" = "Done";
 
+/* Task priorities */
+"taskItem.priority.none" = "None";
+"taskItem.priority.low" = "Low";
+"taskItem.priority.medium" = "Medium";
+"taskItem.priority.high" = "High";
+
 /* Navigation/Context menu - Quick actions in Home & Pending tabs */
 "contextMenu.task.markAs" = "Mark Task as...?";
 "contextMenu.task.markNew" = "Mark as New";
@@ -98,6 +104,7 @@
 "addTask.input.dueDate" = "Due Date";
 "addTask.input.type" = "Type";
 "addTask.input.status" = "Status";
+"addTask.input.priority" = "Priority";
 "addTask.input.notes" = "Notes";
 "addTask.input.placeholder.notes" = "Any extra notes...";
 
@@ -111,6 +118,7 @@
 "taskDetail.cell.status.caption" = "Status";
 "taskDetail.cell.dueDate.caption" = "Due Date";
 "taskDetail.cell.type.caption" = "Type";
+"taskDetail.cell.priority.caption" = "Priority";
 "taskDetail.cell.notes.caption" = "Notes";
 
 /* Alerts */
@@ -135,6 +143,7 @@
 "editTask.input.dueDate" = "Due Date";
 "editTask.input.type" = "Type";
 "editTask.input.status" = "Status";
+"editTask.input.priority" = "Priority";
 "editTask.input.notes" = "Notes";
 "editTask.input.placeholder.notes" = "Any extra notes...";
 

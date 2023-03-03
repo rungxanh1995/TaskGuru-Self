@@ -11,17 +11,15 @@ struct HomeListCell: View {
 	@ObservedObject var task: TaskItem
 
 	var body: some View {
-		HStack(alignment: .top) {
-			HStack {
-				taskStatus
+		HStack {
+			taskStatus
+			VStack(alignment: .leading) {
 				taskName
-			}
-
-			Spacer(minLength: 8.0)
-
-			VStack(alignment: .trailing, spacing: 4) {
-				taskDueDate
-				taskType
+				HStack(alignment: .center, spacing: 20) {
+					if task.priority != .none { taskPriority }
+					taskDueDate
+					taskType
+				}
 			}
 		}
 	}
@@ -42,12 +40,31 @@ extension HomeListCell {
 		}
 		.labelStyle(.iconOnly)
 		.font(.body)
-		.frame(width: 18, height: 18)
-		.clipShape(RoundedRectangle(cornerRadius: 9*(18/40)))
+		.frame(width: 20, height: 20)
+		.clipShape(RoundedRectangle(cornerRadius: 9*(20/40)))
 		.background(in: RoundedRectangle(cornerRadius: 3).inset(by: -4))
 		.backgroundStyle(task.colorForStatus().opacity(0.25))
 		.foregroundStyle(task.colorForStatus())
 		.padding(4)
+	}
+
+	private var taskPriority: some View {
+		Label {
+			Text(LocalizedStringKey(task.priority.rawValue))
+		} icon: {
+			ZStack {
+				switch task.priority {
+				case .none: EmptyView()
+				case .low: Text("!")
+				case .medium: Text("!!")
+				case .high: Text("!!!")
+				}
+			}
+		}
+		.labelStyle(.iconOnly)
+		.font(.body)
+		.strikethrough(task.isNotDone ? false : true)
+		.foregroundColor(task.isNotDone ? task.colorForPriority() : .gray)
 	}
 
 	private var taskName: some View {
@@ -69,18 +86,18 @@ extension HomeListCell {
 				default: SFSymbols.listFilled
 				}
 			}
-			.font(.system(.caption2))
+			.font(.caption)
 
 			Text(LocalizedStringKey(task.type.rawValue))
 		}
-		.font(.system(.subheadline))
+		.font(.subheadline)
 		.strikethrough(task.isNotDone ? false : true)
 		.foregroundColor(.secondary)
 	}
 
 	private var taskDueDate: some View {
-		HStack(spacing: 6) {
-			SFSymbols.alarm.font(.callout)
+		HStack(spacing: 4) {
+			SFSymbols.alarm.font(.caption)
 			Text(task.shortDueDate)
 		}
 		.font(.subheadline)
@@ -90,7 +107,7 @@ extension HomeListCell {
 }
 
 struct HomeListCell_Previews: PreviewProvider {
-    static var previews: some View {
+	static var previews: some View {
 		HomeListCell(task: dev.task)
 	}
 }
