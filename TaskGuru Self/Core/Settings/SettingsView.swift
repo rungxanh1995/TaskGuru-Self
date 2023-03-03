@@ -277,7 +277,7 @@ private extension SettingsView {
 
 	private var resetAppSettingsButton: some View {
 		HStack {
-			SettingsIcon(icon: SFSymbols.gearFilled, accent: .red)
+			SettingsIcon(icon: SFSymbols.gear, accent: .red)
 			Button(role: .destructive) {
 				vm.isConfirmingResetSettings.toggle()
 			} label: {
