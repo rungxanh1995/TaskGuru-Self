@@ -65,13 +65,21 @@ extension AcknowledgementsView {
 	}
 
 	private var dependencies: some View {
-		Group {
+		VStack(spacing: 12) {
 			Text("settings.ack.dependencies")
 				.font(.title3).bold()
-			Link(destination: URL(string: "https://github.com/simibac/ConfettiSwiftUI")!) {
-				Text("ConfettiSwiftUI")
+			VStack {
+				Link(destination: URL(string: "https://github.com/simibac/ConfettiSwiftUI")!) {
+					Text("ConfettiSwiftUI")
+				}
+				Text("Simon Bachmann")
 			}
-			Text("Simon Bachmann")
+
+			VStack {
+				Link(destination: URL(string: "https://github.com/SFSafeSymbols/SFSafeSymbols")!) {
+					Text("SFSafeSymbols")
+				}
+			}
 		}
 	}
 
