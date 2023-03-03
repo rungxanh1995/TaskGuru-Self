@@ -1,0 +1,210 @@
+/* 
+  Localizable.strings
+  TaskGuru Self
+
+  Created by Joe Pham on 2023-02-15.
+  Translated by Ostap Sulyk
+*/
+
+/* ONBOARDING */
+/* Buttons */
+"I'm All Set!" = "Я все налаштовано!";
+"Dismiss" = "Відхилити";
+
+"Home tab" = "Вкладка Головна";
+"Tasks categorized by section to easily track overdue, due today, and upcoming ones" = "Завдання розподілені за розділами для зручного відстеження прострочених, на сьогодні та майбутніх";
+"Pending Tasks tab" = "Вкладка Відкладені завдання";
+"Find your undone tasks here" = "Знайдіть незавершені завдання тут";
+"App icon badge" = "App icon badge";
+"Track all or time-based pending tasks at a glance. Find this in %@ Settings" = "Track all or time-based pending tasks at a glance. Find this in %@ Settings";
+"Quick Actions" = "Швидкі дії";
+"Tap and hold each task from the list to use quick actions" = "Клацніть та утримуйте кожне завдання зі списку, щоб використати швидкі дії";
+
+
+/* SHARED */
+/* Task types */
+"Personal" = "Особисті";
+/* "Work" can also be understood as "business" */
+"Work" = "Робота";
+/* "School" can also be understood as "educational" */
+"School" = "Школа";
+"Coding" = "Програмування";
+"Other" = "Інше";
+
+/* Task statuses */
+/* "New" can also be understood as "newly created" */
+"New" = "Нове";
+"In progress" = "В роботі";
+"Done" = "Виконане";
+
+/* Navigation/Context menu - Quick actions in Home & Pending tabs */
+"Mark as Done" = "Позначити як виконане";
+"Edit" = "Редагувати";
+"Delete" = "Видалити";
+"Cancel" = "Скасувати";
+"OK" = "ОК";
+
+/* Add Task button in Home & Pending tabs */
+"Add Task" = "Додати завдання";
+
+/* Add/Edit Task */
+/* Section titles */
+"General" = "Загальні";
+"Notes" = "Примітки";
+
+/* Add/Edit Inputs + Detail Grid Cell subtitles */
+"Name" = "Назва";
+"Due Date" = "Крайній термін";
+"Type" = "Тип";
+"Status" = "Статус";
+"Any extra notes..." = "Будь-які додаткові примітки...";
+
+
+/* HOME */
+/* Home tab name */
+"Home" = "Головна";
+/* Navigation title */
+"All Tasks" = "Всі завдання";
+/* Section titles */
+"All Pending" = "Усі незавершені завдання";
+"Overdue" = "Прострочені";
+"Due Today" = "На сьогодні";
+"Upcoming" = "Майбутні";
+/* Empty list sentence */
+"No tasks" = "Немає завдань";
+/* All tasks empty sentence */
+"Nothing yet. Tap here or %@ to add more" = "Nothing yet. Tap here or %@ to add more";
+
+
+/* PENDING */
+/* Pending tab name */
+"Pending" = "невиконані";
+/* Navigation title */
+"Pending Tasks" = "невиконані завдання";
+
+"Fetching data" = "завантаження даних";
+"You're free! Enjoy your much deserved time 🥳" = "Ви вільні! Насолоджуйтеся добре заслуженим часом 🥳🥳";
+"Don't stress yourself too much. You got it 💪" = "Не перенапружуйте себе. Ви зможете це зробити 💪";
+
+
+/* ADD */
+/* Navigation title */
+"Add Task" = "Додати задачу";
+/* Navigation action button */
+"Add" = "Додати";
+
+
+/* DETAIL */
+/* Navigation title */
+"Task Detail" = "Деталі задачі";
+
+"Last updated at %@" = "Останнє оновлення %@";
+
+
+/* EDIT */
+/* Navigation title */
+"Edit Task" = "Редагувати задачу";
+/* Navigation action button */
+"Save" = "зберегти";
+
+/* Alerts */
+"Mark Task as Done?" = "Позначити задачу виконаною?";
+"Delete Task?" = "Видалити задачу?";
+
+
+/* SETTINGS */
+/* Navigation title */
+"Settings" = "Налаштування";
+
+/* Section titles */
+"General" = "Загальні";
+"Badge" = "Значки";
+"Miscellaneous" = "Miscellaneous";
+"Advanced" = "Додаткові";
+"Meet The Team" = "Зустріч з командою";
+
+/* General section */
+"Show Onboarding screen" = "Показувати екран навчання";
+"Portrait Lock" = "Блокування портретного режиму";
+"Reduce Haptics" = "Зменшення вібрації";
+"Accent Color" = "Accent Color";
+"Font Style" = "Font Style";
+"Color Theme" = "Кольорова тема";
+
+/* Badge secrion */
+"Show App Icon Badge" = "Показати значок значка програми";
+"App Icon Badge Type" = "Тип значка програми";
+"Show Tab Badge" = "Показувати значок вкладки";
+"Icon badge shows a number of tasks on Home screen. Review your Notification settings if no badge shown." = "Піктограма показує ряд завдань на головному екрані. Перегляньте налаштування сповіщень, якщо значок не відображається.";
+
+/* Misc section */
+"Tab Names" = "Tab Names";
+"Toggle Confetti 🎉" = "Toggle Confetti 🎉";
+"Preview on Haptic Touch" = "Попередній перегляд за допомогою Haptic Touch";
+"Long pressing a task from a list reveals a context menu for the task when enabled." = "Long pressing a task from a list reveals a context menu for the task when enabled.";
+
+/* Advanced section */
+/* Footer */
+"Be careful, these remove all your data! Restart the app to see all changes." = "Обережно, це видалить всі ваші дані! Перезапустіть програму, щоб побачити всі зміни.";
+
+/* Confirm dialogs */
+"App settings would reset.\nThis action cannot be undone" = "Налаштування програми будуть скинуті.\nЦю дію не можна скасувати";
+"All your tasks would be deleted.\nThis action cannot be undone" = "Всі ваші завдання будуть видалені.\nЦю дію не можна скасувати";
+
+/* Buttons */
+"Reset App Settings" = "Скинути налаштування програми";
+"Reset Your Data" = "Скинути ваші дані";
+
+/* Accent colors */
+"Blue" = "Синій";
+"Teal" = "Бірюзовий";
+"Indigo" = "Індиго";
+"Pink" = "Рожевий";
+"Red" = "Червоний";
+"Orange" = "Помаранчевий";
+"Yellow" = "Жовтий";
+"Green" = "Зелений";
+"Mint" = "М'ятний";
+
+/* Font designs */
+"System" = "System";
+"Rounded" = "Rounded";
+"Monospaced" = "Monospaced";
+"Serif" = "Serif";
+
+/* Color themes */
+"System" = "Системна";
+"Light" = "Світла";
+"Dark" = "Темна";
+
+/* Context preview types */
+"settings.misc.previewtype.title" = "Preview Type on Haptic Touch";
+"settings.misc.previewtype.content.cell" = "Cell";
+"settings.misc.previewtype.content.detail" = "Detail";
+
+
+/* ACKNOWLEDGEMENTS */
+/* Navigation title */
+"Acknowledgements" = "Acknowledgements";
+
+"Development Team" = "Development Team";
+"Localization" = "Localization";
+"Third Party Dependencies" = "Third Party Dependencies";
+"License" = "License";
+
+/* Localization */
+"Azerbaijani" = "Azerbaijani";
+"Chinese (Simplified)" = "Chinese (Simplified)";
+"Italian" = "Italian";
+"Portuguese (Brazillian)" = "Portuguese (Brazillian)";
+"Ukrainian" = "Ukrainian";
+"Vietnamese" = "Vietnamese";
+
+/* License */
+"settings.acknowledgements.license.content" = "
+© TaskGuru Non-Commercial License
+
+This software and its associated documentation files (the 'TaskGuru App') are licensed to you under the TaskGuru Non-Commercial License. You are not permitted to sell, license, or distribute the TaskGuru App or any modifications of it for commercial purposes. You may use, modify and distribute the TaskGuru App for non-commercial purposes only, such as for educational or personal use.
+
+THE TASKGURU APP IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE TASKGURU APP OR THE USE OR OTHER DEALINGS IN THE TASKGURU APP.
+";
