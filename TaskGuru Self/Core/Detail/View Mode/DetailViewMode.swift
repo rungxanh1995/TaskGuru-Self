@@ -1,5 +1,5 @@
 //
-//  DetailView.swift
+//  DetailViewMode.swift
 //  TaskGuru Self
 //
 //  Created by Joe Pham on 2023-01-27.
@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-extension DetailView {
+extension DetailScreen {
 	struct ViewMode: View {
-		@ObservedObject var vm: DetailView.ViewModel
+		@ObservedObject var vm: DetailScreen.ViewModel
 
 		@Environment(\.dismiss) var dismissThisView
 
@@ -96,7 +96,7 @@ extension DetailView {
 				})
 			})
 			.sheet(isPresented: $isShowingEdit) {
-				DetailView.EditMode(vm: self.vm)
+				DetailScreen.EditMode(vm: self.vm)
 			}
 		}
 	}

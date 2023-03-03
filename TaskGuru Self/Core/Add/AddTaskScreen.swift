@@ -1,5 +1,5 @@
 //
-//  AddTask.swift
+//  AddTaskScreen.swift
 //  TaskGuru Self
 //
 //  Created by Joe Pham on 2023-01-27.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AddTask: View {
+struct AddTaskScreen: View {
 	internal enum FocusField { case name, notes }
 
 	@FocusState
@@ -15,8 +15,7 @@ struct AddTask: View {
 
 	@Environment(\.dismiss) var dismissThisView
 
-	@ObservedObject
-	var vm: AddTask.ViewModel
+	@ObservedObject var vm: AddTaskScreen.ViewModel
 
     var body: some View {
 		NavigationView {
@@ -93,7 +92,7 @@ struct AddTask: View {
 	}
 }
 
-extension AddTask {
+extension AddTaskScreen {
 	private func addNewTask() {
 		vm.addNewTask()
 		haptic(.notification(.success))
@@ -102,6 +101,6 @@ extension AddTask {
 
 struct AddTask_Previews: PreviewProvider {
 	static var previews: some View {
-		AddTask(vm: .init(parentVM: dev.homeVM))
+		AddTaskScreen(vm: .init(parentVM: dev.homeVM))
 	}
 }

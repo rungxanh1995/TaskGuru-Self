@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-extension DetailView {
+extension DetailScreen {
 	struct EditMode: View {
 		// swiftlint:disable nesting
 		internal enum FocusField { case name, notes }
@@ -19,7 +19,7 @@ extension DetailView {
 		@EnvironmentObject var appState: AppState
 		@Environment(\.dismiss) var dismissThisView
 
-		@ObservedObject var vm: DetailView.ViewModel
+		@ObservedObject var vm: DetailScreen.ViewModel
 
 		var body: some View {
 			NavigationView {

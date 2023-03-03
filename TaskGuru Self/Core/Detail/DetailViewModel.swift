@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-extension DetailView {
+extension DetailScreen {
 	final class ViewModel: ObservableObject {
 		var task: TaskItem
 

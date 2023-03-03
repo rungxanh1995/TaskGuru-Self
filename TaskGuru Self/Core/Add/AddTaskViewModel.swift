@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension AddTask {
+extension AddTaskScreen {
 	final class ViewModel: ObservableObject {
 		private let listViewModel: HomeViewModel
 		private let storageProvider: StorageProvider

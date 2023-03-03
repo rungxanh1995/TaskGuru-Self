@@ -33,7 +33,7 @@ struct TaskGuru_SelfApp: App {
 
 	var body: some Scene {
 		WindowGroup {
-			RootView()
+			RootScreen()
 				.sheet(isPresented: .constant(isOnboarding)) {
 					OnboardContainerView()
 				}
