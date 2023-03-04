@@ -87,7 +87,7 @@ extension HomeScreen {
 
 			let emptyTaskListSentence = LocalizedStringKey("Nothing yet. Tap here or \(SFSymbols.plusCircled) to add more")
 			Text(emptyTaskListSentence)
-				.font(.system(.callout))
+				.font(.callout)
 				.foregroundColor(.secondary)
 		}
 		.onTapGesture { vm.isShowingAddTaskView.toggle() }
@@ -96,7 +96,7 @@ extension HomeScreen {
 	@ViewBuilder private var emptyFilteredListText: some View {
 		let emptyListSentence = LocalizedStringKey("home.info.sectionEmpty")
 		Text(emptyListSentence)
-			.font(.system(.callout))
+			.font(.callout)
 			.foregroundColor(.secondary)
 	}
 

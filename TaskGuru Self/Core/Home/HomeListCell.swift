@@ -69,7 +69,7 @@ extension HomeListCell {
 
 	private var taskName: some View {
 		Text(task.name)
-			.font(.system(.body))
+			.font(.body)
 			.strikethrough(task.isNotDone ? false : true)
 			.foregroundColor(task.isNotDone ? nil : .gray)
 			.lineLimit(2).truncationMode(.tail)
