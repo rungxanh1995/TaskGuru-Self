@@ -15,7 +15,7 @@ struct DetailGridCell: View {
 	var body: some View {
 		VStack {
 			Text(LocalizedStringKey(title))
-				.font(.system(.headline))
+				.font(.headline)
 				.multilineTextAlignment(.center)
 				.padding()
 				.foregroundColor(titleColor)
@@ -24,14 +24,20 @@ struct DetailGridCell: View {
 			Spacer()
 
 			Text(caption)
-				.font(.system(.caption))
+				.font(.caption)
 				.padding(6)
 				.frame(maxWidth: .infinity)
-				.background(.thickMaterial)
+				.overlay(
+					Rectangle()
+						.fill(.gray.opacity(0.25).gradient)
+				)
 		}
 		.frame(maxWidth: .infinity, maxHeight: .infinity)
-		.background(.thinMaterial)
 		.clipShape(RoundedRectangle(cornerRadius: 8))
+		.overlay(
+			RoundedRectangle(cornerRadius: 8)
+				.stroke(.gray.opacity(0.5), lineWidth: 0.5)
+		)
 	}
 }
 

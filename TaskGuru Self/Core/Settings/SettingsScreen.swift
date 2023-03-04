@@ -332,7 +332,7 @@ private extension SettingsScreen {
 			HStack {
 				Spacer()
 				Text("TaskGuru \(vm.appVersionNumber) (\(vm.appBuildNumber))")
-					.font(.system(.callout))
+					.font(.callout)
 					.foregroundColor(.secondary)
 				Spacer()
 			}

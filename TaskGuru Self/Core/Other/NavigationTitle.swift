@@ -27,7 +27,7 @@ struct NavigationTitle: View {
 
 	var body: some View {
 		Button(text) {}
-			.font(.system(.headline))
+			.font(.headline)
 			.fontWeight(.bold)
 			.allowsHitTesting(false)
 	}
