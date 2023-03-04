@@ -1,5 +1,5 @@
 //
-//  SettingsView.swift
+//  SettingsScreen.swift
 //  TaskGuru Self
 //
 //  Created by Joe Pham on 2023-01-27.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SettingsView: View {
+struct SettingsScreen: View {
 	@StateObject private var vm: ViewModel
 
 	@Preference(\.isShowingAppBadge) private var isShowingAppBadge
@@ -24,7 +24,7 @@ struct SettingsView: View {
 	@Preference(\.badgeType) private var badgeType
 	@Preference(\.contextPreviewType) private var contextPreviewType
 
-	init(vm: SettingsView.ViewModel = .init()) {
+	init(vm: SettingsScreen.ViewModel = .init()) {
 		_vm = StateObject(wrappedValue: vm)
 	}
 
@@ -73,7 +73,7 @@ struct SettingsView: View {
 	}
 }
 
-private extension SettingsView {
+private extension SettingsScreen {
 	private var generalSection: some View {
 		Section {
 			appIcon
@@ -348,6 +348,6 @@ private extension SettingsView {
 
 struct SettingsView_Previews: PreviewProvider {
 	static var previews: some View {
-		SettingsView()
+		SettingsScreen()
 	}
 }

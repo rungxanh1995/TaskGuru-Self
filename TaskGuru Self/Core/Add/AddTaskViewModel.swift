@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension AddTask {
+extension AddTaskScreen {
 	final class ViewModel: ObservableObject {
 		private let listViewModel: HomeViewModel
 		private let storageProvider: StorageProvider
@@ -21,13 +21,18 @@ extension AddTask {
 		@Published var dueDate: Date = .now
 		@Published var taskType: TaskType = .personal
 		@Published var taskStatus: TaskStatus = .new
+		@Published var taskPriority: TaskPriority = .none
 		@Published var taskNotes: String = ""
 
 		func addNewTask() {
-			addTask(name: &taskName, dueDate: dueDate, type: taskType, status: taskStatus, notes: taskNotes)
+			addTask(name: &taskName, dueDate: dueDate, type: taskType,
+							status: taskStatus, priority: taskPriority, notes: taskNotes)
 		}
 
-		private func addTask(name: inout String, dueDate: Date, type: TaskType, status: TaskStatus, notes: String) {
+		private func addTask(
+			name: inout String, dueDate: Date, type: TaskType,
+			status: TaskStatus, priority: TaskPriority, notes: String) {
+
 			assignDefaultTaskName(to: &name)
 
 			let newTask = TaskItem(context: storageProvider.context)
@@ -37,6 +42,7 @@ extension AddTask {
 			newTask.lastUpdated = .now
 			newTask.type = type
 			newTask.status = status
+			newTask.priority = priority
 			newTask.notes = notes
 
 			saveThenRefetchData()

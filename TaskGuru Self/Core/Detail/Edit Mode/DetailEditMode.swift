@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-extension DetailView {
+extension DetailScreen {
 	struct EditMode: View {
 		// swiftlint:disable nesting
 		internal enum FocusField { case name, notes }
@@ -19,7 +19,7 @@ extension DetailView {
 		@EnvironmentObject var appState: AppState
 		@Environment(\.dismiss) var dismissThisView
 
-		@ObservedObject var vm: DetailView.ViewModel
+		@ObservedObject var vm: DetailScreen.ViewModel
 
 		var body: some View {
 			NavigationView {
@@ -33,13 +33,19 @@ extension DetailView {
 						)
 
 						Picker("editTask.input.type", selection: $vm.taskType) {
-							ForEach(TaskConstants.allTypes, id: \.self) {
+							ForEach(TaskType.allCases, id: \.self) {
 								Text(LocalizedStringKey($0.rawValue))
 							}
 						}
 
 						Picker("editTask.input.status", selection: $vm.taskStatus) {
-							ForEach(TaskConstants.allStatuses, id: \.self) {
+							ForEach(TaskStatus.allCases, id: \.self) {
+								Text(LocalizedStringKey($0.rawValue))
+							}
+						}
+
+						Picker("editTask.input.priority", selection: $vm.taskPriority) {
+							ForEach(TaskPriority.allCases, id: \.self) {
 								Text(LocalizedStringKey($0.rawValue))
 							}
 						}

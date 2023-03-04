@@ -1,5 +1,5 @@
 //
-//  HomeView.swift
+//  HomeScreen.swift
 //  TaskGuru Self
 //
 //  Created by Joe Pham on 2023-01-27.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct HomeView: View {
+struct HomeScreen: View {
 	@EnvironmentObject var vm: HomeViewModel
 	@StateObject private var tabState: AppState = .init()
 	@State private var selectedTask: TaskItem?
@@ -22,58 +22,57 @@ struct HomeView: View {
 		NavigationStack(path: $tabState.navPath) {
 			ZStack {
 				if vm.isFetchingData {
-					ProgressView()
+					ProgressView { Text("pending.info.fetchingData") }
+				} else if vm.allTasks.isEmpty {
+					emptyTaskText.padding()
 				} else {
 					List {
-						if vm.allTasks.isEmpty {
-							emptyTaskText
-						} else {
-							overdueSection
-							dueTodaySection
-							upcomingSection
-						}
+						overdueSection
+						dueTodaySection
+						upcomingSection
 					}
-					.playConfetti($confettiCounter)
-					.onAppear(perform: vm.fetchTasks)
-					.onChange(of: selectedTask) { _ in vm.fetchTasks() }
-					.navigationDestination(for: TaskItem.self) { task in
-						DetailView(vm: .init(for: task))
-					}
-					.navigationBarTitleDisplayMode(.inline)
-					.toolbar {
-						ToolbarItem(placement: .navigationBarLeading) {
-							todaysDate
-						}
-						ToolbarItem(placement: .principal) {
-							NavigationTitle(text: "home.nav.title")
-						}
-						ToolbarItem(placement: .primaryAction) {
-							addTaskButton
-						}
-						ToolbarItem(placement: .secondaryAction) {
-							clearDoneTasksButton
-						}
-					}
-					.searchable(text: $vm.searchText)
-					.sheet(isPresented: $vm.isShowingAddTaskView) {
-						AddTask(vm: .init(parentVM: self.vm))
-					}
-					.fullScreenCover(item: $selectedTask) { task in
-						DetailView.EditMode(vm: .init(for: task))
-					}
-					.confirmationDialog(
-						"home.clearDoneTasks.alert",
-						isPresented: $vm.isConfirmingClearDoneTasks,
-						titleVisibility: .visible
-					) {
-						Button("contextMenu.clearDoneTasks", role: .destructive) {
-							vm.clearDoneTasks()
-							haptic(.notification(.success))
-						}
-						Button("contextMenu.cancel", role: .cancel) {
-							haptic(.buttonPress)
-						}
-					}
+				}
+			}
+			.listStyle(.plain)
+			.playConfetti($confettiCounter)
+			.onAppear(perform: vm.fetchTasks)
+			.onChange(of: selectedTask) { _ in vm.fetchTasks() }
+			.navigationDestination(for: TaskItem.self) { task in
+				DetailScreen(vm: .init(for: task))
+			}
+			.navigationBarTitleDisplayMode(.inline)
+			.toolbar {
+				ToolbarItem(placement: .navigationBarLeading) {
+					todaysDate
+				}
+				ToolbarItem(placement: .principal) {
+					NavigationTitle(text: "home.nav.title")
+				}
+				ToolbarItem(placement: .primaryAction) {
+					addTaskButton
+				}
+				ToolbarItem(placement: .secondaryAction) {
+					clearDoneTasksButton
+				}
+			}
+			.searchable(text: $vm.searchText)
+			.sheet(isPresented: $vm.isShowingAddTaskView) {
+				AddTaskScreen(vm: .init(parentVM: self.vm))
+			}
+			.fullScreenCover(item: $selectedTask) { task in
+				DetailScreen.EditMode(vm: .init(for: task))
+			}
+			.confirmationDialog(
+				"home.clearDoneTasks.alert",
+				isPresented: $vm.isConfirmingClearDoneTasks,
+				titleVisibility: .visible
+			) {
+				Button("contextMenu.clearDoneTasks", role: .destructive) {
+					vm.clearDoneTasks()
+					haptic(.notification(.success))
+				}
+				Button("contextMenu.cancel", role: .cancel) {
+					haptic(.buttonPress)
 				}
 			}
 		}
@@ -81,33 +80,27 @@ struct HomeView: View {
 	}
 }
 
-extension HomeView {
-	@ViewBuilder
+extension HomeScreen {
 	private var emptyTaskText: some View {
 		VStack {
 			makeCheerfulDecorativeImage()
-			HStack {
-				Spacer()
-				let emptyTaskListSentence = LocalizedStringKey("Nothing yet. Tap here or \(SFSymbols.plusCircled) to add more")
-				Text(emptyTaskListSentence)
-					.font(.system(.callout))
-					.foregroundColor(.secondary)
-				Spacer()
-			}
+
+			let emptyTaskListSentence = LocalizedStringKey("Nothing yet. Tap here or \(SFSymbols.plusCircled) to add more")
+			Text(emptyTaskListSentence)
+				.font(.system(.callout))
+				.foregroundColor(.secondary)
 		}
 		.onTapGesture { vm.isShowingAddTaskView.toggle() }
 	}
 
-	@ViewBuilder
-	private var emptyFilteredListText: some View {
+	@ViewBuilder private var emptyFilteredListText: some View {
 		let emptyListSentence = LocalizedStringKey("home.info.sectionEmpty")
 		Text(emptyListSentence)
 			.font(.system(.callout))
 			.foregroundColor(.secondary)
 	}
 
-	@ViewBuilder
-	private var overdueSection: some View {
+	@ViewBuilder private var overdueSection: some View {
 		Section {
 			let overdues = vm.searchResults.filter { $0.dueDate.isPastToday }
 
@@ -122,7 +115,7 @@ extension HomeView {
 						view.if(ContextPreviewType(rawValue: previewType) == .cell) { view in
 							view.contextMenu { makeContextMenu(for: task) }
 						} elseCase: { view in
-							view.contextMenu { makeContextMenu(for: task) } preview: { DetailView(vm: .init(for: task)) }
+							view.contextMenu { makeContextMenu(for: task) } preview: { DetailScreen(vm: .init(for: task)) }
 						}
 					}
 				}
@@ -132,8 +125,7 @@ extension HomeView {
 		}
 	}
 
-	@ViewBuilder
-	private var dueTodaySection: some View {
+	@ViewBuilder private var dueTodaySection: some View {
 		Section {
 			let dues = vm.searchResults.filter { $0.dueDate.isWithinToday }
 
@@ -148,7 +140,7 @@ extension HomeView {
 						view.if(ContextPreviewType(rawValue: previewType) == .cell) { view in
 							view.contextMenu { makeContextMenu(for: task) }
 						} elseCase: { view in
-							view.contextMenu { makeContextMenu(for: task) } preview: { DetailView(vm: .init(for: task)) }
+							view.contextMenu { makeContextMenu(for: task) } preview: { DetailScreen(vm: .init(for: task)) }
 						}
 					}
 				}
@@ -158,8 +150,7 @@ extension HomeView {
 		}
 	}
 
-	@ViewBuilder
-	private var upcomingSection: some View {
+	@ViewBuilder private var upcomingSection: some View {
 		Section {
 			let upcomings = vm.searchResults.filter { $0.dueDate.isFromTomorrow }
 
@@ -174,7 +165,7 @@ extension HomeView {
 						view.if(ContextPreviewType(rawValue: previewType) == .cell) { view in
 							view.contextMenu { makeContextMenu(for: task) }
 						} elseCase: { view in
-							view.contextMenu { makeContextMenu(for: task) } preview: { DetailView(vm: .init(for: task)) }
+							view.contextMenu { makeContextMenu(for: task) } preview: { DetailScreen(vm: .init(for: task)) }
 						}
 					}
 				}
@@ -295,7 +286,7 @@ extension HomeView {
 
 struct HomeView_Previews: PreviewProvider {
 	static var previews: some View {
-		HomeView()
+		HomeScreen()
 			.environmentObject(HomeViewModel())
 	}
 }

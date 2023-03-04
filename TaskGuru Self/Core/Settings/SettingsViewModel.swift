@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-extension SettingsView {
+extension SettingsScreen {
 	final class ViewModel: ObservableObject {
 		@Published var isConfirmingResetSettings: Bool = false
 		@Published var isConfirmingResetUserData: Bool = false

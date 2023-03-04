@@ -37,6 +37,12 @@
 "taskItem.status.inProgress" = "进行中";
 "taskItem.status.done" = "已完成";
 
+/* Task priorities */
+"taskItem.priority.none" = "无";
+"taskItem.priority.low" = "低";
+"taskItem.priority.medium" = "中";
+"taskItem.priority.high" = "高";
+
 /* Navigation/Context menu - Quick actions in Home & Pending tabs */
 "contextMenu.task.markAs" = "编辑任务为...?";
 "contextMenu.task.markNew" = "编辑为新的";
@@ -98,6 +104,7 @@
 "addTask.input.dueDate" = "到期日";
 "addTask.input.type" = "类型";
 "addTask.input.status" = "状态";
+"addTask.input.priority" = "优先级";
 "addTask.input.notes" = "备注";
 "addTask.input.placeholder.notes" = "额外的备注...";
 
@@ -111,6 +118,7 @@
 "taskDetail.cell.status.caption" = "状态";
 "taskDetail.cell.dueDate.caption" = "到期日";
 "taskDetail.cell.type.caption" = "类型";
+"taskDetail.cell.priority.caption" = "优先级";
 "taskDetail.cell.notes.caption" = "备注";
 
 /* Alerts */
@@ -136,6 +144,7 @@
 "editTask.input.type" = "类型";
 "editTask.input.status" = "状态";
 "editTask.input.notes" = "备注";
+"editTask.input.priority" = "优先级";
 "editTask.input.placeholder.notes" = "额外的备注...";
 
 

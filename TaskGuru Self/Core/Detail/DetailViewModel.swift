@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-extension DetailView {
+extension DetailScreen {
 	final class ViewModel: ObservableObject {
 		var task: TaskItem
 
@@ -16,6 +16,7 @@ extension DetailView {
 		@Published var taskDueDate: Date
 		@Published var taskType: TaskType
 		@Published var taskStatus: TaskStatus
+		@Published var taskPriority: TaskPriority
 		@Published var taskNotes: String
 
 		private let storageProvider: StorageProvider
@@ -28,18 +29,18 @@ extension DetailView {
 			taskDueDate = task.dueDate
 			taskType = task.type
 			taskStatus = task.status
+			taskPriority = task.priority
 			taskNotes = task.notes
 		}
 
-		var taskIsNewOrInProgress: Bool {
-			return task.status == .new || task.status == .inProgress
-		}
+		var taskIsNewOrInProgress: Bool { task.isNotDone }
 
 		func updateTask() {
 			task.name = taskName
 			task.dueDate = taskDueDate
 			task.type = taskType
 			task.status = taskStatus
+			task.priority = taskPriority
 			task.notes = taskNotes
 			saveAndHandleError()
 		}

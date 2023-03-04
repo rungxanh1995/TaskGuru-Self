@@ -1,5 +1,5 @@
 //
-//  PendingView.swift
+//  PendingScreen.swift
 //  TaskGuru Self
 //
 //  Created by Joe Pham on 2023-02-12.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PendingView: View {
+struct PendingScreen: View {
 	@EnvironmentObject private var vm: HomeViewModel
 	@StateObject private var tabState: AppState = .init()
 	@State private var selectedTask: TaskItem?
@@ -24,7 +24,7 @@ struct PendingView: View {
 				if vm.isFetchingData {
 					ProgressView { Text("pending.info.fetchingData") }
 				} else if vm.noPendingTasksLeft {
-					emptyStateImage
+					emptyStateImage.padding()
 				} else {
 					List {
 						pendingInThePastSection
@@ -34,11 +34,12 @@ struct PendingView: View {
 					}
 				}
 			}
+			.listStyle(.plain)
 			.playConfetti($confettiCounter)
 			.onAppear(perform: vm.fetchTasks)
 			.onChange(of: selectedTask) { _ in vm.fetchTasks() }
 			.navigationDestination(for: TaskItem.self) { task in
-				DetailView(vm: .init(for: task))
+				DetailScreen(vm: .init(for: task))
 			}
 			.navigationBarTitleDisplayMode(.inline)
 			.toolbar {
@@ -50,23 +51,23 @@ struct PendingView: View {
 				}
 			}
 			.sheet(isPresented: $vm.isShowingAddTaskView) {
-				AddTask(vm: .init(parentVM: self.vm))
+				AddTaskScreen(vm: .init(parentVM: self.vm))
 			}
 			.fullScreenCover(item: $selectedTask) { task in
-				DetailView.EditMode(vm: .init(for: task))
+				DetailScreen.EditMode(vm: .init(for: task))
 			}
 		}
 		.environmentObject(tabState)
 	}
 }
 
-extension PendingView {
+extension PendingScreen {
 	private var emptyStateImage: some View {
 		VStack(alignment: .leading) {
 			makeCheerfulDecorativeImage()
 
 			Text("pending.info.listEmty")
-				.font(.footnote)
+				.font(.callout)
 				.foregroundColor(.secondary)
 		}
 	}
@@ -90,7 +91,7 @@ extension PendingView {
 						view.if(ContextPreviewType(rawValue: previewType) == .cell) { view in
 							view.contextMenu { makeContextMenu(for: task) }
 						} elseCase: { view in
-							view.contextMenu { makeContextMenu(for: task) } preview: { DetailView(vm: .init(for: task)) }
+							view.contextMenu { makeContextMenu(for: task) } preview: { DetailScreen(vm: .init(for: task)) }
 						}
 					}
 				}
@@ -113,7 +114,7 @@ extension PendingView {
 						view.if(ContextPreviewType(rawValue: previewType) == .cell) { view in
 							view.contextMenu { makeContextMenu(for: task) }
 						} elseCase: { view in
-							view.contextMenu { makeContextMenu(for: task) } preview: { DetailView(vm: .init(for: task)) }
+							view.contextMenu { makeContextMenu(for: task) } preview: { DetailScreen(vm: .init(for: task)) }
 						}
 					}
 				}
@@ -137,7 +138,7 @@ extension PendingView {
 						view.if(ContextPreviewType(rawValue: previewType) == .cell) { view in
 							view.contextMenu { makeContextMenu(for: task) }
 						} elseCase: { view in
-							view.contextMenu { makeContextMenu(for: task) } preview: { DetailView(vm: .init(for: task)) }
+							view.contextMenu { makeContextMenu(for: task) } preview: { DetailScreen(vm: .init(for: task)) }
 						}
 					}
 				}
@@ -224,7 +225,7 @@ extension PendingView {
 
 struct PendingView_Previews: PreviewProvider {
 	static var previews: some View {
-		PendingView()
+		PendingScreen()
 			.environmentObject(HomeViewModel())
 	}
 }

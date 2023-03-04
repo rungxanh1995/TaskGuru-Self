@@ -1,5 +1,5 @@
 //
-//  RootView.swift
+//  RootScreen.swift
 //  TaskGuru Self
 //
 //  Created by Joe Pham on 2023-02-20.
@@ -9,7 +9,7 @@ import SwiftUI
 
 enum Tab: Int, Hashable { case home, pending, settings }
 
-struct RootView: View {
+struct RootScreen: View {
 	@Preference(\.isShowingTabBadge) private var isShowingTabBadge
 	@Preference(\.isTabNamesEnabled) private var isTabNamesEnabled
 
@@ -24,20 +24,20 @@ struct RootView: View {
 			haptic(.tabSelection)
 			selectedTab = newTab
 		})) {
-			HomeView()
+			HomeScreen()
 				.tag(Tab.home)
 				.tabItem {
 					SFSymbols.bulletList
 					if isTabNamesEnabled { Text("home.tab.title") }
 				}
-			PendingView()
+			PendingScreen()
 				.tag(Tab.pending)
 				.tabItem {
 					SFSymbols.clock
 					if isTabNamesEnabled { Text("pending.tab.title") }
 				}
 				.badge(isShowingTabBadge ? pendingTasksCount : 0)
-			SettingsView()
+			SettingsScreen()
 				.tag(Tab.settings)
 				.tabItem {
 					SFSymbols.gear
@@ -53,6 +53,6 @@ struct RootView: View {
 
 struct RootView_Previews: PreviewProvider {
 	static var previews: some View {
-		RootView().environmentObject(HomeViewModel())
+		RootScreen().environmentObject(HomeViewModel())
 	}
 }
