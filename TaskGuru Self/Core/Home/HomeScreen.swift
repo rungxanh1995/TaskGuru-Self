@@ -22,59 +22,57 @@ struct HomeScreen: View {
 		NavigationStack(path: $tabState.navPath) {
 			ZStack {
 				if vm.isFetchingData {
-					ProgressView()
+					ProgressView { Text("pending.info.fetchingData") }
+				} else if vm.allTasks.isEmpty {
+					emptyTaskText.padding()
 				} else {
 					List {
-						if vm.allTasks.isEmpty {
-							emptyTaskText
-						} else {
-							overdueSection
-							dueTodaySection
-							upcomingSection
-						}
+						overdueSection
+						dueTodaySection
+						upcomingSection
 					}
-					.listStyle(.grouped)
-					.playConfetti($confettiCounter)
-					.onAppear(perform: vm.fetchTasks)
-					.onChange(of: selectedTask) { _ in vm.fetchTasks() }
-					.navigationDestination(for: TaskItem.self) { task in
-						DetailScreen(vm: .init(for: task))
-					}
-					.navigationBarTitleDisplayMode(.inline)
-					.toolbar {
-						ToolbarItem(placement: .navigationBarLeading) {
-							todaysDate
-						}
-						ToolbarItem(placement: .principal) {
-							NavigationTitle(text: "home.nav.title")
-						}
-						ToolbarItem(placement: .primaryAction) {
-							addTaskButton
-						}
-						ToolbarItem(placement: .secondaryAction) {
-							clearDoneTasksButton
-						}
-					}
-					.searchable(text: $vm.searchText)
-					.sheet(isPresented: $vm.isShowingAddTaskView) {
-						AddTaskScreen(vm: .init(parentVM: self.vm))
-					}
-					.fullScreenCover(item: $selectedTask) { task in
-						DetailScreen.EditMode(vm: .init(for: task))
-					}
-					.confirmationDialog(
-						"home.clearDoneTasks.alert",
-						isPresented: $vm.isConfirmingClearDoneTasks,
-						titleVisibility: .visible
-					) {
-						Button("contextMenu.clearDoneTasks", role: .destructive) {
-							vm.clearDoneTasks()
-							haptic(.notification(.success))
-						}
-						Button("contextMenu.cancel", role: .cancel) {
-							haptic(.buttonPress)
-						}
-					}
+				}
+			}
+			.listStyle(.grouped)
+			.playConfetti($confettiCounter)
+			.onAppear(perform: vm.fetchTasks)
+			.onChange(of: selectedTask) { _ in vm.fetchTasks() }
+			.navigationDestination(for: TaskItem.self) { task in
+				DetailScreen(vm: .init(for: task))
+			}
+			.navigationBarTitleDisplayMode(.inline)
+			.toolbar {
+				ToolbarItem(placement: .navigationBarLeading) {
+					todaysDate
+				}
+				ToolbarItem(placement: .principal) {
+					NavigationTitle(text: "home.nav.title")
+				}
+				ToolbarItem(placement: .primaryAction) {
+					addTaskButton
+				}
+				ToolbarItem(placement: .secondaryAction) {
+					clearDoneTasksButton
+				}
+			}
+			.searchable(text: $vm.searchText)
+			.sheet(isPresented: $vm.isShowingAddTaskView) {
+				AddTaskScreen(vm: .init(parentVM: self.vm))
+			}
+			.fullScreenCover(item: $selectedTask) { task in
+				DetailScreen.EditMode(vm: .init(for: task))
+			}
+			.confirmationDialog(
+				"home.clearDoneTasks.alert",
+				isPresented: $vm.isConfirmingClearDoneTasks,
+				titleVisibility: .visible
+			) {
+				Button("contextMenu.clearDoneTasks", role: .destructive) {
+					vm.clearDoneTasks()
+					haptic(.notification(.success))
+				}
+				Button("contextMenu.cancel", role: .cancel) {
+					haptic(.buttonPress)
 				}
 			}
 		}
@@ -92,20 +90,17 @@ extension HomeScreen {
 				.font(.system(.callout))
 				.foregroundColor(.secondary)
 		}
-		.padding()
 		.onTapGesture { vm.isShowingAddTaskView.toggle() }
 	}
 
-	@ViewBuilder
-	private var emptyFilteredListText: some View {
+	@ViewBuilder private var emptyFilteredListText: some View {
 		let emptyListSentence = LocalizedStringKey("home.info.sectionEmpty")
 		Text(emptyListSentence)
 			.font(.system(.callout))
 			.foregroundColor(.secondary)
 	}
 
-	@ViewBuilder
-	private var overdueSection: some View {
+	@ViewBuilder private var overdueSection: some View {
 		Section {
 			let overdues = vm.searchResults.filter { $0.dueDate.isPastToday }
 
@@ -130,8 +125,7 @@ extension HomeScreen {
 		}
 	}
 
-	@ViewBuilder
-	private var dueTodaySection: some View {
+	@ViewBuilder private var dueTodaySection: some View {
 		Section {
 			let dues = vm.searchResults.filter { $0.dueDate.isWithinToday }
 
@@ -156,8 +150,7 @@ extension HomeScreen {
 		}
 	}
 
-	@ViewBuilder
-	private var upcomingSection: some View {
+	@ViewBuilder private var upcomingSection: some View {
 		Section {
 			let upcomings = vm.searchResults.filter { $0.dueDate.isFromTomorrow }
 
