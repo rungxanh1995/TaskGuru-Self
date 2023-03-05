@@ -70,7 +70,7 @@
 /* Empty list sentence */
 "home.info.sectionEmpty" = "Không có tác vụ nào";
 /* All tasks empty sentence */
-"Nothing yet. Tap here or %@ to add more" = "Chưa có gì cả. Hãy bấm vào đây hoặc %@ để thêm";
+"Nothing yet. Tap here or %@ to add more" = "Thêm tác vụ mới bằng cách chạm nút %@, rồi d.sách sẽ hiển thị ở đây";
 /* Confirm dialogs */
 "home.clearDoneTasks.alert" = "Bạn chắc chắn muốn xoá các tác vụ đã hoàn thành?\nHành động này không thể hoàn tác";
 
