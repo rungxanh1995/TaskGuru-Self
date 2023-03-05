@@ -35,6 +35,8 @@ extension SettingsScreen {
 			let defaults = UserDefaults.standard
 			let dictionary = defaults.dictionaryRepresentation()
 			dictionary.keys.forEach { defaults.removeObject(forKey: $0) }
+
+			UIApplication.shared.setAlternateIconName(nil) // reset app icon
 		}
 
 		func resetAllTasks() {
