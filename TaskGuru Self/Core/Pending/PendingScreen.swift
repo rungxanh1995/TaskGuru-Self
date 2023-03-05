@@ -220,6 +220,8 @@ extension PendingScreen {
 		} label: {
 			Label { Text("label.task.add") } icon: { SFSymbols.plus }
 		}
+		.buttonStyle(.bordered)
+		.buttonBorderShape(.capsule)
 	}
 }
 

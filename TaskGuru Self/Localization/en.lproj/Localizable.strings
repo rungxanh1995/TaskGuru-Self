@@ -70,7 +70,7 @@
 /* Empty list sentence */
 "home.info.sectionEmpty" = "No tasks";
 /* All tasks empty sentence */
-"Nothing yet. Tap here or %@ to add more" = "Nothing yet. Tap here or %@ to add more";
+"Nothing yet. Tap here or %@ to add more" = "Add new tasks by tapping %@, and they'll show up here";
 /* Confirm dialogs */
 "home.clearDoneTasks.alert" = "Are you sure to clear all tasks that are completed?\nThis action cannot be undone";
 
