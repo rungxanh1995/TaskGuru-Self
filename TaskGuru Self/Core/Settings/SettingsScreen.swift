@@ -220,6 +220,7 @@ private extension SettingsScreen {
 
 	private var miscSection: some View {
 		Section {
+			displayLanguage
 			tabNames
 			confetti
 			preview
@@ -227,6 +228,22 @@ private extension SettingsScreen {
 			Label { Text("settings.sections.misc") } icon: { SFSymbols.bubbleSparkles }
 		} footer: {
 			Text("settings.misc.footer")
+		}
+	}
+
+	private var displayLanguage: some View {
+		// hacky workaround for a stock look w/ disclosure indicator
+		Button {
+			let url = URL(string: UIApplication.openSettingsURLString)!
+			UIApplication.shared.open(url)
+		} label: {
+			HStack {
+				SettingsIcon(icon: SFSymbols.globe, accent: .appOrange)
+				Text("settings.misc.language").foregroundColor(.primary)
+				Spacer()
+				SFSymbols.chevronRight.fontWeight(.medium)
+					.foregroundColor(.gray.opacity(0.5))
+			}
 		}
 	}
 

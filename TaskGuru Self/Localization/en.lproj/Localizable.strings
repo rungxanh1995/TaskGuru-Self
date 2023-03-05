@@ -179,6 +179,7 @@
 "settings.badge.footer" = "Icon badge shows a number of tasks on Home screen. Review your Notification settings if no badge shown.";
 
 /* Misc section */
+"settings.misc.language" = "Language";
 "settings.misc.tabNames" = "Tab Names";
 "settings.misc.confetti" = "Toggle Confetti 🎉";
 "settings.misc.preview" = "Preview on Haptic Touch";

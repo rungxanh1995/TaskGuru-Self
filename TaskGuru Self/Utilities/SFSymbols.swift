@@ -50,6 +50,8 @@ enum SFSymbols {
 	static let textFormat: Image = .init(systemSymbol: .textformat)
 	static let appearance: Image = .init(systemSymbol: .circleLefthalfFilled)
 	static let arrowUpForward: Image = .init(systemSymbol: .arrowUpForwardApp)
+	static let globe: Image = .init(systemSymbol: .globe)
+	static let chevronRight: Image = .init(systemSymbol: .chevronForward)
 	static let dock: Image = .init(systemSymbol: .dockRectangle)
 	static let handTap: Image = .init(systemSymbol: .handTap)
 }

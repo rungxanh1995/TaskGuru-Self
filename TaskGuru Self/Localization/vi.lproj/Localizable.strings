@@ -179,6 +179,7 @@
 "settings.badge.footer" = "Nhãn biểu tượng hiển thị số tác vụ với đ.kiện đã chọn trên MH Chính. Hãy kiểm tra cài đặt Thông báo nếu bạn không thấy nhãn.";
 
 /* Misc section */
+"settings.misc.language" = "Ngôn ngữ";
 "settings.misc.tabNames" = "Tên tab";
 "settings.misc.confetti" = "Hiệu ứng hoa giấy 🎉";
 "settings.misc.preview" = "Xem trước với Haptic Touch";

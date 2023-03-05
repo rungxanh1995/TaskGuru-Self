@@ -178,6 +178,7 @@
 "settings.badge.footer" = "O ícone exibe um número de tarefas na tela inicial. Verifique suas configurações de notificação se o ícone não for exibido.";
 
 /* Misc section */
+"settings.misc.language" = "Idioma";
 "settings.misc.tabNames" = "Nomes das abas";
 "settings.misc.confetti" = "Alternar Confetti 🎉";
 "settings.misc.preview" = "Visualização no Haptic Touch";
