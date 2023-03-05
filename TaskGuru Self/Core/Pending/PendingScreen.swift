@@ -83,18 +83,7 @@ extension PendingScreen {
 
 		if pendings.isEmpty == false {
 			Section {
-				ForEach(pendings) { task in
-					NavigationLink(value: task) {
-						HomeListCell(task: task)
-					}
-					.if(isPreviewEnabled) { view in
-						view.if(ContextPreviewType(rawValue: previewType) == .cell) { view in
-							view.contextMenu { makeContextMenu(for: task) }
-						} elseCase: { view in
-							view.contextMenu { makeContextMenu(for: task) } preview: { DetailScreen(vm: .init(for: task)) }
-						}
-					}
-				}
+				filteredList(of: pendings)
 			} header: {
 				Text("pending.sections.overdue").bold().foregroundColor(.appPink)
 			}
@@ -106,18 +95,7 @@ extension PendingScreen {
 
 		Section {
 			if pendings.isEmpty == false {
-				ForEach(pendings) { task in
-					NavigationLink(value: task) {
-						HomeListCell(task: task)
-					}
-					.if(isPreviewEnabled) { view in
-						view.if(ContextPreviewType(rawValue: previewType) == .cell) { view in
-							view.contextMenu { makeContextMenu(for: task) }
-						} elseCase: { view in
-							view.contextMenu { makeContextMenu(for: task) } preview: { DetailScreen(vm: .init(for: task)) }
-						}
-					}
-				}
+				filteredList(of: pendings)
 			} else { emptyStateImage }
 		}
 	header: {
@@ -130,20 +108,50 @@ extension PendingScreen {
 
 		if pendings.isEmpty == false {
 			Section {
-				ForEach(pendings) { task in
-					NavigationLink(value: task) {
-						HomeListCell(task: task)
-					}
-					.if(isPreviewEnabled) { view in
-						view.if(ContextPreviewType(rawValue: previewType) == .cell) { view in
-							view.contextMenu { makeContextMenu(for: task) }
-						} elseCase: { view in
-							view.contextMenu { makeContextMenu(for: task) } preview: { DetailScreen(vm: .init(for: task)) }
-						}
-					}
-				}
+				filteredList(of: pendings)
 			} header: {
 				Text("pending.sections.upcoming").bold().foregroundColor(.appTeal)
+			}
+		}
+	}
+
+	@ViewBuilder
+	private func filteredList(of tasks: [TaskItem]) -> some View {
+		ForEach(tasks) { task in
+			NavigationLink(value: task) {
+				HomeListCell(task: task)
+			}
+			.if(isPreviewEnabled) { listCell in
+				listCell.if(ContextPreviewType(rawValue: previewType) == .cell) { cell in
+					cell.contextMenu { makeContextMenu(for: task) }
+				} elseCase: { cell in
+					cell.contextMenu { makeContextMenu(for: task) } preview: {
+						DetailScreen(vm: .init(for: task))
+					}
+				}
+			}
+			.swipeActions(edge: .trailing, allowsFullSwipe: true) {
+				Button {
+					withAnimation { vm.delete(task) }
+					haptic(.notification(.success))
+				} label: {
+					Label {
+						Text("contextMenu.task.delete")
+					} icon: { SFSymbols.trash }
+				}.tint(.appPink)
+			}
+			.if(task.isNotDone) { row in
+				row.swipeActions(edge: .trailing, allowsFullSwipe: false) {
+					Button {
+						haptic(.buttonPress)
+						withAnimation { vm.markAsDone(task) }
+						if isConfettiEnabled { confettiCounter += 1}
+					} label: {
+						Label {
+							Text("contextMenu.task.markDone")
+						} icon: { SFSymbols.checkmark }
+					}.tint(.appIndigo)
+				}
 			}
 		}
 	}
