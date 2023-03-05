@@ -113,8 +113,13 @@ extension DetailScreen {
 		@MainActor private func makeSnapshot() -> UIImage {
 			let renderer = ImageRenderer(content: details)
 			renderer.scale = displayScale
-			renderer.colorMode = .extendedLinear
-			return renderer.uiImage ?? UIImage()
+			// Convert image to JPEG, otherwise you'll encounter issues with transparency
+			guard let image = renderer.uiImage,
+						let jpegData = image.jpegData(compressionQuality: 1.0),
+						let jpegImage = UIImage(data: jpegData) else {
+				return UIImage()
+			}
+			return jpegImage
 		}
 	}
 }

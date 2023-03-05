@@ -6,7 +6,8 @@ I developed TaskGuru as the tech lead of my group in the final semester of my iO
 The project required an advanced to-do app with various task types and the ability to create and track them, as well as mark past-due and close-to-due tasks based on the current date/time.
 
 ## Screenshots
-![screenshot](screenshots/screenshot.png)
+![screenshot1](screenshots/screenshot1.png)
+![screenshot2](screenshots/screenshot2.png)
 
 ## App Idea
 TaskGuru is a task tracker iOS utility app with the motto of making tracking your todos straightforward yet customizable. The app splits your task list into time-based sections, with badges and context menus to boost your time management. The Settings screen hosts various settings that allow you to customize the app to your needs.
