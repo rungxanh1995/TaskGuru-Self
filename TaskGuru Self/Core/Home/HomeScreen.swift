@@ -289,7 +289,7 @@ extension HomeScreen {
 			haptic(.notification(.warning))
 			withAnimation { vm.isConfirmingClearDoneTasks.toggle() }
 		} label: {
-			Label { Text("Clear Done Tasks") } icon: { SFSymbols.trash }
+			Label { Text("contextMenu.clearDoneTasks") } icon: { SFSymbols.trash }
 		}
 	}
 }

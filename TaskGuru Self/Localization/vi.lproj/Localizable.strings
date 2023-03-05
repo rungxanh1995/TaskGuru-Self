@@ -52,7 +52,7 @@
 "contextMenu.task.delete" = "Xoá";
 "contextMenu.cancel" = "Huỷ";
 "contextMenu.ok" = "OK";
-"contextMenu.clearDoneTasks" = "Xoá các tác vụ đã h.thành";
+"contextMenu.clearDoneTasks" = "Xoá tác vụ đã h.thành";
 
 /* Add Task button in Home & Pending tabs */
 "label.task.add" = "Tạo tác vụ";
