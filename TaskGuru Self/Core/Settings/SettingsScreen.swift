@@ -36,6 +36,7 @@ struct SettingsScreen: View {
 				miscSection
 				advancedSection
 				devTeamSection
+				onboarding
 				acknowledgements
 				appNameAndLogo
 					.listRowBackground(Color.clear)
@@ -82,7 +83,6 @@ private extension SettingsScreen {
 			haptics
 			fontDesignStyle
 			appTheme
-			onboarding
 		} header: {
 			Label { Text("settings.sections.general") } icon: { SFSymbols.gearFilled }
 		}
@@ -162,15 +162,6 @@ private extension SettingsScreen {
 		}
 	}
 
-	private var onboarding: some View {
-		HStack {
-			SettingsIcon(icon: SFSymbols.handWave, accent: .appPurple)
-			NavigationLink("settings.general.onboarding") {
-				OnboardContainerView()
-			}
-		}
-	}
-
 	private var badgeSection: some View {
 		Section {
 			tabBadge
@@ -233,17 +224,14 @@ private extension SettingsScreen {
 
 	private var displayLanguage: some View {
 		// hacky workaround for a stock look w/ disclosure indicator
-		Button {
+		HStack {
+			SettingsIcon(icon: SFSymbols.globe, accent: .appOrange)
 			let url = URL(string: UIApplication.openSettingsURLString)!
-			UIApplication.shared.open(url)
-		} label: {
-			HStack {
-				SettingsIcon(icon: SFSymbols.globe, accent: .appOrange)
-				Text("settings.misc.language").foregroundColor(.primary)
-				Spacer()
-				SFSymbols.chevronRight.fontWeight(.medium)
-					.foregroundColor(.gray.opacity(0.5))
-			}
+			Link("settings.misc.language", destination: url)
+				.tint(.primary)
+			Spacer()
+			SFSymbols.chevronRight.fontWeight(.medium)
+				.foregroundColor(.gray.opacity(0.5))
 		}
 	}
 
@@ -333,6 +321,15 @@ private extension SettingsScreen {
 			} icon: { SFSymbols.link }
 		} header: {
 			Label { Text("settings.sections.devTeam") } icon: { SFSymbols.handsSparklesFilled }
+		}
+	}
+
+	private var onboarding: some View {
+		HStack {
+			SettingsIcon(icon: SFSymbols.handWave, accent: .defaultAccentColor)
+			NavigationLink("settings.general.onboarding") {
+				OnboardContainerView()
+			}
 		}
 	}
 

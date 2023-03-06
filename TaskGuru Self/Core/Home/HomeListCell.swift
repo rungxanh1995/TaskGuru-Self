@@ -20,7 +20,7 @@ struct HomeListCell: View {
 			taskStatus
 			VStack(alignment: .leading, spacing: 4) {
 				HStack(alignment: .top) {
-					if task.priority != .none { taskPriority }
+					if task.priority != .none { taskPriority.bold() }
 					taskName
 				}
 				LazyVGrid(columns: columns) {

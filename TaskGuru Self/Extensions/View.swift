@@ -52,9 +52,9 @@ extension View {
 			Spacer()
 			Image("cheerful12")
 				.resizable()
-				.scaledToFit()
+				.scaledToFill()
 				.saturation(0)
-				.frame(width: 300, height: 300)
+				.frame(maxWidth: 300, maxHeight: 240)
 			Spacer()
 		}
 	}
