@@ -130,28 +130,18 @@ extension PendingScreen {
 					}
 				}
 			}
-			.swipeActions(edge: .trailing, allowsFullSwipe: true) {
-				Button {
-					withAnimation { vm.delete(task) }
-					haptic(.notification(.success))
-				} label: {
-					Label {
-						Text("contextMenu.task.delete")
-					} icon: { SFSymbols.trash }
-				}.tint(.appPink)
-			}
-			.if(task.isNotDone) { row in
-				row.swipeActions(edge: .trailing, allowsFullSwipe: false) {
-					Button {
-						haptic(.buttonPress)
-						withAnimation { vm.markAsDone(task) }
-						if isConfettiEnabled { confettiCounter += 1}
-					} label: {
-						Label {
-							Text("contextMenu.task.markDone")
-						} icon: { SFSymbols.checkmark }
-					}.tint(.appIndigo)
+			.swipeActions(edge: .leading) {
+				switch task.status {
+				case .new: markInProgressButton(for: task).tint(.appYellow)
+				case .inProgress: markNewButton(for: task).tint(.appTeal)
+				case .done: EmptyView()
 				}
+			}
+			.swipeActions(edge: .trailing, allowsFullSwipe: true) {
+				deleteButton(for: task).tint(.appPink)
+				// all tasks in this view are pending ones,
+				// so no need to conditional check to render this button
+				markDoneButton(for: task).tint(.appIndigo)
 			}
 		}
 	}
@@ -182,42 +172,65 @@ extension PendingScreen {
 		}
 	}
 
-	@ViewBuilder
-	private func markAsButtons(for task: TaskItem) -> some View {
+	@ViewBuilder private func markAsButtons(for task: TaskItem) -> some View {
 		switch task.status {
 		case .new:
 			Section {
-				Button {
-					withAnimation { vm.markAsInProgress(task) }
-				} label: {
-					Label { Text("contextMenu.task.markInProgress") } icon: { SFSymbols.circleArrows }
-				}
-				Button {
-					withAnimation { vm.markAsDone(task) }
-					if isConfettiEnabled { confettiCounter += 1}
-				} label: {
-					Label { Text("contextMenu.task.markDone") } icon: { SFSymbols.checkmark }
-				}
-			} header: {
-				Text("contextMenu.task.markAs")
-			}
+				markInProgressButton(for: task)
+				markDoneButton(for: task)
+			} header: { Text("contextMenu.task.markAs") }
 		case .inProgress:
 			Section {
-				Button {
-					withAnimation { vm.markAsNew(task) }
-				} label: {
-					Label { Text("contextMenu.task.markNew") } icon: { SFSymbols.sparkles }
-				}
-				Button {
-					withAnimation { vm.markAsDone(task) }
-					if isConfettiEnabled { confettiCounter += 1}
-				} label: {
-					Label { Text("contextMenu.task.markDone") } icon: { SFSymbols.checkmark }
-				}
-			} header: {
-				Text("contextMenu.task.markAs")
-			}
-		case .done: EmptyView()	// shouldn't happen in Pending view
+				markNewButton(for: task)
+				markDoneButton(for: task)
+			} header: { Text("contextMenu.task.markAs") }
+		case .done:
+			EmptyView()
+		}
+	}
+
+	private func markNewButton(for task: TaskItem) -> some View {
+		Button {
+			withAnimation { vm.markAsNew(task) }
+			haptic(.notification(.success))
+		} label: {
+			Label {
+				Text("contextMenu.task.markNew")
+			} icon: { SFSymbols.sparkles }
+		}
+	}
+
+	private func markInProgressButton(for task: TaskItem) -> some View {
+		Button {
+			withAnimation { vm.markAsInProgress(task) }
+			haptic(.notification(.success))
+		} label: {
+			Label {
+				Text("contextMenu.task.markInProgress")
+			} icon: { SFSymbols.circleArrows }
+		}
+	}
+
+	private func markDoneButton(for task: TaskItem) -> some View {
+		Button {
+			withAnimation { vm.markAsDone(task) }
+			if isConfettiEnabled { confettiCounter += 1 }
+			haptic(.notification(.success))
+		} label: {
+			Label {
+				Text("contextMenu.task.markDone")
+			} icon: { SFSymbols.checkmark }
+		}
+	}
+
+	private func deleteButton(for task: TaskItem) -> some View {
+		Button(role: .destructive) {
+			withAnimation { vm.delete(task) }
+			haptic(.notification(.success))
+		} label: {
+			Label {
+				Text("contextMenu.task.delete")
+			} icon: { SFSymbols.trash }
 		}
 	}
 
