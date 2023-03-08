@@ -164,10 +164,8 @@ extension HomeScreen {
 				case .inProgress:
 					markNewButton(for: task).tint(.appTeal)
 				case .done:
-					Group {
-						markNewButton(for: task).tint(.appTeal)
-						markInProgressButton(for: task).tint(.appYellow)
-					}
+					markNewButton(for: task).tint(.appTeal)
+					markInProgressButton(for: task).tint(.appYellow)
 				}
 			}
 			.swipeActions(edge: .trailing, allowsFullSwipe: true) {
