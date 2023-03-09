@@ -66,11 +66,15 @@ Below are some biggest challenges I faced:
     <tbody>
         <tr>
             <td>Struct or class</td>
-            <td>...</td>
+            <td>TaskGuru initially used a model struct, and I hesitated to include Core Data for persistence because of the present SwiftUI code. However, after testing it out and seeing that it worked perfectly, I switched to using a model class for Core Data, which was easy to work with.</td>
         </tr>
         <tr>
             <td>Swift enum to Core Data compatibility</td>
-            <td>...</td>
+            <td>Core Data does not support Swift enumeration types, so they must be converted to primitive types such as String or Int. After an hour of research and experimentation, I discovered an elegant solution that has allowed me to easily scale the app with new functionalities.</td>
+        </tr>
+        <tr>
+            <td>Settings screen</td>
+            <td>Although there are tutorials online about building a Settings screen, they typically only cover basic functionality such as color themes and haptic feedback. As someone who is passionate about providing users with more customizable options, I searched Github for open source codebases to learn from. By studying these projects, I was able to identify patterns and apply what I learned to my own Settings screen in TaskGuru.</td>
         </tr>
     </tbody>
 </table>
