@@ -30,28 +30,27 @@ extension DetailScreen {
 			.navigationTitle("taskDetail.nav.title")
 			.navigationBarTitleDisplayMode(.inline)
 			.toolbar {
-				// swiftlint:disable multiple_closures_with_trailing_closure
-				if vm.taskIsNewOrInProgress {
-					ToolbarItemGroup(placement: .primaryAction) {
-						Button(action: {
-							haptic(.buttonPress)
-							isMarkingAsDone.toggle()
-						}) {
-							Label { Text("contextMenu.task.markAsDone") } icon: { SFSymbols.checkmark }
-						}
-					}
+				ToolbarItem(placement: .primaryAction) {
+					ShareLink(item: Image(uiImage: taskSnapshot),
+										preview: SharePreview(vm.task.name, image: Image(uiImage: taskSnapshot)))
 				}
 
 				ToolbarItemGroup(placement: .secondaryAction) {
-					Button(action: {
-						haptic(.buttonPress)
-						isShowingEdit.toggle()
-					}) {
-						Label { Text("contextMenu.task.edit") } icon: { SFSymbols.pencilSquare }
+					if vm.task.isNotDone {
+						Button {
+							haptic(.buttonPress)
+							isMarkingAsDone.toggle()
+						} label: {
+							Label { Text("contextMenu.task.markDone") } icon: { SFSymbols.checkmark }
+						}
 					}
 
-					ShareLink(item: Image(uiImage: makeSnapshot()),
-										preview: SharePreview(vm.task.name, image: Image(uiImage: makeSnapshot())))
+					Button {
+						haptic(.buttonPress)
+						isShowingEdit.toggle()
+					} label: {
+						Label { Text("contextMenu.task.edit") } icon: { SFSymbols.pencilSquare }
+					}
 
 					Button(role: .destructive) {
 						haptic(.notification(.warning))
@@ -62,21 +61,25 @@ extension DetailScreen {
 				}
 			}
 			.alert("taskDetail.alert.markAsDone", isPresented: $isMarkingAsDone, actions: {
-				Button("contextMenu.cancel", role: .cancel, action: { haptic(.buttonPress) })
-				Button("contextMenu.ok", action: {
+				Button("contextMenu.cancel", role: .cancel) {
+					haptic(.buttonPress)
+				}
+				Button("contextMenu.ok") {
 					vm.markTaskAsDone()
 					dismissThisView()
 					haptic(.notification(.success))
-				})
+				}
 			})
-			.alert("taskDetail.alert.deleteTask", isPresented: $isDeletingTask, actions: {
-				Button("contextMenu.cancel", role: .cancel, action: { haptic(.buttonPress) })
-				Button("contextMenu.ok", action: {
+			.alert("taskDetail.alert.deleteTask", isPresented: $isDeletingTask) {
+				Button("contextMenu.cancel", role: .cancel) {
+					haptic(.buttonPress)
+				}
+				Button("contextMenu.ok") {
 					vm.deleteTask()
 					dismissThisView()
 					haptic(.notification(.success))
-				})
-			})
+				}
+			}
 			.sheet(isPresented: $isShowingEdit) {
 				DetailScreen.EditMode(vm: self.vm)
 			}
@@ -110,7 +113,7 @@ extension DetailScreen {
 			}
 		}
 
-		@MainActor private func makeSnapshot() -> UIImage {
+		@MainActor private var taskSnapshot: UIImage {
 			let renderer = ImageRenderer(content: details)
 			renderer.scale = displayScale
 			// Convert image to JPEG, otherwise you'll encounter issues with transparency
