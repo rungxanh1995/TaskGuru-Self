@@ -50,7 +50,7 @@ extension HomeListCell {
 		.frame(width: 20, height: 20)
 		.clipShape(RoundedRectangle(cornerRadius: 9*(20/40)))
 		.background(in: RoundedRectangle(cornerRadius: 3).inset(by: -4))
-		.backgroundStyle(task.colorForStatus().opacity(0.25))
+		.backgroundStyle(task.colorForStatus().opacity(0.15))
 		.foregroundStyle(task.colorForStatus())
 		.padding(4)
 	}

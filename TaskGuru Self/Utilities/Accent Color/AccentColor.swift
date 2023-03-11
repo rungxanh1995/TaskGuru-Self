@@ -29,15 +29,15 @@ extension AccentColorType {
 
 	var associatedColor: Color {
 		switch self {
-		case .berry: return Color(hex: 0xE14359)
-		case .orange: return Color(hex: 0xE55A38)
-		case .yellow: return Color(hex: 0xE7A63A)
-		case .green: return Color(hex: 0x5CC557)
-		case .clover: return Color(hex: 0x56BDA0)
+		case .berry: return Color(hex: 0xE51817)
+		case .orange: return Color(hex: 0xE47101)
+		case .yellow: return Color(hex: 0xF0B302)
+		case .green: return Color(hex: 0x70BE00)
+		case .clover: return Color(hex: 0x02C564)
 		case .teal: return Color(hex: 0x00BBCC)
-		case .blue: return Color(hex: 0x4CA7DA)
-		case .indigo: return Color(hex: 0x435FB7)
-		case .purple: return Color(hex: 0x6747D9)
+		case .blue: return Color(hex: 0x0080FE)
+		case .indigo: return Color(hex: 0x5500FE)
+		case .purple: return Color(hex: 0xA901FF)
 		}
 	}
 }

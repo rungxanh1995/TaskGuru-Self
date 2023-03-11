@@ -18,6 +18,7 @@ struct DetailGridCell: View {
 				.font(.headline)
 				.multilineTextAlignment(.center)
 				.padding()
+				.frame(maxWidth: .infinity)
 				.foregroundColor(titleColor)
 				.textSelection(.enabled)
 

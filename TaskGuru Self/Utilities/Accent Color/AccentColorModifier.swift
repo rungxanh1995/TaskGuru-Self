@@ -16,15 +16,15 @@ struct AccentColorModifier: ViewModifier {
 	private var selectedAccentColor: Color? {
 		guard let accentColor = AccentColorType(rawValue: self.accentColor) else { return nil }
 		switch accentColor {
-		case .berry: return Color(hex: 0xE14359)
-		case .orange: return Color(hex: 0xE55A38)
-		case .yellow: return Color(hex: 0xE7A63A)
-		case .green: return Color(hex: 0x5CC557)
-		case .clover: return Color(hex: 0x56BDA0)
-		case .teal: return Color(hex: systemScheme == .light ? 0x00BBCC : 0x46D7E6)
-		case .blue: return Color(hex: 0x4CA7DA)
-		case .indigo: return Color(hex: 0x435FB7)
-		case .purple: return Color(hex: 0x6747D9)
+		case .berry: return Color(hex: systemScheme == .light ? 0xE51817 : 0xE54545)
+		case .orange: return Color(hex: systemScheme == .light ? 0xE47101 : 0xE4892E)
+		case .yellow: return Color(hex: systemScheme == .light ? 0xF0B302 : 0xE5BC45)
+		case .green: return Color(hex: systemScheme == .light ? 0x70BE00 : 0xA3E547)
+		case .clover: return Color(hex: systemScheme == .light ? 0x02C564 : 0x46E495)
+		case .teal: return Color(hex: systemScheme == .light ? 0x00BBCC : 0x44D7E6)
+		case .blue: return Color(hex: systemScheme == .light ? 0x0080FE : 0x4CA5FF)
+		case .indigo: return Color(hex: systemScheme == .light ? 0x5500FE : 0x9966FF)
+		case .purple: return Color(hex: systemScheme == .light ? 0xA901FF : 0xC34CFE)
 		}
 	}
 

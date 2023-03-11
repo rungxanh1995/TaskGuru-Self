@@ -17,34 +17,34 @@ extension Color {
 		}
 
 		switch accentColor {
-		case .berry: return Color(hex: 0xE14359)
-		case .orange: return Color(hex: 0xE55A38)
-		case .yellow: return Color(hex: 0xE7A63A)
-		case .green: return Color(hex: 0x5CC557)
-		case .clover: return Color(hex: 0x56BDA0)
+		case .berry: return Color(hex: 0xE54545)
+		case .orange: return Color(hex: 0xE47101)
+		case .yellow: return Color(hex: 0xF0B302)
+		case .green: return Color(hex: 0xA3E547)
+		case .clover: return Color(hex: 0x02C564)
 		case .teal: return Color(hex: 0x00BBCC)
-		case .blue: return Color(hex: 0x4CA7DA)
-		case .indigo: return Color(hex: 0x435FB7)
-		case .purple: return Color(hex: 0x6747D9)
+		case .blue: return Color(hex: 0x0080FE)
+		case .indigo: return Color(hex: 0x5500FE)
+		case .purple: return Color(hex: 0xA901FF)
 		}
 	}
 
 	/// The custom pink color specific to TaskGuru
-	static var appPink: Color {	Color(hex: 0xE14359) }
+	static var appPink: Color {	Color(hex: 0xE54545) }
 	/// The custom orange color specific to TaskGuru
-	static var appOrange: Color { Color(hex: 0xE55A38) }
+	static var appOrange: Color { Color(hex: 0xE47101) }
 	/// The custom yellow color specific to TaskGuru
-	static var appYellow: Color { Color(hex: 0xE7A63A) }
+	static var appYellow: Color { Color(hex: 0xF0B302) }
 	/// The custom green color specific to TaskGuru
-	static var appGreen: Color { Color(hex: 0x5CC557) }
+	static var appGreen: Color { Color(hex: 0xA3E547) }
 	/// The custom teal color specific to TaskGuru
-	static var appTeal: Color { Color(hex: 0x56BDA0) }
+	static var appTeal: Color { Color(hex: 0x02C564) }
 	/// The custom blue color specific to TaskGuru
-	static var appBlue: Color { Color(hex: 0x4CA7DA) }
+	static var appBlue: Color { Color(hex: 0x0080FE) }
 	/// The custom indigo color specific to TaskGuru
-	static var appIndigo: Color { Color(hex: 0x435FB7) }
+	static var appIndigo: Color { Color(hex: 0x5500FE) }
 	/// The custom indigo color specific to TaskGuru
-	static var appPurple: Color { Color(hex: 0x6747D9) }
+	static var appPurple: Color { Color(hex: 0xA901FF) }
 
 	/// Allows initializing color from hex code with format "0xABCDEF"
 	init(hex: UInt, alpha: Double = 1) {
