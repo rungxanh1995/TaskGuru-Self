@@ -166,6 +166,7 @@ private extension SettingsScreen {
 		Section {
 			tabBadge
 			appBadge
+			notifSettingLink
 		} header: {
 			Label { Text("settings.sections.badge") } icon: { SFSymbols.appBadge }
 		} footer: {
@@ -195,18 +196,20 @@ private extension SettingsScreen {
 				}
 			}
 			.disabled(!isShowingAppBadge)
-
-			/// Guide user to System notification settings to manually allow permission for badge
-			Button {
-				if let url = URL(string: UIApplication.openNotificationSettingsURLString) {
-					Task { await UIApplication.shared.open(url) }
-				}
-			} label: {
-				Text("settings.badge.notifSetting").frame(maxWidth: .infinity)
-				SFSymbols.arrowUpForward
-			}
-			.buttonStyle(.bordered)
 		}
+	}
+
+	/// Guide user to System notification settings to manually allow permission for badge
+	private var notifSettingLink: some View {
+		HStack {
+			let url = URL(string: UIApplication.openNotificationSettingsURLString)!
+			Link("settings.badge.notifSetting", destination: url)
+				.tint(.primary)
+			Spacer()
+			SFSymbols.arrowUpForward
+				.foregroundColor(isShowingAppBadge ? .primary : .gray.opacity(0.5))
+		}
+		.disabled(!isShowingAppBadge)
 	}
 
 	private var miscSection: some View {
