@@ -36,6 +36,7 @@ struct SettingsScreen: View {
 				miscSection
 				advancedSection
 				devTeamSection
+				onboarding
 				acknowledgements
 				appNameAndLogo
 					.listRowBackground(Color.clear)
@@ -82,7 +83,6 @@ private extension SettingsScreen {
 			haptics
 			fontDesignStyle
 			appTheme
-			onboarding
 		} header: {
 			Label { Text("settings.sections.general") } icon: { SFSymbols.gearFilled }
 		}
@@ -162,19 +162,11 @@ private extension SettingsScreen {
 		}
 	}
 
-	private var onboarding: some View {
-		HStack {
-			SettingsIcon(icon: SFSymbols.handWave, accent: .appPurple)
-			NavigationLink("settings.general.onboarding") {
-				OnboardContainerView()
-			}
-		}
-	}
-
 	private var badgeSection: some View {
 		Section {
 			tabBadge
 			appBadge
+			notifSettingLink
 		} header: {
 			Label { Text("settings.sections.badge") } icon: { SFSymbols.appBadge }
 		} footer: {
@@ -204,22 +196,25 @@ private extension SettingsScreen {
 				}
 			}
 			.disabled(!isShowingAppBadge)
-
-			/// Guide user to System notification settings to manually allow permission for badge
-			Button {
-				if let url = URL(string: UIApplication.openNotificationSettingsURLString) {
-					Task { await UIApplication.shared.open(url) }
-				}
-			} label: {
-				Text("settings.badge.notifSetting").frame(maxWidth: .infinity)
-				SFSymbols.arrowUpForward
-			}
-			.buttonStyle(.bordered)
 		}
+	}
+
+	/// Guide user to System notification settings to manually allow permission for badge
+	private var notifSettingLink: some View {
+		HStack {
+			let url = URL(string: UIApplication.openNotificationSettingsURLString)!
+			Link("settings.badge.notifSetting", destination: url)
+				.tint(.primary)
+			Spacer()
+			SFSymbols.arrowUpForward
+				.foregroundColor(isShowingAppBadge ? .primary : .gray.opacity(0.5))
+		}
+		.disabled(!isShowingAppBadge)
 	}
 
 	private var miscSection: some View {
 		Section {
+			displayLanguage
 			tabNames
 			confetti
 			preview
@@ -227,6 +222,19 @@ private extension SettingsScreen {
 			Label { Text("settings.sections.misc") } icon: { SFSymbols.bubbleSparkles }
 		} footer: {
 			Text("settings.misc.footer")
+		}
+	}
+
+	private var displayLanguage: some View {
+		// hacky workaround for a stock look w/ disclosure indicator
+		HStack {
+			SettingsIcon(icon: SFSymbols.globe, accent: .appOrange)
+			let url = URL(string: UIApplication.openSettingsURLString)!
+			Link("settings.misc.language", destination: url)
+				.tint(.primary)
+			Spacer()
+			SFSymbols.chevronRight.fontWeight(.medium)
+				.foregroundColor(.gray.opacity(0.5))
 		}
 	}
 
@@ -316,6 +324,15 @@ private extension SettingsScreen {
 			} icon: { SFSymbols.link }
 		} header: {
 			Label { Text("settings.sections.devTeam") } icon: { SFSymbols.handsSparklesFilled }
+		}
+	}
+
+	private var onboarding: some View {
+		HStack {
+			SettingsIcon(icon: SFSymbols.handWave, accent: .defaultAccentColor)
+			NavigationLink("settings.general.onboarding") {
+				OnboardContainerView()
+			}
 		}
 	}
 

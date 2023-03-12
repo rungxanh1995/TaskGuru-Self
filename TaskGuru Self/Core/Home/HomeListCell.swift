@@ -10,13 +10,20 @@ import SwiftUI
 struct HomeListCell: View {
 	@ObservedObject var task: TaskItem
 
+	private let columns = [
+		GridItem(.flexible(), alignment: .leading),
+		GridItem(.flexible(), alignment: .leading)
+	]
+
 	var body: some View {
 		HStack {
 			taskStatus
-			VStack(alignment: .leading) {
-				taskName
-				HStack(alignment: .center, spacing: 20) {
-					if task.priority != .none { taskPriority }
+			VStack(alignment: .leading, spacing: 4) {
+				HStack(alignment: .top) {
+					if task.priority != .none { taskPriority.bold() }
+					taskName
+				}
+				LazyVGrid(columns: columns) {
 					taskDueDate
 					taskType
 				}
@@ -43,7 +50,7 @@ extension HomeListCell {
 		.frame(width: 20, height: 20)
 		.clipShape(RoundedRectangle(cornerRadius: 9*(20/40)))
 		.background(in: RoundedRectangle(cornerRadius: 3).inset(by: -4))
-		.backgroundStyle(task.colorForStatus().opacity(0.25))
+		.backgroundStyle(task.colorForStatus().opacity(0.15))
 		.foregroundStyle(task.colorForStatus())
 		.padding(4)
 	}
@@ -55,23 +62,21 @@ extension HomeListCell {
 			ZStack {
 				switch task.priority {
 				case .none: EmptyView()
-				case .low: Text("!")
-				case .medium: Text("!!")
-				case .high: Text("!!!")
+				default: Text(task.priority.visualized)
 				}
 			}
 		}
 		.labelStyle(.iconOnly)
 		.font(.body)
 		.strikethrough(task.isNotDone ? false : true)
-		.foregroundColor(task.isNotDone ? task.colorForPriority() : .gray)
+		.foregroundColor(task.isNotDone ? task.colorForPriority() : .secondary)
 	}
 
 	private var taskName: some View {
 		Text(task.name)
 			.font(.body)
 			.strikethrough(task.isNotDone ? false : true)
-			.foregroundColor(task.isNotDone ? nil : .gray)
+			.foregroundColor(task.isNotDone ? nil : .secondary)
 			.lineLimit(2).truncationMode(.tail)
 	}
 
@@ -92,7 +97,7 @@ extension HomeListCell {
 		}
 		.font(.subheadline)
 		.strikethrough(task.isNotDone ? false : true)
-		.foregroundColor(.secondary)
+		.foregroundColor(task.isNotDone ? nil : .secondary)
 	}
 
 	private var taskDueDate: some View {
@@ -102,7 +107,7 @@ extension HomeListCell {
 		}
 		.font(.subheadline)
 		.strikethrough(task.isNotDone ? false : true)
-		.foregroundColor(task.isNotDone ? task.colorForDueDate() : .gray)
+		.foregroundColor(task.isNotDone ? task.colorForDueDate() : .secondary)
 	}
 }
 

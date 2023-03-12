@@ -157,27 +157,21 @@ extension HomeScreen {
 					}
 				}
 			}
-			.swipeActions(edge: .trailing, allowsFullSwipe: true) {
-				Button {
-					withAnimation { vm.delete(task) }
-					haptic(.notification(.success))
-				} label: {
-					Label {
-						Text("contextMenu.task.delete")
-					} icon: { SFSymbols.trash }
-				}.tint(.appPink)
+			.swipeActions(edge: .leading) {
+				switch task.status {
+				case .new:
+					markInProgressButton(for: task).tint(.appYellow)
+				case .inProgress:
+					markNewButton(for: task).tint(.appTeal)
+				case .done:
+					markNewButton(for: task).tint(.appTeal)
+					markInProgressButton(for: task).tint(.appYellow)
+				}
 			}
-			.if(task.isNotDone) { row in
-				row.swipeActions(edge: .trailing, allowsFullSwipe: false) {
-					Button {
-						haptic(.buttonPress)
-						withAnimation { vm.markAsDone(task) }
-						if isConfettiEnabled { confettiCounter += 1}
-					} label: {
-						Label {
-							Text("contextMenu.task.markDone")
-						} icon: { SFSymbols.checkmark }
-					}.tint(.appIndigo)
+			.swipeActions(edge: .trailing, allowsFullSwipe: true) {
+				deleteButton(for: task).tint(.appPink)
+				if task.isNotDone {
+					markDoneButton(for: task).tint(.appIndigo)
 				}
 			}
 		}
@@ -199,66 +193,74 @@ extension HomeScreen {
 			} label: {
 				Label { Text("contextMenu.cancel") } icon: { SFSymbols.xmark }
 			}
-			Button(role: .destructive) {
-				withAnimation { vm.delete(task) }
-				haptic(.notification(.success))
-			} label: {
-				Label { Text("contextMenu.task.delete") } icon: { SFSymbols.trash }
-			}
+			deleteButton(for: task)
 		} label: {
 			Label { Text("contextMenu.task.delete") } icon: { SFSymbols.trash }
 		}
 	}
 
-	private func markAsButtons(for task: TaskItem) -> some View {
+	@ViewBuilder private func markAsButtons(for task: TaskItem) -> some View {
 		switch task.status {
 		case .new:
-			return Section {
-				Button {
-					withAnimation { vm.markAsInProgress(task) }
-				} label: {
-					Label { Text("contextMenu.task.markInProgress") } icon: { SFSymbols.circleArrows }
-				}
-				Button {
-					withAnimation { vm.markAsDone(task) }
-					if isConfettiEnabled { confettiCounter += 1}
-				} label: {
-					Label { Text("contextMenu.task.markDone") } icon: { SFSymbols.checkmark }
-				}
-			} header: {
-				Text("contextMenu.task.markAs")
-			}
+			Section {
+				markInProgressButton(for: task)
+				markDoneButton(for: task)
+			} header: { Text("contextMenu.task.markAs") }
 		case .inProgress:
-			return Section {
-				Button {
-					withAnimation { vm.markAsNew(task) }
-				} label: {
-					Label { Text("contextMenu.task.markNew") } icon: { SFSymbols.sparkles }
-				}
-				Button {
-					withAnimation { vm.markAsDone(task) }
-					if isConfettiEnabled { confettiCounter += 1}
-				} label: {
-					Label { Text("contextMenu.task.markDone") } icon: { SFSymbols.checkmark }
-				}
-			} header: {
-				Text("contextMenu.task.markAs")
-			}
+			Section {
+				markNewButton(for: task)
+				markDoneButton(for: task)
+			} header: { Text("contextMenu.task.markAs") }
 		case .done:
-			return Section {
-				Button {
-					withAnimation { vm.markAsNew(task) }
-				} label: {
-					Label { Text("contextMenu.task.markNew") } icon: { SFSymbols.sparkles }
-				}
-				Button {
-					withAnimation { vm.markAsInProgress(task) }
-				} label: {
-					Label { Text("contextMenu.task.markInProgress") } icon: { SFSymbols.circleArrows }
-				}
-			} header: {
-				Text("contextMenu.task.markAs")
-			}
+			Section {
+				markNewButton(for: task)
+				markInProgressButton(for: task)
+			} header: { Text("contextMenu.task.markAs") }
+		}
+	}
+
+	private func markNewButton(for task: TaskItem) -> some View {
+		Button {
+			withAnimation { vm.markAsNew(task) }
+			haptic(.notification(.success))
+		} label: {
+			Label {
+				Text("contextMenu.task.markNew")
+			} icon: { SFSymbols.sparkles }
+		}
+	}
+
+	private func markInProgressButton(for task: TaskItem) -> some View {
+		Button {
+			withAnimation { vm.markAsInProgress(task) }
+			haptic(.notification(.success))
+		} label: {
+			Label {
+				Text("contextMenu.task.markInProgress")
+			} icon: { SFSymbols.circleArrows }
+		}
+	}
+
+	private func markDoneButton(for task: TaskItem) -> some View {
+		Button {
+			withAnimation { vm.markAsDone(task) }
+			if isConfettiEnabled { confettiCounter += 1 }
+			haptic(.notification(.success))
+		} label: {
+			Label {
+				Text("contextMenu.task.markDone")
+			} icon: { SFSymbols.checkmark }
+		}
+	}
+
+	private func deleteButton(for task: TaskItem) -> some View {
+		Button(role: .destructive) {
+			withAnimation { vm.delete(task) }
+			haptic(.notification(.success))
+		} label: {
+			Label {
+				Text("contextMenu.task.delete")
+			} icon: { SFSymbols.trash }
 		}
 	}
 
@@ -289,7 +291,7 @@ extension HomeScreen {
 			haptic(.notification(.warning))
 			withAnimation { vm.isConfirmingClearDoneTasks.toggle() }
 		} label: {
-			Label { Text("Clear Done Tasks") } icon: { SFSymbols.trash }
+			Label { Text("contextMenu.clearDoneTasks") } icon: { SFSymbols.trash }
 		}
 	}
 }

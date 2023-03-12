@@ -33,8 +33,6 @@ extension DetailScreen {
 			taskNotes = task.notes
 		}
 
-		var taskIsNewOrInProgress: Bool { task.isNotDone }
-
 		func updateTask() {
 			task.name = taskName
 			task.dueDate = taskDueDate

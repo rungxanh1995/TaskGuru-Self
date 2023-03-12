@@ -179,6 +179,7 @@
 "settings.badge.footer" = "在主屏幕上显示任务的数量。 如果没有显示徽章，请检查你的通知设置。";
 
 /* Misc section */
+"settings.misc.language" = "语言";
 "settings.misc.tabNames" = "选项卡标题";
 "settings.misc.confetti" = "切换五彩纸屑 🎉";
 "settings.misc.preview" = "触觉触摸预览";
