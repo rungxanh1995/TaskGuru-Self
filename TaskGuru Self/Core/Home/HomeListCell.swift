@@ -77,7 +77,9 @@ extension HomeListCell {
 	}
 
 	private var taskType: some View {
-		HStack(spacing: 4) {
+		Label {
+			Text(LocalizedStringKey(task.type.rawValue))
+		} icon: {
 			Group {
 				switch task.type {
 				case .personal: SFSymbols.personFilled
@@ -88,19 +90,20 @@ extension HomeListCell {
 				}
 			}
 			.font(.caption)
-
-			Text(LocalizedStringKey(task.type.rawValue))
 		}
+		.labelStyle(.titleAndIcon)
 		.font(.subheadline)
 		.strikethrough(task.isNotDone ? false : true)
 		.foregroundColor(task.isNotDone ? nil : .secondary)
 	}
 
 	private var taskDueDate: some View {
-		HStack(spacing: 4) {
-			SFSymbols.alarm.font(.caption)
+		Label {
 			Text(task.shortDueDate)
+		} icon: {
+			SFSymbols.alarm.font(.caption)
 		}
+		.labelStyle(.titleAndIcon)
 		.font(.subheadline)
 		.strikethrough(task.isNotDone ? false : true)
 		.foregroundColor(task.isNotDone ? task.colorForDueDate() : .secondary)
