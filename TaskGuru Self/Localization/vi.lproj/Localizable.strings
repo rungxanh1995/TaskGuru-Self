@@ -7,8 +7,10 @@
 */
 
 /* ONBOARDING */
+"onboarding.title" = "Chào mừng bạn đến với TaskGuru";
+"onboarding.privacy" = "Chúng tôi tôn trọng quyền riêng tư của người dùng và không thu thập bất cứ thông tin cá nhân nào cho mục đích quảng cáo hoặc thương mại trong ứng dụng này. Bạn có thể tin tưởng rằng thông tin của mình được bảo mật, cả khi thiết bị được khôi phục từ iCloud.";
 /* Buttons */
-"onboarding.buttons.onboarding.dismiss" = "Đã sẵn sàng!";
+"onboarding.buttons.onboarding.dismiss" = "Tiếp tục";
 "onboarding.buttons.onboarded.dismiss" = "Thoát";
 
 "onboarding.features.home.title" = "Tab Chính";

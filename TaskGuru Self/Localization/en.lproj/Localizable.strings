@@ -7,8 +7,10 @@
 */
 
 /* ONBOARDING */
+"onboarding.title" = "Welcome to TaskGuru";
+"onboarding.privacy" = "We respect our users' privacy and do not collect any personal data for advertising or commercial purposes in this app. You can trust that your information will remain secure and protected, even across device restores, with the use of iCloud backup.";
 /* Buttons */
-"onboarding.buttons.onboarding.dismiss" = "I'm All Set!";
+"onboarding.buttons.onboarding.dismiss" = "Continue";
 "onboarding.buttons.onboarded.dismiss" = "Dismiss";
 
 "onboarding.features.home.title" = "Home tab";

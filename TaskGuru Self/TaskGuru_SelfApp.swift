@@ -36,6 +36,7 @@ struct TaskGuru_SelfApp: App {
 			RootScreen()
 				.sheet(isPresented: .constant(isOnboarding)) {
 					OnboardContainerView()
+						.interactiveDismissDisabled()
 				}
 				.environmentObject(homeVM)
 				.setUpColorTheme()

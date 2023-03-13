@@ -18,21 +18,14 @@ struct OnboardContainerView: View {
 		VStack {
 			ScrollView(showsIndicators: false) {
 				VStack(alignment: .center, spacing: 24) {
-					// app icon
-					if let icon = AppIconType(rawValue: activeAppIcon)?.iconImage {
-						icon.asLargeIconSize()
-					} else {
-						Image("app-logo").asLargeIconSize()
-					}
 					// welcome to
-					Text("Welcome to TaskGuru")
+					Text("onboarding.title")
 						.font(.largeTitle)
 						.fontWeight(.bold)
 						.multilineTextAlignment(.center)
 				}
 				.padding(.horizontal, 40)
-				.padding(.top, 40)
-				.padding(.bottom, 32)
+				.padding(.vertical, 32)
 
 				VStack(alignment: .leading, spacing: 32) {
 					ForEach(OnboardFeature.features) { feature in
@@ -44,6 +37,8 @@ struct OnboardContainerView: View {
 				}
 				.padding(.bottom)
 			}
+
+			dataPrivacy
 
 			switch isOnboarding {
 			case .none: allSet
@@ -70,6 +65,19 @@ extension OnboardContainerView {
 		.buttonBorderShape(.roundedRectangle(radius: 16))
 		.tint(.defaultAccentColor)
 		.padding(.bottom, 20)
+	}
+
+	private var dataPrivacy: some View {
+		VStack {
+			Image(systemSymbol: .personBadgeShieldCheckmarkFill)
+				.symbolRenderingMode(.hierarchical)
+				.asSettingsIconSize()
+				.foregroundColor(.defaultAccentColor)
+			Text("onboarding.privacy")
+				.font(.caption2)
+				.foregroundColor(.secondary)
+				.multilineTextAlignment(.center)
+		}
 	}
 }
 
