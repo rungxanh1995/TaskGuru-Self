@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeListCell: View {
 	@ObservedObject var task: TaskItem
+	@Environment(\.dynamicTypeSize) var dynamicTypeSize
 
 	private let columns = [
 		GridItem(.fixed(60), alignment: .leading),
@@ -17,6 +18,10 @@ struct HomeListCell: View {
 	]
 
 	var body: some View {
+		let layout = dynamicTypeSize <= .xxLarge ?
+		AnyLayout(HStackLayout(alignment: .center)) :
+		AnyLayout(VStackLayout(alignment: .leading))
+
 		VStack(alignment: .leading, spacing: 4) {
 			HStack(alignment: .top) {
 				if task.priority != .none { taskPriority }
@@ -24,9 +29,9 @@ struct HomeListCell: View {
 			}
 			.bold(task.isNotDone ? true : false)
 
-			LazyVGrid(columns: columns) {
-				taskStatus
-				taskDueDate
+			layout {
+				taskStatus.padding(.trailing, 12)
+				taskDueDate.padding(.trailing, 12)
 				taskType
 			}
 		}
@@ -45,9 +50,10 @@ extension HomeListCell {
 				case .done: SFSymbols.checkmark
 				}
 			}
+			.font(.caption)
 		}
-		.labelStyle(.iconOnly)
-		.font(.caption)
+		.labelStyle(.titleAndIcon)
+		.font(.subheadline)
 		.foregroundStyle(task.colorForStatus())
 	}
 
@@ -80,7 +86,7 @@ extension HomeListCell {
 		Label {
 			Text(LocalizedStringKey(task.type.rawValue))
 		} icon: {
-			Group {
+			ZStack {
 				switch task.type {
 				case .personal: SFSymbols.personFilled
 				case .work: SFSymbols.buildingFilled
