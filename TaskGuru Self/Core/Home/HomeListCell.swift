@@ -11,22 +11,23 @@ struct HomeListCell: View {
 	@ObservedObject var task: TaskItem
 
 	private let columns = [
+		GridItem(.fixed(60), alignment: .leading),
 		GridItem(.flexible(), alignment: .leading),
 		GridItem(.flexible(), alignment: .leading)
 	]
 
 	var body: some View {
-		HStack {
-			taskStatus
-			VStack(alignment: .leading, spacing: 4) {
-				HStack(alignment: .top) {
-					if task.priority != .none { taskPriority.bold() }
-					taskName
-				}
-				LazyVGrid(columns: columns) {
-					taskDueDate
-					taskType
-				}
+		VStack(alignment: .leading, spacing: 4) {
+			HStack(alignment: .top) {
+				if task.priority != .none { taskPriority }
+				taskName
+			}
+			.bold(task.isNotDone ? true : false)
+
+			LazyVGrid(columns: columns) {
+				taskStatus
+				taskDueDate
+				taskType
 			}
 		}
 	}
@@ -46,13 +47,8 @@ extension HomeListCell {
 			}
 		}
 		.labelStyle(.iconOnly)
-		.font(.body)
-		.frame(width: 20, height: 20)
-		.clipShape(RoundedRectangle(cornerRadius: 9*(20/40)))
-		.background(in: RoundedRectangle(cornerRadius: 3).inset(by: -4))
-		.backgroundStyle(task.colorForStatus().opacity(0.15))
+		.font(.caption)
 		.foregroundStyle(task.colorForStatus())
-		.padding(4)
 	}
 
 	private var taskPriority: some View {
