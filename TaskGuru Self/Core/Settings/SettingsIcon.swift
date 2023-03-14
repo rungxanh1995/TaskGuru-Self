@@ -12,16 +12,18 @@ struct SettingsIcon: View {
 	let accent: Color
 
 	var body: some View {
-		VStack {
-			icon
-				.resizable()
-				.scaledToFit()
-				.frame(width: 20, height: 20)
-		}
-		.background(in: RoundedRectangle(cornerRadius: 3).inset(by: -4))
-		.backgroundStyle(accent.opacity(0.15))
-		.foregroundStyle(accent)
-		.padding(4)
+		icon
+			.resizable()
+			.scaledToFit()
+			.frame(width: 21.75, height: 21.75)
+			.background(in: RoundedRectangle(cornerRadius: 4).inset(by: -4))
+			.backgroundStyle(accent)
+			.foregroundStyle(.white)
+			.padding(4)
+			.overlay(
+				RoundedRectangle(cornerRadius: 8)
+					.stroke(.gray.opacity(0.5), lineWidth: 0.5)
+			)
 	}
 }
 

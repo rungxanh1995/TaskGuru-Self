@@ -75,6 +75,23 @@ struct SettingsScreen: View {
 }
 
 private extension SettingsScreen {
+	/// Returns a horizontally stacked `View` that contains an `icon` and a settings `content`.
+	///
+	/// - Parameters:
+	///   - icon: A closure that returns a `View` representing the icon to be displayed.
+	///   - content: A closure that returns a `View` representing the content to be displayed.
+	///
+	/// - Returns: A horizontally stacked `View` that contains the `icon` and `content`.
+	///
+	private func settingsRow<Icon: View, Content: View>(
+		@ViewBuilder icon: () -> Icon, @ViewBuilder content: () -> Content
+	) -> some View {
+		HStack(spacing: 16) {
+			icon()
+			content()
+		}
+	}
+
 	private var generalSection: some View {
 		Section {
 			appIcon
@@ -89,8 +106,9 @@ private extension SettingsScreen {
 	}
 
 	@ViewBuilder private var appIcon: some View {
-		HStack {
+		settingsRow {
 			SettingsIcon(icon: SFSymbols.app, accent: .appGreen)
+		} content: {
 			NavigationLink {
 				AppIconSettings()
 			} label: {
@@ -108,16 +126,18 @@ private extension SettingsScreen {
 	}
 
 	private var portraitLock: some View {
-		HStack {
+		settingsRow {
 			SettingsIcon(icon: SFSymbols.lockRotation, accent: .appIndigo)
+		} content: {
 			Toggle("settings.general.portraitLock", isOn: $isLockedInPortrait)
 				.tint(.accentColor)
 		}
 	}
 
 	private var haptics: some View {
-		HStack {
+		settingsRow {
 			SettingsIcon(icon: SFSymbols.waveform, accent: .appPink)
+		} content: {
 			Toggle("settings.general.reduceHaptics", isOn: $isHapticsReduced)
 				.tint(.accentColor)
 		}
@@ -125,8 +145,9 @@ private extension SettingsScreen {
 
 	@ViewBuilder private var appAccentColor: some View {
 		let currentAccentColor = AccentColorType(rawValue: accentColor)
-		HStack {
+		settingsRow {
 			SettingsIcon(icon: SFSymbols.paintbrush, accent: .defaultAccentColor)
+		} content: {
 			NavigationLink {
 				AccentColorSettings()
 			} label: {
@@ -139,8 +160,9 @@ private extension SettingsScreen {
 	}
 
 	private var fontDesignStyle: some View {
-		HStack {
+		settingsRow {
 			SettingsIcon(icon: SFSymbols.textFormat, accent: .appOrange)
+		} content: {
 			Picker("settings.general.fontStyle", selection: $fontDesign) {
 				ForEach(FontDesignType.allCases) { (design) in
 					Text(LocalizedStringKey(design.title))
@@ -151,8 +173,9 @@ private extension SettingsScreen {
 	}
 
 	private var appTheme: some View {
-		HStack {
+		settingsRow {
 			SettingsIcon(icon: SFSymbols.appearance, accent: .appBlue)
+		} content: {
 			Picker("settings.general.colorTheme", selection: $systemTheme) {
 				ForEach(SchemeType.allCases) { (theme) in
 					Text(LocalizedStringKey(theme.title))
@@ -175,8 +198,9 @@ private extension SettingsScreen {
 	}
 
 	private var tabBadge: some View {
-		HStack {
+		settingsRow {
 			SettingsIcon(icon: SFSymbols.clockBadge, accent: .appPink)
+		} content: {
 			Toggle("settings.badge.tab", isOn: $isShowingTabBadge)
 				.tint(.accentColor)
 		}
@@ -184,8 +208,9 @@ private extension SettingsScreen {
 
 	private var appBadge: some View {
 		VStack {
-			HStack {
-				SettingsIcon(icon: SFSymbols.appBadge, accent: .appYellow)
+			settingsRow {
+				SettingsIcon(icon: SFSymbols.appBadge, accent: .appPurple)
+			} content: {
 				Toggle("settings.badge.appIcon", isOn: $isShowingAppBadge)
 					.tint(.accentColor)
 			}
@@ -227,8 +252,9 @@ private extension SettingsScreen {
 
 	private var displayLanguage: some View {
 		// hacky workaround for a stock look w/ disclosure indicator
-		HStack {
+		settingsRow {
 			SettingsIcon(icon: SFSymbols.globe, accent: .appOrange)
+		} content: {
 			let url = URL(string: UIApplication.openSettingsURLString)!
 			Link("settings.misc.language", destination: url)
 				.tint(.primary)
@@ -239,16 +265,18 @@ private extension SettingsScreen {
 	}
 
 	private var tabNames: some View {
-		HStack {
+		settingsRow {
 			SettingsIcon(icon: SFSymbols.dock, accent: .appBlue)
+		} content: {
 			Toggle("settings.misc.tabNames", isOn: $isTabNamesEnabled)
 				.tint(.accentColor)
 		}
 	}
 
 	private var confetti: some View {
-		HStack {
+		settingsRow {
 			SettingsIcon(icon: SFSymbols.sparkles, accent: .appPink)
+		} content: {
 			Toggle("settings.misc.confetti", isOn: $isConfettiEnabled)
 				.tint(.accentColor)
 		}
@@ -256,8 +284,9 @@ private extension SettingsScreen {
 
 	private var preview: some View {
 		VStack {
-			HStack {
+			settingsRow {
 				SettingsIcon(icon: SFSymbols.handTap, accent: .appIndigo)
+			} content: {
 				Toggle("settings.misc.preview", isOn: $isPreviewEnabled)
 					.tint(.accentColor)
 			}
@@ -284,8 +313,9 @@ private extension SettingsScreen {
 	}
 
 	private var resetAppSettingsButton: some View {
-		HStack {
+		settingsRow {
 			SettingsIcon(icon: SFSymbols.gear, accent: .red)
+		} content: {
 			Button(role: .destructive) {
 				vm.isConfirmingResetSettings.toggle()
 			} label: {
@@ -295,8 +325,9 @@ private extension SettingsScreen {
 	}
 
 	private var resetAppDataButton: some View {
-		HStack {
+		settingsRow {
 			SettingsIcon(icon: SFSymbols.personFolder, accent: .red)
+		} content: {
 			Button(role: .destructive) {
 				vm.isConfirmingResetUserData.toggle()
 			} label: {
@@ -328,8 +359,9 @@ private extension SettingsScreen {
 	}
 
 	private var onboarding: some View {
-		HStack {
+		settingsRow {
 			SettingsIcon(icon: SFSymbols.handWave, accent: .defaultAccentColor)
+		} content: {
 			NavigationLink("settings.general.onboarding") {
 				OnboardContainerView()
 			}
