@@ -34,9 +34,9 @@ struct DetailGridCell: View {
 				)
 		}
 		.frame(maxWidth: .infinity, maxHeight: .infinity)
-		.clipShape(RoundedRectangle(cornerRadius: 8))
+		.clipShape(RoundedRectangle(cornerRadius: 12))
 		.overlay(
-			RoundedRectangle(cornerRadius: 8)
+			RoundedRectangle(cornerRadius: 12)
 				.stroke(.gray.opacity(0.5), lineWidth: 0.5)
 		)
 	}

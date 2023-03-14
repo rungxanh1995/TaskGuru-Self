@@ -22,7 +22,7 @@ struct HomeListCell: View {
 		AnyLayout(HStackLayout(alignment: .center)) :
 		AnyLayout(VStackLayout(alignment: .leading))
 
-		VStack(alignment: .leading, spacing: 4) {
+		VStack(alignment: .leading) {
 			HStack(alignment: .top) {
 				if task.priority != .none { taskPriority }
 				taskName
@@ -58,20 +58,22 @@ extension HomeListCell {
 	}
 
 	private var taskPriority: some View {
-		Label {
-			Text(LocalizedStringKey(task.priority.rawValue))
-		} icon: {
-			ZStack {
-				switch task.priority {
-				case .none: EmptyView()
-				default: Text(task.priority.visualized)
+		DynamicColorLabel {
+			Label {
+				Text(LocalizedStringKey(task.priority.rawValue))
+			} icon: {
+				ZStack {
+					switch task.priority {
+					case .none: EmptyView()
+					default: Text(task.priority.visualized)
+					}
 				}
 			}
+			.labelStyle(.iconOnly)
 		}
-		.labelStyle(.iconOnly)
 		.font(.body)
 		.strikethrough(task.isNotDone ? false : true)
-		.foregroundColor(task.isNotDone ? task.colorForPriority() : .secondary)
+		.tint(task.isNotDone ? nil : .secondary)
 	}
 
 	private var taskName: some View {

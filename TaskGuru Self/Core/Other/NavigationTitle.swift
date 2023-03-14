@@ -26,10 +26,9 @@ struct NavigationTitle: View {
 	let text: LocalizedStringKey
 
 	var body: some View {
-		Button(text) {}
+		DynamicColorLabel { Text(text) }
 			.font(.headline)
 			.bold()
-			.allowsHitTesting(false)
 	}
 }
 

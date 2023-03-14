@@ -21,6 +21,7 @@
 		2C33F6C529858FEA004893EF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C33F6C429858FEA004893EF /* Constants.swift */; };
 		2C33F6C82985929C004893EF /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C33F6C72985929C004893EF /* PreviewProvider.swift */; };
 		2C4C16E929A6C4770056709E /* ConfettiViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C16E829A6C4770056709E /* ConfettiViewModifier.swift */; };
+		2C661CDC29C0CD99000E1195 /* DynamicColorLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C661CDB29C0CD99000E1195 /* DynamicColorLabel.swift */; };
 		2C7D8FCD29A8068100E623AE /* AppIconSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7D8FCC29A8068100E623AE /* AppIconSettings.swift */; };
 		2C7D8FCF29A8082000E623AE /* AccentColorSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7D8FCE29A8082000E623AE /* AccentColorSettings.swift */; };
 		2C7D8FD129A810E000E623AE /* SettingsIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7D8FD029A810E000E623AE /* SettingsIcon.swift */; };
@@ -86,6 +87,7 @@
 		2C33F6C429858FEA004893EF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2C33F6C72985929C004893EF /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
 		2C4C16E829A6C4770056709E /* ConfettiViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiViewModifier.swift; sourceTree = "<group>"; };
+		2C661CDB29C0CD99000E1195 /* DynamicColorLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicColorLabel.swift; sourceTree = "<group>"; };
 		2C7D8FCC29A8068100E623AE /* AppIconSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconSettings.swift; sourceTree = "<group>"; };
 		2C7D8FCE29A8082000E623AE /* AccentColorSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccentColorSettings.swift; sourceTree = "<group>"; };
 		2C7D8FD029A810E000E623AE /* SettingsIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsIcon.swift; sourceTree = "<group>"; };
@@ -468,6 +470,7 @@
 		2CFBDF86299FF430006E5FEE /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				2C661CDB29C0CD99000E1195 /* DynamicColorLabel.swift */,
 				2CFBDF87299FF440006E5FEE /* NavigationTitle.swift */,
 			);
 			path = Other;
@@ -600,6 +603,7 @@
 				2C33F6C82985929C004893EF /* PreviewProvider.swift in Sources */,
 				2CCB0B492985B5A400D489DD /* Date.swift in Sources */,
 				2CBACA3C299A9F1700D30C35 /* OnboardView.swift in Sources */,
+				2C661CDC29C0CD99000E1195 /* DynamicColorLabel.swift in Sources */,
 				2CC25BD0298462FF006972DF /* SettingsScreen.swift in Sources */,
 				2C92905029A59AC5009F3389 /* AppIcon.swift in Sources */,
 				2C7D8FCF29A8082000E623AE /* AccentColorSettings.swift in Sources */,
