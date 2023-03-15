@@ -15,6 +15,7 @@ struct PendingScreen: View {
 	@Preference(\.isConfettiEnabled) private var isConfettiEnabled
 	@State private var confettiCounter: Int = 0
 
+	@Preference(\.isTodayDuesHighlighted) private var duesHighlighted
 	@Preference(\.isPreviewEnabled) private var isPreviewEnabled
 	@Preference(\.contextPreviewType) private var previewType
 
@@ -96,11 +97,15 @@ extension PendingScreen {
 		Section {
 			if pendings.isEmpty == false {
 				filteredList(of: pendings)
-			} else { emptyStateImage }
+					.if(duesHighlighted) { list in
+						list.listRowBackground(DynamicHighlightBackground())
+					}
+			} else {
+				emptyStateImage.listRowBackground(Color.clear)
+			}
+		} header: {
+			Text("pending.sections.dueToday").bold().foregroundColor(.appYellow)
 		}
-	header: {
-		Text("pending.sections.dueToday").bold().foregroundColor(.appYellow)
-	}
 	}
 
 	@ViewBuilder private var pendingFromTomorrowSection: some View {

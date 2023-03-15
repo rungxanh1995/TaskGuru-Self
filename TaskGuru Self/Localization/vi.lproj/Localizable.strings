@@ -174,8 +174,9 @@
 "settings.general.fontStyle" = "Kiểu phông chữ";
 "settings.general.fontWidth" = "Khoảng cách phông chữ";
 "settings.general.colorTheme" = "Chủ đề giao diện";
+"settings.general.highlight" = "Tô nổi tác vụ đến hạn";
 
-/* Badge secrion */
+/* Badge section */
 "settings.badge.appIcon" = "Hiện nhãn biểu tượng app";
 "settings.badge.appIconType" = "B.tượng app cho các tác vụ";
 "settings.badge.notifSetting" = "Đi đến Cài đặt thông báo";

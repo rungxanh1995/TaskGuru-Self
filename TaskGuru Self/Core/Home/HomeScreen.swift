@@ -15,6 +15,7 @@ struct HomeScreen: View {
 	@Preference(\.isConfettiEnabled) private var isConfettiEnabled
 	@State private var confettiCounter: Int = 0
 
+	@Preference(\.isTodayDuesHighlighted) private var duesHighlighted
 	@Preference(\.isPreviewEnabled) private var isPreviewEnabled
 	@Preference(\.contextPreviewType) private var previewType
 
@@ -29,6 +30,10 @@ struct HomeScreen: View {
 					List {
 						overdueSection
 						dueTodaySection
+							.if(duesHighlighted) { section in
+								section
+									.listRowBackground(DynamicHighlightBackground())
+							}
 						upcomingSection
 					}
 				}

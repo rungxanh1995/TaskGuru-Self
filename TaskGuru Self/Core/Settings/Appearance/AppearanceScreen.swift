@@ -13,6 +13,7 @@ struct AppearanceScreen: View {
 	@Preference(\.systemTheme) private var systemTheme
 	@Preference(\.fontDesign) private var fontDesign
 	@Preference(\.fontWidth) private var fontWidth
+	@Preference(\.isTodayDuesHighlighted) private var duesHighlighted
 
 	var body: some View {
 		Form {
@@ -29,6 +30,8 @@ struct AppearanceScreen: View {
 			} footer: {
 				Text("settings.appearance.footer")
 			}
+
+			highlightDues
 		}
 		.navigationTitle("settings.general.appearance")
 		.navigationBarTitleDisplayMode(.inline)
@@ -108,6 +111,14 @@ extension AppearanceScreen {
 						.tag(width.rawValue)
 				}
 			}
+		}
+	}
+
+	private var highlightDues: some View {
+		settingsRow {
+			EmptyView()
+		} content: {
+			Toggle("settings.general.highlight", isOn: $duesHighlighted)
 		}
 	}
 }

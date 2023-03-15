@@ -64,4 +64,7 @@ final class Preferences {
 
 	@UserDefault(UserDefaultsKey.appIcon)
 	var activeAppIcon: Int = AppIconType.allCases.first!.rawValue
+
+	@UserDefault(UserDefaultsKey.isTodayDuesHighlighted)
+	var isTodayDuesHighlighted: Bool = true
 }
