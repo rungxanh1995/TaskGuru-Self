@@ -178,7 +178,6 @@ private extension SettingsScreen {
 	}
 
 	private var displayLanguage: some View {
-		// hacky workaround for a stock look w/ disclosure indicator
 		settingsRow {
 			SettingsIcon(icon: SFSymbols.globe, accent: .appOrange)
 		} content: {
@@ -186,8 +185,7 @@ private extension SettingsScreen {
 			Link("settings.misc.language", destination: url)
 				.tint(.primary)
 			Spacer()
-			SFSymbols.chevronRight.fontWeight(.medium)
-				.foregroundColor(.gray.opacity(0.5))
+			SFSymbols.arrowUpForward
 		}
 	}
 

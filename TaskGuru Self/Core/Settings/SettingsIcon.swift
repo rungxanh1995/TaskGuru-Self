@@ -16,12 +16,12 @@ struct SettingsIcon: View {
 			.resizable()
 			.scaledToFit()
 			.frame(width: 21.75, height: 21.75)
-			.background(in: RoundedRectangle(cornerRadius: 4).inset(by: -4))
+			.background(in: RoundedRectangle(cornerRadius: 3).inset(by: -4))
 			.backgroundStyle(accent)
 			.foregroundStyle(.white)
 			.padding(4)
 			.overlay(
-				RoundedRectangle(cornerRadius: 8)
+				RoundedRectangle(cornerRadius: 7)
 					.stroke(.gray.opacity(0.25), lineWidth: 0.5)
 			)
 	}
