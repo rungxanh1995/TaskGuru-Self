@@ -13,6 +13,7 @@ struct AppearanceScreen: View {
 	@Preference(\.systemTheme) private var systemTheme
 	@Preference(\.fontDesign) private var fontDesign
 	@Preference(\.fontWidth) private var fontWidth
+	@Preference(\.isBoldFont) private var boldFont
 	@Preference(\.isTodayDuesHighlighted) private var duesHighlighted
 
 	var body: some View {
@@ -30,6 +31,8 @@ struct AppearanceScreen: View {
 			} footer: {
 				Text("settings.appearance.footer")
 			}
+
+			Section { boldText }
 
 			highlightDues
 		}
@@ -114,12 +117,12 @@ extension AppearanceScreen {
 		}
 	}
 
+	private var boldText: some View {
+		Toggle("settings.general.boldText", isOn: $boldFont)
+	}
+
 	private var highlightDues: some View {
-		settingsRow {
-			EmptyView()
-		} content: {
-			Toggle("settings.general.highlight", isOn: $duesHighlighted)
-		}
+		Toggle("settings.general.highlight", isOn: $duesHighlighted)
 	}
 }
 

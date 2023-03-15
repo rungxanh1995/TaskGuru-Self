@@ -168,7 +168,10 @@
 "settings.general.reduceHaptics" = "Reduzir Haptics";
 "settings.general.accentColor" = "Cor de destaque";
 "settings.general.fontStyle" = "Estilo de fonte";
+"settings.general.fontWidth" = "Font Width";
 "settings.general.colorTheme" = "Tema de cor";
+"settings.general.boldText" = "Bold Text";
+"settings.general.highlight" = "Highlight Today's Dues";
 
 /* Badge section */
 "settings.badge.appIcon" = "Mostrar distintivo do ícone do aplicativo";

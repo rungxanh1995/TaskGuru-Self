@@ -23,5 +23,6 @@ enum UserDefaultsKey {
 	static let badgeType: String = "badgeType"
 	static let contextPreviewType: String = "contextPreviewType"
 	static let appIcon: String = "appIcon"
+	static let isBoldFont: String = "isBoldFont"
 	static let isTodayDuesHighlighted = "isTodayDuesHighlighted"
 }

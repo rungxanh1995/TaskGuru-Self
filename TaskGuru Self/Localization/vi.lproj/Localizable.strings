@@ -170,10 +170,11 @@
 "settings.general.appIcon" = "Biểu tượng app";
 "settings.general.portraitLock" = "Khoá xoay màn hình";
 "settings.general.reduceHaptics" = "Giảm rung phản hồi";
-"settings.general.accentColor" = "Tông màu chủ đạo";
-"settings.general.fontStyle" = "Kiểu phông chữ";
-"settings.general.fontWidth" = "Khoảng cách phông chữ";
-"settings.general.colorTheme" = "Chủ đề giao diện";
+"settings.general.accentColor" = "Màu chủ đạo";
+"settings.general.fontStyle" = "Kiểu chữ";
+"settings.general.fontWidth" = "Khoảng cách chữ";
+"settings.general.colorTheme" = "Chủ đề";
+"settings.general.boldText" = "Chữ đậm";
 "settings.general.highlight" = "Tô nổi tác vụ đến hạn";
 
 /* Badge section */

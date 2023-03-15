@@ -69,6 +69,11 @@ extension View {
 		modifier(FontWidthModifier())
 	}
 
+	/// Configure the bold font setting of this application.
+	func setUpBoldFont() -> some View {
+		modifier(BoldFontModifier())
+	}
+
 	/// Configure the tinted accent color of this application.
 	func setUpAccentColor() -> some View {
 		modifier(AccentColorModifier())

@@ -166,7 +166,7 @@
 
 /* General section */
 "settings.general.onboarding" = "入职屏幕";
-"settings.general.appearance" = "Appearance";
+"settings.general.appearance" = "外观";
 "settings.general.appIcon" = "应用图标";
 "settings.general.portraitLock" = "竖排方向锁定";
 "settings.general.reduceHaptics" = "减少触感触控";
@@ -174,12 +174,13 @@
 "settings.general.fontStyle" = "字体";
 "settings.general.fontWidth" = "字体宽度";
 "settings.general.colorTheme" = "外观主题";
+"settings.general.boldText" = "粗体文本";
 "settings.general.highlight" = "突出显示今天到期的";
 
 /* Badge section */
 "settings.badge.appIcon" = "显示应用图标的标志";
 "settings.badge.appIconType" = "程序图标徽章类型";
-"settings.badge.notifSetting" = "Go to Notifications setting";
+"settings.badge.notifSetting" = "转到通知设置";
 "settings.badge.tab" = "显示选项卡标记";
 "settings.badge.footer" = "在主屏幕上显示任务的数量。 如果没有显示徽章，请检查你的通知设置。";
 
@@ -240,10 +241,10 @@
 "fontDesign.serif" = "衬线";
 
 /* Font widths */
-"fontWidth.standard" = "Standard";
-"fontWidth.condensed" = "Condensed";
-"fontWidth.compressed" = "Compressed";
-"fontWidth.expanded" = "Expanded";
+"fontWidth.standard" = "标准";
+"fontWidth.condensed" = "压缩";
+"fontWidth.compressed" = "更压缩";
+"fontWidth.expanded" = "扩展";
 
 /* Color themes */
 "colorTheme.system" = "系统";

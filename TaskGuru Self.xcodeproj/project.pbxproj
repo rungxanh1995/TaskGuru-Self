@@ -24,6 +24,7 @@
 		2C33F6C229858E5E004893EF /* AddTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C33F6C129858E5E004893EF /* AddTaskViewModel.swift */; };
 		2C33F6C529858FEA004893EF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C33F6C429858FEA004893EF /* Constants.swift */; };
 		2C33F6C82985929C004893EF /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C33F6C72985929C004893EF /* PreviewProvider.swift */; };
+		2C452B6129C1EC3F00F9B1C9 /* BoldFontModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C452B6029C1EC3F00F9B1C9 /* BoldFontModifier.swift */; };
 		2C4C16E929A6C4770056709E /* ConfettiViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C16E829A6C4770056709E /* ConfettiViewModifier.swift */; };
 		2C661CDC29C0CD99000E1195 /* DynamicColorLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C661CDB29C0CD99000E1195 /* DynamicColorLabel.swift */; };
 		2C7D8FCD29A8068100E623AE /* AppIconSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7D8FCC29A8068100E623AE /* AppIconSettings.swift */; };
@@ -94,6 +95,7 @@
 		2C33F6C129858E5E004893EF /* AddTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewModel.swift; sourceTree = "<group>"; };
 		2C33F6C429858FEA004893EF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2C33F6C72985929C004893EF /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
+		2C452B6029C1EC3F00F9B1C9 /* BoldFontModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoldFontModifier.swift; sourceTree = "<group>"; };
 		2C4C16E829A6C4770056709E /* ConfettiViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiViewModifier.swift; sourceTree = "<group>"; };
 		2C661CDB29C0CD99000E1195 /* DynamicColorLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicColorLabel.swift; sourceTree = "<group>"; };
 		2C7D8FCC29A8068100E623AE /* AppIconSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconSettings.swift; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 				2C92905129A59ACB009F3389 /* App Icon */,
 				2C12598629A195A300DD96E4 /* Accent Color */,
 				2CBCA15729A1A5780036B4A7 /* Badge */,
+				2C452B6229C1ED4300F9B1C9 /* Bold Font */,
 				2C12598829A195C000DD96E4 /* Color Scheme */,
 				2C93EA1129A312C000C0AB90 /* Context Preview */,
 				2C12598729A195B300DD96E4 /* Font Design */,
@@ -291,6 +294,14 @@
 				2C7E9D4A299C30C800437EB4 /* UIApplication.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2C452B6229C1ED4300F9B1C9 /* Bold Font */ = {
+			isa = PBXGroup;
+			children = (
+				2C452B6029C1EC3F00F9B1C9 /* BoldFontModifier.swift */,
+			);
+			path = "Bold Font";
 			sourceTree = "<group>";
 		};
 		2C73ACEF298843D700E951A1 /* Core Data */ = {
@@ -654,6 +665,7 @@
 				2C2B5A6129C1382F0041121C /* FontWidth.swift in Sources */,
 				2C7D8FCD29A8068100E623AE /* AppIconSettings.swift in Sources */,
 				2C33F6BC298588B4004893EF /* TaskStatus.swift in Sources */,
+				2C452B6129C1EC3F00F9B1C9 /* BoldFontModifier.swift in Sources */,
 				2C8C35DF298489DA00DCEA67 /* DetailViewMode.swift in Sources */,
 				2CBACA41299AA39800D30C35 /* OnboardFeature.swift in Sources */,
 				2CD53DEF29A11D1800B23429 /* FontDesignModifier.swift in Sources */,
@@ -820,7 +832,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 158;
+				CURRENT_PROJECT_VERSION = 159;
 				DEVELOPMENT_ASSET_PATHS = "\"TaskGuru Self/Preview Content\"";
 				DEVELOPMENT_TEAM = 8R3P49X4ZM;
 				ENABLE_PREVIEWS = YES;
@@ -839,7 +851,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.6.6;
+				MARKETING_VERSION = 1.6.7;
 				PRODUCT_BUNDLE_IDENTIFIER = "joepham.TaskGuru-Self";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -859,7 +871,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 158;
+				CURRENT_PROJECT_VERSION = 159;
 				DEVELOPMENT_ASSET_PATHS = "\"TaskGuru Self/Preview Content\"";
 				DEVELOPMENT_TEAM = 8R3P49X4ZM;
 				ENABLE_PREVIEWS = YES;
@@ -878,7 +890,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.6.6;
+				MARKETING_VERSION = 1.6.7;
 				PRODUCT_BUNDLE_IDENTIFIER = "joepham.TaskGuru-Self";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
