@@ -56,7 +56,6 @@ extension AcknowledgementsView {
 				.padding(.bottom)
 
 			translationFor("ack.localization.azerbaijani", translators: "Rauf Anata")
-			translationFor("ack.localization.chineseSim", translators: "Joe Pham")
 			translationFor("ack.localization.italian", translators: "Marco Stevanella")
 			translationFor("ack.localization.portugueseBrazil", translators: "Matheus Armando")
 			translationFor("ack.localization.ukrainian", translators: "Ostap Sulyk")

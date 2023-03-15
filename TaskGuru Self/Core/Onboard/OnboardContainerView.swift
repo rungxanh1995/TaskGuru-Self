@@ -17,7 +17,7 @@ struct OnboardContainerView: View {
 	var body: some View {
 		VStack {
 			ScrollView(showsIndicators: false) {
-				VStack(alignment: .center, spacing: 24) {
+				VStack(alignment: .center) {
 					// welcome to
 					Text("onboarding.title")
 						.font(.largeTitle)
@@ -27,7 +27,7 @@ struct OnboardContainerView: View {
 				.padding(.horizontal, 40)
 				.padding(.vertical, 32)
 
-				VStack(alignment: .leading, spacing: 32) {
+				VStack(alignment: .leading, spacing: 24) {
 					ForEach(OnboardFeature.features) { feature in
 						OnboardView(
 							icon: feature.icon,
@@ -64,7 +64,7 @@ extension OnboardContainerView {
 		.buttonStyle(.borderedProminent)
 		.buttonBorderShape(.roundedRectangle(radius: 16))
 		.tint(.defaultAccentColor)
-		.padding(.bottom, 20)
+		.padding(.bottom)
 	}
 
 	private var dataPrivacy: some View {

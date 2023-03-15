@@ -20,7 +20,9 @@
 "onboarding.features.appBadge.title" = "App icon badge";
 "Track all or time-based pending tasks at a glance. Find this in %@ Settings" = "Track all or time-based pending tasks at a glance. Find this in %@ Settings";
 "onboarding.features.quickActions.title" = "Quick Actions";
-"onboarding.features.quickActions.description" = "Tap and hold each task from the list to use quick actions";
+"onboarding.features.quickActions.description" = "Tap and hold or swipe each task from the list to use quick actions";
+"onboarding.features.customization.title" = "Customizations";
+"onboarding.features.customization.description" = "Explore a heap of settings to personalize TaskGuru to your liking";
 
 
 /* SHARED */

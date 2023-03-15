@@ -20,7 +20,9 @@
 "onboarding.features.appBadge.title" = "Nhãn biểu tượng app";
 "Track all or time-based pending tasks at a glance. Find this in %@ Settings" = "Theo dõi tác vụ còn tồn, tất cả hay phân loại theo thời gian tuỳ ý. Xem thêm trong %@ Cài đặt";
 "onboarding.features.quickActions.title" = "Menu H.động nhanh";
-"onboarding.features.quickActions.description" = "Bấm giữ mỗi tác vụ trong danh sách để truy cập menu ngữ cảnh";
+"onboarding.features.quickActions.description" = "Bấm giữ hoặc vuốt ngang mỗi tác vụ trong danh sách để sử dụng hành động nhanh";
+"onboarding.features.customization.title" = "Cá nhân hoá";
+"onboarding.features.customization.description" = "Khám phá thêm các cài đặt để biến TaskGuru thành của riêng bạn";
 
 
 /* SHARED */

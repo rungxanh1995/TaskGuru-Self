@@ -21,6 +21,8 @@
 "Track all or time-based pending tasks at a glance. Find this in %@ Settings" = "一目了然地跟踪所有或基于时间的待处中任务。在 %@ 设置选项卡 里找到它";
 "onboarding.features.quickActions.title" = "上下文菜单";
 "onboarding.features.quickActions.description" = "从列表中点击并长按每个任务以使用上下文菜单";
+"onboarding.features.customization.title" = "Customization";
+"onboarding.features.customization.description" = "Explore a heap of settings to personalize TaskGuru to your liking";
 
 
 /* SHARED */
