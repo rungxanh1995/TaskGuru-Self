@@ -30,10 +30,6 @@ struct HomeScreen: View {
 					List {
 						overdueSection
 						dueTodaySection
-							.if(duesHighlighted) { section in
-								section
-									.listRowBackground(DynamicHighlightBackground())
-							}
 						upcomingSection
 					}
 				}
@@ -127,6 +123,10 @@ extension HomeScreen {
 				emptyFilteredListText
 			} else {
 				filteredList(of: dues)
+					.if(duesHighlighted) { list in
+						list
+							.listRowBackground(DynamicHighlightBackground())
+					}
 			}
 		} header: {
 			Text("home.sections.dueToday").bold().foregroundColor(.appYellow)
