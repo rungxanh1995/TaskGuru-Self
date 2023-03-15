@@ -94,7 +94,7 @@ extension View {
 	func settingsRow<Icon: View, Content: View>(
 		@ViewBuilder icon: () -> Icon, @ViewBuilder content: () -> Content
 	) -> some View {
-		HStack(spacing: 16) {
+		HStack(spacing: 12) {
 			icon()
 			content()
 		}
