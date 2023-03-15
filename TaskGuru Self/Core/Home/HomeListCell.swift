@@ -19,7 +19,7 @@ struct HomeListCell: View {
 	]
 
 	var body: some View {
-		let layout = dynamicTypeSize <= .xxLarge ?
+		let lowerLayout = dynamicTypeSize <= .xxLarge ?
 		AnyLayout(HStackLayout(alignment: .center)) :
 		AnyLayout(VStackLayout(alignment: .leading))
 
@@ -30,12 +30,13 @@ struct HomeListCell: View {
 			}
 			.bold(task.isNotDone ? true : false)
 
-			layout {
+			lowerLayout {
 				taskStatus.padding(.trailing, 12)
 				taskDueDate.padding(.trailing, 12)
 				taskType
 			}
 		}
+		.strikethrough(task.isNotDone ? false : true)
 	}
 }
 
@@ -50,8 +51,7 @@ extension HomeListCell {
 				case .inProgress: SFSymbols.circleArrows
 				case .done: SFSymbols.checkmark
 				}
-			}
-			.font(.caption)
+			}.font(.caption)
 		}
 		.labelStyle(.titleAndIcon)
 		.font(.subheadline)
@@ -73,14 +73,12 @@ extension HomeListCell {
 			.labelStyle(.iconOnly)
 		}
 		.font(.body)
-		.strikethrough(task.isNotDone ? false : true)
 		.tint(task.isNotDone ? nil : .secondary)
 	}
 
 	private var taskName: some View {
 		Text(task.name)
 			.font(.body)
-			.strikethrough(task.isNotDone ? false : true)
 			.foregroundColor(task.isNotDone ? nil : .secondary)
 			.lineLimit(2).truncationMode(.tail)
 	}
@@ -97,12 +95,10 @@ extension HomeListCell {
 				case .coding: SFSymbols.computer
 				default: SFSymbols.listFilled
 				}
-			}
-			.font(.caption)
+			}.font(.caption)
 		}
 		.labelStyle(.titleAndIcon)
 		.font(.subheadline)
-		.strikethrough(task.isNotDone ? false : true)
 		.foregroundColor(task.isNotDone ? nil : .secondary)
 	}
 
@@ -114,7 +110,6 @@ extension HomeListCell {
 		}
 		.labelStyle(.titleAndIcon)
 		.font(.subheadline)
-		.strikethrough(task.isNotDone ? false : true)
 		.foregroundColor(task.isNotDone ? task.colorForDueDate() : .secondary)
 	}
 }
