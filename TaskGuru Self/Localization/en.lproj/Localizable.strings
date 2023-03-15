@@ -166,11 +166,13 @@
 
 /* General section */
 "settings.general.onboarding" = "Onboarding screen";
+"settings.general.appearance" = "Appearance";
 "settings.general.appIcon" = "App Icon";
 "settings.general.portraitLock" = "Portrait Lock";
 "settings.general.reduceHaptics" = "Reduce Haptics";
 "settings.general.accentColor" = "Accent Color";
 "settings.general.fontStyle" = "Font Style";
+"settings.general.fontWidth" = "Font Width";
 "settings.general.colorTheme" = "Color Theme";
 
 /* Badge section */
@@ -228,11 +230,19 @@
 "accentColor.mint" = "Mint";
 "accentColor.clover" = "Clover";
 
+"settings.appearance.footer" = "Custom font width is available with system font design";
+
 /* Font designs */
 "fontDesign.system" = "System";
 "fontDesign.rounded" = "Rounded";
 "fontDesign.monospaced" = "Monospaced";
 "fontDesign.serif" = "Serif";
+
+/* Font widths */
+"fontWidth.standard" = "Standard";
+"fontWidth.condensed" = "Condensed";
+"fontWidth.compressed" = "Compressed";
+"fontWidth.expanded" = "Expanded";
 
 /* Color themes */
 "colorTheme.system" = "System";

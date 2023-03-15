@@ -18,9 +18,6 @@ struct SettingsScreen: View {
 	@Preference(\.isHapticsReduced) private var isHapticsReduced
 	@Preference(\.isTabNamesEnabled) private var isTabNamesEnabled
 	@Preference(\.activeAppIcon) private var activeAppIcon
-	@Preference(\.accentColor) private var accentColor
-	@Preference(\.fontDesign) private var fontDesign
-	@Preference(\.systemTheme) private var systemTheme
 	@Preference(\.badgeType) private var badgeType
 	@Preference(\.contextPreviewType) private var contextPreviewType
 
@@ -75,52 +72,24 @@ struct SettingsScreen: View {
 }
 
 private extension SettingsScreen {
-	/// Returns a horizontally stacked `View` that contains an `icon` and a settings `content`.
-	///
-	/// - Parameters:
-	///   - icon: A closure that returns a `View` representing the icon to be displayed.
-	///   - content: A closure that returns a `View` representing the content to be displayed.
-	///
-	/// - Returns: A horizontally stacked `View` that contains the `icon` and `content`.
-	///
-	private func settingsRow<Icon: View, Content: View>(
-		@ViewBuilder icon: () -> Icon, @ViewBuilder content: () -> Content
-	) -> some View {
-		HStack(spacing: 16) {
-			icon()
-			content()
-		}
-	}
-
 	private var generalSection: some View {
 		Section {
-			appIcon
-			appAccentColor
+			appearance
 			portraitLock
 			haptics
-			fontDesignStyle
-			appTheme
 		} header: {
 			Label { Text("settings.sections.general") } icon: { SFSymbols.gearFilled }
 		}
 	}
 
-	@ViewBuilder private var appIcon: some View {
+	private var appearance: some View {
 		settingsRow {
-			SettingsIcon(icon: SFSymbols.app, accent: .appGreen)
+			SettingsIcon(icon: SFSymbols.paintbrush, accent: .appTeal)
 		} content: {
 			NavigationLink {
-				AppIconSettings()
+				AppearanceScreen()
 			} label: {
-				HStack {
-					Text("settings.general.appIcon")
-					Spacer()
-					if let icon = AppIconType(rawValue: activeAppIcon)?.iconImage {
-						icon.asSettingsIconSize()
-					} else {
-						Image("app-logo").asSettingsIconSize()
-					}
-				}
+				Text("settings.general.appearance")
 			}
 		}
 	}
@@ -136,52 +105,10 @@ private extension SettingsScreen {
 
 	private var haptics: some View {
 		settingsRow {
-			SettingsIcon(icon: SFSymbols.waveform, accent: .appPink)
+			SettingsIcon(icon: SFSymbols.waveform, accent: .appYellow)
 		} content: {
 			Toggle("settings.general.reduceHaptics", isOn: $isHapticsReduced)
 				.tint(.accentColor)
-		}
-	}
-
-	@ViewBuilder private var appAccentColor: some View {
-		let currentAccentColor = AccentColorType(rawValue: accentColor)
-		settingsRow {
-			SettingsIcon(icon: SFSymbols.paintbrush, accent: .defaultAccentColor)
-		} content: {
-			NavigationLink {
-				AccentColorSettings()
-			} label: {
-				Text("settings.general.accentColor")
-					.ifLet(currentAccentColor?.title) { text, colorName in
-						text.badge(LocalizedStringKey(colorName))
-					}
-			}
-		}
-	}
-
-	private var fontDesignStyle: some View {
-		settingsRow {
-			SettingsIcon(icon: SFSymbols.textFormat, accent: .appOrange)
-		} content: {
-			Picker("settings.general.fontStyle", selection: $fontDesign) {
-				ForEach(FontDesignType.allCases) { (design) in
-					Text(LocalizedStringKey(design.title))
-						.tag(design.rawValue)
-				}
-			}
-		}
-	}
-
-	private var appTheme: some View {
-		settingsRow {
-			SettingsIcon(icon: SFSymbols.appearance, accent: .appBlue)
-		} content: {
-			Picker("settings.general.colorTheme", selection: $systemTheme) {
-				ForEach(SchemeType.allCases) { (theme) in
-					Text(LocalizedStringKey(theme.title))
-						.tag(theme.rawValue)
-				}
-			}
 		}
 	}
 

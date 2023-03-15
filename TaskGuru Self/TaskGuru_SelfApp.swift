@@ -41,6 +41,7 @@ struct TaskGuru_SelfApp: App {
 				.environmentObject(homeVM)
 				.setUpColorTheme()
 				.setUpFontDesign()
+				.setUpFontWidth()
 				.setUpAccentColor()
 				.onReceive(homeVM.$isFetchingData) { _ in
 					if isShowingAppBadge { setUpAppIconBadge() }

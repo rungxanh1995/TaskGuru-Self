@@ -22,7 +22,7 @@ struct SettingsIcon: View {
 			.padding(4)
 			.overlay(
 				RoundedRectangle(cornerRadius: 8)
-					.stroke(.gray.opacity(0.5), lineWidth: 0.5)
+					.stroke(.gray.opacity(0.25), lineWidth: 0.5)
 			)
 	}
 }

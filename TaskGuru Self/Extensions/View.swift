@@ -64,6 +64,11 @@ extension View {
 		modifier(FontDesignModifier())
 	}
 
+	/// Configure the font width of this application.
+	func setUpFontWidth() -> some View {
+		modifier(FontWidthModifier())
+	}
+
 	/// Configure the tinted accent color of this application.
 	func setUpAccentColor() -> some View {
 		modifier(AccentColorModifier())
@@ -71,5 +76,22 @@ extension View {
 
 	func playConfetti(_ confettiCounter: Binding<Int>) -> some View {
 		modifier(ConfettiViewModifier(counter: confettiCounter))
+	}
+
+	/// Returns a horizontally stacked `View` that contains an `icon` and a settings `content`.
+	///
+	/// - Parameters:
+	///   - icon: A closure that returns a `View` representing the icon to be displayed.
+	///   - content: A closure that returns a `View` representing the content to be displayed.
+	///
+	/// - Returns: A horizontally stacked `View` that contains the `icon` and `content`.
+	///
+	func settingsRow<Icon: View, Content: View>(
+		@ViewBuilder icon: () -> Icon, @ViewBuilder content: () -> Content
+	) -> some View {
+		HStack(spacing: 16) {
+			icon()
+			content()
+		}
 	}
 }

@@ -166,11 +166,13 @@
 
 /* General section */
 "settings.general.onboarding" = "Màn hình giới thiệu";
+"settings.general.appearance" = "Giao diện";
 "settings.general.appIcon" = "Biểu tượng app";
 "settings.general.portraitLock" = "Khoá xoay màn hình";
 "settings.general.reduceHaptics" = "Giảm rung phản hồi";
 "settings.general.accentColor" = "Tông màu chủ đạo";
 "settings.general.fontStyle" = "Kiểu phông chữ";
+"settings.general.fontWidth" = "Khoảng cách phông chữ";
 "settings.general.colorTheme" = "Chủ đề giao diện";
 
 /* Badge secrion */
@@ -228,11 +230,19 @@
 "accentColor.mint" = "Bạc hà";
 "accentColor.clover" = "Cỏ ba lá";
 
+"settings.appearance.footer" = "Tuỳ chỉnh khoảng cách phông chữ khả dụng với kiểu chữ hệ thống";
+
 /* Font designs */
 "fontDesign.system" = "Hệ thống";
 "fontDesign.rounded" = "Tròn";
 "fontDesign.monospaced" = "Đơn cách";
 "fontDesign.serif" = "Có chân";
+
+/* Font widths */
+"fontWidth.standard" = "Tiêu chuẩn";
+"fontWidth.condensed" = "Gọn";
+"fontWidth.compressed" = "Gọn hơn";
+"fontWidth.expanded" = "Giãn cách";
 
 /* Color themes */
 "colorTheme.system" = "Hệ thống";

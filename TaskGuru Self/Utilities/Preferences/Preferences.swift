@@ -48,7 +48,10 @@ final class Preferences {
 	var isTabNamesEnabled: Bool = true
 
 	@UserDefault(UserDefaultsKey.fontDesign)
-	var fontDesign: Int = FontDesignType.allCases.first!.rawValue
+	var fontDesign: Int = FontDesignType.system.rawValue
+
+	@UserDefault(UserDefaultsKey.fontWidth)
+	var fontWidth: Int = FontWidthType.standard.rawValue
 
 	@UserDefault(UserDefaultsKey.accentColor)
 	var accentColor: Int = AccentColorType.clover.rawValue

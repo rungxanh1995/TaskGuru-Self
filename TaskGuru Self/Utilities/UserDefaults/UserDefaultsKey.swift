@@ -18,6 +18,7 @@ enum UserDefaultsKey {
 	static let isConfettiEnabled: String = "isConfettiEnabled"
 	static let isTabNamesEnabled: String = "isTabNamesEnabled"
 	static let fontDesign: String = "fontDesign"
+	static let fontWidth: String = "fontWidth"
 	static let accentColor: String = "accentColor"
 	static let badgeType: String = "badgeType"
 	static let contextPreviewType: String = "contextPreviewType"

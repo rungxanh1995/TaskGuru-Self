@@ -48,6 +48,7 @@ enum SFSymbols {
 	static let waveform: Image = .init(systemSymbol: .waveformPathEcg)
 	static let lockRotation: Image = .init(systemSymbol: .lockRotation)
 	static let textFormat: Image = .init(systemSymbol: .textformat)
+	static let arrowLeftRight: Image = .init(systemSymbol: .arrowLeftAndLineVerticalAndArrowRight)
 	static let appearance: Image = .init(systemSymbol: .circleLefthalfFilled)
 	static let arrowUpForward: Image = .init(systemSymbol: .arrowUpForwardApp)
 	static let globe: Image = .init(systemSymbol: .globe)
