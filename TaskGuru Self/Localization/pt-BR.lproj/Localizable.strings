@@ -173,6 +173,9 @@
 "settings.general.boldText" = "Bold Text";
 "settings.general.highlight" = "Highlight Today's Dues";
 
+"settings.general.relDateTime" = "Relative Time Format";
+"settings.general.relDateTime.footer" = "For example, \"1 month ago\" instead of \"DD-MM-YYYY\"";
+
 /* Badge section */
 "settings.badge.appIcon" = "Mostrar distintivo do ícone do aplicativo";
 "settings.badge.appIconType" = "Tipo de distintivo do ícone do aplicativo";

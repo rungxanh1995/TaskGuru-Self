@@ -70,4 +70,7 @@ final class Preferences {
 
 	@UserDefault(UserDefaultsKey.isTodayDuesHighlighted)
 	var isTodayDuesHighlighted: Bool = true
+
+	@UserDefault(UserDefaultsKey.isRelativeDateTime)
+	var isRelativeDateTime: Bool = false
 }

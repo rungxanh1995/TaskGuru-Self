@@ -14,6 +14,7 @@ struct SettingsScreen: View {
 	@Preference(\.isShowingTabBadge) private var isShowingTabBadge
 	@Preference(\.isConfettiEnabled) private var isConfettiEnabled
 	@Preference(\.isPreviewEnabled) private var isPreviewEnabled
+	@Preference(\.isRelativeDateTime) private var isRelativeDateTime
 	@Preference(\.isLockedInPortrait) private var isLockedInPortrait
 	@Preference(\.isHapticsReduced) private var isHapticsReduced
 	@Preference(\.isTabNamesEnabled) private var isTabNamesEnabled
@@ -29,6 +30,7 @@ struct SettingsScreen: View {
 		NavigationStack {
 			Form {
 				generalSection
+				dateTimeSection
 				badgeSection
 				miscSection
 				advancedSection
@@ -108,6 +110,23 @@ private extension SettingsScreen {
 			SettingsIcon(icon: SFSymbols.waveform, accent: .appYellow)
 		} content: {
 			Toggle("settings.general.reduceHaptics", isOn: $isHapticsReduced)
+				.tint(.accentColor)
+		}
+	}
+
+	private var dateTimeSection: some View {
+		Section {
+			relativeDateTime
+		} footer: {
+			Text("settings.general.relDateTime.footer")
+		}
+	}
+
+	private var relativeDateTime: some View {
+		settingsRow {
+			SettingsIcon(icon: SFSymbols.clock, accent: .appGreen)
+		} content: {
+			Toggle("settings.general.relDateTime", isOn: $isRelativeDateTime)
 				.tint(.accentColor)
 		}
 	}

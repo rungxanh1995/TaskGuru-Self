@@ -24,7 +24,11 @@ struct AddTaskScreen: View {
 					TextField("addTask.input.name", text: $vm.taskName)
 						.focused($focusField, equals: .name)
 
-					DatePicker("addTask.input.dueDate", selection: $vm.dueDate, displayedComponents: .date)
+					VStack(alignment: .leading) {
+						Text("addTask.input.dueDate")
+						DatePicker("addTask.input.dueDate", selection: $vm.dueDate)
+							.datePickerStyle(.graphical)
+					}
 
 					Picker("addTask.input.type", selection: $vm.taskType) {
 						ForEach(TaskConstants.allTypes, id: \.self) {
@@ -81,10 +85,17 @@ struct AddTaskScreen: View {
 				}
 
 				ToolbarItem(placement: .confirmationAction) {
-					Button("addTask.nav.button.add", action: {
+					Button("addTask.nav.button.add") {
 						addNewTask()
 						dismissThisView()
-					})
+					}
+				}
+
+				ToolbarItemGroup(placement: .keyboard) {
+					Spacer()
+					Button {
+						focusField = nil
+					} label: { SFSymbols.keyboardChevronDown }
 				}
 			}
 		}

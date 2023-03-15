@@ -49,11 +49,17 @@ extension TaskItem: Identifiable {
 	}
 
 	var numericDueDate: String {
-		dueDate.formatted(date: .numeric, time: .omitted)
+		dueDate.formatted(date: .numeric, time: .standard)
 	}
 
 	var shortDueDate: String {
 		dueDate.formatted(.dateTime.day().month())
+	}
+
+	var relativeDueDate: String {
+		let formatter = RelativeDateTimeFormatter()
+		formatter.dateTimeStyle = .named
+		return formatter.localizedString(for: dueDate, relativeTo: .now).capitalizingFirstLetter()
 	}
 
 	var lastUpdated: Date {

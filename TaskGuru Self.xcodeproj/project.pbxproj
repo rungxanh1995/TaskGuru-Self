@@ -52,6 +52,7 @@
 		2CC25BC3298459BB006972DF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CC25BC2298459BB006972DF /* Preview Assets.xcassets */; };
 		2CC25BCD29845D9A006972DF /* AddTaskScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC25BCC29845D9A006972DF /* AddTaskScreen.swift */; };
 		2CC25BD0298462FF006972DF /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC25BCF298462FF006972DF /* SettingsScreen.swift */; };
+		2CC3499029C217420049B909 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC3498F29C217420049B909 /* String.swift */; };
 		2CCB0B452985AAFA00D489DD /* DetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0B442985AAFA00D489DD /* DetailScreen.swift */; };
 		2CCB0B472985B2E700D489DD /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0B462985B2E700D489DD /* DetailViewModel.swift */; };
 		2CCB0B492985B5A400D489DD /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB0B482985B5A400D489DD /* Date.swift */; };
@@ -128,6 +129,7 @@
 		2CC25BC2298459BB006972DF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2CC25BCC29845D9A006972DF /* AddTaskScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskScreen.swift; sourceTree = "<group>"; };
 		2CC25BCF298462FF006972DF /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
+		2CC3498F29C217420049B909 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		2CC55CEF29A70E9D001D64F3 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		2CCB0B442985AAFA00D489DD /* DetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreen.swift; sourceTree = "<group>"; };
 		2CCB0B462985B2E700D489DD /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 				2CCB0B482985B5A400D489DD /* Date.swift */,
 				2C92904D29A597C4009F3389 /* Image.swift */,
 				2C33F6C72985929C004893EF /* PreviewProvider.swift */,
+				2CC3498F29C217420049B909 /* String.swift */,
 				2CCB0B502985BC9200D489DD /* View.swift */,
 				2C7E9D4A299C30C800437EB4 /* UIApplication.swift */,
 			);
@@ -652,6 +655,7 @@
 				2CD60B5629B296520072E52B /* TaskPriority.swift in Sources */,
 				2CF38FB6298982FB00CB49C5 /* TaskGuru.xcdatamodeld in Sources */,
 				2CB9AA4729A4674B00E9C1E0 /* RootScreen.swift in Sources */,
+				2CC3499029C217420049B909 /* String.swift in Sources */,
 				2C93EA1329A312E800C0AB90 /* ContextPreviewType.swift in Sources */,
 				2CC25BBC298459BA006972DF /* TaskGuru_SelfApp.swift in Sources */,
 				2C92904E29A597C4009F3389 /* Image.swift in Sources */,
@@ -829,7 +833,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 159;
+				CURRENT_PROJECT_VERSION = 160;
 				DEVELOPMENT_ASSET_PATHS = "\"TaskGuru Self/Preview Content\"";
 				DEVELOPMENT_TEAM = 8R3P49X4ZM;
 				ENABLE_PREVIEWS = YES;
@@ -848,7 +852,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.6.7;
+				MARKETING_VERSION = 1.7;
 				PRODUCT_BUNDLE_IDENTIFIER = "joepham.TaskGuru-Self";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -868,7 +872,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 159;
+				CURRENT_PROJECT_VERSION = 160;
 				DEVELOPMENT_ASSET_PATHS = "\"TaskGuru Self/Preview Content\"";
 				DEVELOPMENT_TEAM = 8R3P49X4ZM;
 				ENABLE_PREVIEWS = YES;
@@ -887,7 +891,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.6.7;
+				MARKETING_VERSION = 1.7;
 				PRODUCT_BUNDLE_IDENTIFIER = "joepham.TaskGuru-Self";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

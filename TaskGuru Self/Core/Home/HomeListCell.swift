@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeListCell: View {
 	@ObservedObject var task: TaskItem
+	@Preference(\.isRelativeDateTime) private var isRelativeDateTime
 	@Environment(\.dynamicTypeSize) var dynamicTypeSize
 
 	private let columns = [
@@ -107,7 +108,7 @@ extension HomeListCell {
 
 	private var taskDueDate: some View {
 		Label {
-			Text(task.shortDueDate)
+			Text(isRelativeDateTime ? task.relativeDueDate : task.shortDueDate)
 		} icon: {
 			SFSymbols.alarm.font(.caption)
 		}

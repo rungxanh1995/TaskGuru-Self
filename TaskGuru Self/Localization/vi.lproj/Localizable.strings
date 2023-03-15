@@ -38,7 +38,7 @@
 /* Task statuses */
 /* "New" can also be understood as "newly created" */
 "taskItem.status.new" = "Vừa tạo";
-"taskItem.status.inProgress" = "Đang tiến hành";
+"taskItem.status.inProgress" = "Đang làm";
 "taskItem.status.done" = "Đã xong";
 
 /* Task priorities */
@@ -178,6 +178,9 @@
 "settings.general.colorTheme" = "Chủ đề";
 "settings.general.boldText" = "Chữ đậm";
 "settings.general.highlight" = "Tô nổi tác vụ đến hạn";
+
+"settings.general.relDateTime" = "Định dạng t.gian tương đối";
+"settings.general.relDateTime.footer" = "Ví dụ: \"1 tháng trước\" thay vì \"ngày-tháng-năm\"";
 
 /* Badge section */
 "settings.badge.appIcon" = "Hiện nhãn biểu tượng app";

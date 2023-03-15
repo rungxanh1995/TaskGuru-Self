@@ -28,9 +28,11 @@ extension DetailScreen {
 						TextField("editTask.input.name", text: $vm.taskName)
 							.focused($focusField, equals: .name)
 
-						DatePicker("editTask.input.dueDate", selection: $vm.taskDueDate,
-								   displayedComponents: .date
-						)
+						VStack(alignment: .leading) {
+							Text("editTask.input.dueDate")
+							DatePicker("editTask.input.dueDate", selection: $vm.taskDueDate)
+								.datePickerStyle(.graphical)
+						}
 
 						Picker("editTask.input.type", selection: $vm.taskType) {
 							ForEach(TaskType.allCases, id: \.self) {
@@ -92,6 +94,13 @@ extension DetailScreen {
 							didTapSaveButton()
 						}
 						.font(.headline)
+					}
+
+					ToolbarItemGroup(placement: .keyboard) {
+						Spacer()
+						Button {
+							focusField = nil
+						} label: { SFSymbols.keyboardChevronDown }
 					}
 				}
 			}
