@@ -49,7 +49,7 @@ extension TaskItem: Identifiable {
 	}
 
 	var numericDueDate: String {
-		dueDate.formatted(date: .numeric, time: .standard)
+		dueDate.formatted(date: .numeric, time: .shortened)
 	}
 
 	var shortDueDate: String {

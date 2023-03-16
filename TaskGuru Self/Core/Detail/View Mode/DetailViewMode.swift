@@ -104,13 +104,14 @@ extension DetailScreen {
 						DetailGridCell(title: vm.task.notes, caption: "taskDetail.cell.notes.caption")
 					}
 				}
-				.padding()
+
+				Divider()
 
 				Text("Last updated at \(vm.task.formattedLastUpdated)")
 					.font(.footnote)
 					.foregroundColor(.secondary)
-					.padding([.bottom])
 			}
+			.padding()
 		}
 
 		@MainActor private var taskSnapshot: UIImage {
