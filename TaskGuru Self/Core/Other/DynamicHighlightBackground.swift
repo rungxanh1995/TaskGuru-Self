@@ -13,16 +13,27 @@ import SwiftUI
 /// by using a white background with a light accent color in light mode,
 /// and a gray background with a light accent color in dark mode.
 struct DynamicHighlightBackground: View {
-	@Environment(\.colorScheme) private var colorScheme
+	@Environment(\.colorScheme) private var systemScheme
+	@AppStorage(UserDefaultsKey.accentColor) private var accentColor: Int = AccentColorType.clover.rawValue
 
 	var body: some View {
-		colorScheme == .light ?
-		ZStack {
-			Color.white
-			Color.defaultAccentColor.opacity(0.075)
-		} : ZStack {
-			Color.gray.opacity(0.25)
-			Color.defaultAccentColor.opacity(0.1)
+		let accentPalette = AccentColorPalette(colorScheme: systemScheme)
+		switch systemScheme {
+		case .light:
+			ZStack {
+				Color.white
+				accentPalette.selectedAccentColor.opacity(0.075)
+			}
+		case .dark:
+			ZStack {
+				Color.gray.opacity(0.25)
+				accentPalette.selectedAccentColor.opacity(0.1)
+			}
+		@unknown default:
+			ZStack {
+				Color.white
+				accentPalette.selectedAccentColor.opacity(0.075)
+			}
 		}
 	}
 }
