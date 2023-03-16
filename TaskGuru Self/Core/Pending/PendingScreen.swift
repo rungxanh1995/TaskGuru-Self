@@ -25,7 +25,7 @@ struct PendingScreen: View {
 				if vm.isFetchingData {
 					ProgressView { Text("pending.info.fetchingData") }
 				} else if vm.noPendingTasksLeft {
-					emptyStateImage.padding()
+					emptyStateImage().padding()
 				} else {
 					List {
 						pendingInThePastSection
@@ -63,8 +63,8 @@ struct PendingScreen: View {
 }
 
 extension PendingScreen {
-	private var emptyStateImage: some View {
-		VStack(alignment: .leading) {
+	private func emptyStateImage(alignment: HorizontalAlignment = .center) -> some View {
+		VStack(alignment: alignment) {
 			makeCheerfulDecorativeImage()
 
 			Text("pending.info.listEmty")
@@ -101,7 +101,8 @@ extension PendingScreen {
 						list.listRowBackground(DynamicHighlightBackground())
 					}
 			} else {
-				emptyStateImage.listRowBackground(Color.clear)
+				// leading alignment to workaround weird-looking list separator
+				emptyStateImage(alignment: .leading).listRowBackground(Color.clear)
 			}
 		} header: {
 			Text("pending.sections.dueToday").bold().foregroundColor(.appYellow)
