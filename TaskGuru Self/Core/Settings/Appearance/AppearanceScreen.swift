@@ -16,6 +16,11 @@ struct AppearanceScreen: View {
 	@Preference(\.isBoldFont) private var boldFont
 	@Preference(\.isTodayDuesHighlighted) private var duesHighlighted
 
+	@Preference(\.isTabNamesEnabled) private var isTabNamesEnabled
+	@Preference(\.isConfettiEnabled) private var isConfettiEnabled
+	@Preference(\.isPreviewEnabled) private var isPreviewEnabled
+	@Preference(\.contextPreviewType) private var contextPreviewType
+
 	var body: some View {
 		Form {
 			Section {
@@ -35,6 +40,8 @@ struct AppearanceScreen: View {
 			Section { boldText }
 
 			highlightDues
+
+			miscSection
 		}
 		.navigationTitle("settings.general.appearance")
 		.navigationBarTitleDisplayMode(.inline)
@@ -53,9 +60,9 @@ extension AppearanceScreen {
 					Text("settings.general.appIcon")
 					Spacer()
 					if let icon = AppIconType(rawValue: activeAppIcon)?.iconImage {
-						icon.asSettingsIconSize()
+						icon.asSettingsIcon()
 					} else {
-						Image("app-logo").asSettingsIconSize()
+						Image("app-logo").asSettingsIcon()
 					}
 				}
 			}
@@ -123,6 +130,57 @@ extension AppearanceScreen {
 
 	private var highlightDues: some View {
 		Toggle("settings.general.highlight", isOn: $duesHighlighted)
+	}
+
+	private var miscSection: some View {
+		Section {
+			tabNames
+			confetti
+			preview
+		} header: {
+			Label {
+				Text("settings.sections.misc")
+			} icon: { SFSymbols.bubbleSparkles }
+		} footer: {
+			Text("settings.misc.footer")
+		}
+	}
+
+	private var tabNames: some View {
+		settingsRow {
+			SettingsIcon(icon: SFSymbols.dock, accent: .appBlue)
+		} content: {
+			Toggle("settings.misc.tabNames", isOn: $isTabNamesEnabled)
+				.tint(.accentColor)
+		}
+	}
+
+	private var confetti: some View {
+		settingsRow {
+			SettingsIcon(icon: SFSymbols.sparkles, accent: .appPink)
+		} content: {
+			Toggle("settings.misc.confetti", isOn: $isConfettiEnabled)
+				.tint(.accentColor)
+		}
+	}
+
+	private var preview: some View {
+		VStack {
+			settingsRow {
+				SettingsIcon(icon: SFSymbols.handTap, accent: .appIndigo)
+			} content: {
+				Toggle("settings.misc.preview", isOn: $isPreviewEnabled)
+					.tint(.accentColor)
+			}
+			Picker("settings.misc.previewtype.title", selection: $contextPreviewType) {
+				ForEach(ContextPreviewType.allCases) { (type) in
+					Text(LocalizedStringKey(type.title))
+						.tag(type.rawValue)
+				}
+			}
+			.pickerStyle(.segmented)
+			.disabled(!isPreviewEnabled)
+		}
 	}
 }
 

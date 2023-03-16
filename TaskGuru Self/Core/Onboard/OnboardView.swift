@@ -14,11 +14,9 @@ struct OnboardView: View {
 
 	var body: some View {
 		HStack(spacing: 16) {
-			icon
-				.resizable()
-				.scaledToFit()
-				.frame(width: 40, height: 40)
-				.foregroundColor(.defaultAccentColor)
+			DynamicColorLabel {
+				icon.asIconSize()
+			}
 
 			VStack(alignment: .leading) {
 				Text(title)

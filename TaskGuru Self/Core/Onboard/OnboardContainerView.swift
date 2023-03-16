@@ -63,16 +63,16 @@ extension OnboardContainerView {
 		.bold()
 		.buttonStyle(.borderedProminent)
 		.buttonBorderShape(.roundedRectangle(radius: 16))
-		.tint(.defaultAccentColor)
 		.padding(.bottom)
 	}
 
 	private var dataPrivacy: some View {
 		VStack {
-			Image(systemSymbol: .personBadgeShieldCheckmarkFill)
-				.symbolRenderingMode(.hierarchical)
-				.asSettingsIconSize()
-				.foregroundColor(.defaultAccentColor)
+			DynamicColorLabel {
+				Image(systemSymbol: .personBadgeShieldCheckmarkFill)
+					.symbolRenderingMode(.hierarchical)
+					.asSettingsIcon()
+			}
 			Text("onboarding.privacy")
 				.font(.caption2)
 				.foregroundColor(.secondary)

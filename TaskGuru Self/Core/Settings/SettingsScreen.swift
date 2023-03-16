@@ -12,15 +12,11 @@ struct SettingsScreen: View {
 
 	@Preference(\.isShowingAppBadge) private var isShowingAppBadge
 	@Preference(\.isShowingTabBadge) private var isShowingTabBadge
-	@Preference(\.isConfettiEnabled) private var isConfettiEnabled
-	@Preference(\.isPreviewEnabled) private var isPreviewEnabled
+	@Preference(\.badgeType) private var badgeType
 	@Preference(\.isRelativeDateTime) private var isRelativeDateTime
 	@Preference(\.isLockedInPortrait) private var isLockedInPortrait
 	@Preference(\.isHapticsReduced) private var isHapticsReduced
-	@Preference(\.isTabNamesEnabled) private var isTabNamesEnabled
 	@Preference(\.activeAppIcon) private var activeAppIcon
-	@Preference(\.badgeType) private var badgeType
-	@Preference(\.contextPreviewType) private var contextPreviewType
 
 	init(vm: SettingsScreen.ViewModel = .init()) {
 		_vm = StateObject(wrappedValue: vm)
@@ -32,7 +28,7 @@ struct SettingsScreen: View {
 				generalSection
 				dateTimeSection
 				badgeSection
-				miscSection
+				displayLanguage
 				advancedSection
 				devTeamSection
 				onboarding
@@ -183,19 +179,6 @@ private extension SettingsScreen {
 		.disabled(!isShowingAppBadge)
 	}
 
-	private var miscSection: some View {
-		Section {
-			displayLanguage
-			tabNames
-			confetti
-			preview
-		} header: {
-			Label { Text("settings.sections.misc") } icon: { SFSymbols.bubbleSparkles }
-		} footer: {
-			Text("settings.misc.footer")
-		}
-	}
-
 	private var displayLanguage: some View {
 		settingsRow {
 			SettingsIcon(icon: SFSymbols.globe, accent: .appOrange)
@@ -205,43 +188,6 @@ private extension SettingsScreen {
 				.tint(.primary)
 			Spacer()
 			SFSymbols.arrowUpForward
-		}
-	}
-
-	private var tabNames: some View {
-		settingsRow {
-			SettingsIcon(icon: SFSymbols.dock, accent: .appBlue)
-		} content: {
-			Toggle("settings.misc.tabNames", isOn: $isTabNamesEnabled)
-				.tint(.accentColor)
-		}
-	}
-
-	private var confetti: some View {
-		settingsRow {
-			SettingsIcon(icon: SFSymbols.sparkles, accent: .appPink)
-		} content: {
-			Toggle("settings.misc.confetti", isOn: $isConfettiEnabled)
-				.tint(.accentColor)
-		}
-	}
-
-	private var preview: some View {
-		VStack {
-			settingsRow {
-				SettingsIcon(icon: SFSymbols.handTap, accent: .appIndigo)
-			} content: {
-				Toggle("settings.misc.preview", isOn: $isPreviewEnabled)
-					.tint(.accentColor)
-			}
-			Picker("settings.misc.previewtype.title", selection: $contextPreviewType) {
-				ForEach(ContextPreviewType.allCases) { (type) in
-					Text(LocalizedStringKey(type.title))
-						.tag(type.rawValue)
-				}
-			}
-			.pickerStyle(.segmented)
-			.disabled(!isPreviewEnabled)
 		}
 	}
 
@@ -331,9 +277,9 @@ private extension SettingsScreen {
 			}
 
 			if let icon = AppIconType(rawValue: activeAppIcon)?.iconImage {
-				icon.asIconSize()
+				icon.asIcon()
 			} else {
-				Image("app-logo").asIconSize()
+				Image("app-logo").asIcon()
 			}
 		}
 	}

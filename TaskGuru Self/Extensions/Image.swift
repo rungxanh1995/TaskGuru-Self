@@ -17,8 +17,8 @@ extension Image {
 			.clipShape(RoundedRectangle(cornerRadius: 22))
 	}
 
-	/// Frames image as a medium icon size for a row in App icon settings view.
-	func asIconSize() -> some View {
+	/// Frames image as a medium icon for a row in App icon settings view.
+	func asIcon() -> some View {
 		self
 			.resizable()
 			.scaledToFit()
@@ -26,12 +26,21 @@ extension Image {
 			.clipShape(RoundedRectangle(cornerRadius: 9))
 	}
 
-	/// Frames image as a small icon size for a row in Settings view.
-	func asSettingsIconSize() -> some View {
+	/// Frames image as a medium icon size for a row in App icon settings view.
+	func asIconSize() -> some View {
+		self
+			.resizable()
+			.scaledToFit()
+			.frame(width: 40, height: 40)
+	}
+
+	/// Frames image as a small icon for a row in Settings view.
+	func asSettingsIcon() -> some View {
 		self
 			.resizable()
 			.scaledToFit()
 			.frame(width: 28, height: 28)
 			.clipShape(RoundedRectangle(cornerRadius: 9*(28/40)))
 	}
+
 }

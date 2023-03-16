@@ -237,7 +237,7 @@
 "accentColor.mint" = "Mint";
 "accentColor.clover" = "Clover";
 
-"settings.appearance.footer" = "Custom font width is available with system font design";
+"settings.appearance.footer" = "Custom font width is available with system font style";
 
 /* Font designs */
 "fontDesign.system" = "System";
