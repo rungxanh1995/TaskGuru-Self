@@ -143,7 +143,7 @@ extension HomeScreen {
 				filteredList(of: upcomings)
 			}
 		} header: {
-			Text("home.sections.upcoming").bold().foregroundColor(.appTeal)
+			Text("home.sections.upcoming").bold().foregroundColor(.appClover)
 		}
 	}
 
@@ -167,9 +167,9 @@ extension HomeScreen {
 				case .new:
 					markInProgressButton(for: task).tint(.appYellow)
 				case .inProgress:
-					markNewButton(for: task).tint(.appTeal)
+					markNewButton(for: task).tint(.appClover)
 				case .done:
-					markNewButton(for: task).tint(.appTeal)
+					markNewButton(for: task).tint(.appClover)
 					markInProgressButton(for: task).tint(.appYellow)
 				}
 			}
