@@ -56,7 +56,6 @@ struct TaskGuru_SelfApp: App {
 				.onChange(of: isShowingAppBadge) { _ in
 					setUpAppIconBadge()
 				}
-				.environmentObject(homeVM)
 				.onChange(of: isLockedInPortrait) { _ in
 					isLockedInPortrait ? appDelegate.lockInPortraitMode() : appDelegate.unlockPortraitMode()
 				}
