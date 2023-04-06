@@ -11,7 +11,7 @@ import SwiftUI
 ///
 /// The view ensures that text is legible in both light and dark mode
 /// by using a white background with a light accent color in light mode,
-/// and a gray background with a light accent color in dark mode.
+/// and a gray background with a dark accent color in dark mode.
 struct DynamicHighlightBackground: View {
 	@Environment(\.colorScheme) private var systemScheme
 	@AppStorage(UserDefaultsKey.accentColor) private var accentColor: Int = AccentColorType.clover.rawValue
