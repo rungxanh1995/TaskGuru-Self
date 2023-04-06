@@ -29,6 +29,7 @@ extension AddTaskScreen {
 							status: taskStatus, priority: taskPriority, notes: taskNotes)
 		}
 
+		// swiftlint:disable function_parameter_count
 		private func addTask(
 			name: inout String, dueDate: Date, type: TaskType,
 			status: TaskStatus, priority: TaskPriority, notes: String) {
