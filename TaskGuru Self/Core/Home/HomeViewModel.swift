@@ -39,7 +39,6 @@ final class HomeViewModel: ObservableObject {
 
 	init(storageProvider: StorageProvider = StorageProviderImpl.standard) {
 		self.storageProvider = storageProvider
-		fetchTasks()
 	}
 
 	func fetchTasks() {
