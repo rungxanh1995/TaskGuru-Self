@@ -75,6 +75,7 @@
 		2CD60B5629B296520072E52B /* TaskPriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD60B5529B296520072E52B /* TaskPriority.swift */; };
 		2CD60B5929B298990072E52B /* TaskItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD60B5729B298990072E52B /* TaskItem+CoreDataClass.swift */; };
 		2CD60B5A29B298990072E52B /* TaskItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD60B5829B298990072E52B /* TaskItem+CoreDataProperties.swift */; };
+		2CDDBF5729DED47400D5CAF6 /* AccentPalette.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CDDBF5629DED47400D5CAF6 /* AccentPalette.xcassets */; };
 		2CEF151B2988A142002FF516 /* StorageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEF151A2988A142002FF516 /* StorageProvider.swift */; };
 		2CF38FB6298982FB00CB49C5 /* TaskGuru.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2CF38FB3298982FB00CB49C5 /* TaskGuru.xcdatamodeld */; };
 		2CFBDF88299FF440006E5FEE /* NavigationTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFBDF87299FF440006E5FEE /* NavigationTitle.swift */; };
@@ -153,6 +154,7 @@
 		2CD60B5529B296520072E52B /* TaskPriority.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskPriority.swift; sourceTree = "<group>"; };
 		2CD60B5729B298990072E52B /* TaskItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskItem+CoreDataClass.swift"; sourceTree = "<group>"; };
 		2CD60B5829B298990072E52B /* TaskItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		2CDDBF5629DED47400D5CAF6 /* AccentPalette.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AccentPalette.xcassets; sourceTree = "<group>"; };
 		2CEF151A2988A142002FF516 /* StorageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageProvider.swift; sourceTree = "<group>"; };
 		2CF38FB4298982FB00CB49C5 /* TaskGuru.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TaskGuru.xcdatamodel; sourceTree = "<group>"; };
 		2CF38FB5298982FB00CB49C5 /* CachedTask.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CachedTask.xcdatamodel; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				2C7E9D48299C21DF00437EB4 /* AppDelegate.swift */,
+				2CDDBF5629DED47400D5CAF6 /* AccentPalette.xcassets */,
 				2CC25BBF298459BB006972DF /* Assets.xcassets */,
 				2C33F6B529858649004893EF /* Launch Screen.storyboard */,
 			);
@@ -594,6 +597,7 @@
 			files = (
 				2C33F6B629858649004893EF /* Launch Screen.storyboard in Resources */,
 				2C9B44EC299D177900EE5232 /* Localizable.strings in Resources */,
+				2CDDBF5729DED47400D5CAF6 /* AccentPalette.xcassets in Resources */,
 				2CC25BC3298459BB006972DF /* Preview Assets.xcassets in Resources */,
 				2CC25BC0298459BB006972DF /* Assets.xcassets in Resources */,
 			);
