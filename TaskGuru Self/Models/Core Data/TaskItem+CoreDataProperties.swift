@@ -41,7 +41,7 @@ extension TaskItem: Identifiable {
 	}
 
 	var dueDate: Date {
-		get { cd_dueDate ?? .now }
+        get { cd_dueDate ?? .endOfDay }
 		set {
 			cd_dueDate = newValue
 			cd_lastUpdated = .now

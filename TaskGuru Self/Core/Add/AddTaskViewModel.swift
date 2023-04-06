@@ -18,7 +18,7 @@ extension AddTaskScreen {
 		}
 
 		@Published var taskName: String = ""
-		@Published var dueDate: Date = .now
+		@Published var dueDate: Date = .endOfDay
 		@Published var taskType: TaskType = .personal
 		@Published var taskStatus: TaskStatus = .new
 		@Published var taskPriority: TaskPriority = .none
