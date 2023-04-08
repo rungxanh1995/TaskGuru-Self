@@ -136,7 +136,7 @@ extension DetailScreen.ViewMode {
 	private var accessibilityString: String {
 		var accessibilityString = ""
 		accessibilityString.append("Name: \(vm.task.name),")
-		accessibilityString.append("Priority: \(vm.task.priority.accessibilityString),")
+		accessibilityString.append("\(vm.task.priority.accessibilityString) priorty,")
 		accessibilityString.append("Status: \(vm.task.status.accessibilityString),")
 		accessibilityString.append("Due date: \(vm.task.dueDate.formatted(date: .complete, time: .shortened)),")
 		accessibilityString.append("Type: \(vm.task.type.accessibilityString),")
