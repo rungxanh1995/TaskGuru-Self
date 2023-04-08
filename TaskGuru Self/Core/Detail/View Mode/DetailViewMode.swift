@@ -33,6 +33,7 @@ extension DetailScreen {
 				ToolbarItem(placement: .primaryAction) {
 					ShareLink(item: Image(uiImage: taskSnapshot),
 										preview: SharePreview(vm.task.name, image: Image(uiImage: taskSnapshot)))
+					.accessibilityHint("Tap this button to share a detailed snapshot of the task")
 				}
 
 				ToolbarItemGroup(placement: .secondaryAction) {
@@ -112,6 +113,9 @@ extension DetailScreen {
 					.foregroundColor(.secondary)
 			}
 			.padding()
+			.disableDefaultAccessibilityBehavior()
+			.accessibilityElement(children: .combine)
+			.accessibilityLabel(accessibilityString)
 		}
 
 		@MainActor private var taskSnapshot: UIImage {
@@ -125,5 +129,18 @@ extension DetailScreen {
 			}
 			return jpegImage
 		}
+	}
+}
+
+extension DetailScreen.ViewMode {
+	private var accessibilityString: String {
+		var accessibilityString = ""
+		accessibilityString.append("Name: \(vm.task.name),")
+		accessibilityString.append("Priority: \(vm.task.priority.accessibilityString),")
+		accessibilityString.append("Status: \(vm.task.status.accessibilityString),")
+		accessibilityString.append("Due date: \(vm.task.dueDate.formatted(date: .complete, time: .shortened)),")
+		accessibilityString.append("Type: \(vm.task.type.accessibilityString),")
+		accessibilityString.append("The task was last updated at \(vm.task.formattedLastUpdated).")
+		return accessibilityString
 	}
 }

@@ -17,6 +17,7 @@ struct OnboardView: View {
 			DynamicColorLabel {
 				icon.asIconSize()
 			}
+			.accessibilityHidden(true)
 
 			VStack(alignment: .leading) {
 				Text(title)
@@ -28,6 +29,7 @@ struct OnboardView: View {
 					.multilineTextAlignment(.leading)
 					.foregroundColor(.secondary)
 			}
+			.accessibilityElement(children: .combine)
 		}
 		.padding(.horizontal, 12)
 	}

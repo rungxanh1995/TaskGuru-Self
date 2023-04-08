@@ -31,6 +31,8 @@ struct DynamicColorLabel<Label: View>: View {
 		Button {} label: { label() }
 			.buttonStyle(.borderless)
 			.allowsHitTesting(false)
+			.accessibilityAddTraits(.isStaticText)
+			.accessibilityRemoveTraits(.isButton)
 	}
 }
 

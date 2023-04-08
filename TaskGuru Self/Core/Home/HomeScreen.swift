@@ -32,6 +32,7 @@ struct HomeScreen: View {
 						dueTodaySection
 						upcomingSection
 					}
+					.accessibilityElement(children: .contain)
 				}
 			}
 			.listStyle(.plain)
@@ -90,6 +91,7 @@ extension HomeScreen {
 			Text(emptyTaskListSentence)
 				.font(.callout)
 				.foregroundColor(.secondary)
+				.accessibilityCustomContent("Content", Text("Add new tasks by tapping the plus button, and they'll show up here"))
 		}
 		.onTapGesture { vm.isShowingAddTaskView.toggle() }
 	}
@@ -278,6 +280,10 @@ extension HomeScreen {
 		}
 		.labelStyle(.titleAndIcon)
 		.foregroundColor(.appYellow)
+		.accessibilityLabel("Today's date is")
+		.accessibilityValue(
+			Text(Date().formatted(.dateTime.weekday(.wide).day().month().year()))
+		)
 	}
 
 	private var addTaskButton: some View {
@@ -289,6 +295,7 @@ extension HomeScreen {
 		}
 		.buttonStyle(.bordered)
 		.buttonBorderShape(.capsule)
+		.accessibilityHint("Tap this button to toggle Add new task screen")
 	}
 
 	private var clearDoneTasksButton: some View {
@@ -298,6 +305,7 @@ extension HomeScreen {
 		} label: {
 			Label { Text("contextMenu.clearDoneTasks") } icon: { SFSymbols.trash }
 		}
+		.accessibilityHint("Tap this button to delete all tasks that are completed")
 	}
 }
 

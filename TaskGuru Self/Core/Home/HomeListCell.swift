@@ -37,6 +37,9 @@ struct HomeListCell: View {
 			}
 		}
 		.strikethrough(task.isNotDone ? false : true)
+		.disableDefaultAccessibilityBehavior()
+		.accessibilityElement(children: .combine)
+		.accessibilityValue(accessibilityString)
 	}
 }
 
@@ -111,6 +114,18 @@ extension HomeListCell {
 		.labelStyle(.titleAndIcon)
 		.font(.subheadline)
 		.foregroundColor(task.isNotDone ? task.colorForDueDate() : .secondary)
+	}
+}
+
+extension HomeListCell {
+	private var accessibilityString: String {
+		var accessibilityString = ""
+		accessibilityString.append("Task name: \(task.name),")
+		accessibilityString.append("\(task.priority.accessibilityString) priority,")
+		accessibilityString.append("\(task.status.accessibilityString) status,")
+		accessibilityString.append(isRelativeDateTime ? "Due \(task.relativeDueDate)," : "Due on \(task.shortDueDate),")
+		accessibilityString.append("\(task.type.accessibilityString) type.")
+		return accessibilityString
 	}
 }
 

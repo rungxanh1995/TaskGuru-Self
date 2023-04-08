@@ -57,6 +57,7 @@ extension View {
 				.frame(maxWidth: 300, maxHeight: 240)
 			Spacer()
 		}
+		.accessibilityHidden(true)
 	}
 
 	/// Configure the font design of this application.
@@ -96,7 +97,12 @@ extension View {
 	) -> some View {
 		HStack(spacing: 12) {
 			icon()
+				.accessibilityHidden(true)
 			content()
 		}
+	}
+
+	func disableDefaultAccessibilityBehavior() -> some View {
+		return self.accessibilityElement(children: .ignore)
 	}
 }
