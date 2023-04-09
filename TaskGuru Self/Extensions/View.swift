@@ -50,14 +50,13 @@ extension View {
 	func makeCheerfulDecorativeImage() -> some View {
 		HStack {
 			Spacer()
-			Image("cheerful12")
+			Image(decorative: "cheerful12")
 				.resizable()
 				.scaledToFill()
 				.saturation(0)
 				.frame(maxWidth: 300, maxHeight: 240)
 			Spacer()
 		}
-		.accessibilityHidden(true)
 	}
 
 	/// Configure the font design of this application.
@@ -96,8 +95,7 @@ extension View {
 		@ViewBuilder icon: () -> Icon, @ViewBuilder content: () -> Content
 	) -> some View {
 		HStack(spacing: 12) {
-			icon()
-				.accessibilityHidden(true)
+			icon().accessibilityHidden(true)
 			content()
 		}
 	}
