@@ -10,10 +10,11 @@ import SwiftUI
 struct HomeListCell: View {
 	@ObservedObject var task: TaskItem
 	@Preference(\.isRelativeDateTime) private var isRelativeDateTime
+	@Preference(\.isTodayDuesHighlighted) private var isCellHighlighted
 	@Environment(\.dynamicTypeSize) var dynamicTypeSize
 
 	private let columns = [
-		GridItem(.fixed(60), alignment: .leading),
+		GridItem(.flexible(), alignment: .leading),
 		GridItem(.flexible(), alignment: .leading),
 		GridItem(.flexible(), alignment: .leading)
 	]
@@ -58,7 +59,16 @@ extension HomeListCell {
 		}
 		.labelStyle(.titleAndIcon)
 		.font(.subheadline)
-		.foregroundStyle(task.colorForStatus())
+		.if(task.isNotDone) { dueDate in
+			dueDate.if(isCellHighlighted) { status in
+				// intentional accessibility decision
+				status.foregroundColor(.primary)
+			} elseCase: { status in
+				status.foregroundColor(task.colorForStatus())
+			}
+		} elseCase: { status in
+			status.foregroundColor(.secondary)
+		}
 	}
 
 	private var taskPriority: some View {
@@ -113,7 +123,16 @@ extension HomeListCell {
 		}
 		.labelStyle(.titleAndIcon)
 		.font(.subheadline)
-		.foregroundColor(task.isNotDone ? task.colorForDueDate() : .secondary)
+		.if(task.isNotDone) { dueDate in
+			dueDate.if(isCellHighlighted) { dueDate in
+				// intentional accessibility decision
+				dueDate.foregroundColor(.primary)
+			} elseCase: { dueDate in
+				dueDate.foregroundColor(task.colorForDueDate())
+			}
+		} elseCase: { dueDate in
+			dueDate.foregroundColor(.secondary)
+		}
 	}
 }
 
