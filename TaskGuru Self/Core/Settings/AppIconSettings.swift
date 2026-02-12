@@ -28,7 +28,7 @@ struct AppIconSettings: View {
 			}
 			.navigationTitle("settings.general.appIcon")
 			.navigationBarTitleDisplayMode(.inline)
-			.onChange(of: activeAppIcon) { iconValue in
+			.onChange(of: activeAppIcon) { _, iconValue in
 				updateAppIcon(from: iconValue)
 			}
 		}

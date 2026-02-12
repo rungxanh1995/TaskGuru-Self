@@ -31,15 +31,15 @@ extension AppIconType {
 	/// Used as direct reference to icon image name in Assets catalog
 	var assetName: String {
 		switch self {
-		case .dew: return "Dew"
-		case .spring: return "Spring"
-		case .summer: return "Summer"
-		case .fall: return "Fall"
-		case .winter: return "Winter"
-		case .sky: return "Sky"
-		case .midnight: return "Midnight"
-		case .iris: return "Iris"
-		case .berry: return "Berry"
+		case .dew: return "AppIconDew"
+		case .spring: return "AppIconSpring"
+		case .summer: return "AppIconSummer"
+		case .fall: return "AppIconFall"
+		case .winter: return "AppIconWinter"
+		case .sky: return "AppIconSky"
+		case .midnight: return "AppIconMidnight"
+		case .iris: return "AppIconIris"
+		case .berry: return "AppIconBerry"
 		}
 	}
 
@@ -47,23 +47,23 @@ extension AppIconType {
 	var iconImage: Image {
 		switch self {
 		case .dew:
-			return Image(uiImage: .init(named: AppIconType.dew.assetName)!)
+            return Image(.appIconDew)
 		case .spring:
-			return Image(uiImage: .init(named: AppIconType.spring.assetName)!)
+			return Image(.appIconSpring)
 		case .summer:
-			return Image(uiImage: .init(named: AppIconType.summer.assetName)!)
+			return Image(.appIconSummer)
 		case .fall:
-			return Image(uiImage: .init(named: AppIconType.fall.assetName)!)
+			return Image(.appIconFall)
 		case .winter:
-			return Image(uiImage: .init(named: AppIconType.winter.assetName)!)
+			return Image(.appIconWinter)
 		case .sky:
-			return Image(uiImage: .init(named: AppIconType.sky.assetName)!)
+			return Image(.appIconSky)
 		case .midnight:
-			return Image(uiImage: .init(named: AppIconType.midnight.assetName)!)
+			return Image(.appIconMidnight)
 		case .iris:
-			return Image(uiImage: .init(named: AppIconType.iris.assetName)!)
+			return Image(.appIconIris)
 		case .berry:
-			return Image(uiImage: .init(named: AppIconType.berry.assetName)!)
+			return Image(.appIconBerry)
 		}
 	}
 }
